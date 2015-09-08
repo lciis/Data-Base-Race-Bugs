@@ -1,7 +1,6 @@
 # Data-Base-Race-Bugs
 ***Majority of Information is gathered through https://bugzilla.kernel.org.
-Directory Structure:
-
+Directory Structure
 	/Data Base - Data Race						—The home directory
 
 	/Data Base - Data Race/.../Bug #					—individual folder for each bug that organized with id #.
