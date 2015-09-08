@@ -2,6 +2,7 @@
 ***Majority of Information is gathered through https://bugzilla.kernel.org.
 
 Directory Structure:
+
 /Data Base - Data Race						—The home directory 
 /Data Base - Data Race/.../Bug #					—individual folder for each bug that organized with id #.
 /Data Base - Data Race/.../Bug #/Attachments				—Attachments that were submitted along with the bug on https://bugzilla.kernel.org.
