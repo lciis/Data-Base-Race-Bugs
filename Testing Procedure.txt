@@ -15,19 +15,19 @@ Step 5 is done with rmmod and it invoked the driver's exit function.
 
 Symdrive does not automatically invoke every function in the driver. A test program is usually required to do this task.
 	Example:	driver A
-					functions:
-						Start();
-						Exit();
-						Read();
-						Write();
-						Open();
-						Close();
-				insmod A will invoke start()
-				rmmod A will invoke exit()
-				Modifying the dev file that associates with this driver triggers other functions
-					In user mode, Opening this dev file will invoke open();
-						Reading this dev file will invoke read();
-						Writing this dev file will invoke write();
-						Closing this dev file will invoke close();
+				functions:
+					Start();
+					Exit();
+					Read();
+					Write();	
+					Open();
+					Close();
+			insmod A will invoke start()
+			rmmod A will invoke exit()
+			Modifying the dev file that associates with this driver triggers other functions
+				In user mode, Opening this dev file will invoke open();
+					Reading this dev file will invoke read();
+					Writing this dev file will invoke write();
+					Closing this dev file will invoke close();
 
 *The test program of lp5523 is provided as the example in SymDrive.
