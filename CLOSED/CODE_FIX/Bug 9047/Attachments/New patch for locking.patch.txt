@@ -1,0 +1,113 @@
+--- old/forcedeth.c	2007-09-24 21:01:57.000000000 -0700
++++ new/forcedeth.c	2007-09-26 14:56:52.000000000 -0700
+@@ -123,6 +123,11 @@
+  * DEV_NEED_TIMERIRQ will not harm you on sane hardware, only generating a few
+  * superfluous timer interrupts from the nic.
+  */
++
++//#ifndef CONFIG_FORCEDETH_NAPI
++//#define CONFIG_FORCEDETH_NAPI
++//#endif
++
+ #ifdef CONFIG_FORCEDETH_NAPI
+ #define DRIVERNAPI "-NAPI"
+ #else
+@@ -744,6 +749,7 @@
+ /* in dev: base, irq */
+ struct fe_priv {
+ 	spinlock_t lock;
++	spinlock_t timer_lock;
+ 
+ 	/* General data:
+ 	 * Locking: spin_lock(&np->lock); */
+@@ -1597,6 +1603,7 @@
+ 	struct fe_priv *np = netdev_priv(dev);
+ 	int retcode;
+ 
++	spin_lock_irq(&np->timer_lock);
+ 	if (!using_multi_irqs(dev)) {
+ 		if (np->msi_flags & NV_MSI_X_ENABLED)
+ 			disable_irq(np->msi_x_entry[NV_MSI_X_VECTOR_ALL].vector);
+@@ -1605,12 +1612,14 @@
+ 	} else {
+ 		disable_irq(np->msi_x_entry[NV_MSI_X_VECTOR_RX].vector);
+ 	}
++	spin_lock_irq(&np->lock);
+ 	if (np->desc_ver == DESC_VER_1 || np->desc_ver == DESC_VER_2)
+ 		retcode = nv_alloc_rx(dev);
+ 	else
+ 		retcode = nv_alloc_rx_optimized(dev);
++	spin_unlock_irq(&np->lock);
+ 	if (retcode) {
+-		spin_lock_irq(&np->lock);
++	        spin_lock_irq(&np->lock);
+ 		if (!np->in_shutdown)
+ 			mod_timer(&np->oom_kick, jiffies + OOM_REFILL);
+ 		spin_unlock_irq(&np->lock);
+@@ -1623,6 +1632,7 @@
+ 	} else {
+ 		enable_irq(np->msi_x_entry[NV_MSI_X_VECTOR_RX].vector);
+ 	}
++	spin_unlock_irq(&np->timer_lock);
+ }
+ #endif
+ 
+@@ -3127,14 +3137,16 @@
+ 			spin_unlock(&np->lock);
+ 		}
+ #else
++		spin_lock(&np->lock);
+ 		if (nv_rx_process_optimized(dev, dev->weight)) {
+ 			if (unlikely(nv_alloc_rx_optimized(dev))) {
+-				spin_lock(&np->lock);
++			  //spin_lock(&np->lock);
+ 				if (!np->in_shutdown)
+ 					mod_timer(&np->oom_kick, jiffies + OOM_REFILL);
+-				spin_unlock(&np->lock);
++				//spin_unlock(&np->lock);
+ 			}
+ 		}
++		spin_unlock(&np->lock);
+ #endif
+ 		if (unlikely(events & NVREG_IRQ_LINK)) {
+ 			spin_lock(&np->lock);
+@@ -3253,6 +3265,7 @@
+ 	unsigned long flags;
+ 	int retcode;
+ 
++	spin_lock_irqsave(&np->timer_lock, flags);
+ 	if (np->desc_ver == DESC_VER_1 || np->desc_ver == DESC_VER_2) {
+ 		pkts = nv_rx_process(dev, limit);
+ 		retcode = nv_alloc_rx(dev);
+@@ -3260,6 +3273,7 @@
+ 		pkts = nv_rx_process_optimized(dev, limit);
+ 		retcode = nv_alloc_rx_optimized(dev);
+ 	}
++	spin_unlock_irqrestore(&np->timer_lock, flags);
+ 
+ 	if (retcode) {
+ 		spin_lock_irqsave(&np->lock, flags);
+@@ -3619,6 +3633,7 @@
+ 	 * nv_nic_irq because that may decide to do otherwise
+ 	 */
+ 
++	spin_lock_irq(&np->timer_lock);
+ 	if (!using_multi_irqs(dev)) {
+ 		if (np->msi_flags & NV_MSI_X_ENABLED)
+ 			disable_irq_lockdep(np->msi_x_entry[NV_MSI_X_VECTOR_ALL].vector);
+@@ -3705,6 +3720,7 @@
+ 			enable_irq_lockdep(np->msi_x_entry[NV_MSI_X_VECTOR_OTHER].vector);
+ 		}
+ 	}
++	spin_unlock_irq(&np->timer_lock);
+ }
+ 
+ #ifdef CONFIG_NET_POLL_CONTROLLER
+@@ -4996,6 +5012,7 @@
+ 	np = netdev_priv(dev);
+ 	np->pci_dev = pci_dev;
+ 	spin_lock_init(&np->lock);
++	spin_lock_init(&np->timer_lock);
+ 	SET_MODULE_OWNER(dev);
+ 	SET_NETDEV_DEV(dev, &pci_dev->dev);
+ 

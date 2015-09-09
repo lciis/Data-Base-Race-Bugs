@@ -1,0 +1,37 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=37752
+Component: Video(DRI - Intel)
+Hardware: i386 Linux
+Reported: 2011-06-17 13:02 UTC 
+Modified: 2012-03-25 13:01 UTC 
+Kernel Version: 2.6.39.3, 3.0
+Tree: Mainline
+Status: RESOLVED CODE_FIX
+
+Summary:
+	There is a pageflip race between setting the unpin_work pointer and the vblank_get. 
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Martin Rogge 2011-06-17 13:02:11 UTC
+	Created attachment 62512 [details]
+	kernel config
+
+	The kernel panic occurs non-deterministically. I have never seen it in runlevel 3 (console). For me, the most reliable way to trigger it within minutes or hours is to run the X screensaver Atlantis.
+
+	The stack trace can look very different each time. Most often it looks like in Foto0105.jpg with a lot of hardware irq routines on the stack. Once I caught the infamous "Hangcheck timer elapsed... render ring idle" (Foto0102.jpg)
+
+	Btw, the same kernel version does not show this issue on my other machines with i915 drm: one with 945GM and one with Clarkdale graphics.
+
+	I'll attach the kernel config and output of lspci.
+
+	The screenshots can be downloaded here:
+	http://www.wupload.com/file/21411414/panic_screenshots.tar
+		
+---------------------------------------------------------------------------
+	Chris Wilson 2011-06-29 09:47:30 UTC
+	Looks similar to the races found in https://bugs.freedesktop.org/show_bug.cgi?id=34211
+
+---------------------------------------------------------------------------
+	
+Proposed Fix:
+	In ./Attachments/Proposed fix

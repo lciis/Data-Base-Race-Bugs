@@ -1,0 +1,32 @@
+[    7.249453] rt61pci 0000:00:09.0: firmware: requesting rt2561s.bin
+[    7.314512] BUG: unable to handle kernel NULL pointer dereference at 00000004
+[    7.315639] IP: [<d04d51cd>] firmware_loading_store+0xed/0x160 [firmware_class]
+[    7.315639] *pde = 00000000
+[    7.315639] Oops: 0000 [#1] PREEMPT
+[    7.315639] last sysfs file: /sys/devices/pci0000:00/0000:00:09.0/firmware/0000:00:09.0/loading
+[    7.315639] Modules linked in: arc4 ecb cryptomgr crypto_blkcipher aead pcompress crypto_hash crypto_algapi rt61pci rt2x00pci rt2x00lib firmware_class mac80211 input_polldev crc_itu_t eeprom_93cx6 cfg80211 ndccanram ndccan ndcser(P) ndcscan(P) eu16550(P) ndccon(P)
+[    7.315639]
+[    7.315639] Pid: 1004, comm: echo Tainted: P           (2.6.31 #1)
+[    7.315639] EIP: 0060:[<d04d51cd>] EFLAGS: 00010202 CPU: 0
+[    7.315639] EIP is at firmware_loading_store+0xed/0x160 [firmware_class]
+[    7.315639] EAX: 00000000 EBX: d04d50e0 ECX: 0000000a EDX: 00000028
+[    7.315639] ESI: cf65ca80 EDI: cea29c00 EBP: cea29c08 ESP: cf777f2c
+[    7.315639]  DS: 007b ES: 007b FS: 0000 GS: 0000 SS: 0068
+[    7.315639] Process echo (pid: 1004, ti=cf776000 task=cf755aa0 task.ti=cf776000)
+[    7.315639] Stack:
+[    7.315639]  d04d50e0 cea29c00 00000002 c028051d 00000002 c0414c40 ce9c0420 c01c9c98
+[    7.315639] <0> 00000002 c0414c40 00000002 b7f15000 ce9c1e80 cf44c000 c01c9ce6 ce9c1e94
+[    7.315639] <0> cf44c000 b7f15000 00000002 c01c9cb0 c018d362 cf777f9c cf44c000 fffffff7
+[    7.315639] Call Trace:
+[    7.315639]  [<d04d50e0>] ? firmware_loading_store+0x0/0x160 [firmware_class]
+[    7.315639]  [<c028051d>] ? dev_attr_store+0x1d/0x20
+[    7.315639]  [<c01c9c98>] ? flush_write_buffer+0x38/0x50
+[    7.315639]  [<c01c9ce6>] ? sysfs_write_file+0x36/0x60
+[    7.315639]  [<c01c9cb0>] ? sysfs_write_file+0x0/0x60
+[    7.315639]  [<c018d362>] ? vfs_write+0x82/0xf0
+[    7.315639]  [<c018d47c>] ? sys_write+0x3c/0x70
+[    7.315639]  [<c0102ba1>] ? syscall_call+0x7/0xb
+[    7.315639] Code: 91 c9 ef 3b 5e 3c 7c ed eb b5 8d 74 26 00 83 f8 ff 0f 85 50 ff ff ff e9 6a ff ff ff 89 f6 f6 46 34 01 0f 84 3f ff ff ff 8b 46 30 <8b> 40 04 e8 5b 05 cb ef 31 c9 8b 56 3c 8b 46 38 8b 5e 30 68 61
+[    7.315639] EIP: [<d04d51cd>] firmware_loading_store+0xed/0x160 [firmware_class] SS:ESP 0068:cf777f2c
+[    7.315639] CR2: 0000000000000004
+[    7.540848] ---[ end trace 6ebe83c102d3b046 ]---

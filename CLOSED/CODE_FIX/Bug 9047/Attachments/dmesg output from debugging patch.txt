@@ -1,0 +1,285 @@
+Oct 11 12:37:58 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:58 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:58 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:58 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:58 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:58 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:58 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:58 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:58 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:58 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:58 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:58 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:58 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:58 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:58 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:58 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:58 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:58 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (1)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:37:59 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:37:59 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:37:59 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:37:59 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 eth0: too many iterations (6) in nv_nic_irq.
+Oct 11 12:38:00 bucket00 forcedeth: lock error. Previous owner ffffffff880a13da (3), now ffffffff880a0b7e (3)
+Oct 11 12:38:00 bucket00 nv_do_nic_poll+0xb5/0x2b1 [forcedeth]
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:38:00 bucket00 forcedeth: lock not held ffffffff880a154c (3)
+Oct 11 12:38:00 bucket00 nv_nic_irq_optimized_wrap+0x18/0x37 [forcedeth]
+Oct 11 12:44:49 bucket00 syslog-ng[7226]: syslog-ng version 1.6.11 starting
+Oct 11 12:44:49 bucket00 syslog-ng[7226]: Changing permissions on special file /dev/tty12
+Oct 11 12:44:49 bucket00 Linux version 2.6.23-rc7-git1 (root@bucket00) (gcc version 4.1.2 (Gentoo 4.1.2)) #3 SMP Tue Oct 9 13:38:02 HST 2007

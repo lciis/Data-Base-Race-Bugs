@@ -1,0 +1,470 @@
+[  227.608308] ACPI: Low-level resume complete
+[  227.608384] PM: Restoring platform NVS memory
+[  227.610031] PM: Calling lapic_resume+0x0/0x290
+[  227.610064] PM: Calling cpufreq_bp_resume+0x0/0x60
+[  227.610080] PM: Calling irqrouter_resume+0x0/0x35
+[  227.610086] PM: Calling i8259A_resume+0x0/0x30
+[  227.610232] PM: Calling i8237A_resume+0x0/0xc0
+[  227.610310] PM: Calling ioapic_resume+0x0/0x90
+[  227.610338] PM: Calling mc_bp_resume+0x0/0x40
+[  227.610343] PM: Calling timekeeping_resume+0x0/0xf0
+[  227.610395] PM: Calling irq_pm_syscore_resume+0x0/0x10
+[  227.610417] PM: Calling mce_syscore_resume+0x0/0x30
+[  227.610466] PM: Calling kvm_resume+0x0/0x50 [kvm]
+[  227.610492] Enabling non-boot CPUs ...
+[  227.610591] smpboot: Booting Node 0 Processor 1 APIC 0x1
+[  227.622229] Disabled fast string operations
+[  227.624652] Intel pstate controlling: cpu 1
+[  227.624748] CPU1 is up
+[  227.624774] smpboot: Booting Node 0 Processor 2 APIC 0x2
+[  227.635883] Disabled fast string operations
+[  227.638055] Intel pstate controlling: cpu 2
+[  227.638086] CPU2 is up
+[  227.638098] smpboot: Booting Node 0 Processor 3 APIC 0x3
+[  227.649205] Disabled fast string operations
+[  227.651393] Intel pstate controlling: cpu 3
+[  227.651423] CPU3 is up
+[  227.655454] ACPI: Waking up from system sleep state S3
+[  227.677514] calling  0000:00:00.0+ @ 18572, parent: pci0000:00
+[  227.677525] call 0000:00:00.0+ returned 0 after 9 usecs
+[  227.677525] calling  0000:00:02.0+ @ 18572, parent: pci0000:00
+[  227.677533] i915 0000:00:02.0: power state changed by ACPI to D0
+[  227.688480] call 0000:00:02.0+ returned 0 after 10709 usecs
+[  227.688482] calling  0000:00:16.0+ @ 18572, parent: pci0000:00
+[  227.688547] call 0000:00:16.0+ returned 0 after 63 usecs
+[  227.688548] calling  0000:00:16.3+ @ 18572, parent: pci0000:00
+[  227.688576] call 0000:00:16.3+ returned 0 after 26 usecs
+[  227.688576] calling  0000:00:19.0+ @ 18572, parent: pci0000:00
+[  227.699489] call 0000:00:19.0+ returned 0 after 10668 usecs
+[  227.699491] calling  0000:00:1a.0+ @ 18572, parent: pci0000:00
+[  227.699499] ehci-pci 0000:00:1a.0: power state changed by ACPI to D0
+[  227.710482] ehci-pci 0000:00:1a.0: System wakeup disabled by ACPI
+[  227.710490] call 0000:00:1a.0+ returned 0 after 10753 usecs
+[  227.710492] calling  0000:00:1b.0+ @ 18572, parent: pci0000:00
+[  227.721464] call 0000:00:1b.0+ returned 0 after 10727 usecs
+[  227.721466] calling  0000:00:1c.0+ @ 18572, parent: pci0000:00
+[  227.721562] call 0000:00:1c.0+ returned 0 after 92 usecs
+[  227.721562] calling  0000:00:1c.1+ @ 18572, parent: pci0000:00
+[  227.721639] call 0000:00:1c.1+ returned 0 after 74 usecs
+[  227.721639] calling  0000:00:1c.3+ @ 18572, parent: pci0000:00
+[  227.721716] call 0000:00:1c.3+ returned 0 after 74 usecs
+[  227.721716] calling  0000:00:1c.4+ @ 18572, parent: pci0000:00
+[  227.721761] call 0000:00:1c.4+ returned 0 after 43 usecs
+[  227.721762] calling  0000:00:1c.6+ @ 18572, parent: pci0000:00
+[  227.721807] call 0000:00:1c.6+ returned 0 after 43 usecs
+[  227.721807] calling  0000:00:1d.0+ @ 18572, parent: pci0000:00
+[  227.721809] ehci-pci 0000:00:1d.0: power state changed by ACPI to D0
+[  227.732451] ehci-pci 0000:00:1d.0: System wakeup disabled by ACPI
+[  227.732458] call 0000:00:1d.0+ returned 0 after 10412 usecs
+[  227.732459] calling  0000:00:1f.0+ @ 18572, parent: pci0000:00
+[  227.732505] call 0000:00:1f.0+ returned 0 after 43 usecs
+[  227.732505] calling  0000:00:1f.2+ @ 18572, parent: pci0000:00
+[  227.743448] call 0000:00:1f.2+ returned 0 after 10698 usecs
+[  227.743450] calling  0000:00:1f.3+ @ 18572, parent: pci0000:00
+[  227.743482] call 0000:00:1f.3+ returned 0 after 30 usecs
+[  227.743483] calling  0000:03:00.0+ @ 18572, parent: 0000:00:1c.1
+[  227.755459] call 0000:03:00.0+ returned 0 after 11704 usecs
+[  227.755464] calling  0000:0d:00.0+ @ 18572, parent: 0000:00:1c.4
+[  227.766582] sdhci-pci 0000:0d:00.0: MMC controller base frequency changed to 50Mhz.
+[  227.766588] call 0000:0d:00.0+ returned 0 after 10875 usecs
+[  227.766590] calling  0000:0e:00.0+ @ 18572, parent: 0000:00:1c.6
+[  227.777462] pcieport 0000:00:1c.6: System wakeup disabled by ACPI
+[  227.777471] call 0000:0e:00.0+ returned 0 after 10638 usecs
+[  227.777575] PM: noirq resume of devices complete after 100.199 msecs
+[  227.777848] PM: early resume of devices complete after 0.221 msecs
+[  227.777876] calling  0000:00:00.0+ @ 6388, parent: pci0000:00
+[  227.777879] call 0000:00:00.0+ returned 0 after 1 usecs
+[  227.777891] calling  0000:00:02.0+ @ 6408, parent: pci0000:00
+[  227.777894] calling  0000:00:16.0+ @ 6388, parent: pci0000:00
+[  227.777898] call 0000:00:16.0+ returned 0 after 0 usecs
+[  227.777904] calling  0000:00:16.3+ @ 6397, parent: pci0000:00
+[  227.777906] calling  0000:00:19.0+ @ 6388, parent: pci0000:00
+[  227.777909] call 0000:00:16.3+ returned 0 after 1 usecs
+[  227.777912] calling  0000:00:1a.0+ @ 6404, parent: pci0000:00
+[  227.777914] calling  0000:00:1b.0+ @ 6397, parent: pci0000:00
+[  227.777924] e1000e 0000:00:19.0: setting latency timer to 64
+[  227.777954] calling  0000:00:1c.0+ @ 6389, parent: pci0000:00
+[  227.777958] call 0000:00:1c.0+ returned 0 after 2 usecs
+[  227.777962] i915 0000:00:02.0: setting latency timer to 64
+[  227.777965] calling  0000:00:1c.1+ @ 6389, parent: pci0000:00
+[  227.777968] call 0000:00:1c.1+ returned 0 after 1 usecs
+[  227.777971] calling  0000:00:1c.3+ @ 6389, parent: pci0000:00
+[  227.777974] call 0000:00:1c.3+ returned 0 after 1 usecs
+[  227.777977] calling  0000:00:1c.4+ @ 6389, parent: pci0000:00
+[  227.777989] call 0000:00:1c.4+ returned 0 after 1 usecs
+[  227.777990] calling  0000:00:1c.6+ @ 6389, parent: pci0000:00
+[  227.777991] call 0000:00:1c.6+ returned 0 after 0 usecs
+[  227.777992] calling  0000:00:1d.0+ @ 6389, parent: pci0000:00
+[  227.777995] calling  LNXCPU:00+ @ 18572, parent: LNXSYSTM:00
+[  227.777997] call LNXCPU:00+ returned 0 after 1 usecs
+[  227.777998] calling  LNXCPU:01+ @ 18572, parent: LNXSYSTM:00
+[  227.777999] calling  0000:00:1f.0+ @ 6, parent: pci0000:00
+[  227.778000] call 0000:00:1f.0+ returned 0 after 0 usecs
+[  227.778001] call LNXCPU:01+ returned 0 after 1 usecs
+[  227.778001] calling  0000:00:1f.2+ @ 6, parent: pci0000:00
+[  227.778002] calling  LNXCPU:02+ @ 18572, parent: LNXSYSTM:00
+[  227.778004] call LNXCPU:02+ returned 0 after 0 usecs
+[  227.778005] calling  LNXCPU:03+ @ 18572, parent: LNXSYSTM:00
+[  227.778006] call LNXCPU:03+ returned 0 after 0 usecs
+[  227.778007] calling  LNXCPU:04+ @ 18572, parent: LNXSYSTM:00
+[  227.778008] e1000e 0000:00:19.0: irq 42 for MSI/MSI-X
+[  227.778009] call LNXCPU:04+ returned 0 after 0 usecs
+[  227.778010] calling  LNXCPU:05+ @ 18572, parent: LNXSYSTM:00
+[  227.778011] ahci 0000:00:1f.2: setting latency timer to 64
+[  227.778012] call LNXCPU:05+ returned 0 after 1 usecs
+[  227.778013] calling  LNXCPU:06+ @ 18572, parent: LNXSYSTM:00
+[  227.778015] call LNXCPU:06+ returned 0 after 1 usecs
+[  227.778016] calling  LNXCPU:07+ @ 18572, parent: LNXSYSTM:00
+[  227.778018] call LNXCPU:07+ returned 0 after 1 usecs
+[  227.778021] calling  PNP0C0D:00+ @ 18572, parent: LNXSYBUS:00
+[  227.778027] calling  0000:00:1f.3+ @ 9182, parent: pci0000:00
+[  227.778029] call 0000:00:1f.3+ returned 0 after 0 usecs
+[  227.778030] calling  0000:03:00.0+ @ 9182, parent: 0000:00:1c.1
+[  227.778069] call 0000:03:00.0+ returned 0 after 37 usecs
+[  227.778070] calling  0000:0d:00.0+ @ 9182, parent: 0000:00:1c.4
+[  227.778271] calling  0000:0e:00.0+ @ 6374, parent: 0000:00:1c.6
+[  227.778309] usb usb2: root hub lost power or was reset
+[  227.778311] ehci-pci 0000:00:1a.0: setting latency timer to 64
+[  227.778311] usb usb3: root hub lost power or was reset
+[  227.778319] snd_hda_intel 0000:00:1b.0: irq 43 for MSI/MSI-X
+[  227.778324] call 0000:00:1a.0+ returned 0 after 401 usecs
+[  227.778394] ehci-pci 0000:00:1d.0: setting latency timer to 64
+[  227.778404] call 0000:00:1d.0+ returned 0 after 402 usecs
+[  227.778598] xhci_hcd 0000:0e:00.0: irq 45 for MSI/MSI-X
+[  227.778603] xhci_hcd 0000:0e:00.0: irq 46 for MSI/MSI-X
+[  227.778608] xhci_hcd 0000:0e:00.0: irq 47 for MSI/MSI-X
+[  227.778613] xhci_hcd 0000:0e:00.0: irq 48 for MSI/MSI-X
+[  227.778618] xhci_hcd 0000:0e:00.0: irq 49 for MSI/MSI-X
+[  227.779466] call PNP0C0D:00+ returned 0 after 1412 usecs
+[  227.779468] calling  PNP0C0E:00+ @ 18572, parent: LNXSYBUS:00
+[  227.779468] call PNP0C0E:00+ returned 0 after 0 usecs
+[  227.779474] calling  PNP0C0A:00+ @ 18572, parent: PNP0C09:00
+[  227.779615] calling  usb1+ @ 9178, parent: 0000:00:1a.0
+[  227.779617] usb usb1: usb resume
+[  227.779620] ehci-pci 0000:00:1a.0: resume root hub
+[  227.779650] hub 1-0:1.0: hub_resume
+[  227.779663] hub 1-0:1.0: port 1: status 0507 change 0000
+[  227.779673] call usb1+ returned 0 after 56 usecs
+[  227.779712] calling  usb4+ @ 6367, parent: 0000:00:1d.0
+[  227.779713] usb usb4: usb resume
+[  227.779718] ehci-pci 0000:00:1d.0: resume root hub
+[  227.779740] hub 4-0:1.0: hub_resume
+[  227.779744] hub 4-0:1.0: port 1: status 0507 change 0000
+[  227.779749] call usb4+ returned 0 after 36 usecs
+[  227.779757] calling  1-1+ @ 32, parent: usb1
+[  227.779774] usb 1-1: usb resume
+[  227.779807] calling  4-1+ @ 9173, parent: usb4
+[  227.779818] usb 4-1: usb resume
+[  227.781861] call 0000:0e:00.0+ returned 0 after 3509 usecs
+[  227.781865] calling  usb2+ @ 9178, parent: 0000:0e:00.0
+[  227.781867] usb usb2: usb resume
+[  227.781889] hub 2-0:1.0: hub_reset_resume
+[  227.781891] hub 2-0:1.0: enabling power on all ports
+[  227.781912] calling  usb3+ @ 6373, parent: 0000:0e:00.0
+[  227.781914] usb usb3: usb resume
+[  227.781927] hub 3-0:1.0: hub_reset_resume
+[  227.781928] hub 3-0:1.0: enabling power on all ports
+[  227.783725] [drm] Wrong MCH_SSKPD value: 0x16040307
+[  227.783725] [drm] This can cause pipe underruns and display issues.
+[  227.783726] [drm] Please upgrade your BIOS to fix this.
+[  227.783795] call 0000:00:02.0+ returned 0 after 5771 usecs
+[  227.788321] call 0000:00:1f.2+ returned 0 after 10089 usecs
+[  227.788327] calling  ata1+ @ 6404, parent: 0000:00:1f.2
+[  227.788328] calling  ata5+ @ 6403, parent: 0000:00:1f.2
+[  227.788329] calling  ata2+ @ 6389, parent: 0000:00:1f.2
+[  227.788335] calling  ata3+ @ 9180, parent: 0000:00:1f.2
+[  227.788338] calling  ata4+ @ 6392, parent: 0000:00:1f.2
+[  227.788342] calling  ata6+ @ 9176, parent: 0000:00:1f.2
+[  227.788368] call ata3+ returned 0 after 31 usecs
+[  227.788371] call ata4+ returned 0 after 30 usecs
+[  227.788372] call ata6+ returned 0 after 27 usecs
+[  227.788372] call ata2+ returned 0 after 40 usecs
+[  227.788374] calling  host2+ @ 6398, parent: ata3
+[  227.788375] calling  host5+ @ 6406, parent: ata6
+[  227.788376] calling  host1+ @ 925, parent: ata2
+[  227.788377] call host2+ returned 0 after 0 usecs
+[  227.788377] call host5+ returned 0 after 0 usecs
+[  227.788378] call host1+ returned 0 after 0 usecs
+[  227.788379] calling  host3+ @ 6364, parent: ata4
+[  227.788380] call host3+ returned 0 after 0 usecs
+[  227.791144] call PNP0C0A:00+ returned 0 after 11409 usecs
+[  227.791145] calling  ACPI0003:00+ @ 18572, parent: PNP0C09:00
+[  227.791234] call ACPI0003:00+ returned 0 after 86 usecs
+[  227.791243] calling  LNXTHERM:00+ @ 18572, parent: LNXSYBUS:01
+[  227.791541] call LNXTHERM:00+ returned 0 after 290 usecs
+[  227.791544] calling  LNXPWRBN:00+ @ 18572, parent: LNXSYSTM:00
+[  227.791545] call LNXPWRBN:00+ returned 0 after 0 usecs
+[  227.791546] calling  dock.0+ @ 18572, parent: platform
+[  227.791546] call dock.0+ returned 0 after 0 usecs
+[  227.791547] calling  dock.1+ @ 18572, parent: platform
+[  227.791547] call dock.1+ returned 0 after 0 usecs
+[  227.791548] calling  dock.2+ @ 18572, parent: platform
+[  227.791548] call dock.2+ returned 0 after 0 usecs
+[  227.791549] calling  regulatory.0+ @ 18572, parent: platform
+[  227.791550] call regulatory.0+ returned 0 after 0 usecs
+[  227.791563] calling  00:00+ @ 18572, parent: pnp0
+[  227.791564] call 00:00+ returned 0 after 0 usecs
+[  227.791565] calling  00:01+ @ 18572, parent: pnp0
+[  227.791565] call 00:01+ returned 0 after 0 usecs
+[  227.791566] calling  00:02+ @ 18572, parent: pnp0
+[  227.791567] call 00:02+ returned 0 after 0 usecs
+[  227.791567] calling  00:03+ @ 18572, parent: pnp0
+[  227.791568] call 00:03+ returned 0 after 0 usecs
+[  227.791568] calling  00:04+ @ 18572, parent: pnp0
+[  227.791568] call 00:04+ returned 0 after 0 usecs
+[  227.791569] calling  00:05+ @ 18572, parent: pnp0
+[  227.791569] call 00:05+ returned 0 after 0 usecs
+[  227.791570] calling  00:06+ @ 18572, parent: pnp0
+[  227.791572] call 00:06+ returned 0 after 1 usecs
+[  227.791572] calling  00:07+ @ 18572, parent: pnp0
+[  227.791573] call 00:07+ returned 0 after 0 usecs
+[  227.791573] calling  00:08+ @ 18572, parent: pnp0
+[  227.791574] call 00:08+ returned 0 after 0 usecs
+[  227.791576] calling  pcspkr+ @ 18572, parent: platform
+[  227.791576] call pcspkr+ returned 0 after 0 usecs
+[  227.791577] calling  microcode+ @ 18572, parent: platform
+[  227.791577] call microcode+ returned 0 after 0 usecs
+[  227.791579] calling  alarmtimer+ @ 18572, parent: platform
+[  227.791579] call alarmtimer+ returned 0 after 0 usecs
+[  227.791582] calling  input0+ @ 18572, parent: PNP0C0D:00
+[  227.791583] call input0+ returned 0 after 0 usecs
+[  227.791583] calling  input1+ @ 18572, parent: PNP0C0E:00
+[  227.791594] call input1+ returned 0 after 10 usecs
+[  227.791595] calling  input2+ @ 18572, parent: LNXPWRBN:00
+[  227.791602] call input2+ returned 0 after 5 usecs
+[  227.791604] calling  controlD64+ @ 18572, parent: 0000:00:02.0
+[  227.791604] call controlD64+ returned 0 after 0 usecs
+[  227.791605] calling  card0+ @ 18572, parent: 0000:00:02.0
+[  227.791605] call card0+ returned 0 after 0 usecs
+[  227.791606] calling  i2c-0+ @ 18572, parent: 0000:00:02.0
+[  227.791606] call i2c-0+ returned 0 after 0 usecs
+[  227.791607] calling  i2c-1+ @ 18572, parent: 0000:00:02.0
+[  227.791607] call i2c-1+ returned 0 after 0 usecs
+[  227.791608] calling  i2c-2+ @ 18572, parent: 0000:00:02.0
+[  227.791608] call i2c-2+ returned 0 after 0 usecs
+[  227.791609] calling  i2c-3+ @ 18572, parent: 0000:00:02.0
+[  227.791609] call i2c-3+ returned 0 after 0 usecs
+[  227.791610] calling  i2c-4+ @ 18572, parent: 0000:00:02.0
+[  227.791610] call i2c-4+ returned 0 after 0 usecs
+[  227.791611] calling  i2c-5+ @ 18572, parent: 0000:00:02.0
+[  227.791611] call i2c-5+ returned 0 after 0 usecs
+[  227.791612] calling  card0-LVDS-1+ @ 18572, parent: card0
+[  227.791612] call card0-LVDS-1+ returned 0 after 0 usecs
+[  227.791613] calling  intel_backlight+ @ 18572, parent: card0-LVDS-1
+[  227.791614] call intel_backlight+ returned 0 after 0 usecs
+[  227.791614] calling  card0-VGA-1+ @ 18572, parent: card0
+[  227.791615] call card0-VGA-1+ returned 0 after 0 usecs
+[  227.791615] calling  card0-HDMI-A-1+ @ 18572, parent: card0
+[  227.791616] call card0-HDMI-A-1+ returned 0 after 0 usecs
+[  227.791616] calling  card0-DP-1+ @ 18572, parent: card0
+[  227.791617] call card0-DP-1+ returned 0 after 0 usecs
+[  227.791617] calling  i2c-6+ @ 18572, parent: card0-DP-1
+[  227.791618] call i2c-6+ returned 0 after 0 usecs
+[  227.791618] calling  card0-HDMI-A-2+ @ 18572, parent: card0
+[  227.791619] call card0-HDMI-A-2+ returned 0 after 0 usecs
+[  227.791619] calling  card0-HDMI-A-3+ @ 18572, parent: card0
+[  227.791620] call card0-HDMI-A-3+ returned 0 after 0 usecs
+[  227.791620] calling  card0-DP-2+ @ 18572, parent: card0
+[  227.791620] call card0-DP-2+ returned 0 after 0 usecs
+[  227.791621] calling  i2c-7+ @ 18572, parent: card0-DP-2
+[  227.791622] call i2c-7+ returned 0 after 0 usecs
+[  227.791622] calling  card0-DP-3+ @ 18572, parent: card0
+[  227.791622] call card0-DP-3+ returned 0 after 0 usecs
+[  227.791623] calling  i2c-8+ @ 18572, parent: card0-DP-3
+[  227.791623] call i2c-8+ returned 0 after 0 usecs
+[  227.791625] calling  acpi_video0+ @ 18572, parent: 0000:00:02.0
+[  227.791625] call acpi_video0+ returned 0 after 0 usecs
+[  227.791626] calling  input3+ @ 18572, parent: LNXVIDEO:00
+[  227.791631] call input3+ returned 0 after 4 usecs
+[  227.795643] call 0000:00:1b.0+ returned 0 after 17334 usecs
+[  227.805377] ehci-pci 0000:00:1d.0: GetStatus port:1 status 001005 0  ACK POWER sig=se0 PE CONNECT
+[  227.805381] ehci-pci 0000:00:1a.0: GetStatus port:1 status 001005 0  ACK POWER sig=se0 PE CONNECT
+[  227.816313] usb 4-1: finish resume
+[  227.816316] usb 1-1: finish resume
+[  227.816395] hub 4-1:1.0: hub_resume
+[  227.816445] hub 1-1:1.0: hub_resume
+[  227.816647] hub 4-1:1.0: port 2: status 0307 change 0000
+[  227.817404] ehci-pci 0000:00:1d.0: reused qh ffff880211eed700 schedule
+[  227.817411] usb 4-1: link qh256-0001/ffff880211eed700 start 1 [1/0 us]
+[  227.817431] call 4-1+ returned 0 after 36789 usecs
+[  227.817485] calling  4-1.2+ @ 6400, parent: 4-1
+[  227.817743] usb 4-1.2: usb resume
+[  227.817749] hub 1-1:1.0: port 6: status 0101 change 0001
+[  227.854376] usb 4-1.2: finish resume
+[  227.855015] ehci-pci 0000:00:1d.0: reused qh ffff880211e23b00 schedule
+[  227.855022] usb 4-1.2: link qh8-0601/ffff880211e23b00 start 2 [1/2 us]
+[  227.855038] ehci-pci 0000:00:1d.0: reused qh ffff880211e23f00 schedule
+[  227.855041] usb 4-1.2: link qh8-0601/ffff880211e23f00 start 3 [1/2 us]
+[  227.855048] call 4-1.2+ returned 0 after 36727 usecs
+[  227.882183] call usb2+ returned 0 after 98092 usecs
+[  227.882189] call usb3+ returned 0 after 98052 usecs
+[  227.895675] call 0000:00:19.0+ returned 0 after 115154 usecs
+[  227.918172] ehci-pci 0000:00:1a.0: reused qh ffff880211eedc80 schedule
+[  227.918180] usb 1-1: link qh256-0001/ffff880211eedc80 start 1 [1/0 us]
+[  227.918189] call 1-1+ returned 0 after 135361 usecs
+[  227.918263] calling  1-1.6+ @ 6371, parent: 1-1
+[  227.918417] usb 1-1.6: finish reset-resume
+[  227.929277] hub 1-1:1.0: port 6 not reset yet, waiting 10ms
+[  227.991176] usb 1-1.6: reset high-speed USB device number 4 using ehci-pci
+[  228.008180] hub 1-1:1.0: port 6 not reset yet, waiting 10ms
+[  228.089070] call 1-1.6+ returned 0 after 167014 usecs
+[  228.092944] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[  228.093399] ata1.00: ACPI cmd ef/02:00:00:00:00:a0 (SET FEATURES) succeeded
+[  228.093401] ata1.00: ACPI cmd f5/00:00:00:00:00:a0 (SECURITY FREEZE LOCK) filtered out
+[  228.093402] ata1.00: ACPI cmd ef/10:03:00:00:00:a0 (SET FEATURES) filtered out
+[  228.094217] ata1.00: ACPI cmd ef/02:00:00:00:00:a0 (SET FEATURES) succeeded
+[  228.094219] ata1.00: ACPI cmd f5/00:00:00:00:00:a0 (SECURITY FREEZE LOCK) filtered out
+[  228.094220] ata1.00: ACPI cmd ef/10:03:00:00:00:a0 (SET FEATURES) filtered out
+[  228.094496] ata1.00: configured for UDMA/133
+[  228.094938] ata5: SATA link down (SStatus 0 SControl 300)
+[  228.094974] call ata5+ returned 0 after 299845 usecs
+[  228.094992] calling  host4+ @ 6360, parent: ata5
+[  228.094996] call host4+ returned 0 after 1 usecs
+[  228.105013] call ata1+ returned 0 after 309666 usecs
+[  228.105021] calling  host0+ @ 6368, parent: ata1
+[  228.105023] call host0+ returned 0 after 0 usecs
+[  228.105029] calling  i8042+ @ 18572, parent: platform
+[  228.105030] calling  target0:0:0+ @ 6366, parent: host0
+[  228.105032] call target0:0:0+ returned 0 after 0 usecs
+[  228.105038] calling  0:0:0:0+ @ 9175, parent: target0:0:0
+[  228.105042] sd 0:0:0:0: [sda] Starting disk
+[  228.105263] call 0:0:0:0+ returned 0 after 214 usecs
+[  228.106042] call i8042+ returned 0 after 987 usecs
+[  228.106045] calling  serio0+ @ 18572, parent: i8042
+[  228.106067] call serio0+ returned 0 after 19 usecs
+[  228.106070] calling  serio1+ @ 18572, parent: i8042
+[  228.106083] call serio1+ returned 0 after 11 usecs
+[  228.106088] calling  rtc0+ @ 18572, parent: 00:06
+[  228.106089] call rtc0+ returned 0 after 0 usecs
+[  228.106096] calling  i2c-9+ @ 18572, parent: 0000:00:1f.3
+[  228.106097] call i2c-9+ returned 0 after 0 usecs
+[  228.106100] calling  coretemp.0+ @ 18572, parent: platform
+[  228.106101] call coretemp.0+ returned 0 after 0 usecs
+[  228.106104] calling  input4+ @ 18572, parent: serio0
+[  228.106130] call input4+ returned 0 after 23 usecs
+[  228.279831] call 0000:0d:00.0+ returned 0 after 490636 usecs
+[  228.279894] calling  mmc0::+ @ 18572, parent: 0000:0d:00.0
+[  228.279897] call mmc0::+ returned 0 after 0 usecs
+[  228.279905] calling  input5+ @ 18572, parent: card0
+[  228.279907] call input5+ returned 0 after 0 usecs
+[  228.279909] calling  input6+ @ 18572, parent: card0
+[  228.279911] call input6+ returned 0 after 0 usecs
+[  228.279913] calling  input7+ @ 18572, parent: card0
+[  228.279915] call input7+ returned 0 after 0 usecs
+[  228.279929] calling  input8+ @ 18572, parent: serio1
+[  228.279931] call input8+ returned 0 after 0 usecs
+[  228.279934] calling  serio2+ @ 18572, parent: serio1
+[  228.279937] call serio2+ returned 0 after 1 usecs
+[  228.279939] calling  thinkpad_acpi+ @ 18572, parent: platform
+[  228.281733] call thinkpad_acpi+ returned 0 after 1751 usecs
+[  228.281735] calling  thinkpad_hwmon+ @ 18572, parent: platform
+[  228.281735] call thinkpad_hwmon+ returned 0 after 0 usecs
+[  228.281737] calling  rfkill0+ @ 18572, parent: thinkpad_acpi
+[  228.281737] call rfkill0+ returned 0 after 0 usecs
+[  228.281738] calling  tpacpi::thinklight+ @ 18572, parent: thinkpad_acpi
+[  228.281739] call tpacpi::thinklight+ returned 0 after 0 usecs
+[  228.281740] calling  tpacpi::power+ @ 18572, parent: thinkpad_acpi
+[  228.281740] call tpacpi::power+ returned 0 after 0 usecs
+[  228.281741] calling  tpacpi::standby+ @ 18572, parent: thinkpad_acpi
+[  228.281742] call tpacpi::standby+ returned 0 after 0 usecs
+[  228.281743] calling  tpacpi::thinkvantage+ @ 18572, parent: thinkpad_acpi
+[  228.281743] call tpacpi::thinkvantage+ returned 0 after 0 usecs
+[  228.281744] calling  tpacpi::micmute+ @ 18572, parent: thinkpad_acpi
+[  228.281745] call tpacpi::micmute+ returned 0 after 0 usecs
+[  228.281746] calling  input9+ @ 18572, parent: thinkpad_acpi
+[  228.281755] call input9+ returned 0 after 8 usecs
+[  228.281757] calling  phy0-led+ @ 18572, parent: 0000:03:00.0
+[  228.281758] call phy0-led+ returned 0 after 0 usecs
+[  228.281759] calling  phy0+ @ 18572, parent: 0000:03:00.0
+[  228.281762] call phy0+ returned 0 after 2 usecs
+[  228.281762] calling  rfkill1+ @ 18572, parent: phy0
+[  228.281763] call rfkill1+ returned 0 after 0 usecs
+[  228.281766] calling  input10+ @ 18572, parent: 1-1.6:1.0
+[  228.281772] call input10+ returned 0 after 5 usecs
+[  228.281774] calling  input11+ @ 18572, parent: 4-1.2:1.0
+[  228.281799] call input11+ returned 0 after 23 usecs
+[  228.281801] calling  input12+ @ 18572, parent: 4-1.2:1.1
+[  228.281807] call input12+ returned 0 after 5 usecs
+[  228.281808] calling  smapi+ @ 18572, parent: platform
+[  228.281809] call smapi+ returned 0 after 0 usecs
+[  228.281814] calling  input13+ @ 18572, parent: serio2
+[  228.281814] call input13+ returned 0 after 0 usecs
+[  228.281817] PM: resume of devices complete after 504.626 msecs
+[  228.292832] PM: Finishing wakeup.
+[  228.292852] usb 4-1.2: remote wakeup needed for autosuspend
+[  228.292870] hub 3-0:1.0: state 7 ports 2 chg 0000 evt 0000
+[  228.292876] hub 2-0:1.0: state 7 ports 2 chg 0000 evt 0000
+[  228.292878] hub 1-1:1.0: state 7 ports 6 chg 0040 evt 0040
+[  228.293363] hub 1-1:1.0: port 6, status 0503, change 0000, 480 Mb/s
+[  228.293367] hub 1-0:1.0: state 7 ports 3 chg 0000 evt 0000
+[  228.293370] hub 4-0:1.0: state 7 ports 3 chg 0000 evt 0000
+[  228.293374] hub 4-1:1.0: state 7 ports 8 chg 0000 evt 0000
+[  228.292833] Restarting tasks ... done.
+[  228.294391] video LNXVIDEO:00: Restoring backlight state
+[  228.496330] EXT4-fs (sda1): re-mounted. Opts: discard,commit=20
+[  228.510984] EXT4-fs (sda2): re-mounted. Opts: discard,commit=20
+[  228.519418] EXT4-fs (loop0): re-mounted. Opts: commit=20
+[  228.573235] usb 4-1.2: remote wakeup needed for autosuspend
+[  228.635191] smapi smapi: set_inhibit_charge_minutes: set to 65535 for bat=0
+
+[  228.747091] smapi smapi: set_inhibit_charge_minutes: set to 65535 for bat=0
+
+[  228.803488] hub 1-1:1.0: state 7 ports 6 chg 0000 evt 0010
+[  228.804013] hub 1-1:1.0: port 4, status 0101, change 0001, 12 Mb/s
+[  228.908139] hub 1-1:1.0: debounce: port 4: total 100ms stable 100ms status 0x101
+[  228.918955] hub 1-1:1.0: port 4 not reset yet, waiting 10ms
+[  228.981004] usb 1-1.4: new full-speed USB device number 11 using ehci-pci
+[  228.995382] e1000e 0000:00:19.0: irq 42 for MSI/MSI-X
+[  229.059998] usb 1-1.4: skipped 1 descriptor after interface
+[  229.060454] usb 1-1.4: default language 0x0409
+[  229.062025] usb 1-1.4: udev 11, busnum 1, minor = 10
+[  229.062026] usb 1-1.4: New USB device found, idVendor=0a5c, idProduct=217f
+[  229.062028] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  229.062029] usb 1-1.4: Product: Broadcom Bluetooth Device
+[  229.062030] usb 1-1.4: Manufacturer: Broadcom Corp
+[  229.062031] usb 1-1.4: SerialNumber: 9439E58F80AC
+[  229.062153] usb 1-1.4: usb_probe_device
+[  229.062156] usb 1-1.4: configuration #1 chosen from 1 choice
+[  229.062482] usb 1-1.4: adding 1-1.4:1.0 (config #1, interface 0)
+[  229.062514] btusb 1-1.4:1.0: usb_probe_interface
+[  229.062515] btusb 1-1.4:1.0: usb_probe_interface - got id
+[  229.062636] usb 1-1.4: link qh1-0601/ffff88019b536880 start 0 [1/2 us]
+[  229.062652] usb 1-1.4: adding 1-1.4:1.1 (config #1, interface 1)
+[  229.062698] usb 1-1.4: adding 1-1.4:1.2 (config #1, interface 2)
+[  229.062942] btusb 1-1.4:1.2: usb_probe_interface
+[  229.062944] btusb 1-1.4:1.2: usb_probe_interface - got id
+[  229.062966] usb 1-1.4: adding 1-1.4:1.3 (config #1, interface 3)
+[  229.063000] btusb 1-1.4:1.3: usb_probe_interface
+[  229.063001] btusb 1-1.4:1.3: usb_probe_interface - got id
+[  229.095650] e1000e 0000:00:19.0: irq 42 for MSI/MSI-X
+[  229.095859] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[  229.446148] [drm] Enabling RC6 states: RC6 on, RC6p on, RC6pp on
+[  230.452899] hub 3-0:1.0: hub_suspend
+[  230.452904] usb usb3: bus auto-suspend, wakeup 1
+[  230.452923] hub 2-0:1.0: hub_suspend
+[  230.452924] usb usb2: bus auto-suspend, wakeup 1
+[  230.453644] xhci_hcd 0000:0e:00.0: hcd_pci_runtime_suspend: 0
+[  230.461110] usb 1-1.6: usb auto-suspend, wakeup 0
+[  230.911127] e1000e: eth0 NIC Link is Up 100 Mbps Full Duplex, Flow Control: Rx/Tx
+[  230.911130] e1000e 0000:00:19.0 eth0: 10/100 speed: disabling TSO
+[  230.911161] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[  231.451528] usb 1-1.4: unlink qh1-0601/ffff88019b536880 start 0 [1/2 us]
+[  231.454148] usb 1-1: clear tt buffer port 4, a11 ep2 t04048d82
+[  231.454741] usb 1-1.4: usb auto-suspend, wakeup 1
+[  232.747887] CPU0: Package power limit notification (total events = 1)
+[  232.747889] CPU2: Package power limit notification (total events = 1)
+[  232.747890] CPU3: Package power limit notification (total events = 1)
+[  232.747891] CPU1: Package power limit notification (total events = 1)
+[  232.758906] CPU0: Package power limit normal
+[  232.758907] CPU1: Package power limit normal
+[  232.758933] CPU3: Package power limit normal
+[  232.758934] CPU2: Package power limit normal
+[  233.462878] hub 1-1:1.0: hub_suspend
+[  233.462884] usb 1-1: unlink qh256-0001/ffff880211eedc80 start 1 [1/0 us]
+[  233.465305] usb 1-1: usb auto-suspend, wakeup 1
+[  235.473249] hub 1-0:1.0: hub_suspend
+[  235.473254] usb usb1: bus auto-suspend, wakeup 1
+[  235.473256] ehci-pci 0000:00:1a.0: suspend root hub
+[  235.484271] ehci-pci 0000:00:1a.0: hcd_pci_runtime_suspend: 0
+[  235.495221] ehci-pci 0000:00:1a.0: power state changed by ACPI to D3cold
+

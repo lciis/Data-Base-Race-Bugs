@@ -1,0 +1,64 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=71551
+Component: Input Devices
+Hardware: All Linux
+Reported: 2014-03-05 21:34 UTC
+Modified: 2014-03-31 01:55 UTC 
+Kernel Version: 3.13.5
+Tree: Mainline
+Status:	RESOLVED CODE_FIX
+
+Summary:
+	There is an race when the driver is creating multiplexer device, and it occurs in the function static int mousedev_open_device(struct mousedev *mousedev).
+
+Important User Comments:
+---------------------------------------------------------------------------	
+	GiulioDP 2014-03-05 21:34:26 UTC
+	Created attachment 128251 [details]
+	dmesg after the update
+
+	I'm using Arch Linux and I've just updated to systemd-210 since it added the support for the keyboard backlight sav/restore my Macbook Air needed. After having done the update, though, my keyboard is inusable.
+---------------------------------------------------------------------------	
+	Alan 2014-03-06 15:33:50 UTC
+	Relevant chunk
+
+	[    4.080393] BUG: unable to handle kernel NULL pointer dereference at           (null)
+	[    4.080399] IP: [<ffffffffa0269317>] mousedev_open_device+0x77/0x100 [mousedev]
+	[    4.080401] PGD 166488067 PUD 1664fd067 PMD 0 
+	[    4.080402] Oops: 0000 [#1] PREEMPT SMP 
+	[    4.080428] Modules linked in: mousedev(+) usbhid bcm5974 hid evdev applesmc input_polldev lib80211_crypt_tkip nls_cp437 vfat fat wl(PO) lib80211 microcode(+) cfg80211 pcspkr lpc_ich(+) i2c_i801(+) rfkill snd_hda_codec_cirrus i915(+) intel_agp snd_hda_intel intel_gtt drm_kms_helper snd_hda_codec video spi_pxa2xx_platform drm snd_hwdep snd_pcm battery ac snd_page_alloc apple_bl snd_timer i2c_algo_bit mei_me snd mei i2c_core soundcore shpchp button processor ext4 crc16 mbcache jbd2 sd_mod usb_storage ahci libahci xhci_hcd libata scsi_mod usbcore usb_common
+	[    4.080431] CPU: 2 PID: 398 Comm: acpid Tainted: P           O 3.13.5-1-ARCH #1
+	[    4.080432] Hardware name: Apple Inc. MacBookAir6,2/Mac-7DF21CB3ED6977E5, BIOS MBA61.88Z.0099.B04.1309271229 09/27/2013
+	[    4.080433] task: ffff8801664f0000 ti: ffff88008a97e000 task.ti: ffff88008a97e000
+	[    4.080437] RIP: 0010:[<ffffffffa0269317>]  [<ffffffffa0269317>] mousedev_open_device+0x77/0x100 [mousedev]
+	[    4.080438] RSP: 0018:ffff88008a97fc10  EFLAGS: 00010202
+	[    4.080439] RAX: 0000000000000000 RBX: ffff88016665b800 RCX: ffff88016665b868
+	[    4.080440] RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000246
+	[    4.080441] RBP: ffff88008a97fc28 R08: 0000000000000000 R09: ffff88016a803600
+	[    4.080441] R10: 0000000000000000 R11: 0000000000000004 R12: 0000000000000000
+	[    4.080442] R13: ffff88016665b880 R14: ffff880037b13778 R15: ffff8801687d5a00
+	[    4.080444] FS:  00007f3f2ca0c700(0000) GS:ffff88016f280000(0000) knlGS:0000000000000000
+	[    4.080445] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+	[    4.080446] CR2: 0000000000000000 CR3: 0000000167dda000 CR4: 00000000001407e0
+	[    4.080447] Stack:
+	[    4.080449]  ffff88008aa9d800 ffff88016665b800 ffff88016665b878 ffff88008a97fc60
+	[    4.080451]  ffffffffa026a0cc ffff88016665bb48 ffff880037b13778 ffff8801687d5a00
+	[    4.080453]  ffffffffa026ae80 ffff8801687d5a10 ffff88008a97fc98 ffffffff811a834f
+	[    4.080454] Call Trace:
+	[    4.080458]  [<ffffffffa026a0cc>] mousedev_open+0xcc/0x150 [mousedev]
+	[    4.080463]  [<ffffffff811a834f>] chrdev_open+0x9f/0x1d0
+	[    4.080467]  [<ffffffff811a19e7>] do_dentry_open+0x1b7/0x2c0
+	[    4.080469]  [<ffffffff811aedc1>] ? __inode_permission+0x41/0xb0
+	[    4.080471]  [<ffffffff811a82b0>] ? cdev_put+0x30/0x30
+	[    4.080474]  [<ffffffff811a1e01>] finish_open+0x31/0x40
+	[    4.080476]  [<ffffffff811b1bf2>] do_last+0x572/0xe90
+	[    4.080478]  [<ffffffff811af0b6>] ? link_path_walk+0x236/0x8d0
+	[    4.080480]  [<ffffffff811b25cb>] path_openat+0xbb/0x6b0
+	[    4.080482]  [<ffffffff811b3cda>] do_filp_open+0x3a/0x90
+	[    4.080485]  [<ffffffff811c05c7>] ? __alloc_fd+0xa7/0x130
+	[    4.080488]  [<ffffffff811a2fd4>] do_sys_open+0x124/0x220
+	[    4.080491]  [<ffffffff811a30ee>] SyS_open+0x1e/0x20
+	[    4.080494]  [<ffffffff8152142d>] system_call_fastpath+0x1a/0x1f
+---------------------------------------------------------------------------	
+
+Proposed Fix:
+	In ./Attachments/Fix race when creating multiplexor device - v2

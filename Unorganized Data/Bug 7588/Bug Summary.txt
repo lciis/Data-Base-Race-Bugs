@@ -1,0 +1,29 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=7588
+Component: Network
+Hardware: i386 Linux
+Reported: 2006-11-28 11:01 UTC
+Modified: 2008-09-22 14:19 UTC 
+Kernel Version: 2.6.19 
+Tree: Mainline
+
+Summary:
+	Lock is not acquired before calling read_zsreg in z8530_dma_status.
+
+Problem Description:
+	The code extract of read_zsreg:
+	"119  *      register back.  The caller must hold the lock
+	120  */
+	121  
+	122 static inline u8 read_zsreg(struct z8530_channel *c, u8 reg)"
+
+	The code extract of z8530_dma_status:
+	static void z8530_dma_status(struct z8530_channel *chan)
+	575 {
+	576         u8 status, altered;
+	577 
+	578         status=read_zsreg(chan, R0);
+	579         altered=chan->status^status;
+	580         
+	581         chan->status=status;
+
+	Line 577 calls read_zsreg but does not hold the lock.

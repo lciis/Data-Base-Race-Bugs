@@ -1,0 +1,5 @@
+Notes:
+	-The bug is marked as resolved will_not_fix.
+	-One comment is stating that “There are various know races in the old tty code. The fixes are not really things we can backport.”
+Proposed fix:
+	None

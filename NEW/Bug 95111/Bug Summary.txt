@@ -1,0 +1,29 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=95111
+Component: Other
+Hardware: All Linux
+Reported: 2015-03-19 21:47 UTC
+Modified: 2015-03-19 21:47 UTC 
+Kernel Version: 4.0-rc4
+Tree: Mainline
+Status: NEW
+
+Summary:
+	Data race in llseek file operation in generic_nvram and mbcs char drivers.
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	Pantazis Deligiannis 2015-03-19 21:47:03 UTC
+	Hi, I believe that there is a data race when write/read accessing the file offset (file->f_pos) in the drivers/char/generic_nvram.c and drivers/char/mbcs during the llseek file operation.
+
+	The corresponding llseek functions can be found in lines: 34 for generic_nvram.c and 452 for mbcs.c
+
+	I am trying to understand if this is a genuine race, but when reading the documentation regarding locking in file_operations (Documentation/filesystem/Locking), it mentions that if you are implementing your own llseek (as in these 2 drivers) you need to synchronise with a lock.
+
+	I checked another module that uses the same API (arch/x86/kernel/cpuid.c), and they are indeed protecting the offset access with a mutex during the llseek file operation.
+
+	Any thoughts are appreciated.
+
+	Thanks
+
+Proposed Fix:
+	None, The bug is still marked as NEW.

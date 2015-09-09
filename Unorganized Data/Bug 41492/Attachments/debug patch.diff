@@ -1,0 +1,43 @@
+diff --git a/sound/pci/hda/hda_intel.c b/sound/pci/hda/hda_intel.c
+index 2a8bed9..c44cd1c 100644
+--- a/sound/pci/hda/hda_intel.c
++++ b/sound/pci/hda/hda_intel.c
+@@ -1694,12 +1694,22 @@ static int azx_pcm_hw_params(struct snd_pcm_substream *substream,
+ 			     struct snd_pcm_hw_params *hw_params)
+ {
+ 	struct azx_dev *azx_dev = get_azx_dev(substream);
++	struct snd_dma_buffer *buf;
++	int err;
+ 
+ 	azx_dev->bufsize = 0;
+ 	azx_dev->period_bytes = 0;
+ 	azx_dev->format_val = 0;
+-	return snd_pcm_lib_malloc_pages(substream,
++	err = snd_pcm_lib_malloc_pages(substream,
+ 					params_buffer_bytes(hw_params));
++	if (err < 0)
++		return err;
++	buf = substream->runtime->dma_buffer_p;
++	printk(KERN_DEBUG "XXX hw_params: dma_buffer_p = %p\n", buf);
++	if (buf)
++		printk(KERN_DEBUG "XXX dma_buffer_p area=%p, addr=%lx, bytes=%x, priv=%p\n",
++		       buf->area, (long)buf->addr, (int)buf->bytes, buf->private_data);
++	return err;
+ }
+ 
+ static int azx_pcm_hw_free(struct snd_pcm_substream *substream)
+@@ -1733,6 +1743,14 @@ static int azx_pcm_prepare(struct snd_pcm_substream *substream)
+ 	struct hda_spdif_out *spdif =
+ 		snd_hda_spdif_out_of_nid(apcm->codec, hinfo->nid);
+ 	unsigned short ctls = spdif ? spdif->ctls : 0;
++	struct snd_dma_buffer *buf = runtime->dma_buffer_p;
++
++	printk(KERN_DEBUG "XXX prepare: dma_buffer_p = %p\n", buf);
++	if (buf)
++		printk(KERN_DEBUG "XXX dma_buffer_p area=%p, addr=%lx, bytes=%x, priv=%p\n",
++		       buf->area, (long)buf->addr, (int)buf->bytes, buf->private_data);
++	else
++		return -EINVAL;
+ 
+ 	azx_stream_reset(chip, azx_dev);
+ 	format_val = snd_hda_calc_stream_format(runtime->rate,

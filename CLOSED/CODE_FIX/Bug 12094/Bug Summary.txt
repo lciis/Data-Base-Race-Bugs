@@ -1,0 +1,36 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=12094
+Component: Console/Flamebuffers
+Hardware: All Linux
+Reported: 2008-11-24 05:17 UTC
+Modified: 2012-05-14 16:34 UTC 
+Kernel Version: 2.6.27.5
+Tree: Mainline
+Status:	CLOSED CODE_FIX
+
+Summary:
+	there seems to be an yet-to-be-fixed race-condition in virtual console handling causing duplicate sysfs oops.
+
+Important User Comments
+---------------------------------------------------------------------------
+	Roland Kletzing 2008-11-24 05:17:43 UTC
+	there seems to be an yet-to-be-fixed race-condition in virtual console handling causing duplicate sysfs oops.
+
+	see 
+	https://bugzilla.novell.com/show_bug.cgi?id=446114
+	and
+	http://lkml.org/lkml/2008/8/26/87
+	and
+	http://lkml.org/lkml/2008/10/13/203
+
+	discussion/possible fixes:
+
+	http://lkml.org/lkml/2008/5/13/52
+
+	this one http://lkml.org/lkml/2008/7/22/33 already is in 2.6.27 (commit 47aa5793f78c274d51711f6a621fa6b02d4e6402) but it seems it`s not complete solution.
+---------------------------------------------------------------------------
+
+Proposed Fix:
+	-http://lkml.org/lkml/2008/7/22/33 is given as a partial solution, but it seems to be an incomplete solution.
+	-No one is maintaining this bug.
+
+

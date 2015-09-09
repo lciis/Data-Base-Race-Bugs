@@ -1,0 +1,14 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=14484
+Component: Video(DRI-Intel)
+Hardware: All Linux
+Reported: 2009-10-26 18:12 UTC
+Modified: 2010-04-26 18:37 UTC
+Kernel Version: 2.6.32-rc5
+Tree: Mainline
+
+Summary:
+	No video output after suspend after "drm/i915: force mode set at lid open time”.
+
+Bug Description:
+	This bug may be not a race condition, but it may be caused by multiple issues included race condition. 
+

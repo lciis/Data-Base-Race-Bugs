@@ -1,0 +1,5 @@
+Notes:
+	-This bug is closed because the patch is already available.
+	
+Proposed fix:	
+	None.

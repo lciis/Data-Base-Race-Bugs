@@ -1,0 +1,56 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=58971
+Component: Video(DRI - Intel)
+Hardware: x86-64 Linux
+Reported: 2013-05-29 17:34 UTC 
+Modified: 2013-11-18 04:50 UTC
+Kernel Version: 3.7+
+Tree: Mainline
+Status: RESOLVED CODE_FIX
+
+Summary:
+	It appears to be caused by some race condition within i915 itself that causes high temperature after resuming from suspend to RAM (sysm idle). 
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Alexander Kaltsas 2013-05-29 17:34:43 UTC
+	Created attachment 102851 [details]
+	System informations. lspci, ver_linux, cpuinfo etc.
+
+	With kernel 3.9.x  after resuming from suspend to RAM the temperature, when the system is idle, is more than 10 degrees higher before suspending. The last kernel working without this issue is 3.8.7.
+
+	There doesn't seem to be high CPU usage (~5%).
+
+	It drains the battery really quickly.
+
+	Things I tried without solving the problem:
+
+	-- I removed every module that could be removed (rmmod). I couldn't remove i915. I guess KMS prevented it even when the X was down.
+
+	-- I compiled a kernel 3.9.2 and 3.9.4 with CONFIG_X86_INTEL_PSTATE disabled but.
+
+	-- I used the intel_pstate=disable option.
+
+
+	I am attaching a file with my systems informations.
+
+	Related links:
+
+	https://bbs.archlinux.org/viewtopic.php?id=150743
+	https://bbs.archlinux.org/viewtopic.php?id=163854
+		
+---------------------------------------------------------------------------
+	Robert Csordas 2013-06-23 13:14:45 UTC
+	It seems that the problem is related to some uggly race condition. Because the "later enabling of IRQ" made the problem much less frequent, I tought it may be that something in resuming of i915 still happening "to early". I put a couple of msleep(100)'s in the __i915_drm_thaw function, where I tought it may be good. After that my machine resumed itself 30 out of 30 without any problems running from battery. Later I "hand binary searched" the right sleep that solves the problem. So my machine is now working with one msleep(100); before the line intel_modeset_init_hw(dev); (the early IRQ commit already removed). With this one sleep added the machine resumed 20 out of 20 tries without problem (running from battery).
+
+	Interestingly putting the sleep early in the function doesn't helps (this may indicate that the race condition is in i915 itself and not bethween i915 and some other module???).
+
+	So the uggly solution which works for me:
+
+	1. remove commit 15239099d7a7a9ecdc1ccb5b187ae4cda5488ff9
+	2. locate function __i915_drm_thaw in i915_drv.c
+	3. find line intel_modeset_init_hw(dev); and put msleep(100); one line before it.
+
+---------------------------------------------------------------------------
+	
+Proposed Fix:
+	In ./Attachments/Patch with msleep(100)

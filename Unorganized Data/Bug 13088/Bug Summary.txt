@@ -1,0 +1,10 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=12899
+Component: Video(DRI-Intel)
+Hardware: All Linux
+Reported: 2009-03-20 07:13 UTC
+Modified: 2009-09-18 02:31 UTC 
+Kernel Version: 2.6.29-r8
+Tree: Mainline
+
+Summary:
+	An audit of the cxgb3 driver has shown the the following work structs: ext_intr_handler_task, link_fault_handler_task, fatal_error_handler_task, and adap_check_task are create and scheduled, but have no syncronization points.  As such it is possible for the cxgb3 module to be unloaded while work remains outstanding on anyone of these workqueues, leading to potential oopses when the workqueues run after the module has been unloaded.

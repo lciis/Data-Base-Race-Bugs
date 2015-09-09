@@ -1,0 +1,104 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15538
+Component: Network-Wireless
+Hardware: All Linux
+Reported: 2010-03-15 09:13 UTC
+Modified: 2010-08-23 14:21 UTC
+Kernel Version: 2.6.34-rc1
+Tree: Mainline
+Status:	CLOSED CODE_FIX
+
+Summary:
+	There is a potential race condition between the host and the hardware in reading
+the next link in the transmit descriptor list:
+
+	cpu0              	hw
+                 		tx for buf completed
+                		raise tx_ok interrupt
+	process buf
+	buf->ds_link = 0
+           	       		read buf->ds_link
+	This is just a race that discovered along the discussion of the bug. It may not relate to the cause of the bug, but it is still a race.
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	Johannes Karlsson 2010-03-15 09:13:46 UTC
+	When a network card using ath5k has been used in adhoc mode for a while (from minutes to hours) the txbuf fills up and no more packets get through. This error message is flooded in the kernel log:
+	ath5k phy0: no further txbuf available, dropping packet
+
+	Network card: Atheros AR5BXB63 
+	03:00.0 Ethernet controller: Atheros Communications Inc. AR242x 802.11abg Wireless PCI Express Adapter (rev 01)
+
+	It probably relates to this bug that was fixed for AP mode in this patch:
+
+	commit a951ae2176b982574ffa197455db6c89359fd5eb
+	Author: Bob Copeland <me@bobcopeland.com>
+	Date:   Wed Jan 20 23:51:04 2010 -0500
+
+		ath5k: fix setup for CAB queue
+		
+		The beacon sent gating doesn't seem to work with any combination
+		of flags.  Thus, buffered frames tend to stay buffered forever,
+		using up tx descriptors.
+		
+		Instead, use the DBA gating and hold transmission of the buffered
+		frames until 80% of the beacon interval has elapsed using the ready
+		time.  This fixes the following error in AP mode:
+		
+		   ath5k phy0: no further txbuf available, dropping packet
+		
+		Add a comment to acknowledge that this isn't the best solution.
+		
+		Signed-off-by: Bob Copeland <me@bobcopeland.com>
+		Acked-by: Nick Kossifidis <mickflemm@gmail.com>
+		Signed-off-by: John W. Linville <linville@tuxdriver.com>
+---------------------------------------------------------------------------		
+	John W. Linville 2010-08-18 18:58:01 UTC
+	commit 6ccf15a1a76d2ff915cdef6ae4d12d0170087118
+	Author: Maxim Levitsky <maximlevitsky@gmail.com>
+	Date:   Fri Aug 13 11:27:28 2010 -0400
+
+		ath5k: disable ASPM L0s for all cards
+		
+		Atheros PCIe wireless cards handled by ath5k do require L0s disabled.
+		For distributions shipping with CONFIG_PCIEASPM (this will be enabled
+		by default in the future in 2.6.36) this will also mean both L1 and L0s
+		will be disabled when a pre 1.1 PCIe device is detected. We do know L1
+		works correctly even for all ath5k pre 1.1 PCIe devices though but cannot
+		currently undue the effect of a blacklist, for details you can read
+		pcie_aspm_sanity_check() and see how it adjusts the device link
+		capability.
+		
+		It may be possible in the future to implement some PCI API to allow
+		drivers to override blacklists for pre 1.1 PCIe but for now it is
+		best to accept that both L0s and L1 will be disabled completely for
+		distributions shipping with CONFIG_PCIEASPM rather than having this
+		issue present. Motivation for adding this new API will be to help
+		with power consumption for some of these devices.
+		
+		Example of issues you'd see:
+		
+		  - On the Acer Aspire One (AOA150, Atheros Communications Inc. AR5001
+			Wireless Network Adapter [168c:001c] (rev 01)) doesn't work well
+			with ASPM enabled, the card will eventually stall on heavy traffic
+			with often 'unsupported jumbo' warnings appearing. Disabling
+			ASPM L0s in ath5k fixes these problems.
+		
+		  - On the same card you would see a storm of RXORN interrupts
+			even though medium is idle.
+		
+		Credit for root causing and fixing the bug goes to Jussi Kivilinna.
+		
+		Cc: David Quan <David.Quan@atheros.com>
+		Cc: Matthew Garrett <mjg59@srcf.ucam.org>
+		Cc: Tim Gardner <tim.gardner@canonical.com>
+		Cc: Jussi Kivilinna <jussi.kivilinna@mbnet.fi>
+		Cc: stable@kernel.org
+		Signed-off-by: Luis R. Rodriguez <lrodriguez@atheros.com>
+		Signed-off-by: Maxim Levitsky <maximlevitsky@gmail.com>
+		Signed-off-by: John W. Linville <linville@tuxdriver.com>
+	
+Proposed fix:
+	Notes:
+		A proposed patch is posted by a user to fix race condition, but it seemed to not fix the bug.
+	http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=6ccf15a1a76d2ff915cdef6ae4d12d0170087118
+	

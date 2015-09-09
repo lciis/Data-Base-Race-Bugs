@@ -1,0 +1,37 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=82901
+Component: network-wireless
+Hardware: All Linux
+Reported: 2014-08-20 18:35 UTC 
+Modified: 2014-08-21 15:13 UTC 
+Kernel Version: 3.2 + android-omap-3.0
+Tree: Mainline
+Status: RESOLVED INVALID
+
+Summary:
+	The mutex object (&wl->mutex) may get locked upon exit of function (wl1271_unregister_hw) through the call to function (__wl1271_plt_stop). However, the lock is never released upon exit of function (wl1271_unregister_hw).
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Ahmed Tamrawi 2014-08-20 18:35:22 UTC
+	Function's Source Code: http://lxr.free-electrons.com/source/drivers/net/wireless/wl12xx/sdio.c?v=3.2#L313
+
+	function (wl1271_remove) in file (linux3.2/drivers/net/wireless/wl12xx/sdio.c):
+
+	The mutex object (&wl->mutex) may get locked upon exit of function (wl1271_unregister_hw) through the call to function (__wl1271_plt_stop). However, the lock is never released upon exit of function (wl1271_unregister_hw).
+
+	The buggy scenario happens as follows:
+
+	(wl1271_remove) calls (wl1271_unregister_hw) which acquires the locks. Then, (wl1271_remove) calls (wl1271_free_hw) which tries to lock the object the already locked in (wl1271_unregister_hw) which causes a race scenario.
+
+	Possible fix is to call (wl1271_plt_stop) instead of (__wl1271_plt_stop) in function (wl1271_unregister_hw) in file (http://lxr.free-electrons.com/source/drivers/net/wireless/wl12xx/main.c?v=3.2#L4650).
+
+	The bug also occurs in Android Linux kernel: https://android.googlesource.com/kernel/omap/+/android-omap-3.0/drivers/net/wireless/wl12xx/sdio.c @ line 319
+
+	Bug found via C-Atlas tool [http://www.ensoftcorp.com/]
+---------------------------------------------------------------------------
+	Alan 2014-08-21 15:13:21 UTC
+	If you are going to file bugs found by analysers please check they are still present on a recent kernel before filing them. Sometimes they are, usually they are not - this one included.
+---------------------------------------------------------------------------
+
+Proposed fix:
+	-It is already fixed in the current kernel, but the exact fix is not given.

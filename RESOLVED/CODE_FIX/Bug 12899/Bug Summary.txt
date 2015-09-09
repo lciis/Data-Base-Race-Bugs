@@ -1,0 +1,74 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=12899
+Component: Video(DRI-Intel)
+Hardware: All Linux
+Reported: 2009-03-20 07:13 UTC
+Modified: 2009-09-18 02:31 UTC 
+Kernel Version: 2.6.29-r8
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	There is a possible race between clearing out "->hw_status_page" and the interrupt handler. Frequent kernel NULL pointer dereferences in i915_driver_irq_handler while switching from a running X server back into the VGA text console.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Helge Bahmann 2009-03-20 07:13:06 UTC
+	linux-2.6.29-rc8, no kernel modesetting, X server running with legacy DRI
+
+	I observe frequent kernel NULL pointer dereferences in i915_driver_irq_handler while switching from a running X server back into the VGA text console. Machine locks hard very shortly afterwards, so all backtraces via serial console are truncated, the last messages are at best:
+
+	[drm:gm45_get_vblank_counter] *ERROR* trying to get vblank count for disabled pipe 0
+	BUG: unable to handle kernel NULL pointer dereference at 00000084
+	IP: [<f90b736b>] i915_driver_irq_handler+0x135/0x1b7 [i915]
+
+	From the disassembly I guess that the culprit is:
+
+		if (dev->primary->master) {
+			master_priv = dev->primary->master->driver_priv;
+			if (master_priv->sarea_priv)
+				master_priv->sarea_priv->last_dispatch =
+					READ_BREADCRUMB(dev_priv);    <---- CRASH
+		}
+
+	and after applying the following small patch:
+
+	diff --git a/drivers/gpu/drm/i915/i915_irq.c b/drivers/gpu/drm/i915/i915_irq.c
+	index 87b6b60..d7fe821 100644
+	--- a/drivers/gpu/drm/i915/i915_irq.c
+	+++ b/drivers/gpu/drm/i915/i915_irq.c
+	@@ -249,7 +249,7 @@ irqreturn_t i915_driver_irq_handler(DRM_IRQ_ARGS)
+	 
+			if (dev->primary->master) {
+				master_priv = dev->primary->master->driver_priv;
+	-			if (master_priv->sarea_priv)
+	+			if (master_priv->sarea_priv && dev_priv->hw_status_page)
+					master_priv->sarea_priv->last_dispatch =
+						READ_BREADCRUMB(dev_priv);
+			}
+
+
+	the problem goes away. The patch is most certainly *wrong*, but that it hides the problem hints that there must somewhere be a race between clearing out "->hw_status_page" and the interrupt handler. Someone with better understanding of the driver should have a look
+---------------------------------------------------------------------------
+7 Gordon Jin 2009-09-17 07:50:07 UTC
+Does this issue still exist in 2.6.31?
+---------------------------------------------------------------------------
+Jesse Barnes 2009-09-17 15:43:16 UTC
+This one is fixed.
+---------------------------------------------------------------------------
+
+Proposed fix:
+	Apparently, this bug is no longer appeared in the current kernel. The exact fix is not specified. Only a small patch from a user is given:
+		diff --git a/drivers/gpu/drm/i915/i915_irq.c b/drivers/gpu/drm/i915/i915_irq.c
+		index 87b6b60..d7fe821 100644
+		--- a/drivers/gpu/drm/i915/i915_irq.c
+		+++ b/drivers/gpu/drm/i915/i915_irq.c
+		@@ -249,7 +249,7 @@ irqreturn_t i915_driver_irq_handler(DRM_IRQ_ARGS)
+		 
+				if (dev->primary->master) {
+					master_priv = dev->primary->master->driver_priv;
+		-			if (master_priv->sarea_priv)
+		+			if (master_priv->sarea_priv && dev_priv->hw_status_page)
+						master_priv->sarea_priv->last_dispatch =
+							READ_BREADCRUMB(dev_priv);
+				}
+	Unfortunately, this patch is not perfect. It hides the problem (For details, look at Important User Comments). 

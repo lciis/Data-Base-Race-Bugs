@@ -1,0 +1,10 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=16111
+Component: Sound(ALSA)
+Hardware: All Linux
+Reported: 2011-08-21 16:33 UTC 
+Modified: 2012-05-11 23:49 UTC
+Kernel Version: 3.0-arch x86_64
+Tree: Mainline
+
+Summary:
+	snd_hda_intel crashes in azx_pcm_prepare when using skype.

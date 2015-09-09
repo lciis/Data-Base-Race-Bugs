@@ -1,0 +1,21 @@
+udevadm monitor
+monitor will print the received events for:
+KERNEL - the kernel uevent
+KERNEL[2203.173080] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/rfkill2 (rfkill)
+KERNEL[2203.173148] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0 (bluetooth)
+KERNEL[2203.173420] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0 (usb)
+KERNEL[2203.173451] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.1 (usb)
+KERNEL[2203.173475] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.2 (usb)
+KERNEL[2203.173693] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2 (usb)
+KERNEL[2213.152339] remove   /hci0/hci0:46/input14/mouse2 (input)
+KERNEL[2213.160374] remove   /hci0/hci0:46/input14/event10 (input)
+KERNEL[2213.168366] remove   /hci0/hci0:46/input14 (input)
+KERNEL[2213.169058] remove   /hci0/hci0:46/0005:050D:0031.0005/hidraw/hidraw0 (hidraw)
+KERNEL[2213.169198] remove   /hci0/hci0:46/0005:050D:0031.0005 (hid)
+KERNEL[2213.169242] remove   /hci0/hci0:46 (bluetooth)
+KERNEL[2218.176527] remove   /hci0/hci0:49/input13/event11 (input)
+KERNEL[2218.180403] remove   /hci0/hci0:49/input13 (input)
+KERNEL[2218.180481] remove   /hci0/hci0:49/0005:05AC:0256.0004/hidraw/hidraw1 (hidraw)
+KERNEL[2218.180538] remove   /hci0/hci0:49/0005:05AC:0256.0004 (hid)
+KERNEL[2218.182005] remove   /hci0/hci0:49 (bluetooth)
+

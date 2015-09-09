@@ -1,0 +1,33 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=96271
+Component: Sound(ALSA)
+Hardware: All Linux
+Reported: 2015-04-07 17:22 UTC
+Modified: 2015-04-19 21:21 UTC 
+Kernel Version: Tiwai for-next
+Tree: Mainline
+
+Summary:
+	Using Tiwai's for-next branch (at ALSA: hda_intel: add AZX_DCAPS_I915_POWERWELL for SKL and BSW) makes anything instantly perma-freeze that tries to use the Creative Core3D (CA0132) chip on my Gigabyte G1.Sniper M5. This also causes systemd to wait infinitely to store the sound card state on shutdown. There is a race between the runtime PM suspend and the concurrent access via alsactl during suspend.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Andreas Reis 2015-04-07 17:22:21 UTC
+	Created attachment 173331 [details]
+	relevant dmesg
+
+	Using Tiwai's for-next branch (at ALSA: hda_intel: add AZX_DCAPS_I915_POWERWELL for SKL and BSW) makes anything instantly perma-freeze that tries to use the Creative Core3D (CA0132) chip on my Gigabyte G1.Sniper M5. This also causes systemd to wait infinitely to store the sound card state on shutdown.
+
+	4.0-rc7 seems unaffected.
+
+	Attached are the relevant parts from dmesg.
+
+	Side note: snd_hda_codec_ca0132 has been repeatedly spamming dmesg with "ca0132 DOWNLOAD OK :-) DSP IS RUNNING." whenever it feels like it for months now.
+---------------------------------------------------------------------------	
+	Takashi Iwai 2015-04-08 11:50:18 UTC
+	Good to hear.  The reason you didn't see it always is basically because it's a race between the runtime PM suspend and the concurrent access via alsactl during suspend.
+
+	Below is the more official patch I'm going to submit to upstream.  Please use this one istead of further testing.
+
+Proposed fix:
+	In ./Attachments/0001-ALSA-hda-Work-around-races-of-power-up-down-with-run
+	

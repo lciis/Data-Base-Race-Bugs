@@ -1,0 +1,128 @@
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582281] ------------[ cut here ]------------
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582298] WARNING: at net/mac80211/scan.c:257 ieee80211_scan_completed+0x137/0x1d0 [mac80211]()
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582300] Hardware name: XPS M1530                       
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582302] Modules linked in: cryptd aes_x86_64 aes_generic hidp binfmt_misc ppdev bridge stp bnep vboxnetflt vboxdrv snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep arc4 snd_pcm_oss snd_mixer_oss snd_pcm snd_seq_dummy snd_seq_oss snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq sdhci_pci iwlagn iwlcore uvcvideo mac80211 videodev v4l1_compat snd_timer snd_seq_device sdhci v4l2_compat_ioctl32 dell_laptop snd cfg80211 psmouse led_class nvidia(P) dcdbas lp soundcore sky2 intel_agp ohci1394 video serio_raw joydev snd_page_alloc ieee1394 btusb usbhid dell_wmi parport output
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582338] Pid: 2934, comm: iwlagn Tainted: P           2.6.34-rc5-generic #2
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582340] Call Trace:
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582347]  [<ffffffff81058248>] warn_slowpath_common+0x78/0xb0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582360]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582363]  [<ffffffff8105828f>] warn_slowpath_null+0xf/0x20
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582368]  [<ffffffffa0c66707>] ieee80211_scan_completed+0x137/0x1d0 [mac80211]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582375]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582382]  [<ffffffffa0cd637f>] iwl_bg_scan_completed+0xbf/0x1a0 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582388]  [<ffffffffa0cd6cf0>] ? iwl_bg_request_scan+0x0/0x1390 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582392]  [<ffffffff8107232d>] worker_thread+0x17d/0x2b0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582396]  [<ffffffff81076e60>] ? autoremove_wake_function+0x0/0x40
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582399]  [<ffffffff810721b0>] ? worker_thread+0x0/0x2b0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582401]  [<ffffffff8107695e>] kthread+0x8e/0xa0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582405]  [<ffffffff8100ace4>] kernel_thread_helper+0x4/0x10
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582407]  [<ffffffff810768d0>] ? kthread+0x0/0xa0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582410]  [<ffffffff8100ace0>] ? kernel_thread_helper+0x0/0x10
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582412] ---[ end trace 8f872cd344df86e2 ]---
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582413] ------------[ cut here ]------------
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582418] WARNING: at net/mac80211/scan.c:260 ieee80211_scan_completed+0x1b7/0x1d0 [mac80211]()
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582420] Hardware name: XPS M1530                       
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582422] Modules linked in: cryptd aes_x86_64 aes_generic hidp binfmt_misc ppdev bridge stp bnep vboxnetflt vboxdrv snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep arc4 snd_pcm_oss snd_mixer_oss snd_pcm snd_seq_dummy snd_seq_oss snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq sdhci_pci iwlagn iwlcore uvcvideo mac80211 videodev v4l1_compat snd_timer snd_seq_device sdhci v4l2_compat_ioctl32 dell_laptop snd cfg80211 psmouse led_class nvidia(P) dcdbas lp soundcore sky2 intel_agp ohci1394 video serio_raw joydev snd_page_alloc ieee1394 btusb usbhid dell_wmi parport output
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582451] Pid: 2934, comm: iwlagn Tainted: P        W  2.6.34-rc5-generic #2
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582452] Call Trace:
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582455]  [<ffffffff81058248>] warn_slowpath_common+0x78/0xb0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582461]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582464]  [<ffffffff8105828f>] warn_slowpath_null+0xf/0x20
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582469]  [<ffffffffa0c66787>] ieee80211_scan_completed+0x1b7/0x1d0 [mac80211]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582476]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582482]  [<ffffffffa0cd637f>] iwl_bg_scan_completed+0xbf/0x1a0 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582489]  [<ffffffffa0cd6cf0>] ? iwl_bg_request_scan+0x0/0x1390 [iwlcore]
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582492]  [<ffffffff8107232d>] worker_thread+0x17d/0x2b0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582494]  [<ffffffff81076e60>] ? autoremove_wake_function+0x0/0x40
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582497]  [<ffffffff810721b0>] ? worker_thread+0x0/0x2b0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582500]  [<ffffffff8107695e>] kthread+0x8e/0xa0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582505]  [<ffffffff8100ace4>] kernel_thread_helper+0x4/0x10
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582508]  [<ffffffff810768d0>] ? kthread+0x0/0xa0
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582510]  [<ffffffff8100ace0>] ? kernel_thread_helper+0x0/0x10
+Apr 21 09:25:13 pegasus-lucid kernel: [  804.582512] ---[ end trace 8f872cd344df86e3 ]---
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912549] iwlagn 0000:0b:00.0: TX Power requested while scanning!
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912567] ------------[ cut here ]------------
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912604] WARNING: at net/mac80211/scan.c:257 ieee80211_scan_completed+0x137/0x1d0 [mac80211]()
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912610] Hardware name: XPS M1530                       
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912614] Modules linked in: cryptd aes_x86_64 aes_generic hidp binfmt_misc ppdev bridge stp bnep vboxnetflt vboxdrv snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep arc4 snd_pcm_oss snd_mixer_oss snd_pcm snd_seq_dummy snd_seq_oss snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq sdhci_pci iwlagn iwlcore uvcvideo mac80211 videodev v4l1_compat snd_timer snd_seq_device sdhci v4l2_compat_ioctl32 dell_laptop snd cfg80211 psmouse led_class nvidia(P) dcdbas lp soundcore sky2 intel_agp ohci1394 video serio_raw joydev snd_page_alloc ieee1394 btusb usbhid dell_wmi parport output
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912714] Pid: 2934, comm: iwlagn Tainted: P        W  2.6.34-rc5-generic #2
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912719] Call Trace:
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912734]  [<ffffffff81058248>] warn_slowpath_common+0x78/0xb0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912762]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912770]  [<ffffffff8105828f>] warn_slowpath_null+0xf/0x20
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912788]  [<ffffffffa0c66707>] ieee80211_scan_completed+0x137/0x1d0 [mac80211]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912809]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912829]  [<ffffffffa0cd637f>] iwl_bg_scan_completed+0xbf/0x1a0 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912850]  [<ffffffffa0cd6cf0>] ? iwl_bg_request_scan+0x0/0x1390 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912861]  [<ffffffff8107232d>] worker_thread+0x17d/0x2b0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912871]  [<ffffffff81076e60>] ? autoremove_wake_function+0x0/0x40
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912879]  [<ffffffff810721b0>] ? worker_thread+0x0/0x2b0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912887]  [<ffffffff8107695e>] kthread+0x8e/0xa0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912896]  [<ffffffff8100ace4>] kernel_thread_helper+0x4/0x10
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912904]  [<ffffffff810768d0>] ? kthread+0x0/0xa0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912912]  [<ffffffff8100ace0>] ? kernel_thread_helper+0x0/0x10
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912917] ---[ end trace 8f872cd344df86e4 ]---
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912921] ------------[ cut here ]------------
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912938] WARNING: at net/mac80211/scan.c:260 ieee80211_scan_completed+0x1b7/0x1d0 [mac80211]()
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912944] Hardware name: XPS M1530                       
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.912948] Modules linked in: cryptd aes_x86_64 aes_generic hidp binfmt_misc ppdev bridge stp bnep vboxnetflt vboxdrv snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep arc4 snd_pcm_oss snd_mixer_oss snd_pcm snd_seq_dummy snd_seq_oss snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq sdhci_pci iwlagn iwlcore uvcvideo mac80211 videodev v4l1_compat snd_timer snd_seq_device sdhci v4l2_compat_ioctl32 dell_laptop snd cfg80211 psmouse led_class nvidia(P) dcdbas lp soundcore sky2 intel_agp ohci1394 video serio_raw joydev snd_page_alloc ieee1394 btusb usbhid dell_wmi parport output
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913040] Pid: 2934, comm: iwlagn Tainted: P        W  2.6.34-rc5-generic #2
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913045] Call Trace:
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913053]  [<ffffffff81058248>] warn_slowpath_common+0x78/0xb0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913073]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913081]  [<ffffffff8105828f>] warn_slowpath_null+0xf/0x20
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913099]  [<ffffffffa0c66787>] ieee80211_scan_completed+0x1b7/0x1d0 [mac80211]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913119]  [<ffffffffa0cd62c0>] ? iwl_bg_scan_completed+0x0/0x1a0 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913140]  [<ffffffffa0cd637f>] iwl_bg_scan_completed+0xbf/0x1a0 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913160]  [<ffffffffa0cd6cf0>] ? iwl_bg_request_scan+0x0/0x1390 [iwlcore]
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913168]  [<ffffffff8107232d>] worker_thread+0x17d/0x2b0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913177]  [<ffffffff81076e60>] ? autoremove_wake_function+0x0/0x40
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913186]  [<ffffffff810721b0>] ? worker_thread+0x0/0x2b0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913194]  [<ffffffff8107695e>] kthread+0x8e/0xa0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913202]  [<ffffffff8100ace4>] kernel_thread_helper+0x4/0x10
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913211]  [<ffffffff810768d0>] ? kthread+0x0/0xa0
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913218]  [<ffffffff8100ace0>] ? kernel_thread_helper+0x0/0x10
+Apr 21 09:30:04 pegasus-lucid kernel: [ 1095.913223] ---[ end trace 8f872cd344df86e5 ]---
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362451] iwlagn 0000:0b:00.0: TX Power requested while scanning!
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362516] BUG: unable to handle kernel NULL pointer dereference at (null)
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362527] IP: [<ffffffffa0cd7626>] iwl_bg_request_scan+0x936/0x1390 [iwlcore]
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362559] PGD d342a067 PUD d3421067 PMD 0 
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362571] Oops: 0000 [#1] SMP 
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362578] last sysfs file: /sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0A:00/power_supply/BAT0/charge_full
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362586] CPU 0 
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362590] Modules linked in: cryptd aes_x86_64 aes_generic hidp binfmt_misc ppdev bridge stp bnep vboxnetflt vboxdrv snd_hda_codec_idt snd_hda_intel snd_hda_codec snd_hwdep arc4 snd_pcm_oss snd_mixer_oss snd_pcm snd_seq_dummy snd_seq_oss snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq sdhci_pci iwlagn iwlcore uvcvideo mac80211 videodev v4l1_compat snd_timer snd_seq_device sdhci v4l2_compat_ioctl32 dell_laptop snd cfg80211 psmouse led_class nvidia(P) dcdbas lp soundcore sky2 intel_agp ohci1394 video serio_raw joydev snd_page_alloc ieee1394 btusb usbhid dell_wmi parport output
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362692] 
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362700] Pid: 2934, comm: iwlagn Tainted: P        W  2.6.34-rc5-generic #2       /XPS M1530                       
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362707] RIP: 0010:[<ffffffffa0cd7626>]  [<ffffffffa0cd7626>] iwl_bg_request_scan+0x936/0x1390 [iwlcore]
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362731] RSP: 0018:ffff880104a1bd20  EFLAGS: 00010246
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362737] RAX: ffff8800dd133e00 RBX: 0000000000000000 RCX: 0000000000000000
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362743] RDX: 0000000000000000 RSI: ffff880104a1bfd8 RDI: 000000000000019f
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362749] RBP: ffff880104a1be30 R08: 00000000000000ea R09: 00000000ffffffff
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362755] R10: ffff8800dd3a7316 R11: 000000000000019f R12: ffff880104a01280
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362761] R13: ffff8800dd3a7316 R14: 0000000000000000 R15: ffff880104a096c0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362768] FS:  0000000000000000(0000) GS:ffff880001e00000(0000) knlGS:0000000000000000
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362775] CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362781] CR2: 0000000000000000 CR3: 00000000d34b2000 CR4: 00000000000006f0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362787] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362792] DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362799] Process iwlagn (pid: 2934, threadinfo ffff880104a1a000, task ffff88011a435bc0)
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362804] Stack:
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362808]  0000000000000000 0000000000000000 0000000000000000 0000000000000000
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362817] <0> 0000000000000000 0000000000000000 0000000000000064 ffff88010000020a
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362828] <0> 0000000000000000 0000019f0000019e ffff880104a1bfd8 019f0000fffffffe
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362840] Call Trace:
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362855]  [<ffffffff81067eee>] ? try_to_del_timer_sync+0x7e/0xe0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362877]  [<ffffffffa0cb9e61>] ? iwl_set_tx_power+0x91/0x160 [iwlcore]
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362899]  [<ffffffffa0cd6cf0>] ? iwl_bg_request_scan+0x0/0x1390 [iwlcore]
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362910]  [<ffffffff8107232d>] worker_thread+0x17d/0x2b0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362920]  [<ffffffff81076e60>] ? autoremove_wake_function+0x0/0x40
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362929]  [<ffffffff810721b0>] ? worker_thread+0x0/0x2b0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362937]  [<ffffffff8107695e>] kthread+0x8e/0xa0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362946]  [<ffffffff8100ace4>] kernel_thread_helper+0x4/0x10
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362955]  [<ffffffff810768d0>] ? kthread+0x0/0xa0
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362963]  [<ffffffff8100ace0>] ? kernel_thread_helper+0x0/0x10
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.362967] Code: ff 8b 5d a0 eb 1d 0f 1f 80 00 00 00 00 49 8b 84 24 40 0a 00 00 41 83 c6 01 44 3b 70 0c 0f 83 08 03 00 00 49 63 d6 48 8b 4c d0 38 <3b> 19 75 de 0f b7 79 04 48 89 8d 20 ff ff ff e8 26 98 f2 ff 66 
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.363051] RIP  [<ffffffffa0cd7626>] iwl_bg_request_scan+0x936/0x1390 [iwlcore]
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.363072]  RSP <ffff880104a1bd20>
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.363077] CR2: 0000000000000000
+Apr 21 09:38:00 pegasus-lucid kernel: [ 1571.363083] ---[ end trace 8f872cd344df86e6 ]---

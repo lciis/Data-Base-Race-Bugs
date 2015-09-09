@@ -1,0 +1,15 @@
+--- 2.6/drivers/net/forcedeth.c	2007-10-07 17:33:18.000000000 +0200
++++ build-2.6/drivers/net/forcedeth.c	2007-10-12 22:32:20.000000000 +0200
+@@ -2420,6 +2420,12 @@ static int nv_rx_process_optimized(struc
+ 				np->get_rx_ctx->dma_len,
+ 				PCI_DMA_FROMDEVICE);
+ 		skb = np->get_rx_ctx->skb;
++if (skb == NULL) {
++	printk(KERN_ERR "rx_process_optimized with np->get_rx_ctx->skb = NULL\n");
++	printk(KERN_ERR "np %p np->get_rx.ex %p np->put_rx.ex %p rx_processed_cnt %d\n",
++			np, np->get_rx.ex, np->put_rx.ex, rx_processed_cnt);
++return 0;
++}
+ 		np->get_rx_ctx->skb = NULL;
+ 
+ 		{

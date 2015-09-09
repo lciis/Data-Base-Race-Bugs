@@ -1,0 +1,16 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=4432
+Component: USB
+Hardware: i386 Linux
+Reported: 2005-04-01 12:27 UTC
+Modified: 2005-08-18 14:31 UTC
+Kernel Version: 2.6.10 (and 2.4.29)
+Tree: Mainline
+
+Summary:
+	There is a race condition created with usblp.c in usblp_write. 
+
+Problem Description:
+	-You can successfully open/read/close without any issue any time.
+	-You can also do open/write/close as long as the write is the first thing to happen.
+	-If you do any number of open/read/close and then attempt an open/write/close the
+driver will lock up.

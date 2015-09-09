@@ -1,0 +1,57 @@
+Notes:
+	-fix locking around write_voice_regs.
+	
+Proposed fix:	
+	# HG changeset patch
+	# User Muli Ben-Yehuda <muli@il.ibm.com>
+	# Date 1179046840 -10800
+	# Node ID d3584310769fd51aabcb21ff414efdafa76087bd
+	# Parent  0a978cd5dd094f670ab60c5dc56ff52e29b46b5b
+	OSS trident: fix locking around write_voice_regs
+	
+	trident_write_voice_regs() was getting called with the card spinlock
+	held in only some cases. Fix it.
+	
+	Explanation: we allocate a new virtual channel in open, and then we
+	frob some hardware registers (in write_voice_regs) for that
+	channel. But the hardware registers are shared with other channels,
+	which may be trying to frob the some registers (albeit for another
+	channel) via ioctl(SNDCTL_DSP_SPEED).
+	
+	Fixed bugzilla.kernel.org bug #8172 (http://bugme.osdl.org/show_bug.cgi?id=8172)
+	
+	Signed-off-by: Muli Ben-Yehuda <muli@il.ibm.com>
+	Cc: tammy000@gmail.com
+	Cc: bunk@stusta.de
+	
+	diff -r 0a978cd5dd09 -r d3584310769f sound/oss/trident.c
+	--- a/sound/oss/trident.c	Sun May 13 12:13:19 2007 +0300
+	+++ b/sound/oss/trident.c	Sun May 13 12:00:40 2007 +0300
+	@@ -2703,6 +2703,7 @@ trident_open(struct inode *inode, struct
+	 	struct trident_card *card = devs;
+	 	struct trident_state *state = NULL;
+	 	struct dmabuf *dmabuf = NULL;
+	+	unsigned long flags;
+	 
+	 	/* Added by Matt Wu 01-05-2001 */
+	 	/* TODO: there's some redundacy here wrt the check below */
+	@@ -2780,7 +2781,9 @@ trident_open(struct inode *inode, struct
+	 			/* set default channel attribute to normal playback */
+	 			dmabuf->channel->attribute = CHANNEL_PB;
+	 		}
+	+		spin_lock_irqsave(&card->lock, flags);
+	 		trident_set_dac_rate(state, 8000);
+	+		spin_unlock_irqrestore(&card->lock, flags);
+	 	}
+	 
+	 	if (file->f_mode & FMODE_READ) {
+	@@ -2798,7 +2801,9 @@ trident_open(struct inode *inode, struct
+	 			dmabuf->channel->attribute = (CHANNEL_REC | PCM_LR |
+	 						      MONO_MIX);
+	 		}
+	+		spin_lock_irqsave(&card->lock, flags);
+	 		trident_set_adc_rate(state, 8000);
+	+		spin_unlock_irqrestore(&card->lock, flags);
+	 
+	 		/* Added by Matt Wu 01-05-2001 */
+	 		if (card->pci_id == PCI_DEVICE_ID_ALI_5451)

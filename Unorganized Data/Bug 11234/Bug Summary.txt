@@ -1,0 +1,16 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=11234
+Component: Console/Flamebuffers
+Hardware: All Linux
+Reported: 2008-08-02 12:07 UTC
+Modified: 2008-09-16 08:44 UTC
+Kernel Version: 2.6.26
+Tree: Mainline
+
+Summary:
+	In drivers/char/tty_io.c, tty->termios_mutex locked twice in one procedure, which may lead to deadlock. Function tiocswinsz in drivers/char/tty_io.c calls mutex_lock(&tty->termios_mutex), then it calls vc_lock_resize with tty->driver_data as first argument when tty->termios_mutex is locking. The latter(vc_lock_resize in drivers/char/vt.c) then calls vc_resize which calls mutex_lock(&vc->vc_tty->termios_mutex). vc is its first argument which is tty->driver_data. vc->vc_tty is the tty of tty->driver_data, is also the tty of tty->termios_mutex locked in tiocswinsz.
+
+Fix:
+	Notes:
+		-The display is still disabled when the LID is closed.
+		-The weird enable->disable->enable behaviour when reopening the LID is gone. Instead, the display only enables once and stays on.
+		-The bug seems to be gone

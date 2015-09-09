@@ -1,0 +1,182 @@
+--- enc28j60.c	2012-08-07 11:56:32.976158463 +0200
++++ enc28j60_mod.c	2012-08-07 12:01:07.300166836 +0200
+@@ -944,7 +944,7 @@
+ 	if (netif_msg_rx_status(priv))
+ 		enc28j60_dump_rsv(priv, __func__, next_packet, len, rxstat);
+ 
+-	if (!RSV_GETBIT(rxstat, RSV_RXOK) || len > MAX_FRAMELEN) {
++	if (unlikely(!RSV_GETBIT(rxstat, RSV_RXOK) || len > MAX_FRAMELEN)) {
+ 		if (netif_msg_rx_err(priv))
+ 			dev_err(&ndev->dev, "Rx Error (%04x)\n", rxstat);
+ 		ndev->stats.rx_errors++;
+@@ -956,7 +956,7 @@
+ 			ndev->stats.rx_over_errors++;
+ 	} else {
+ 		skb = netdev_alloc_skb(ndev, len + NET_IP_ALIGN);
+-		if (!skb) {
++		if (unlikely(!skb)) {
+ 			if (netif_msg_rx_err(priv))
+ 				dev_err(&ndev->dev,
+ 					"out of memory for Rx'd frame\n");
+@@ -1068,19 +1068,31 @@
+ {
+ 	struct enc28j60_net *priv = netdev_priv(ndev);
+ 
+-	if (err)
+-		ndev->stats.tx_errors++;
+-	else
+-		ndev->stats.tx_packets++;
+-
+-	if (priv->tx_skb) {
+-		if (!err)
+-			ndev->stats.tx_bytes += priv->tx_skb->len;
+-		dev_kfree_skb(priv->tx_skb);
+-		priv->tx_skb = NULL;
++	mutex_lock(&priv->lock);
++	/* Reset TX logic */
++	if (unlikely(err))	{
++		priv->stats.tx_errors++;
++		nolock_reg_bfset(priv, ECON1, ECON1_TXRST);
++		nolock_reg_bfclr(priv, ECON1, ECON1_TXRST);
++		nolock_reg_bfclr(priv, EIR, EIR_TXERIF);
++		nolock_reg_bfclr(priv, EIR, EIR_TXIF);
++		nolock_reg_bfclr(priv, ESTAT, ESTAT_TXABRT);
++	}
++	else {
++		priv->stats.tx_bytes += priv->tx_skb_sent->len;
++		priv->stats.tx_packets++;
++	}
++	nolock_txfifo_init(priv, TXSTART_INIT, TXEND_INIT);
++	mutex_unlock(&priv->lock);
++
++	if (likely(priv->tx_skb_sent)) {
++
++		dev_kfree_skb(priv->tx_skb_sent);
++		priv->tx_skb_sent = NULL;
+ 	}
+-	locked_reg_bfclr(priv, ECON1, ECON1_TXRTS);
+-	netif_wake_queue(ndev);
++
++	if( priv->tx_skb_queued == NULL )
++		netif_wake_queue(ndev);
+ }
+ 
+ /*
+@@ -1129,7 +1141,7 @@
+ 		loop = 0;
+ 		intflags = locked_regb_read(priv, EIR);
+ 		/* DMA interrupt handler (not currently used) */
+-		if ((intflags & EIR_DMAIF) != 0) {
++		if (unlikely((intflags & EIR_DMAIF) != 0)) {
+ 			loop++;
+ 			if (netif_msg_intr(priv))
+ 				printk(KERN_DEBUG DRV_NAME
+@@ -1137,7 +1149,7 @@
+ 			locked_reg_bfclr(priv, EIR, EIR_DMAIF);
+ 		}
+ 		/* LINK changed handler */
+-		if ((intflags & EIR_LINKIF) != 0) {
++		if (unlikely((intflags & EIR_LINKIF) != 0)) {
+ 			loop++;
+ 			if (netif_msg_intr(priv))
+ 				printk(KERN_DEBUG DRV_NAME
+@@ -1147,7 +1159,7 @@
+ 			enc28j60_phy_read(priv, PHIR);
+ 		}
+ 		/* TX complete handler */
+-		if ((intflags & EIR_TXIF) != 0) {
++		if (likely((intflags & EIR_TXIF) != 0)) {
+ 			bool err = false;
+ 			loop++;
+ 			if (netif_msg_intr(priv))
+@@ -1169,7 +1181,7 @@
+ 			locked_reg_bfclr(priv, EIR, EIR_TXIF);
+ 		}
+ 		/* TX Error handler */
+-		if ((intflags & EIR_TXERIF) != 0) {
++		if (unlikely((intflags & EIR_TXERIF) != 0)) {
+ 			u8 tsv[TSV_SIZE];
+ 
+ 			loop++;
+@@ -1180,12 +1192,6 @@
+ 			enc28j60_read_tsv(priv, tsv);
+ 			if (netif_msg_tx_err(priv))
+ 				enc28j60_dump_tsv(priv, "Tx Error", tsv);
+-			/* Reset TX logic */
+-			mutex_lock(&priv->lock);
+-			nolock_reg_bfset(priv, ECON1, ECON1_TXRST);
+-			nolock_reg_bfclr(priv, ECON1, ECON1_TXRST);
+-			nolock_txfifo_init(priv, TXSTART_INIT, TXEND_INIT);
+-			mutex_unlock(&priv->lock);
+ 			/* Transmit Late collision check for retransmit */
+ 			if (TSV_GETBIT(tsv, TSV_TXLATECOLLISION)) {
+ 				if (netif_msg_tx_err(priv))
+@@ -1197,12 +1203,13 @@
+ 							   ECON1_TXRTS);
+ 				else
+ 					enc28j60_tx_clear(ndev, true);
++				priv->stats.collisions++;
+ 			} else
+ 				enc28j60_tx_clear(ndev, true);
+ 			locked_reg_bfclr(priv, EIR, EIR_TXERIF);
+ 		}
+ 		/* RX Error handler */
+-		if ((intflags & EIR_RXERIF) != 0) {
++		if (unlikely((intflags & EIR_RXERIF) != 0)) {
+ 			loop++;
+ 			if (netif_msg_intr(priv))
+ 				printk(KERN_DEBUG DRV_NAME
+@@ -1234,14 +1241,21 @@
+  */
+ static void enc28j60_hw_tx(struct enc28j60_net *priv)
+ {
++	if (WARN_ON(priv->tx_skb_queued == NULL))
++		return;
++
+ 	if (netif_msg_tx_queued(priv))
+ 		printk(KERN_DEBUG DRV_NAME
+-			": Tx Packet Len:%d\n", priv->tx_skb->len);
++			": Tx Packet Len:%d\n", priv->tx_skb_queued->len);
+ 
+ 	if (netif_msg_pktdata(priv))
+ 		dump_packet(__func__,
+-			    priv->tx_skb->len, priv->tx_skb->data);
+-	enc28j60_packet_write(priv, priv->tx_skb->len, priv->tx_skb->data);
++			priv->tx_skb_queued->len, priv->tx_skb_queued->data);
++	enc28j60_packet_write(priv, priv->tx_skb_queued->len, priv->tx_skb_queued->data);
++	WARN_ON(priv->tx_skb_sent != NULL);
++
++	priv->tx_skb_sent = priv->tx_skb_queued;
++	priv->tx_skb_queued = 0;
+ 
+ #ifdef CONFIG_ENC28J60_WRITEVERIFY
+ 	/* readback and verify written data */
+@@ -1293,8 +1307,14 @@
+ 	 */
+ 	netif_stop_queue(dev);
+ 
++	if (unlikely(priv->tx_skb_queued))
++	{
++		printk(KERN_ERR DRV_NAME ": %s() BUG - already queued\n",
++				__func__);
++		return NETDEV_TX_BUSY;
++	}
+ 	/* Remember the skb for deferred processing */
+-	priv->tx_skb = skb;
++	priv->tx_skb_queued = skb;
+ 	schedule_work(&priv->tx_work);
+ 
+ 	return NETDEV_TX_OK;
+@@ -1627,6 +1647,12 @@
+ 	unregister_netdev(priv->netdev);
+ 	free_irq(spi->irq, priv);
+ 	free_netdev(priv->netdev);
++	flush_scheduled_work();
++	if(priv->tx_skb_queued)
++	{
++		dev_kfree_skb(priv->tx_skb_sent);
++		priv->tx_skb_queued = NULL;
++	}
+ 
+ 	return 0;
+ }

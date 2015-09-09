@@ -1,0 +1,593 @@
+00:00.0 RAM memory: nVidia Corporation MCP55 Memory Controller (rev a2)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0
+	Capabilities: [44] HyperTransport: Slave or Primary Interface
+	Capabilities: [dc] HyperTransport: MSI Mapping
+00: de 10 69 03 06 01 b0 00 a2 00 00 05 00 00 00 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 ff 00 00 00
+40: de 10 84 cb 08 dc e0 01 22 20 11 11 d0 00 00 00
+50: 23 06 7f 00 03 00 00 00 00 00 03 00 00 00 00 00
+60: 00 00 00 00 00 00 00 00 00 00 00 00 06 15 0a 00
+70: 44 44 44 00 d0 09 00 00 11 00 00 00 11 11 88 00
+80: 23 99 88 00 fa 00 64 0e 02 00 00 00 7f 00 00 00
+90: 70 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 01 01 01 01 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 80 00 0f 0f
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 08 00 01 a8
+e0: 00 00 e0 fe 00 00 00 00 00 00 80 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:01.0 ISA bridge: nVidia Corporation MCP55 LPC Bridge (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0
+	I/O ports at 2f00 [size=128]
+00: de 10 64 03 0f 00 a0 00 a3 00 01 06 00 00 80 00
+10: 01 2f 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+40: de 10 84 cb 00 00 d0 fe fa 3e ff 00 fa 3e ff 00
+50: fa 3e ff 00 00 5a 62 02 00 00 00 01 00 00 fe d7
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 f9 ff
+70: 10 00 ff ff c5 80 00 00 00 00 04 19 00 00 00 0c
+80: 09 80 00 12 d1 02 00 d0 f0 00 00 01 ff 00 00 00
+90: 00 08 00 00 00 00 00 00 21 47 95 86 ef cd ab 00
+a0: 03 00 10 c1 00 00 01 00 00 00 00 00 00 00 00 00
+b0: a0 0c af 0c 00 0a 7f 0a 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00
+
+00:01.1 SMBus: nVidia Corporation MCP55 SMBus (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: 66MHz, fast devsel, IRQ 10
+	I/O ports at dc00 [size=64]
+	I/O ports at 2d00 [size=64]
+	I/O ports at 2e00 [size=64]
+	Capabilities: [44] Power Management version 2
+00: de 10 68 03 01 00 b0 00 a3 00 05 0c 00 00 80 00
+10: 01 dc 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 01 2d 00 00 01 2e 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 0a 01 00 00
+40: de 10 84 cb 01 00 02 c0 00 00 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: 01 20 00 00 01 24 00 00 01 28 00 00 00 00 00 00
+70: 01 00 00 00 00 00 98 fe 00 00 00 00 01 2c 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: d4 30 80 00 01 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 64 10 04 00 a5 01 80 07 80 38 00 00 77 44 44 11
+f0: 5a ff 5f 3f 00 00 00 c0 10 00 00 00 00 00 00 00
+
+00:02.0 USB Controller: nVidia Corporation MCP55 USB Controller (rev a1) (prog-if 10 [OHCI])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 23
+	Memory at fe9fb000 (32-bit, non-prefetchable) [size=4K]
+	Capabilities: [44] Power Management version 2
+00: de 10 6c 03 07 00 b0 00 a1 10 03 0c 00 00 80 00
+10: 00 b0 9f fe 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 05 01 03 01
+40: de 10 84 cb 01 00 02 fe 00 00 00 00 00 00 00 00
+50: 00 00 00 00 1d 47 40 00 10 00 00 00 00 00 00 00
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00
+
+00:02.1 USB Controller: nVidia Corporation MCP55 USB Controller (rev a2) (prog-if 20 [EHCI])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 20
+	Memory at fe9fac00 (32-bit, non-prefetchable) [size=256]
+	Capabilities: [44] Debug port
+	Capabilities: [80] Power Management version 2
+00: de 10 6d 03 06 00 b0 00 a2 20 03 0c 00 00 80 00
+10: 00 ac 9f fe 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 07 02 03 01
+40: de 10 84 cb 0a 80 98 20 00 00 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: 20 20 01 00 00 60 18 85 03 3c 3f 01 00 00 00 00
+70: 00 00 08 05 00 10 20 80 89 3d b6 22 77 25 04 00
+80: 01 00 02 fe 00 00 00 00 00 00 00 00 15 16 00 00
+90: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 01 00 00 00 00 00 08 c0 00 00 00 00 00 00 00 00
+b0: 33 00 11 22 44 00 00 00 ff 03 00 00 00 00 00 00
+c0: 10 10 2d 0d 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00
+
+00:04.0 IDE interface: nVidia Corporation MCP55 IDE (rev a1) (prog-if 8a [Master SecP PriP])
+	Subsystem: Unknown device f0de:cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0
+	[virtual] Memory at 000001f0 (32-bit, non-prefetchable) [disabled] [size=8]
+	[virtual] Memory at 000003f0 (type 3, non-prefetchable) [disabled] [size=1]
+	[virtual] Memory at 00000170 (32-bit, non-prefetchable) [disabled] [size=8]
+	[virtual] Memory at 00000370 (type 3, non-prefetchable) [disabled] [size=1]
+	I/O ports at ffa0 [size=16]
+	Capabilities: [44] Power Management version 2
+00: de 10 6e 03 05 00 b0 00 a1 8a 01 01 00 00 00 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: a1 ff 00 00 00 00 00 00 00 00 00 00 de f0 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 00 00 03 01
+40: de f0 84 cb 01 00 02 00 00 00 00 00 00 00 00 00
+50: 02 f0 04 00 00 00 00 00 a8 a8 20 a8 df 00 20 ff
+60: 00 00 c0 00 00 00 00 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 01
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00
+
+00:05.0 IDE interface: nVidia Corporation MCP55 SATA Controller (rev a3) (prog-if 85 [Master SecO PriO])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 23
+	I/O ports at d480 [size=8]
+	I/O ports at d400 [size=4]
+	I/O ports at d080 [size=8]
+	I/O ports at d000 [size=4]
+	I/O ports at cc00 [size=16]
+	Memory at fe9f9000 (32-bit, non-prefetchable) [size=4K]
+	Capabilities: [44] Power Management version 2
+	Capabilities: [b0] Message Signalled Interrupts: Mask- 64bit+ Queue=0/2 Enable-
+	Capabilities: [cc] HyperTransport: MSI Mapping
+00: de 10 7f 03 07 00 b0 00 a3 85 01 01 00 00 80 00
+10: 81 d4 00 00 01 d4 00 00 81 d0 00 00 01 d0 00 00
+20: 01 cc 00 00 00 90 9f fe 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 0a 01 03 01
+40: de 10 84 cb 01 b0 02 00 00 00 00 00 00 00 00 00
+50: 0b 68 08 80 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 41 0c 00 00 00 0f 06 42 00 00 00 00
+70: 2c 78 c4 40 01 10 00 00 01 10 00 00 20 00 20 80
+80: 00 00 00 00 77 ff eb f7 00 00 7f 30 fe d7 de fe
+90: 00 00 3b 3d 00 00 00 00 06 00 06 10 7f 03 01 01
+a0: 12 0a 00 00 40 00 00 00 00 00 00 00 33 31 00 02
+b0: 05 cc 84 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 0a 00 0a 00 08 00 02 a8
+d0: 0a 00 02 54 42 00 00 00 00 00 00 00 09 e0 14 05
+e0: 0a 00 02 54 42 00 00 00 00 00 00 00 02 00 00 00
+f0: 00 00 00 00 00 00 00 00 10 00 0c 00 00 00 00 00
+
+00:05.1 IDE interface: nVidia Corporation MCP55 SATA Controller (rev a3) (prog-if 85 [Master SecO PriO])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 22
+	I/O ports at c880 [size=8]
+	I/O ports at c800 [size=4]
+	I/O ports at c480 [size=8]
+	I/O ports at c400 [size=4]
+	I/O ports at c080 [size=16]
+	Memory at fe9f8000 (32-bit, non-prefetchable) [size=4K]
+	Capabilities: [44] Power Management version 2
+	Capabilities: [b0] Message Signalled Interrupts: Mask- 64bit+ Queue=0/2 Enable-
+	Capabilities: [cc] HyperTransport: MSI Mapping
+00: de 10 7f 03 07 00 b0 00 a3 85 01 01 00 00 80 00
+10: 81 c8 00 00 01 c8 00 00 81 c4 00 00 01 c4 00 00
+20: 81 c0 00 00 00 80 9f fe 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 0b 02 03 01
+40: de 10 84 cb 01 b0 02 00 00 00 00 00 00 00 00 00
+50: 0b 68 08 80 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 41 0c 00 00 00 0f 06 42 00 00 00 00
+70: 2c 78 c4 40 01 10 00 00 01 10 00 00 20 00 20 80
+80: 00 00 00 00 fe 9e ff ff 00 00 92 03 d8 df fd ff
+90: 00 00 66 2c 00 00 00 00 06 00 06 10 7f 03 01 01
+a0: 12 0a 00 00 40 00 00 00 00 00 00 00 33 31 00 02
+b0: 05 cc 84 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 0a 00 0a 00 08 00 02 a8
+d0: 0a 00 02 54 42 00 00 00 00 00 00 00 11 80 00 06
+e0: 0a 00 02 54 42 00 00 00 00 00 00 00 25 f7 e4 05
+f0: 00 00 00 00 00 00 00 00 10 00 0c 00 00 00 00 00
+
+00:05.2 IDE interface: nVidia Corporation MCP55 SATA Controller (rev a3) (prog-if 85 [Master SecO PriO])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 21
+	I/O ports at c000 [size=8]
+	I/O ports at bc00 [size=4]
+	I/O ports at b880 [size=8]
+	I/O ports at b800 [size=4]
+	I/O ports at b480 [size=16]
+	Memory at fe9f7000 (32-bit, non-prefetchable) [size=4K]
+	Capabilities: [44] Power Management version 2
+	Capabilities: [b0] Message Signalled Interrupts: Mask- 64bit+ Queue=0/2 Enable-
+	Capabilities: [cc] HyperTransport: MSI Mapping
+00: de 10 7f 03 07 00 b0 00 a3 85 01 01 00 00 80 00
+10: 01 c0 00 00 01 bc 00 00 81 b8 00 00 01 b8 00 00
+20: 81 b4 00 00 00 70 9f fe 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 05 03 03 01
+40: de 10 84 cb 01 b0 02 00 00 00 00 00 00 00 00 00
+50: 0b 68 08 80 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 41 0c 00 00 00 0f 06 42 00 00 00 00
+70: 2c 78 c4 40 01 10 00 00 01 10 00 00 20 00 20 80
+80: 00 00 00 00 7f df ef ff 00 00 bd 37 7e ff ff 3f
+90: 00 00 c3 1e 00 00 00 00 06 00 06 10 7f 03 01 01
+a0: 12 0a 00 00 40 00 00 00 00 00 00 00 33 31 00 02
+b0: 05 cc 84 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 0a 00 0a 00 08 00 02 a8
+d0: 0a 00 02 54 42 00 00 00 00 00 00 00 00 00 60 00
+e0: 0a 00 02 54 42 00 00 00 00 00 00 00 0f 00 00 00
+f0: 00 00 00 00 00 00 00 00 10 00 0c 00 00 00 00 00
+
+00:06.0 PCI bridge: nVidia Corporation Unknown device 0370 (rev a2) (prog-if 01 [Subtractive decode])
+	Flags: bus master, 66MHz, fast devsel, latency 0
+	Bus: primary=00, secondary=01, subordinate=01, sec-latency=64
+	I/O behind bridge: 0000e000-0000efff
+	Memory behind bridge: fea00000-feafffff
+	Prefetchable memory behind bridge: f8000000-fbffffff
+	Capabilities: [b8] Subsystem: nVidia Corporation Unknown device cb84
+	Capabilities: [8c] HyperTransport: MSI Mapping
+00: de 10 70 03 07 00 b0 00 a2 01 04 06 00 00 81 00
+10: 00 00 00 00 00 00 00 00 00 01 01 40 e0 e0 80 02
+20: a0 fe a0 fe 00 f8 f0 fb 00 00 00 00 00 00 00 00
+30: 00 00 00 00 b8 00 00 00 00 00 00 00 00 00 1a 02
+40: 00 00 33 07 01 00 02 00 05 00 00 00 00 00 4c 00
+50: 00 00 fe d7 00 00 00 00 ff 1f ff 1f 00 00 00 00
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 28 02 00 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 08 00 00 a8
+90: 00 00 e0 fe 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 ff ff 00 00 0d 8c 00 00 de 10 84 cb
+c0: de 10 84 cb 03 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:08.0 Bridge: nVidia Corporation MCP55 Ethernet (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 1276
+	Memory at fe9f6000 (32-bit, non-prefetchable) [size=4K]
+	I/O ports at b400 [size=8]
+	Memory at fe9fa800 (32-bit, non-prefetchable) [size=256]
+	Memory at fe9fa400 (32-bit, non-prefetchable) [size=16]
+	Capabilities: [44] Power Management version 2
+	Capabilities: [70] MSI-X: Enable- Mask- TabSize=8
+	Capabilities: [50] Message Signalled Interrupts: Mask+ 64bit+ Queue=0/3 Enable+
+	Capabilities: [6c] HyperTransport: MSI Mapping
+00: de 10 73 03 07 04 b0 00 a3 00 80 06 00 00 00 00
+10: 00 60 9f fe 01 b4 00 00 00 a8 9f fe 00 a4 9f fe
+20: 00 00 00 00 00 00 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 0a 01 01 14
+40: de 10 84 cb 01 70 02 fe 00 01 00 00 01 00 00 00
+50: 05 6c 87 01 0c f0 e0 fe 00 00 00 00 89 41 00 00
+60: fe 00 00 00 00 00 00 00 ff 00 00 00 08 00 02 a8
+70: 11 50 07 00 02 00 00 00 03 00 00 00 00 00 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 11 00 00 00 52 01 00 00 00 00 00 00
+
+00:09.0 Bridge: nVidia Corporation MCP55 Ethernet (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Flags: bus master, 66MHz, fast devsel, latency 0, IRQ 21
+	Memory at fe9f5000 (32-bit, non-prefetchable) [size=4K]
+	I/O ports at b080 [size=8]
+	Memory at fe9fa000 (32-bit, non-prefetchable) [size=256]
+	Memory at fe9f4c00 (32-bit, non-prefetchable) [size=16]
+	Capabilities: [44] Power Management version 2
+	Capabilities: [70] MSI-X: Enable- Mask- TabSize=8
+	Capabilities: [50] Message Signalled Interrupts: Mask+ 64bit+ Queue=0/3 Enable-
+	Capabilities: [6c] HyperTransport: MSI Mapping
+00: de 10 73 03 07 00 b0 00 a3 00 80 06 00 00 00 00
+10: 00 50 9f fe 81 b0 00 00 00 a0 9f fe 00 4c 9f fe
+20: 00 00 00 00 00 00 00 00 00 00 00 00 de 10 84 cb
+30: 00 00 00 00 44 00 00 00 00 00 00 00 0a 01 01 14
+40: de 10 84 cb 01 70 02 fe 00 00 00 00 01 00 00 00
+50: 05 6c 86 01 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 00 00 00 00 ff 00 00 00 08 00 02 a8
+70: 11 50 07 00 02 00 00 00 03 00 00 00 00 00 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 11 00 00 00 52 01 00 00 00 00 00 00
+
+00:0a.0 PCI bridge: nVidia Corporation Unknown device 0376 (rev a3) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0
+	Bus: primary=00, secondary=02, subordinate=02, sec-latency=0
+	Memory behind bridge: feb00000-febfffff
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+00: de 10 76 03 06 04 10 00 a3 00 04 06 10 00 01 00
+10: 00 00 00 00 00 00 00 00 00 02 02 00 f1 01 00 20
+20: b0 fe b0 fe f1 ff 01 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 40 00 00 00 00 00 00 00 00 00 02 00
+40: 0d 48 00 00 de 10 00 00 01 50 02 f8 00 00 00 00
+50: 05 60 83 00 0c f0 e0 fe 00 00 00 00 49 41 00 00
+60: 08 80 00 a8 00 00 e0 fe 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 10 00 41 01 01 80 00 00 1f 28 00 00 81 3c 11 05
+90: 00 00 81 30 00 00 00 00 c0 01 48 01 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:0d.0 PCI bridge: nVidia Corporation Unknown device 0378 (rev a3) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0
+	Bus: primary=00, secondary=03, subordinate=03, sec-latency=0
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+00: de 10 78 03 04 04 10 00 a3 00 04 06 10 00 01 00
+10: 00 00 00 00 00 00 00 00 00 03 03 00 f1 01 00 00
+20: f0 ff 00 00 f1 ff 01 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 40 00 00 00 00 00 00 00 00 00 02 00
+40: 0d 48 00 00 de 10 00 00 01 50 02 f8 00 00 00 00
+50: 05 60 83 00 0c f0 e0 fe 00 00 00 00 51 41 00 00
+60: 08 80 00 a8 00 00 e0 fe 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 10 00 41 01 01 80 00 00 1f 28 00 00 41 3c 11 02
+90: 00 00 41 10 00 00 00 00 c0 01 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:0f.0 PCI bridge: nVidia Corporation Unknown device 0377 (rev a3) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0
+	Bus: primary=00, secondary=04, subordinate=04, sec-latency=0
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+00: de 10 77 03 04 04 10 00 a3 00 04 06 10 00 01 00
+10: 00 00 00 00 00 00 00 00 00 04 04 00 f1 01 00 00
+20: f0 ff 00 00 f1 ff 01 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 40 00 00 00 00 00 00 00 00 00 02 00
+40: 0d 48 00 00 de 10 00 00 01 50 02 f8 00 00 00 00
+50: 05 60 83 00 0c f0 e0 fe 00 00 00 00 59 41 00 00
+60: 08 80 00 a8 00 00 e0 fe 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 10 00 41 01 01 80 00 00 1f 28 00 00 01 3d 11 00
+90: 00 00 01 11 00 00 00 00 c0 01 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:18.0 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] HyperTransport Technology Configuration
+	Flags: fast devsel
+	Capabilities: [80] HyperTransport: Host or Secondary Interface
+	Capabilities: [a0] HyperTransport: Host or Secondary Interface
+	Capabilities: [c0] HyperTransport: Host or Secondary Interface
+00: 22 10 00 11 00 00 10 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 80 00 00 00 00 00 00 00 00 00 00 00
+40: 01 01 05 00 04 04 01 00 01 01 01 00 01 01 01 00
+50: 01 01 01 00 01 01 01 00 01 01 01 00 01 01 01 00
+60: 10 00 03 00 e4 00 00 00 20 c8 0e 0f 24 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 08 a0 01 21 20 00 11 11 22 06 75 80 02 00 00 00
+90: 56 04 51 02 00 00 ff 00 07 00 00 00 00 00 00 00
+a0: 08 c0 01 21 20 00 11 11 22 06 75 80 02 00 00 00
+b0: 13 56 13 04 00 00 00 00 03 00 00 00 00 00 00 00
+c0: 08 00 01 21 d0 00 11 77 22 00 75 80 02 00 00 00
+d0: 8e ff 70 07 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:18.1 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Address Map
+	Flags: fast devsel
+00: 22 10 01 11 00 00 00 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+40: 03 00 00 00 00 00 27 01 03 00 28 01 01 00 27 02
+50: 00 00 00 00 02 00 00 00 00 00 00 00 03 00 00 00
+60: 00 00 00 00 04 00 00 00 00 00 00 00 05 00 00 00
+70: 00 00 00 00 06 00 00 00 00 00 00 00 07 00 00 00
+80: 03 00 e0 00 80 ff ef 00 03 00 f0 00 00 c0 fe 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 03 0a 00 00 00 0b 00 00 03 00 d8 00 00 ff df 00
+c0: 13 10 00 00 00 f0 ff 00 00 00 00 00 00 00 00 00
+d0: 03 20 00 00 00 30 00 00 00 00 00 00 00 00 00 00
+e0: 03 00 00 ff 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 01 28 00 d8 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:18.2 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] DRAM Controller
+	Flags: fast devsel
+00: 22 10 02 11 00 00 00 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+40: 01 00 00 00 00 00 00 00 01 02 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: e0 3d f8 00 e0 3d f8 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 46 00 00 00 00 00 00 00
+80: 66 00 00 00 00 00 00 00 24 a2 68 cf 20 13 92 00
+90: 10 38 08 00 7a 80 00 a4 21 00 00 80 16 18 18 17
+a0: eb 02 00 cf 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 5d 94 ab af 9b 00 00 00 e0 0f ea 09 cc f3 0f ed
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: c1 11 fe 8e fa 34 9e d7 c1 7d af e9 6e 4e 9e 5f
+e0: e0 49 ff cb db 3a ce cb c1 bc af f9 a7 46 df 6f
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:18.3 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Miscellaneous Control
+	Flags: fast devsel
+	Capabilities: [f0] #0f [0010]
+00: 22 10 03 11 00 00 10 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 f0 00 00 00 00 00 00 00 00 00 00 00
+40: ff 3b 04 00 40 00 50 0a 00 00 00 00 00 00 00 00
+50: 38 33 fb 27 01 00 00 00 00 00 00 00 80 2b 05 00
+60: 00 00 00 00 00 00 00 00 c0 00 00 00 00 00 00 00
+70: 11 01 02 51 11 80 00 50 00 38 00 08 1a 22 00 00
+80: 00 00 07 23 13 21 13 00 00 00 00 00 00 00 00 00
+90: 05 00 00 00 6c 00 00 00 00 02 24 02 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 0f 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 07 a7 e2 04 10 27 60 20 25 26 26 00
+e0: 00 00 00 00 20 1b 58 00 1b 17 00 00 00 00 00 00
+f0: 0f 00 10 00 00 00 00 00 00 00 00 00 13 0f 04 00
+
+00:19.0 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] HyperTransport Technology Configuration
+	Flags: fast devsel
+	Capabilities: [80] HyperTransport: Host or Secondary Interface
+	Capabilities: [a0] HyperTransport: Host or Secondary Interface
+	Capabilities: [c0] HyperTransport: Host or Secondary Interface
+00: 22 10 00 11 00 00 10 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 80 00 00 00 00 00 00 00 00 00 00 00
+40: 04 04 01 00 01 01 05 00 01 01 01 00 01 01 01 00
+50: 01 01 01 00 01 01 01 00 01 01 01 00 01 01 01 00
+60: 11 00 03 00 e4 00 00 00 20 c8 0e 0f 0c 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 08 a0 01 21 d0 00 11 77 22 00 75 80 02 00 00 00
+90: f0 b3 30 07 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 08 c0 01 21 20 00 11 11 22 06 75 80 02 00 00 00
+b0: 13 56 13 04 00 00 00 00 03 00 00 00 00 00 00 00
+c0: 08 00 01 21 d0 00 11 77 22 00 75 80 02 00 00 00
+d0: 8e 7c 01 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:19.1 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Address Map
+	Flags: fast devsel
+00: 22 10 01 11 00 00 00 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+40: 03 00 00 00 00 00 27 01 03 00 28 01 01 00 27 02
+50: 00 00 00 00 02 00 00 00 00 00 00 00 03 00 00 00
+60: 00 00 00 00 04 00 00 00 00 00 00 00 05 00 00 00
+70: 00 00 00 00 06 00 00 00 00 00 00 00 07 00 00 00
+80: 03 00 e0 00 80 ff ef 00 03 00 f0 00 00 c0 fe 00
+90: 00 88 87 c1 83 00 ff c0 04 1c e0 85 97 ff 8f 7d
+a0: 00 80 e0 f1 33 bf f1 e1 00 00 00 00 00 00 00 00
+b0: 03 0a 00 00 00 0b 00 00 03 00 d8 00 00 ff df 00
+c0: 13 10 00 00 00 f0 ff 00 30 c0 ff 01 37 e0 ff 01
+d0: 03 20 00 00 00 30 00 00 00 70 fb 01 07 f0 ff 01
+e0: 03 00 00 ff 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:19.2 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] DRAM Controller
+	Flags: fast devsel
+00: 22 10 02 11 00 00 00 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+40: 01 00 00 00 00 00 00 00 01 02 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: e0 3d f8 00 e0 3d f8 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 46 00 00 00 00 00 00 00
+80: 66 00 00 00 00 00 00 00 24 a2 68 cf 20 13 92 00
+90: 10 38 08 00 6a 80 00 a4 21 00 00 80 16 17 18 17
+a0: eb 02 00 cf 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 5e 41 e8 2e 37 00 00 00 78 3e 88 48 28 57 18 f3
+c0: 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 5f fd 19 31 06 94 ef a6 2e ce d9 b0 06 98 ff 19
+e0: 4e ed 9c 1b 97 d6 67 e2 ae c7 c8 d8 47 da eb 89
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+00:19.3 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Miscellaneous Control
+	Flags: fast devsel
+	Capabilities: [f0] #0f [0010]
+00: 22 10 03 11 00 00 10 00 00 00 00 06 00 00 80 00
+10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+30: 00 00 00 00 f0 00 00 00 00 00 00 00 00 00 00 00
+40: ff 3b 04 00 40 00 50 0a 00 00 00 00 00 00 00 00
+50: f0 95 ff 27 02 00 00 00 00 00 00 00 c0 68 05 28
+60: 01 00 00 00 00 00 00 00 c0 00 00 00 00 00 00 00
+70: 11 01 02 51 11 80 00 50 00 38 00 08 1a 22 00 00
+80: 00 00 07 23 13 21 13 00 00 00 00 00 00 00 00 00
+90: 05 00 00 00 6c 00 00 00 00 02 24 02 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 0f 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 07 a7 e2 04 10 27 60 20 26 26 26 00
+e0: 00 00 00 00 20 1b 59 00 1b 17 00 00 00 00 00 00
+f0: 0f 00 10 00 00 00 00 00 00 00 00 00 13 0f 04 00
+
+01:06.0 VGA compatible controller: XGI - Xabre Graphics Inc Volari Z7 (prog-if 00 [VGA])
+	Subsystem: XGI - Xabre Graphics Inc Volari Z7
+	Flags: 66MHz, medium devsel
+	BIST result: 00
+	Memory at f8000000 (32-bit, prefetchable) [size=64M]
+	Memory at feac0000 (32-bit, non-prefetchable) [size=256K]
+	I/O ports at ec00 [size=128]
+	Capabilities: [40] Power Management version 2
+00: ca 18 20 00 03 00 30 02 00 00 00 03 00 00 00 80
+10: 08 00 00 f8 00 00 ac fe 01 ec 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 ca 18 20 00
+30: 00 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00
+40: 01 00 02 06 00 00 00 00 00 00 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+02:00.0 RAID bus controller: Areca Technology Corp. Unknown device 1280
+	Subsystem: Areca Technology Corp. Unknown device 1280
+	Flags: bus master, fast devsel, latency 0, IRQ 19
+	Memory at febfe000 (32-bit, non-prefetchable) [size=8K]
+	Expansion ROM at febe0000 [disabled] [size=64K]
+	Capabilities: [98] Power Management version 2
+	Capabilities: [b0] Subsystem: LSI Logic / Symbios Logic Unknown device 0000
+	Capabilities: [a0] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable-
+	Capabilities: [d0] Express Endpoint IRQ 0
+00: d3 17 80 12 47 00 10 00 00 00 04 01 10 00 00 00
+10: 00 e0 bf fe 00 00 00 00 00 00 00 00 00 00 00 00
+20: 00 00 00 00 00 00 00 00 00 00 00 00 d3 17 80 12
+30: 00 00 be fe 98 00 00 00 00 00 00 00 0b 01 00 00
+40: 00 e0 ff ff 00 e0 00 40 00 00 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 00 00 ff ff 00 00 3c f0 00 00 00 00
+70: 42 00 00 00 00 20 00 02 00 04 00 00 ff 33 05 16
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+90: 03 00 ff 7f fc 00 00 00 01 b0 02 02 00 00 00 00
+a0: 05 d0 82 00 00 00 00 00 00 00 00 00 00 00 00 00
+b0: 0d a0 07 00 00 10 00 00 00 18 00 00 00 00 00 00
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d0: 10 00 01 00 c2 81 00 00 1f 28 09 00 81 94 03 00
+e0: 00 00 81 10 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+

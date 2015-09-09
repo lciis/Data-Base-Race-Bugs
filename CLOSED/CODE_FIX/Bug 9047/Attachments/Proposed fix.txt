@@ -1,0 +1,22 @@
+Signed-off-by: Joe Korty <joe.korty@ccur.com>
+Cc: Ayaz Abdulla <aabdulla@nvidia.com>
+Cc: Jeff Garzik <jeff@garzik.org>
+Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+---
+
+ drivers/net/forcedeth.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff -puN drivers/net/forcedeth.c~forcdeth-increase-max_interrupt_work drivers/net/forcedeth.c
+--- a/drivers/net/forcedeth.c~forcdeth-increase-max_interrupt_work
++++ a/drivers/net/forcedeth.c
+@@ -818,7 +818,7 @@ struct fe_priv {
+  * Maximum number of loops until we assume that a bit in the irq mask
+  * is stuck. Overridable with module param.
+  */
+-static int max_interrupt_work = 5;
++static int max_interrupt_work = 15;
+ 
+ /*
+  * Optimization can be either throuput mode or cpu mode
+_

@@ -1,0 +1,25 @@
+Notes:
+	-The display is still disabled when the LID is closed.
+	-The weird enable->disable->enable behaviour when reopening the LID is gone. Instead, the display only enables once and stays on.
+	-The bug seems to be gone
+	
+Proposed fix:	
+	diff --git a/drivers/gpu/drm/i915/intel_lvds.c b/drivers/gpu/drm/i915/intel_lvds.c
+	index 216e9f5..c429e6c 100644
+	--- a/drivers/gpu/drm/i915/intel_lvds.c
+	+++ b/drivers/gpu/drm/i915/intel_lvds.c
+	@@ -1121,11 +1121,12 @@ out:
+                pwm |= PWM_PCH_ENABLE;
+                I915_WRITE(BLC_PWM_PCH_CTL1, pwm);
+        }
+	-       dev_priv->lid_notifier.notifier_call = intel_lid_notify;
+	+       /*dev_priv->lid_notifier.notifier_call = intel_lid_notify;
+        	if (acpi_lid_notifier_register(&dev_priv->lid_notifier)) {
+        	        DRM_DEBUG_KMS("lid notifier registration failed\n");
+                	dev_priv->lid_notifier.notifier_call = NULL;
+	-       }
+	+       }*/
+	+       dev_priv->lid_notifier.notifier_call = NULL;
+	        /* keep the LVDS connector */
+	        dev_priv->int_lvds_connector = connector;
+	        drm_sysfs_connector_add(connector);

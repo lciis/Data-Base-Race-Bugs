@@ -1,0 +1,48 @@
+tty: Fix vt deadlock
+
+From: Alan Cox <alan@redhat.com>
+
+This is an ugly quickfix for the problem for the current/next release. This
+area is all getting reworked anyway and post rework we can do it cleanly.
+
+Signed-off-by: Alan Cox <alan@redhat.com>
+---
+
+ drivers/char/tty_io.c |   10 +++++++++-
+ 1 files changed, 9 insertions(+), 1 deletions(-)
+
+
+diff --git a/drivers/char/tty_io.c b/drivers/char/tty_io.c
+index e1b46bc..14fee01 100644
+--- a/drivers/char/tty_io.c
++++ b/drivers/char/tty_io.c
+@@ -2522,13 +2522,17 @@ static int tiocswinsz(struct tty_struct *tty, struct tty_struct *real_tty,
+ 	if (copy_from_user(&tmp_ws, arg, sizeof(*arg)))
+ 		return -EFAULT;
+ 
++#ifdef CONFIG_VT
++	if (tty->driver->type == TTY_DRIVER_TYPE_CONSOLE)
++		acquire_console_sem();
++#endif		
+ 	mutex_lock(&tty->termios_mutex);
+ 	if (!memcmp(&tmp_ws, &tty->winsize, sizeof(*arg)))
+ 		goto done;
+ 
+ #ifdef CONFIG_VT
+ 	if (tty->driver->type == TTY_DRIVER_TYPE_CONSOLE) {
+-		if (vc_lock_resize(tty->driver_data, tmp_ws.ws_col,
++		if (vc_resize(tty->driver_data, tmp_ws.ws_col,
+ 					tmp_ws.ws_row)) {
+ 			mutex_unlock(&tty->termios_mutex);
+ 			return -ENXIO;
+@@ -2554,6 +2558,10 @@ static int tiocswinsz(struct tty_struct *tty, struct tty_struct *real_tty,
+ 	real_tty->winsize = tmp_ws;
+ done:
+ 	mutex_unlock(&tty->termios_mutex);
++#ifdef CONFIG_VT
++	if (tty->driver->type == TTY_DRIVER_TYPE_CONSOLE)
++		release_console_sem();
++#endif		
+ 	return 0;
+ }
+ 

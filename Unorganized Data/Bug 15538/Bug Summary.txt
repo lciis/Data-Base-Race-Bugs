@@ -1,0 +1,18 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15538
+Component: Network-Wireless
+Hardware: All Linux
+Reported: 2010-03-15 09:13 UTC
+Modified: 2010-08-23 14:21 UTC
+Kernel Version: 2.6.34-rc1
+Tree: Mainline
+
+Summary:
+	there is a potential race condition between the host and the hardware in reading
+the next link in the transmit descriptor list:
+
+	cpu0              	hw
+                 		tx for buf completed
+                		raise tx_ok interrupt
+	process buf
+	buf->ds_link = 0
+           	       		read buf->ds_link

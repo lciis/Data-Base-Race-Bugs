@@ -1,0 +1,10 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=82901
+Component: Network-Wireless
+Hardware: All Linux
+Reported: 2014-08-20 18:35 UTC 
+Modified: 2014-08-21 15:13 UTC 
+Kernel Version: 3.2 + android-omap-3.0
+Tree: Mainline
+
+Summary:
+	There are missing mutex_unlock and possible race scenraio in function (wl1271_remove) in file (linux3.2/drivers/net/wireless/wl12xx/sdio.c).

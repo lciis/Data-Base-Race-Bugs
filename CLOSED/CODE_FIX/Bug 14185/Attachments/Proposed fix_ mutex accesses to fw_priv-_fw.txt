@@ -1,0 +1,97 @@
+Date	Thu, 24 Sep 2009 15:26:53 +0000
+From	Frederik Deweerdt <>
+Subject	Re: [patch -stable] firware_class oops: fix firmware_loading_store locking
+
+On Wed, Sep 23, 2009 at 09:42:41AM -0700, Linus Torvalds wrote:
+> 
+> 
+> On Mon, 21 Sep 2009, Frederik Deweerdt wrote:
+> <
+> > I'd rather wait someone picks it up for mainline inclusion. I've added
+> > your {Reported,Tested}-by tags.
+> > 
+> > The bug its vanilla 2.6.31, and should be considered for -stable inclusion.
+> > 
+> > Regards,
+> > Frederik
+> > 
+> > ----
+> > 
+> > The code introduced by commit 6e03a201bbe8137487f340d26aa662110e324b20 leads
+> > to a potential null deref. The following patch adds the proper locking
+> > around the accesses to fw_priv->fw.
+> > See http://bugzilla.kernel.org/show_bug.cgi?id=14185 for a full bug report.
+> 
+> I don't think this is correct.
+> 
+> I think you should protect the FW_STATUS_LOADING bit too, shouldn't you?
+> 
+> As it is, it does this:
+> 
+> 	if (test_bit(FW_STATUS_LOADING, &fw_priv->status)) {
+> 		mutex_lock(&fw_lock);
+> 		...
+> 		clear_bit(FW_STATUS_LOADING, &fw_priv->status);
+> 		mutex_unlock(&fw_lock);
+> 		break;
+> 	}
+> 
+> and if this code can race (which it obviously can, since your addition of 
+> fw_lock mutex matters), then I think it can race on that FW_STATUS_LOADING 
+> bit too. No?
+> 
+> So my gut feel is that the whole damn function should be protected by the 
+> mutex_lock thing. IOW, the patch would be something like the appended.
+> 
+> UNTESTED. Somebody needs to test this, verify, and send it back to me.
+> 
+> Am I missing something?
+You're right, the status must be protected too, but we would want to
+keep the check on fw_priv->fw not being NULL (patch follows).
+
+I cannot reproduce the bug here, Lars could you please have a look ?
+
+Regards,
+Frederik
+
+diff --git a/drivers/base/firmware_class.c b/drivers/base/firmware_class.c
+index 7376367..21ac040 100644
+--- a/drivers/base/firmware_class.c
++++ b/drivers/base/firmware_class.c
+@@ -150,13 +150,15 @@ static ssize_t firmware_loading_store(struct device *dev,
+ 	int loading = simple_strtol(buf, NULL, 10);
+ 	int i;
+ 
++
++	mutex_lock(&fw_lock);
++	if (!fw_priv->fw) {
++		mutex_unlock(&fw_lock);
++		return -ENODEV;
++	}
++
+ 	switch (loading) {
+ 	case 1:
+-		mutex_lock(&fw_lock);
+-		if (!fw_priv->fw) {
+-			mutex_unlock(&fw_lock);
+-			break;
+-		}
+ 		vfree(fw_priv->fw->data);
+ 		fw_priv->fw->data = NULL;
+ 		for (i = 0; i < fw_priv->nr_pages; i++)
+@@ -167,7 +169,6 @@ static ssize_t firmware_loading_store(struct device *dev,
+ 		fw_priv->nr_pages = 0;
+ 		fw_priv->fw->size = 0;
+ 		set_bit(FW_STATUS_LOADING, &fw_priv->status);
+-		mutex_unlock(&fw_lock);
+ 		break;
+ 	case 0:
+ 		if (test_bit(FW_STATUS_LOADING, &fw_priv->status)) {
+@@ -195,6 +196,7 @@ static ssize_t firmware_loading_store(struct device *dev,
+ 		fw_load_abort(fw_priv);
+ 		break;
+ 	}
++	mutex_unlock(&fw_lock);
+ 
+ 	return count;
+ }

@@ -1,0 +1,36 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=16206
+Component: Other
+Hardware: All Linux
+Reported: 2010-06-14 14:37 UTC
+Modified: 2012-06-27 13:32 UTC
+Kernel Version: 2.6.34
+Tree: Mainline
+Status:	RESOLVED CODE_FIX
+
+Summary:
+	PROBLEM: PPP and other serial port related application hangs in kernel space.
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	Maciej Rutecki 2010-06-14 14:37:16 UTC
+	Subject    : PROBLEM: PPP and other serial port related application hangs in kernel space
+	Submitter  : Ales Teska <ales.teska@gmail.com>
+	Date       : 2010-06-09 20:46
+	Message-ID : 900E3B14-5B92-4A37-9581-049DB40F4D1C@gmail.com
+	References : http://marc.info/?l=linux-kernel&m=127611640301071&w=2
+
+	This entry is being used for tracking a regression from 2.6.33.  Please don't
+	close it until the problem is fixed in the mainline.
+---------------------------------------------------------------------------
+	Chuck Ebbert 2010-07-23 22:23:28 UTC
+	This patch went in 2.6.34:
+
+	http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff_plain;h=638b9648ab51c9c549ff5735d3de519ef6199df3
+
+	"tty: Fix the ldisc hangup race"
+---------------------------------------------------------------------------
+
+Proposed Fix:
+	Notes:
+		There is no clear identification that this is the fix, but this is the only fix provided and this bug is marked as CODE_FIX.
+	http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff_plain;h=638b9648ab51c9c549ff5735d3de519ef6199df3

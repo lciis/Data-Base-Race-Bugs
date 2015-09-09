@@ -1,0 +1,11 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=12899
+Component: Video(DRI-Intel)
+Hardware: All Linux
+Reported: 2009-03-20 07:13 UTC
+Modified: 2009-09-18 02:31 UTC 
+Kernel Version: 2.6.29-r8
+Tree: Mainline
+
+Summary:
+	There is a possible race between clearing out "->hw_status_page" and the interrupt handler. Frequent kernel NULL pointer dereferences in i915_driver_irq_handler while switching from a running X server back into the VGA text console.
+

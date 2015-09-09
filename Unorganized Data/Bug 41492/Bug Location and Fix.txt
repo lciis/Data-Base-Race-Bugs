@@ -1,0 +1,250 @@
+Notes:
+	-Proposed fix is made by an user who assumes the bug is caused by a race. 
+	-No confirmation on the validity of the patch. 
+	-The bug is simply no longer existed in recent kernel.
+
+Proposed fix:
+diff --git a/include/sound/pcm.h b/include/sound/pcm.h
+index 57e71fa..aa2d253 100644
+--- a/include/sound/pcm.h
++++ b/include/sound/pcm.h
+@@ -378,6 +378,7 @@ struct snd_pcm_substream {
+ 	struct snd_dma_buffer dma_buffer;
+ 	unsigned int dma_buf_id;
+ 	size_t dma_max;
++	struct mutex state_mutex;	/* mutex to protect state change */
+ 	/* -- hardware operations -- */
+ 	struct snd_pcm_ops *ops;
+ 	/* -- runtime information -- */
+diff --git a/sound/core/pcm.c b/sound/core/pcm.c
+index ee9abb2..ff8896f 100644
+--- a/sound/core/pcm.c
++++ b/sound/core/pcm.c
+@@ -669,6 +669,7 @@ int snd_pcm_new_stream(struct snd_pcm *pcm, int stream, int substream_count)
+ 		substream->stream = stream;
+ 		sprintf(substream->name, "subdevice #%i", idx);
+ 		substream->buffer_bytes_max = UINT_MAX;
++		mutex_init(&substream->state_mutex);
+ 		if (prev == NULL)
+ 			pstr->substream = substream;
+ 		else
+diff --git a/sound/core/pcm_native.c b/sound/core/pcm_native.c
+index 1c6be91..b4c9394 100644
+--- a/sound/core/pcm_native.c
++++ b/sound/core/pcm_native.c
+@@ -378,6 +378,7 @@ static int snd_pcm_hw_params(struct snd_pcm_substream *substream,
+ 
+ 	if (PCM_RUNTIME_CHECK(substream))
+ 		return -ENXIO;
++	mutex_lock(&substream->state_mutex);
+ 	runtime = substream->runtime;
+ 	snd_pcm_stream_lock_irq(substream);
+ 	switch (runtime->status->state) {
+@@ -387,14 +388,17 @@ static int snd_pcm_hw_params(struct snd_pcm_substream *substream,
+ 		break;
+ 	default:
+ 		snd_pcm_stream_unlock_irq(substream);
+-		return -EBADFD;
++		err = -EBADFD;
++		goto _unlock;
+ 	}
+ 	snd_pcm_stream_unlock_irq(substream);
+ #if defined(CONFIG_SND_PCM_OSS) || defined(CONFIG_SND_PCM_OSS_MODULE)
+ 	if (!substream->oss.oss)
+ #endif
+-		if (atomic_read(&substream->mmap_count))
+-			return -EBADFD;
++		if (atomic_read(&substream->mmap_count)) {
++			err = -EBADFD;
++			goto _unlock;
++		}
+ 
+ 	params->rmask = ~0U;
+ 	err = snd_pcm_hw_refine(substream, params);
+@@ -458,6 +462,7 @@ static int snd_pcm_hw_params(struct snd_pcm_substream *substream,
+ 	if ((usecs = period_to_usecs(runtime)) >= 0)
+ 		pm_qos_add_request(&substream->latency_pm_qos_req,
+ 				   PM_QOS_CPU_DMA_LATENCY, usecs);
++	mutex_unlock(&substream->state_mutex);
+ 	return 0;
+  _error:
+ 	/* hardware might be unusable from this time,
+@@ -466,6 +471,8 @@ static int snd_pcm_hw_params(struct snd_pcm_substream *substream,
+ 	runtime->status->state = SNDRV_PCM_STATE_OPEN;
+ 	if (substream->ops->hw_free != NULL)
+ 		substream->ops->hw_free(substream);
++ _unlock:
++	mutex_unlock(&substream->state_mutex);
+ 	return err;
+ }
+ 
+@@ -496,6 +503,7 @@ static int snd_pcm_hw_free(struct snd_pcm_substream *substream)
+ 
+ 	if (PCM_RUNTIME_CHECK(substream))
+ 		return -ENXIO;
++	mutex_lock(&substream->state_mutex);
+ 	runtime = substream->runtime;
+ 	snd_pcm_stream_lock_irq(substream);
+ 	switch (runtime->status->state) {
+@@ -504,15 +512,20 @@ static int snd_pcm_hw_free(struct snd_pcm_substream *substream)
+ 		break;
+ 	default:
+ 		snd_pcm_stream_unlock_irq(substream);
+-		return -EBADFD;
++		result = -EBADFD;
++		goto _unlock;
+ 	}
+ 	snd_pcm_stream_unlock_irq(substream);
+-	if (atomic_read(&substream->mmap_count))
+-		return -EBADFD;
++	if (atomic_read(&substream->mmap_count)) {
++		result = -EBADFD;
++		goto _unlock;
++	}
+ 	if (substream->ops->hw_free)
+ 		result = substream->ops->hw_free(substream);
+ 	runtime->status->state = SNDRV_PCM_STATE_OPEN;
+ 	pm_qos_remove_request(&substream->latency_pm_qos_req);
++ _unlock:
++	mutex_unlock(&substream->state_mutex);
+ 	return result;
+ }
+ 
+@@ -524,26 +537,35 @@ static int snd_pcm_sw_params(struct snd_pcm_substream *substream,
+ 
+ 	if (PCM_RUNTIME_CHECK(substream))
+ 		return -ENXIO;
++	mutex_lock(&substream->state_mutex);
+ 	runtime = substream->runtime;
+ 	snd_pcm_stream_lock_irq(substream);
+ 	if (runtime->status->state == SNDRV_PCM_STATE_OPEN) {
+ 		snd_pcm_stream_unlock_irq(substream);
+-		return -EBADFD;
++		err = -EBADFD;
++		goto _unlock;
+ 	}
+ 	snd_pcm_stream_unlock_irq(substream);
+ 
+-	if (params->tstamp_mode > SNDRV_PCM_TSTAMP_LAST)
+-		return -EINVAL;
+-	if (params->avail_min == 0)
+-		return -EINVAL;
++	if (params->tstamp_mode > SNDRV_PCM_TSTAMP_LAST) {
++		err = -EINVAL;
++		goto _unlock;
++	}
++	if (params->avail_min == 0) {
++		err = -EINVAL;
++		goto _unlock;
++	}
+ 	if (params->silence_size >= runtime->boundary) {
+-		if (params->silence_threshold != 0)
+-			return -EINVAL;
++		if (params->silence_threshold != 0) {
++			err = -EINVAL;
++			goto _unlock;
++		}
+ 	} else {
+-		if (params->silence_size > params->silence_threshold)
+-			return -EINVAL;
+-		if (params->silence_threshold > runtime->buffer_size)
+-			return -EINVAL;
++		if (params->silence_size > params->silence_threshold ||
++		    params->silence_threshold > runtime->buffer_size) {
++			err = -EINVAL;
++			goto _unlock;
++		}
+ 	}
+ 	err = 0;
+ 	snd_pcm_stream_lock_irq(substream);
+@@ -562,6 +584,8 @@ static int snd_pcm_sw_params(struct snd_pcm_substream *substream,
+ 		err = snd_pcm_update_state(substream, runtime);
+ 	}
+ 	snd_pcm_stream_unlock_irq(substream);
++ _unlock:
++	mutex_unlock(&substream->state_mutex);
+ 	return err;
+ }
+ 
+@@ -697,6 +721,11 @@ struct action_ops {
+ 	void (*post_action)(struct snd_pcm_substream *substream, int state);
+ };
+ 
++enum {
++	PCM_LOCK_ATOMIC_SLAVE,
++	PCM_LOCK_MUTEX_SLAVE,
++};
++
+ /*
+  *  this functions is core for handling of linked stream
+  *  Note: the stream state might be changed also on failure
+@@ -711,9 +740,14 @@ static int snd_pcm_action_group(struct action_ops *ops,
+ 	int res = 0;
+ 
+ 	snd_pcm_group_for_each_entry(s, substream) {
+-		if (do_lock && s != substream)
+-			spin_lock_nested(&s->self_group.lock,
+-					 SINGLE_DEPTH_NESTING);
++		if (s != substream) {
++			if (do_lock)
++				spin_lock_nested(&s->self_group.lock,
++						 PCM_LOCK_ATOMIC_SLAVE);
++			else
++				mutex_lock_nested(&s->state_mutex,
++						  PCM_LOCK_MUTEX_SLAVE);
++		}
+ 		res = ops->pre_action(s, state);
+ 		if (res < 0)
+ 			goto _unlock;
+@@ -736,14 +770,16 @@ static int snd_pcm_action_group(struct action_ops *ops,
+ 		ops->post_action(s, state);
+ 	}
+  _unlock:
+-	if (do_lock) {
+-		/* unlock streams */
+-		snd_pcm_group_for_each_entry(s1, substream) {
+-			if (s1 != substream)
++	/* unlock streams */
++	snd_pcm_group_for_each_entry(s1, substream) {
++		if (s1 != substream) {
++			if (do_lock)
+ 				spin_unlock(&s1->self_group.lock);
+-			if (s1 == s)	/* end */
+-				break;
++			else
++				mutex_unlock(&s1->state_mutex);
+ 		}
++		if (s1 == s)	/* end */
++			break;
+ 	}
+ 	return res;
+ }
+@@ -825,10 +861,12 @@ static int snd_pcm_action_nonatomic(struct action_ops *ops,
+ 	int res;
+ 
+ 	down_read(&snd_pcm_link_rwsem);
++	mutex_lock(&substream->state_mutex);
+ 	if (snd_pcm_stream_linked(substream))
+ 		res = snd_pcm_action_group(ops, substream, state, 0);
+ 	else
+ 		res = snd_pcm_action_single(ops, substream, state);
++	mutex_unlock(&substream->state_mutex);
+ 	up_read(&snd_pcm_link_rwsem);
+ 	return res;
+ }
+@@ -1997,6 +2035,7 @@ void snd_pcm_release_substream(struct snd_pcm_substream *substream)
+ 		return;
+ 
+ 	snd_pcm_drop(substream);
++	mutex_lock(&substream->state_mutex);
+ 	if (substream->hw_opened) {
+ 		if (substream->ops->hw_free != NULL)
+ 			substream->ops->hw_free(substream);
+@@ -2010,6 +2049,7 @@ void snd_pcm_release_substream(struct snd_pcm_substream *substream)
+ 		substream->pcm_release = NULL;
+ 	}
+ 	snd_pcm_detach_substream(substream);
++	mutex_unlock(&substream->state_mutex);
+ }
+ 
+ EXPORT_SYMBOL(snd_pcm_release_substream);

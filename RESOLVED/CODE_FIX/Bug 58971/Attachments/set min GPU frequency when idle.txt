@@ -1,0 +1,91 @@
+diff --git a/drivers/gpu/drm/i915/i915_drv.h b/drivers/gpu/drm/i915/i915_drv.h
+index 07ca7f4..f498bbf 100644
+--- a/drivers/gpu/drm/i915/i915_drv.h
++++ b/drivers/gpu/drm/i915/i915_drv.h
+@@ -723,7 +723,7 @@ struct i915_suspend_saved_registers {
+ 
+ struct intel_gen6_power_mgmt {
+ 	struct work_struct work;
+-	struct delayed_work vlv_work;
++	struct delayed_work min_freq_work;
+ 	u32 pm_iir;
+ 	/* lock - irqsave spinlock that protectects the work_struct and
+ 	 * pm_iir. */
+diff --git a/drivers/gpu/drm/i915/i915_irq.c b/drivers/gpu/drm/i915/i915_irq.c
+index 7857430..e0d2f97 100644
+--- a/drivers/gpu/drm/i915/i915_irq.c
++++ b/drivers/gpu/drm/i915/i915_irq.c
+@@ -724,16 +724,14 @@ static void gen6_pm_rps_work(struct work_struct *work)
+ 			gen6_set_rps(dev_priv->dev, new_delay);
+ 	}
+ 
+-	if (IS_VALLEYVIEW(dev_priv->dev)) {
+-		/*
+-		 * On VLV, when we enter RC6 we may not be at the minimum
+-		 * voltage level, so arm a timer to check.  It should only
+-		 * fire when there's activity or once after we've entered
+-		 * RC6, and then won't be re-armed until the next RPS interrupt.
+-		 */
+-		mod_delayed_work(dev_priv->wq, &dev_priv->rps.vlv_work,
+-				 msecs_to_jiffies(100));
+-	}
++	/*
++	 * On VLV, when we enter RC6 we may not be at the minimum
++	 * voltage level, so arm a timer to check.  It should only
++	 * fire when there's activity or once after we've entered
++	 * RC6, and then won't be re-armed until the next RPS interrupt.
++	 */
++	mod_delayed_work(dev_priv->wq, &dev_priv->rps.min_freq_work,
++			 msecs_to_jiffies(100));
+ 
+ 	mutex_unlock(&dev_priv->rps.hw_lock);
+ }
+diff --git a/drivers/gpu/drm/i915/intel_pm.c b/drivers/gpu/drm/i915/intel_pm.c
+index cc9440b..551c56e 100644
+--- a/drivers/gpu/drm/i915/intel_pm.c
++++ b/drivers/gpu/drm/i915/intel_pm.c
+@@ -3430,10 +3430,10 @@ int valleyview_rps_min_freq(struct drm_i915_private *dev_priv)
+ 	return vlv_punit_read(dev_priv, PUNIT_REG_GPU_LFM) & 0xff;
+ }
+ 
+-static void vlv_rps_timer_work(struct work_struct *work)
++static void min_freq_rps_timer_work(struct work_struct *work)
+ {
+ 	drm_i915_private_t *dev_priv = container_of(work, drm_i915_private_t,
+-						    rps.vlv_work.work);
++						    rps.min_freq_work.work);
+ 
+ 	/*
+ 	 * Timer fired, we must be idle.  Drop to min voltage state.
+@@ -3443,7 +3443,10 @@ static void vlv_rps_timer_work(struct work_struct *work)
+ 	 * min freq available.
+ 	 */
+ 	mutex_lock(&dev_priv->rps.hw_lock);
+-	valleyview_set_rps(dev_priv->dev, dev_priv->rps.rpe_delay);
++	if (IS_VALLEYVIEW(dev_priv->dev))
++		valleyview_set_rps(dev_priv->dev, dev_priv->rps.rpe_delay);
++	else
++		gen6_set_rps(dev_priv->dev, dev_priv->rps.min_delay);
+ 	mutex_unlock(&dev_priv->rps.hw_lock);
+ }
+ 
+@@ -3576,7 +3579,8 @@ static void valleyview_enable_rps(struct drm_device *dev)
+ 	DRM_DEBUG_DRIVER("setting GPU freq to %d\n",
+ 			 vlv_gpu_freq(dev_priv->mem_freq, rpe));
+ 
+-	INIT_DELAYED_WORK(&dev_priv->rps.vlv_work, vlv_rps_timer_work);
++	INIT_DELAYED_WORK(&dev_priv->rps.min_freq_work,
++			  min_freq_rps_timer_work);
+ 
+ 	valleyview_set_rps(dev_priv->dev, rpe);
+ 
+@@ -4324,8 +4328,7 @@ void intel_disable_gt_powersave(struct drm_device *dev)
+ 	} else if (INTEL_INFO(dev)->gen >= 6) {
+ 		cancel_delayed_work_sync(&dev_priv->rps.delayed_resume_work);
+ 		cancel_work_sync(&dev_priv->rps.work);
+-		if (IS_VALLEYVIEW(dev))
+-			cancel_delayed_work_sync(&dev_priv->rps.vlv_work);
++		cancel_delayed_work_sync(&dev_priv->rps.min_freq_work);
+ 		mutex_lock(&dev_priv->rps.hw_lock);
+ 		if (IS_VALLEYVIEW(dev))
+ 			valleyview_disable_rps(dev);

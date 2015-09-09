@@ -1,0 +1,87 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15550
+Component: Video(DRI-Intel)
+Hardware: All Linux
+Reported: 2010-03-16 20:19 UTC 
+Modified: 2013-04-09 06:23 UTC 
+Kernel Version: 2.6.34-rc4
+Tree: Mainline
+Status:	RESOLVED PATCH_ALREADY_AVAILABLE
+
+Summary:
+	When the LID is closed and then opened, the display sometimes stops working and kacpi_notify uses 100% CPU forever. The reboot seems to be needed to fix the problem. It seems like a race condition between the intel_lid_notify in intel_lvds.c and something the BIOS (or any other component)
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Thomas Bächler 2010-03-16 20:19:11 UTC
+	Created attachment 25554 [details]
+	dmesg output
+
+	When I close and then open the LID, the display sometimes stops working and kacpi_notify uses 100% CPU forever. I need to reboot to fix the problem.
+
+	Most of the time, the display is first off, then when I close/open again, it is on but only displays a black screen.
+
+	This seems to be related to the LID button being hit too frequently, as it mostly happens when I don't open the LID "fast enough".
+
+	I am attaching dmesg, lsmod, kernel config and dmidecode.
+		
+	Thomas Bächler 2010-04-17 16:20:51 UTC
+	Okay, now it gets interesting, I hope the following information will help to solve this bug.
+
+	I applyied the following (test) kernel patch to the latest Linus tree (2.6.34-rc4):
+---------------------------------------------------------------------------
+	diff --git a/drivers/gpu/drm/i915/intel_lvds.c b/drivers/gpu/drm/i915/intel_lvds.c
+	index 216e9f5..c429e6c 100644
+	--- a/drivers/gpu/drm/i915/intel_lvds.c
+	+++ b/drivers/gpu/drm/i915/intel_lvds.c
+	@@ -1121,11 +1121,12 @@ out:
+					pwm |= PWM_PCH_ENABLE;
+					I915_WRITE(BLC_PWM_PCH_CTL1, pwm);
+			}
+	-       dev_priv->lid_notifier.notifier_call = intel_lid_notify;
+	+       /*dev_priv->lid_notifier.notifier_call = intel_lid_notify;
+			if (acpi_lid_notifier_register(&dev_priv->lid_notifier)) {
+					DRM_DEBUG_KMS("lid notifier registration failed\n");
+					dev_priv->lid_notifier.notifier_call = NULL;
+	-       }
+	+       }*/
+	+       dev_priv->lid_notifier.notifier_call = NULL;
+			/* keep the LVDS connector */
+			dev_priv->int_lvds_connector = connector;
+			drm_sysfs_connector_add(connector);
+
+	The following behaviour occurs:
+	1) The display is still disabled when I close the LID.
+	2) The weird enable->disable->enable behaviour when reopening the LID is gone. Instead, the display only enables once and stays on.
+	3) The bug is gone as far as I can determine (closed/opened the LID a dozen times).
+
+	This seems like a race condition between the intel_lid_notify in intel_lvds.c and something the BIOS (or any other component) does. What would be a proper fix here?
+---------------------------------------------------------------------------
+	Thomas Bächler 2010-04-17 16:50:45 UTC
+	Narrowing it down further: The problem is definitely caused by
+			mutex_lock(&dev->mode_config.mutex);
+			drm_helper_resume_force_mode(dev);
+			mutex_unlock(&dev->mode_config.mutex);
+	in intel_lid_notify(). If I return NOTIFY_OK before that, the bug is gone as well.
+---------------------------------------------------------------------------
+	Chris Wilson 2010-07-24 09:24:28 UTC
+	In fact you've already done so! :)
+
+	commit 1073af33fdd4e960c70b828e899b1291b44f0b3d
+	Author: Thomas Bächler <thomas@archlinux.org>
+	Date:   Fri Jul 2 10:44:23 2010 +0200
+
+		gpu/drm/i915: Add a blacklist to omit modeset on LID open
+		
+		On some machines (currently only the Toshiba Tecra A11 is known), the GPU
+		locks up when modeset is forced on LID open. This patch adds a new DMI
+		blacklist and omits modesetting for all matches.
+		
+		Fixes https://bugzilla.kernel.org/show_bug.cgi?id=15550
+		
+		Signed-off-by: Thomas Bächler <thomas@archlinux.org>
+		Signed-off-by: Eric Anholt <eric@anholt.net>
+
+	currently in Eric Anholt's tree.
+	
+Proposed Fix:
+	commit 1073af33fdd4e960c70b828e899b1291b44f0b3d

@@ -1,0 +1,27 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=11687
+Component: ISDN
+Hardware: All Linux
+Reported: 2008-10-02 08:44 UTC 
+Modified: 2012-10-30 15:13 UTC
+Kernel Version: 2.6.26
+Tree: Mainline
+
+Summary:
+	There is a spin lock deadlock in capi tty layer.
+
+Bug description:
+	The commit
+		http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=053b47ff249b9e0a634dae807f81465205e7c228
+
+	fixed some crashy races but introduced the deadlock, atleast when using the proprietary fcpci driver. Here's a summary of the problem:
+
+	some capi tty layer function:
+	- spinlock_irqsave(workaround_lock)
+	-> capi20_put_message()
+	   -> fcpci->send_msg()
+	       -> kick_scheduler() -> tasklet_schedule()
+	          -> call other function in capi tty layer
+        	  -> deadlock on spinlock_irqsave(workaround_lock)
+
+	The problem here is that tasklet_schedule() fires a softirq immeditately and then runs into the capi tty layer again.
+

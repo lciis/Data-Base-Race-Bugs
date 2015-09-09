@@ -1,0 +1,300 @@
+          <idle>-0     [000]   541.875492: ath5k_tx_processq: phy0 ddc606c0 0
+            ping-6394  [000]   541.876121: ath5k_tx_queue: phy0 de5cb900 0
+            ping-6394  [000]   541.876194: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.876313: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.876330: ath5k_tx_processq: phy0 de5cb900 0
+            ping-6394  [000]   541.876956: ath5k_tx_queue: phy0 de5cb9c0 0
+          <idle>-0     [000]   541.879216: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.879859: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.879876: ath5k_tx_processq: phy0 de5cb9c0 0
+            ping-6394  [000]   541.880633: ath5k_tx_queue: phy0 ddc5b3c0 0
+          <idle>-0     [000]   541.881338: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.881441: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.881459: ath5k_tx_processq: phy0 ddc5b3c0 0
+            ping-6394  [000]   541.882080: ath5k_tx_queue: phy0 ddc5bcc0 0
+            ping-6394  [000]   541.882145: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.882281: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.882298: ath5k_tx_processq: phy0 ddc5bcc0 0
+            ping-6394  [000]   541.883132: ath5k_tx_queue: phy0 de64e540 0
+          <idle>-0     [000]   541.883223: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.883328: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.883345: ath5k_tx_processq: phy0 de64e540 0
+            ping-6394  [000]   541.884104: ath5k_tx_queue: phy0 de64ea80 0
+          <idle>-0     [000]   541.884193: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.884297: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.884314: ath5k_tx_processq: phy0 de64ea80 0
+            ping-6394  [000]   541.885094: ath5k_tx_queue: phy0 ddc60a80 0
+          <idle>-0     [000]   541.885238: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.885343: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.885360: ath5k_tx_processq: phy0 ddc60a80 0
+            ping-6394  [000]   541.886143: ath5k_tx_queue: phy0 ddc609c0 0
+          <idle>-0     [000]   541.886347: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.886452: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.886469: ath5k_tx_processq: phy0 ddc609c0 0
+            ping-6394  [000]   541.887195: ath5k_tx_queue: phy0 ddc60540 0
+          <idle>-0     [000]   541.889508: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.889639: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.889656: ath5k_tx_processq: phy0 ddc60540 0
+            ping-6394  [000]   541.890353: ath5k_tx_queue: phy0 ddc60300 0
+          <idle>-0     [000]   541.890430: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.890534: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.890551: ath5k_tx_processq: phy0 ddc60300 0
+            ping-6394  [000]   541.891307: ath5k_tx_queue: phy0 ddc60180 0
+          <idle>-0     [000]   541.891396: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.891502: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.891519: ath5k_tx_processq: phy0 ddc60180 0
+            ping-6394  [000]   541.892262: ath5k_tx_queue: phy0 ddc60240 0
+          <idle>-0     [000]   541.892392: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.892498: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.892514: ath5k_tx_processq: phy0 ddc60240 0
+            ping-6394  [000]   541.893197: ath5k_tx_queue: phy0 ddc60900 0
+          <idle>-0     [000]   541.893332: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.893383: ath5k_tx_processq: phy0 ddc60900 0
+          <idle>-0     [000]   541.893404: ath5k_tasklet_tx <-tasklet_action
+            ping-6394  [000]   541.894132: ath5k_tx_queue: phy0 ddc60e40 0
+          <idle>-0     [000]   541.894210: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.894315: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.894332: ath5k_tx_processq: phy0 ddc60e40 0
+            ping-6394  [000]   541.894986: ath5k_tx_queue: phy0 ddc60840 0
+          <idle>-0     [000]   541.895077: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.895180: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.895197: ath5k_tx_processq: phy0 ddc60840 0
+            ping-6394  [000]   541.895952: ath5k_tx_queue: phy0 ddc60cc0 0
+          <idle>-0     [000]   541.896046: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.896151: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.896168: ath5k_tx_processq: phy0 ddc60cc0 0
+            ping-6394  [000]   541.896985: ath5k_tx_queue: phy0 ddc60c00 0
+          <idle>-0     [000]   541.899655: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.899896: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.899913: ath5k_tx_processq: phy0 ddc60c00 0
+            ping-6394  [000]   541.900576: ath5k_tx_queue: phy0 de64e840 0
+            ping-6394  [000]   541.900644: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.900750: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.900767: ath5k_tx_processq: phy0 de64e840 0
+            ping-6394  [000]   541.901305: ath5k_tx_queue: phy0 ddc5b600 0
+          <idle>-0     [000]   541.901478: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.901583: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.901600: ath5k_tx_processq: phy0 ddc5b600 0
+            ping-6394  [000]   541.902276: ath5k_tx_queue: phy0 ddc5b180 0
+          <idle>-0     [000]   541.902366: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.902472: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.902489: ath5k_tx_processq: phy0 ddc5b180 0
+            ping-6394  [000]   541.903043: ath5k_tx_queue: phy0 ddc5be40 0
+          <idle>-0     [000]   541.903135: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.903241: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.903258: ath5k_tx_processq: phy0 ddc5be40 0
+            ping-6394  [000]   541.903948: ath5k_tx_queue: phy0 ddc5b000 0
+            ping-6394  [000]   541.904015: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.904120: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.904137: ath5k_tx_processq: phy0 ddc5b000 0
+            ping-6394  [000]   541.904861: ath5k_tx_queue: phy0 ddc5b540 0
+            ping-6394  [000]   541.904926: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.905033: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.905050: ath5k_tx_processq: phy0 ddc5b540 0
+            ping-6394  [000]   541.905614: ath5k_tx_queue: phy0 ddc5bd80 0
+          <idle>-0     [000]   541.905820: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.905921: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.905938: ath5k_tx_processq: phy0 ddc5bd80 0
+            ping-6394  [000]   541.906556: ath5k_tx_queue: phy0 ddc5b900 0
+          <idle>-0     [000]   541.906643: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.906750: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.906767: ath5k_tx_processq: phy0 ddc5b900 0
+            ping-6394  [000]   541.907607: ath5k_tx_queue: phy0 ddc5b480 0
+          <idle>-0     [000]   541.909992: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.910098: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.910115: ath5k_tx_processq: phy0 ddc5b480 0
+            ping-6394  [000]   541.912144: ath5k_tx_queue: phy0 ddc5b840 0
+          <idle>-0     [000]   541.912299: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.912403: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.912420: ath5k_tx_processq: phy0 ddc5b840 0
+            ping-6394  [000]   541.913054: ath5k_tx_queue: phy0 ddc60b40 0
+          <idle>-0     [000]   541.913146: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.913250: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.913267: ath5k_tx_processq: phy0 ddc60b40 0
+            ping-6394  [000]   541.916231: ath5k_tx_queue: phy0 de5cbd80 0
+            ping-6394  [000]   541.916303: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.916405: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.916422: ath5k_tx_processq: phy0 de5cbd80 0
+            ping-6394  [000]   541.917140: ath5k_tx_queue: phy0 de60d480 0
+          <idle>-0     [000]   541.920184: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.920312: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.920329: ath5k_tx_processq: phy0 de60d480 0
+            ping-6394  [000]   541.920908: ath5k_tx_queue: phy0 de60d540 0
+            ping-6394  [000]   541.920982: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.921090: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.921107: ath5k_tx_processq: phy0 de60d540 0
+            ping-6394  [000]   541.921824: ath5k_tx_queue: phy0 de60d900 0
+            ping-6394  [000]   541.921889: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.921995: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.922012: ath5k_tx_processq: phy0 de60d900 0
+            ping-6394  [000]   541.922896: ath5k_tx_queue: phy0 de60d3c0 0
+            ping-6394  [000]   541.922963: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.923068: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.923085: ath5k_tx_processq: phy0 de60d3c0 0
+            ping-6394  [000]   541.923920: ath5k_tx_queue: phy0 de60d780 0
+            ping-6394  [000]   541.923985: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.924091: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.924108: ath5k_tx_processq: phy0 de60d780 0
+            ping-6394  [000]   541.924686: ath5k_tx_queue: phy0 de60d600 0
+            ping-6394  [000]   541.924775: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.924862: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.924879: ath5k_tx_processq: phy0 de60d600 0
+            ping-6394  [000]   541.925541: ath5k_tx_queue: phy0 de60da80 0
+          <idle>-0     [000]   541.925698: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.925804: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.925822: ath5k_tx_processq: phy0 de60da80 0
+            ping-6394  [000]   541.926587: ath5k_tx_queue: phy0 de60d840 0
+          <idle>-0     [000]   541.926829: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.926913: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.926931: ath5k_tx_processq: phy0 de60d840 0
+            ping-6394  [000]   541.927527: ath5k_tx_queue: phy0 de60d300 0
+          <idle>-0     [000]   541.930293: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.930545: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.930562: ath5k_tx_processq: phy0 de60d300 0
+            ping-6394  [000]   541.931359: ath5k_tx_queue: phy0 ddc60480 0
+          <idle>-0     [000]   541.931449: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.931553: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.931570: ath5k_tx_processq: phy0 ddc60480 0
+            ping-6394  [000]   541.932393: ath5k_tx_queue: phy0 ddc60780 0
+          <idle>-0     [000]   541.932570: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.932688: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.932705: ath5k_tx_processq: phy0 ddc60780 0
+            ping-6394  [000]   541.933485: ath5k_tx_queue: phy0 ddc60c00 0
+          <idle>-0     [000]   541.933577: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.933692: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.933710: ath5k_tx_processq: phy0 ddc60c00 0
+            ping-6394  [000]   541.934468: ath5k_tx_queue: phy0 ddc5bcc0 0
+          <idle>-0     [000]   541.934612: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.934716: ath5k_tasklet_tx <-tasklet_action
+            sshd-6226  [000]   541.934733: ath5k_tx_processq: phy0 ddc5bcc0 0
+            ping-6394  [000]   541.935503: ath5k_tx_queue: phy0 ddc5b3c0 0
+          <idle>-0     [000]   541.935726: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.935778: ath5k_tx_processq: phy0 ddc5b3c0 0
+          <idle>-0     [000]   541.935798: ath5k_tasklet_tx <-tasklet_action
+            ping-6394  [000]   541.936374: ath5k_tx_queue: phy0 ddc5bf00 0
+          <idle>-0     [000]   541.936462: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.936566: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.936583: ath5k_tx_processq: phy0 ddc5bf00 0
+            ping-6394  [000]   541.937390: ath5k_tx_queue: phy0 de64ea80 0
+          <idle>-0     [000]   541.937491: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.937594: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   541.937611: ath5k_tx_processq: phy0 de64ea80 0
+            ping-6394  [000]   541.938269: ath5k_tx_queue: phy0 de64e540 0
+          <idle>-0     [000]   541.940582: ath5k_tasklet_tx <-tasklet_action
+            ping-6394  [000]   541.957671: ath5k_tx_queue: phy0 de60d300 0
+            ping-6394  [000]   541.967663: ath5k_tx_queue: phy0 de644300 0
+            ping-6394  [000]   541.987640: ath5k_tx_queue: phy0 ddc60300 0
+            ping-6394  [000]   541.997631: ath5k_tx_queue: phy0 ddc60540 0
+            ping-6394  [000]   542.007628: ath5k_tx_queue: phy0 ddc60180 0
+            ping-6394  [000]   542.017628: ath5k_tx_queue: phy0 ddc609c0 0
+            ping-6394  [000]   542.037599: ath5k_tx_queue: phy0 ddc60a80 0
+            ping-6394  [000]   542.047590: ath5k_tx_queue: phy0 dddd2000 0
+            ping-6394  [000]   542.057582: ath5k_tx_queue: phy0 dddd2180 0
+            ping-6394  [000]   542.077560: ath5k_tx_queue: phy0 dddd2300 0
+            ping-6394  [000]   542.087554: ath5k_tx_queue: phy0 dddd23c0 0
+           olsrd-5533  [000]   543.125449: ath5k_tx_queue: phy0 ddc60900 0
+           olsrd-5533  [000]   544.926571: ath5k_tx_queue: phy0 dddd2840 0
+            phy0-572   [000]   545.740920: ath5k_tx_queue: phy0 de60d780 0
+            phy0-572   [000]   546.596377: ath5k_tx_queue: phy0 dddd26c0 0
+           olsrd-5533  [000]   546.627769: ath5k_tx_queue: phy0 dddd29c0 0
+            phy0-572   [000]   547.636062: ath5k_tx_queue: phy0 ddc5b3c0 0
+           olsrd-5533  [000]   548.478881: ath5k_tx_queue: phy0 de60da80 0
+            phy0-572   [000]   548.483493: ath5k_tx_queue: phy0 de64ea80 0
+           olsrd-5533  [000]   550.320165: ath5k_tx_queue: phy0 ddc60240 0
+            phy0-572   [000]   550.757855: ath5k_tx_queue: phy0 dddd2cc0 0
+           olsrd-5533  [000]   551.971249: ath5k_tx_queue: phy0 ddc60b40 0
+           olsrd-5533  [000]   553.572249: ath5k_tx_queue: phy0 ddc5be40 0
+           olsrd-5533  [000]   554.773080: ath5k_tx_queue: phy0 ddc5bd80 0
+           olsrd-5533  [000]   555.323488: ath5k_tx_queue: phy0 dddd2c00 0
+           olsrd-5533  [000]   557.124568: ath5k_tx_queue: phy0 dddd2e40 0
+           olsrd-5533  [000]   558.925912: ath5k_tx_queue: phy0 ddc5b480 0
+           olsrd-5533  [000]   560.677185: ath5k_tx_queue: phy0 de7f3a80 0
+           olsrd-5533  [000]   562.578477: ath5k_tx_queue: phy0 dddd2540 0
+           olsrd-5533  [000]   564.129561: ath5k_tx_queue: phy0 ddc60e40 0
+           olsrd-5533  [000]   564.279773: ath5k_tx_queue: phy0 ddc60480 0
+            phy0-572   [000]   564.658816: ath5k_tx_queue: phy0 ddc5ba80 0
+            phy0-572   [000]   564.663070: ath5k_tx_queue: phy0 ddc5b840 0
+          <idle>-0     [000]   564.746654: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.746674: ath5k_tx_processq: phy0 de64e540 0
+            ping-6394  [000]   564.758320: ath5k_tx_queue: phy0 ddc606c0 0
+          <idle>-0     [000]   564.769116: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.769135: ath5k_tx_processq: phy0 de60d300 0
+          <idle>-0     [000]   564.770066: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.770083: ath5k_tx_processq: phy0 de644300 0
+          <idle>-0     [000]   564.770266: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.770283: ath5k_tx_processq: phy0 ddc60300 0
+          <idle>-0     [000]   564.770430: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.770447: ath5k_tx_processq: phy0 ddc60540 0
+          <idle>-0     [000]   564.770593: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.770610: ath5k_tx_processq: phy0 ddc60180 0
+          <idle>-0     [000]   564.770823: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.770840: ath5k_tx_processq: phy0 ddc609c0 0
+          <idle>-0     [000]   564.771315: ath5k_tx_queue: phy0 de64e540 0
+          <idle>-0     [000]   564.771578: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.771595: ath5k_tx_processq: phy0 ddc60a80 0
+          <idle>-0     [000]   564.771767: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.771784: ath5k_tx_processq: phy0 dddd2000 0
+          <idle>-0     [000]   564.771932: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.771949: ath5k_tx_processq: phy0 dddd2180 0
+          <idle>-0     [000]   564.772070: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.772084: ath5k_tx_processq: phy0 dddd2300 0
+          <idle>-0     [000]   564.772229: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.772245: ath5k_tx_processq: phy0 dddd23c0 0
+          <idle>-0     [000]   564.773328: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.773339: ath5k_tx_processq: phy0 ddc60900 0
+          <idle>-0     [000]   564.774545: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.774562: ath5k_tx_processq: phy0 dddd2840 0
+            ping-6394  [000]   564.778059: ath5k_tx_queue: phy0 ddc5b540 0
+            ping-6394  [000]   564.798043: ath5k_tx_queue: phy0 ddc5b600 0
+            ping-6394  [000]   564.808024: ath5k_tx_queue: phy0 ddc5b900 0
+            ping-6394  [000]   564.818020: ath5k_tx_queue: phy0 ddc60c00 0
+            ping-6394  [000]   564.837999: ath5k_tx_queue: phy0 ddc60900 0
+            ping-6394  [000]   564.848025: ath5k_tx_queue: phy0 ddc60540 0
+          <idle>-0     [000]   564.864573: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.864593: ath5k_tx_processq: phy0 de60d780 0
+            ping-6394  [000]   564.867968: ath5k_tx_queue: phy0 dddd2a80 0
+            ping-6394  [000]   564.877956: ath5k_tx_queue: phy0 dddd2840 0
+            ping-6394  [000]   564.887948: ath5k_tx_queue: phy0 dddd2480 0
+            ping-6394  [000]   564.897940: ath5k_tx_queue: phy0 dddd2d80 0
+            ping-6394  [000]   564.907934: ath5k_tx_queue: phy0 dddd2300 0
+          <idle>-0     [000]   564.935372: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.935391: ath5k_tx_processq: phy0 dddd26c0 0
+          <idle>-0     [000]   564.936384: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.936401: ath5k_tx_processq: phy0 dddd29c0 0
+          <idle>-0     [000]   564.995886: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.995905: ath5k_tx_processq: phy0 ddc5b3c0 0
+          <idle>-0     [000]   564.996915: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   564.996932: ath5k_tx_processq: phy0 de60da80 0
+          <idle>-0     [000]   565.067418: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   565.067437: ath5k_tx_processq: phy0 de64ea80 0
+          <idle>-0     [000]   565.068607: ath5k_tasklet_tx <-tasklet_action
+          <idle>-0     [000]   565.068625: ath5k_tx_processq: phy0 ddc60240 0
+          <idle>-0     [000]   565.152734: ath5k_tx_queue: phy0 de60d3c0 0
+          <idle>-0     [000]   565.153272: ath5k_tx_queue: phy0 de60da80 0
+          <idle>-0     [000]   565.173628: ath5k_tx_queue: phy0 ddc60840 0
+          <idle>-0     [000]   565.748252: ath5k_tx_queue: phy0 de7f3540 0
+           olsrd-5533  [000]   566.081358: ath5k_tx_queue: phy0 ddc5b180 0
+          <idle>-0     [000]   566.747323: ath5k_tx_queue: phy0 de7f3900 0
+           olsrd-5533  [000]   567.982691: ath5k_tx_queue: phy0 de60d540 0
+            phy0-572   [000]   568.711699: ath5k_tx_queue: phy0 dddd2780 0
+            phy0-572   [000]   568.757144: ath5k_tx_queue: phy0 ddc60300 0
+            phy0-572   [000]   569.342248: ath5k_tx_queue: phy0 de7f3d80 0
+           olsrd-5533  [000]   569.533790: ath5k_tx_queue: phy0 ddc60d80 0
+           olsrd-5533  [000]   571.535118: ath5k_tx_queue: phy0 ddc60cc0 0
+           olsrd-5533  [000]   573.336410: ath5k_tx_queue: phy0 de7f3180 0
+           olsrd-5533  [000]   575.337783: ath5k_tx_queue: phy0 de7f3cc0 0
+           olsrd-5533  [000]   577.339052: ath5k_tx_queue: phy0 de7f3f00 0
+            phy0-572   [000]   578.344414: ath5k_tx_queue: phy0 dddd2b40 0
+            phy0-572   [000]   578.517772: ath5k_tx_queue: phy0 de7f3c00 0
+           olsrd-5533  [000]   579.090474: ath5k_tx_queue: phy0 ddc5bf00 0
+           olsrd-5533  [000]   580.891867: ath5k_tx_queue: phy0 de7f3600 0
+           olsrd-5533  [000]   582.493162: ath5k_tx_queue: phy0 ddc5b9c0 0
+            phy0-572   [000]   583.223783: ath5k_tx_queue: phy0 de64ea80 0
+           olsrd-5533  [000]   584.344546: ath5k_tx_queue: phy0 ddc5b000 0
+           olsrd-5533  [000]   586.245882: ath5k_tx_queue: phy0 ddc60a80 0
+           olsrd-5533  [000]   588.147240: ath5k_tx_queue: phy0 de7f3e40 0
+            phy0-572   [000]   589.613370: ath5k_tx_queue: phy0 de7f3240 0
+           olsrd-5533  [000]   590.148574: ath5k_tx_queue: phy0 ddc87180 0
+           olsrd-5533  [000]   591.799639: ath5k_tx_queue: phy0 ddc5bb40 0
+            phy0-572   [000]   593.339100: ath5k_tx_queue: phy0 de60d300 0
+           olsrd-5533  [000]   593.400723: ath5k_tx_queue: phy0 ddc87300 0

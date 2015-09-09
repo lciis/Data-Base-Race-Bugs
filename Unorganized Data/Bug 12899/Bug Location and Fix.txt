@@ -1,0 +1,17 @@
+Notes:
+	
+Proposed fix:	
+	diff --git a/drivers/gpu/drm/i915/i915_irq.c b/drivers/gpu/drm/i915/i915_irq.c
+	index 87b6b60..d7fe821 100644
+	--- a/drivers/gpu/drm/i915/i915_irq.c
+	+++ b/drivers/gpu/drm/i915/i915_irq.c
+	@@ -249,7 +249,7 @@ irqreturn_t i915_driver_irq_handler(DRM_IRQ_ARGS)
+	 
+	 		if (dev->primary->master) {
+	 			master_priv = dev->primary->master->driver_priv;
+	-			if (master_priv->sarea_priv)
+	+			if (master_priv->sarea_priv && dev_priv->hw_status_page)
+	 				master_priv->sarea_priv->last_dispatch =
+	 					READ_BREADCRUMB(dev_priv);
+	 		}
+		 

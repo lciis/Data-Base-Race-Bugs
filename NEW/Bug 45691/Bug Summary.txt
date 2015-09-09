@@ -1,0 +1,47 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=45691
+Component: Network
+Hardware: All Linux
+Reported: 2012-08-07 10:56 UTC
+Modified: 2012-09-06 15:53 UTC 
+Kernel Version: > 2.6.25
+Tree: Mainline
+Status: NEW
+
+Summary:
+	When massive amount of (false) late collisions occur (enc28j60 errata #13), there shows up a race condition bug:
+	1. xmit_start (enc28j60_send_packet) shadules new tx_work with given skb
+	2. false collision occur and enc28j60_irq is called. This schedules new irq_work.
+	3. irq_work handles TX error, clears skb buffer and wakes network queue.
+	In this point new xmit_start could happen and this shaduels new tx_work with new skbuff, but there could be pending EIR_TXIF with error set to ESTAT_TXABRT (see bellow why). When next loop of enc28j60_irq_work_handler handles ESTAT_TXABRT it clears tx_skb socket buffer allocated for tx_work and when tx_work gets finally called, it gives NULL pointer oops.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	BeginEnd 2012-08-07 10:56:06 UTC
+	Created attachment 77011 [details]
+	proposed patch - need verification
+
+	When massive amount of (false) late collisions occur (enc28j60 errata #13), there shows up a race condition bug:
+	1. xmit_start (enc28j60_send_packet) shadules new tx_work with given skb
+	2. false collision occur and enc28j60_irq is called. This schedules new irq_work.
+	3. irq_work handles TX error, clears skb buffer and wakes network queue.
+	In this point new xmit_start could happen and this shaduels new tx_work with new skbuff, but there could be pending EIR_TXIF with error set to ESTAT_TXABRT (see bellow why). When next loop of enc28j60_irq_work_handler handles ESTAT_TXABRT it clears tx_skb socket buffer allocated for tx_work and when tx_work gets finally called, it gives NULL pointer oops.
+
+	Proposed patch is to make two buffers one which is used for qued tx work and one which is used for packet that had been already send and can be safely cleared.
+
+	Second issue is that the ESTAT_TXABRT flag is not been cleared in ESTAT register automaticaly. This causes that every packet is always reported as aborted even if it had been send correctly. This issue cases thas race condition bug shows up.
+
+	Proposed patch: reset TX logic and clear ESTAT_TXABRT bit explicitly whenever any transmit error occurs.
+
+	Attached patch needs to be verified, especially lines:
+
+	priv->tx_skb_sent = priv->tx_skb_queued;
+	priv->tx_skb_queued = 0;
+
+	do this need some synchronizing with network queue?
+	Some branch prediction code adjustments had been also added.
+---------------------------------------------------------------------------
+	Alan 2012-09-06 15:53:04 UTC
+	Please see Documentation/SubmittingPatches and send a copy to netdev@vger.kernel.org for discussion
+
+Proposed Fix:
+	In ./Attachments/proposed patch - need verification

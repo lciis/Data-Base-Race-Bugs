@@ -1,0 +1,70 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=86231
+Component: network-wireless
+Hardware: All Linux
+Reported: 2014-10-14 10:11 UTC 
+Modified: 2014-11-03 13:31 UTC 
+Kernel Version: 3.17-rc7
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	If the RFkill interrupt fires while we calibrate, it would
+	make the firmware fail and the driver wasn't able to recover.
+	Change the flow so that the driver will kill the firmware
+	in that case.
+
+	Since we have now two flows that are calling
+	trans_stop_device (the RFkill interrupt and the
+	op_mode_mvm_start function) - we need to better sync this.
+	Use the STATUS_DEVICE_ENABLED in the pcie transport in an
+	atomic way to achieve this.
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	Ralf Jung 2014-10-14 10:11:17 UTC
+	Every once in a while, the wireless driver (iwlwifi) prints "Microcode SW error detected" during boot (I will attached a full dmesg). In this case, the wireless card is not detected properly, not shown by "ip addr" nor by NetworkManager. I never saw this appear with kernels up to 3.14, I see it fairly often with the 3.16 Debian kernel, and it still happens occasionally with 3.17-rc7 vanilla. Sometimes, it seems to be "stuck" in that state, so even booting into an older kernel, the error will still appear. No amount of cold-rebooting or even pulling out the battery will fix this.
+
+	In any case, I can run the command
+
+	  sudo modprobe -r iwlmvm && sudo modprobe -r iwlwifi && sudo modprobe iwlwifi
+
+	to make it load properly. This also seems to "reset" the "stuck" state. In other words, now doing a reboot to a 3.14 or older reliably brings the card up on boot. So the only time I saw this failure with <=3.14 on boot was if the same failure was already shown on the previous boot, and I did *not* re-load the module to fix that. With 3.16+, the bug can happen even if the previous boot was fine. That's why I consider this a regression.
+
+	I reported this bug against Debian as well, and another user seems to have the same issue: <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=763172>
+
+	Here's what lspci has to say about the card:
+
+	03:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
+			Subsystem: Intel Corporation Dual Band Wireless-AC 7260
+			Flags: bus master, fast devsel, latency 0, IRQ 34
+			Memory at ddc00000 (64-bit, non-prefetchable) [size=8K]
+			Capabilities: [c8] Power Management version 3
+			Capabilities: [d0] MSI: Enable+ Count=1/1 Maskable- 64bit+
+			Capabilities: [40] Express Endpoint, MSI 00
+			Capabilities: [100] Advanced Error Reporting
+			Capabilities: [140] Device Serial Number fc-f8-ae-ff-ff-51-88-9e
+			Capabilities: [14c] Latency Tolerance Reporting
+			Capabilities: [154] Vendor Specific Information: ID=cafe Rev=1 Len=014 <?>
+			Kernel driver in use: iwlwifi
+
+	The Debian package firmware-iwlwifi is at version 0.43 (whatever that means). Curiously, the dmesg says
+
+	[   12.055632] iwlwifi 0000:03:00.0: Direct firmware load for iwlwifi-7260-10.ucode failed with error -2
+	[   12.058021] iwlwifi 0000:03:00.0: loaded firmware version 23.214.9.0 op_mode iwlmvm
+
+	I assume this means that it didn't find the -10 ucode (which, according to <http://wireless.kernel.org/en/users/Drivers/iwlwifi>, is still experimental), and then falls back to the -9? The following ucodes for the 7260 exist on my disk:
+
+	$ ls /lib/firmware/iwlwifi-7260-* -l
+	-rw-r--r-- 1 root root 683236 Jun 16 01:51 /lib/firmware/iwlwifi-7260-7.ucode
+	-rw-r--r-- 1 root root 679780 Jun 16 01:51 /lib/firmware/iwlwifi-7260-8.ucode
+	-rw-r--r-- 1 root root 679380 Jun 16 01:51 /lib/firmware/iwlwifi-7260-9.ucode
+---------------------------------------------------------------------------
+	Emmanuel Grumbach 2014-11-03 13:31:30 UTC
+	Fix is now in my tree - will be sent in the next pull request.
+	Closing the bug.
+
+
+	https://git.kernel.org/cgit/linux/kernel/git/iwlwifi/iwlwifi-fixes.git/commit/?id=31b8b343e019e0a0c57ca9c13520a87f9cab884b
+
+Proposed Fix:
+	In ./Attachments/final fix - before review

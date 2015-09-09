@@ -1,0 +1,55 @@
+Asus EEE PC 1005P (the stable one)
+
+           CPU0       
+  0:        231   IO-APIC-edge      timer
+  1:          8   IO-APIC-edge      i8042
+  2:          0    XT-PIC-XT        cascade
+  8:          2   IO-APIC-edge      rtc0
+ 12:          4   IO-APIC-edge      i8042
+ 16:          0   IO-APIC-fasteoi   uhci_hcd:usb5
+ 17:       6015   IO-APIC-fasteoi   ath
+ 18:          0   IO-APIC-fasteoi   uhci_hcd:usb4
+ 19:          0   IO-APIC-fasteoi   uhci_hcd:usb3
+ 23:        196   IO-APIC-fasteoi   ehci_hcd:usb1, uhci_hcd:usb2
+ 24:          0   PCI-MSI-edge      pciehp
+ 25:          0   PCI-MSI-edge      pciehp
+ 26:          0   PCI-MSI-edge      pciehp
+ 28:        915   PCI-MSI-edge      ahci
+NMI:          0   Non-maskable interrupts
+LOC:      93713   Local timer interrupts
+SPU:          0   Spurious interrupts
+PMI:          0   Performance monitoring interrupts
+PND:          0   Performance pending work
+RES:          0   Rescheduling interrupts
+CAL:          0   Function call interrupts
+TLB:          0   TLB shootdowns
+ERR:          0
+MIS:          0
+--------
+
+Acer Apire One A110 (the buggy one)
+
+           CPU0       
+  0:        221    XT-PIC-XT        timer
+  1:          8    XT-PIC-XT        i8042
+  2:          0    XT-PIC-XT        cascade
+  8:        101    XT-PIC-XT        rtc0
+ 11:      12743    XT-PIC-XT        ath, ehci_hcd:usb1, uhci_hcd:usb2, uhci_hcd:usb3, uhci_hcd:usb4, uhci_hcd:usb5
+ 12:          1    XT-PIC-XT        i8042
+ 14:          0    XT-PIC-XT        ata_piix
+ 15:        987    XT-PIC-XT        ata_piix
+ 16:          0   PCI-MSI-edge      pciehp
+ 17:          0   PCI-MSI-edge      pciehp
+ 18:          0   PCI-MSI-edge      pciehp
+ 19:          0   PCI-MSI-edge      pciehp
+ 20:         38   PCI-MSI-edge      eth0
+NMI:          0   Non-maskable interrupts
+LOC:      19303   Local timer interrupts
+SPU:          0   Spurious interrupts
+PMI:          0   Performance monitoring interrupts
+PND:          0   Performance pending work
+RES:          0   Rescheduling interrupts
+CAL:          0   Function call interrupts
+TLB:          0   TLB shootdowns
+ERR:          0
+MIS:          0

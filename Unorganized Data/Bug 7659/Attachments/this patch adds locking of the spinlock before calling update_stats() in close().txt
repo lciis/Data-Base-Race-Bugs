@@ -1,0 +1,27 @@
+diff --git a/drivers/net/pcmcia/3c589_cs.c b/drivers/net/pcmcia/3c589_cs.c
+index 461e827..dc5d361 100644
+--- a/drivers/net/pcmcia/3c589_cs.c
++++ b/drivers/net/pcmcia/3c589_cs.c
+@@ -926,6 +926,7 @@ static int el3_close(struct net_device *dev)
+     struct el3_private *lp = netdev_priv(dev);
+     struct pcmcia_device *link = lp->p_dev;
+     kio_addr_t ioaddr = dev->base_addr;
++    unsigned long flags;
+     
+     DEBUG(1, "%s: shutting down ethercard.\n", dev->name);
+ 
+@@ -952,8 +953,12 @@ static int el3_close(struct net_device *dev)
+ 	outw(0x0f00, ioaddr + WN0_IRQ);
+         
+ 	/* Check if the card still exists */
+-	if ((inw(ioaddr+EL3_STATUS) & 0xe000) == 0x2000)
+-	    update_stats(dev);
++	if ((inw(ioaddr+EL3_STATUS) & 0xe000) == 0x2000) {
++		spin_lock_irqsave(&lp->lock, flags);
++		update_stats(dev);
++		spin_unlock_irqrestore(&lp->lock, flags);
++	}
++		
+     }
+ 
+     link->open--;

@@ -1,0 +1,13 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15294
+Component: Other
+Hardware: All Linux
+Reported: 2010-02-14 00:32 UTC 
+Modified: 2013-12-10 18:05 UTC
+Kernel Version: 2.6.32.7
+Tree: Mainline
+
+Summary:
+	There are Oops due to an apparent race between udev and a timeout in firmware_class.c
+
+
+

@@ -1,0 +1,32 @@
+udevadm monitor : hidp_get_raw_report patch applied so it aborts
+if the hidp_session is terminating
+
+KERNEL - the kernel uevent
+KERNEL[182.485731] change   /devices/platform/regulatory.0 (platform)
+KERNEL[184.588445] add      /devices/virtual/vc/vcs63 (vc)
+KERNEL[184.588470] add      /devices/virtual/vc/vcsa63 (vc)
+KERNEL[189.684462] remove   /devices/system/machinecheck/machinecheck1 (machinecheck)
+KERNEL[189.684511] add      /devices/system/machinecheck/machinecheck1 (machinecheck)
+KERNEL[189.684549] change   /devices/LNXSYSTM:00/device:00/ACPI0003:00/power_supply/AC (power_supply)
+KERNEL[189.684602] change   /devices/LNXSYSTM:00/device:00/PNP0C0A:00/power_supply/BAT0 (power_supply)
+KERNEL[189.684623] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:0/input10/event10 (input)
+KERNEL[189.684644] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/rfkill0 (rfkill)
+KERNEL[189.684673] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:0/input10 (input)
+KERNEL[189.684690] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0 (bluetooth)
+KERNEL[189.684710] remove   /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:0/0005:05AC:0256.0001/hidraw/hidraw0 (hidraw)
+KERNEL[189.684730] remove   /hci0/hci0:46:0/0005:05AC:0256.0001 (hid)
+KERNEL[189.684745] remove   /hci0/hci0:46:0 (bluetooth)
+KERNEL[189.684761] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0 (bluetooth)
+KERNEL[189.684778] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/rfkill2 (rfkill)
+KERNEL[189.711636] remove   /devices/LNXSYSTM:00/device:00/PNP0C0A:00/power_supply/BAT0 (power_supply)
+KERNEL[189.712038] add      /devices/LNXSYSTM:00/device:00/PNP0C0A:00/power_supply/BAT0 (power_supply)
+KERNEL[189.712072] change   /devices/LNXSYSTM:00/device:00/PNP0C0A:00/power_supply/BAT0 (power_supply)
+KERNEL[192.802848] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:1 (bluetooth)
+KERNEL[193.051143] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:1/0005:05AC:0256.0002 (hid)
+KERNEL[193.096699] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:1/input11 (input)
+KERNEL[193.097420] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:1/input11/event10 (input)
+KERNEL[193.097467] add      /devices/pci0000:00/0000:00:1a.0/usb3/3-2/3-2:1.0/bluetooth/hci0/hci0:46:1/0005:05AC:0256.0002/hidraw/hidraw0 (hidraw)
+
+
+This log shows the input/event devices are removed before the hci0 device, but the hci_conn is still not removed in time
+because of the code race

@@ -1,0 +1,12 @@
+diff -Nurp 1/linux-2.6.31/drivers/base/firmware_class.c linux/linux-2.6.31/drivers/base/firmware_class.c
+--- ./drivers/base/firmware_class.c	2009-09-16 14:17:45.000000000 +0200
++++ ./drivers/base/firmware_class.c	2009-09-16 14:20:46.000000000 +0200
+@@ -171,6 +172,8 @@ static ssize_t firmware_loading_store(st
+ 		break;
+ 	case 0:
+ 		if (test_bit(FW_STATUS_LOADING, &fw_priv->status)) {
++			/* http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=6e03a201bbe8137487f340d26aa662110e324b20 */
++			BUG_ON(fw_priv->fw == NULL);
+ 			vfree(fw_priv->fw->data);
+ 			fw_priv->fw->data = vmap(fw_priv->pages,
+ 						 fw_priv->nr_pages,

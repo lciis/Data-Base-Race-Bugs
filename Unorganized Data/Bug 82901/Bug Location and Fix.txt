@@ -1,0 +1,5 @@
+Notes:
+	-This bug does not present on a recent kernel. 
+
+Proposed fix:
+	call (wl1271_plt_stop) instead of (__wl1271_plt_stop) in function (wl1271_unregister_hw) in file (http://lxr.free-electrons.com/source/drivers/net/wireless/wl12xx/main.c?v=3.2#L4650).

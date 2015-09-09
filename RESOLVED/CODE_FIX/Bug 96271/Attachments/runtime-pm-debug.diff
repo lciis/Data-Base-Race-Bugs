@@ -1,0 +1,43 @@
+diff --git a/sound/hda/hdac_device.c b/sound/hda/hdac_device.c
+index d4a0e723af2c..026b1f71e2bc 100644
+--- a/sound/hda/hdac_device.c
++++ b/sound/hda/hdac_device.c
+@@ -501,6 +501,8 @@ void snd_hdac_power_up(struct hdac_device *codec)
+ {
+ 	struct device *dev = &codec->dev;
+ 
++	pr_info("XXX in_pm=%d, count=%d\n", atomic_read(&codec->in_pm),
++		atomic_read(&dev->power.usage_count));
+ 	if (atomic_read(&codec->in_pm))
+ 		return;
+ 	pm_runtime_get_sync(dev);
+@@ -515,6 +517,8 @@ void snd_hdac_power_down(struct hdac_device *codec)
+ {
+ 	struct device *dev = &codec->dev;
+ 
++	pr_info("XXX in_pm=%d, count=%d\n", atomic_read(&codec->in_pm),
++		atomic_read(&dev->power.usage_count));
+ 	if (atomic_read(&codec->in_pm))
+ 		return;
+ 	pm_runtime_mark_last_busy(dev);
+diff --git a/sound/pci/hda/hda_codec.h b/sound/pci/hda/hda_codec.h
+index acf868c6a785..f21a1c35b965 100644
+--- a/sound/pci/hda/hda_codec.h
++++ b/sound/pci/hda/hda_codec.h
+@@ -507,8 +507,14 @@ const char *snd_hda_get_jack_location(u32 cfg);
+ /*
+  * power saving
+  */
+-#define snd_hda_power_up(codec)		snd_hdac_power_up(&(codec)->core)
+-#define snd_hda_power_down(codec)	snd_hdac_power_down(&(codec)->core)
++#define snd_hda_power_up(codec)		do { \
++	dev_info(hda_codec_dev(codec), "XXX power_up %s:%d\n", __FILE__, __LINE__); \
++	snd_hdac_power_up(&(codec)->core); \
++	} while (0)
++#define snd_hda_power_down(codec)	do { \
++	dev_info(hda_codec_dev(codec), "XXX power_down %s:%d\n", __FILE__, __LINE__); \
++	snd_hdac_power_down(&(codec)->core); \
++	} while (0)
+ #ifdef CONFIG_PM
+ void snd_hda_set_power_save(struct hda_bus *bus, int delay);
+ void snd_hda_update_power_acct(struct hda_codec *codec);

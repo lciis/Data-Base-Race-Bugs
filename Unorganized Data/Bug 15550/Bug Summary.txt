@@ -1,0 +1,10 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15550
+Component: Video(DRI-Intel)
+Hardware: All Linux
+Reported: 2010-03-16 20:19 UTC 
+Modified: 2013-04-09 06:23 UTC 
+Kernel Version: 2.6.34-rc4
+Tree: Mainline
+
+Summary:
+	When the LID is closed and then opened, the display sometimes stops working and kacpi_notify uses 100% CPU forever. The reboot seems to be needed to fix the problem. It seems like a race condition between the intel_lid_notify in intel_lvds.c and something the BIOS (or any other component)

@@ -1,0 +1,61 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=43187
+Component: network-wireless
+Hardware: All Linux
+Reported: 2012-05-01 12:51 UTC 
+Modified: 2012-08-12 09:33 UTC
+Kernel Version: 3.3.1-3.3.4
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	In commit b0302ab, the rtlwifi family of drivers was converted to use
+asynchronous firmware loading. Unfortumately, the implementation was
+racy, and the ieee80211 routines could be started before rtl_init_core()
+was called to setup the data.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Lucas Treffenstädt 2012-05-01 12:51:30 UTC
+	After updating to the 3.3.1 kernel, my wifi card cannot be used anymore because the firmware loading fails, see dmesg:
+
+	[    6.599003] Pid: 812, comm: firmware/rtlwif Not tainted 3.3.1-gentoo #3
+	[    6.599005] Call Trace:
+	[    6.599013]  [<ffffffff8102ae06>] warn_slowpath_common+0x7e/0x96
+	[    6.599017]  [<ffffffff8102ae33>] warn_slowpath_null+0x15/0x17
+	[    6.599021]  [<ffffffff8147320e>] wiphy_register+0x56/0x3dc
+	[    6.599027]  [<ffffffff810cb8d7>] ? __kmalloc+0xbf/0xcf
+	[    6.599031]  [<ffffffff8148c269>] ieee80211_register_hw+0x37a/0x5a2
+	[    6.599035]  [<ffffffff81311230>] rtl_fw_cb+0x145/0x1c0
+	[    6.599040]  [<ffffffff812d1f6f>] ? request_firmware_nowait+0x19d/0x19d
+	[    6.599044]  [<ffffffff812d1fbe>] request_firmware_work_func+0x4f/0x6d
+	[    6.599048]  [<ffffffff810451b7>] kthread+0x86/0x8e
+	[    6.599053]  [<ffffffff814de7f4>] kernel_thread_helper+0x4/0x10
+	[    6.599056]  [<ffffffff81045131>] ? kthread_freezable_should_stop+0x3e/0x3e
+	[    6.599060]  [<ffffffff814de7f0>] ? gs_change+0xb/0xb
+	[    6.599062] ---[ end trace 61bc4bb270a47404 ]---
+	[    6.599066] rtlwifi:rtl_fw_cb():<0-0> Can't register mac80211 hw
+
+	I'm using firmware from the rtl_92ce_92se_92de_linux_mac80211_0005.1230.2011 package provided by realtek. The same file works fine in 3.3.0, so I guess this is related to the switch to asyncronous firmware loading in 3.3.1. (see http://www.kernel.org/pub/linux/kernel/v3.0/ChangeLog-3.3.1 )
+
+	I'm using the gentoo and bfs patches.
+---------------------------------------------------------------------------
+	Larry Finger 2012-05-03 18:42:04 UTC
+	Created attachment 73167 [details]
+	Trial patch for incorrect initialization - #2
+
+	Please try this one. The current thinking is that there is a racy condition that shows up when the driver is loaded with the firmware cached that causes the initialization to be done in the wrong order.
+
+	This one does not fail on bootup. I have no idea if it fixes the other problem as I still have not duplicated it.
+---------------------------------------------------------------------------
+	Florian Mickler 2012-07-01 09:44:41 UTC
+	A patch referencing this bug report has been merged in Linux v3.4:
+
+	commit 574e02abaf816b582685805f0c1150ca9f1f18ee
+	Author: Larry Finger <Larry.Finger@lwfinger.net>
+	Date:   Fri May 4 08:27:43 2012 -0500
+
+		rtlwifi: fix for race condition when firmware is cached
+---------------------------------------------------------------------------
+	
+Proposed Fix:
+	In ./Attachments/Trial patch for incorrect initialization - #2

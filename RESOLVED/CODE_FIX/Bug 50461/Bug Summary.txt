@@ -1,0 +1,53 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=50461
+Component: Sound(ALSA)
+Hardware: All Linux
+Reported: 2012-11-13 03:13 UTC
+Modified: 2013-11-13 17:28 UTC
+Kernel Version: 3.6.6
+Tree: Mainline
+Status: RESOLVED CODE_FIX
+
+Summary:
+	Reproducible hard lockup when recording from USB mic and playing through snd_hda_intel. The cause is unclear, but it causes a lockup behavior. Thus, It may be a race.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Sami Liedes 2012-11-13 03:13:55 UTC
+	[copying to Greg as this might turn out to be a USB bug, not an ALSA bug]
+
+	System: Debian unstable (x86-64 kernel and userland), mainline 3.6.6 kernel
+
+	Marking as regression as I've never seen this on 3.4.x and downwards that I previously used. There has been some erratic behavior before -- that I have ascribed to the crappiness of Audacity, the recording software -- but hard lockups never. So whatever race (I guess) causes this might be old, but the lockup behavior is new.
+
+	Hardware: Blue Snowball USB Microphone; Asus P8P67 EVO motherboard with Intel hda audio.
+
+	What I do:
+
+	1. Start audacity (the audio piece of software)
+	2. Edit->Preferences, configure recording device as Blue Snowball, one channel, and playback device as HDA Intel PCH: ALC892 Analog. In Recording section, enable "Software Playthrough: Listen while recording or monitoring new track".
+	3. Start recording.
+
+	One of several things happen at random:
+
+	3a. The recording starts and works nicely. The recorded audio is played through the HDA soundcard.
+
+	3b. The recording seems to start, but jams immediately. The system remains responsive and the recording can be stopped. Evidently audacity just doesn't get any samples from the USB mic.
+
+	3c. The recording seems to start, but the samples received are bogus. The bogus samples are played through the HDA soundcard, making quite a noise.
+
+	3d. The entire system freezes immediately. The USB keyboard stops working. The system does not respond to pings via the motherboard's network card.
+
+	I have now repeated this test three times, and each time it was easy to reproduce the hard lockup. The last time I had a netconsole running, and I have a backtrace for you (below). If you want me to do any further debugging or testing, I'll be happy to be of help.
+	...
+---------------------------------------------------------------------------
+	Sami Liedes 2012-11-13 21:23:27 UTC
+	Yup, it seems I cannot reproduce the lockup under 3.7-rc5.
+
+	After some torturing like starting and stopping recording with playthrough 50ish times, I did get this in my dmesg though (at the same time, audacity hung, but after killing and restarting it it works again):
+
+	[  392.909008] hda-intel: Unstable LPIB (352798 >= 176400); disabling LPIB delay counting
+		
+---------------------------------------------------------------------------
+	
+Proposed Fix:
+	The bug seemed to be unreproducible in the current kernel. 

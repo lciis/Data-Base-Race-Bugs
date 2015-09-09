@@ -1,0 +1,106 @@
+Module                  Size  Used by
+ipv6                  282444  26 
+rfcomm                 35403  6 
+sco                     8472  2 
+bridge                 47453  0 
+stp                     1584  1 bridge
+llc                     3721  2 bridge,stp
+bnep                    8954  2 
+l2cap                  32905  16 rfcomm,bnep
+cpufreq_ondemand        8085  4 
+tun                    12783  1 
+ext3                  125620  1 
+jbd                    47454  1 ext3
+joydev                  9800  0 
+evdev                   8889  14 
+btusb                  11500  2 
+bluetooth              51104  9 rfcomm,sco,bnep,l2cap,btusb
+uvcvideo               60311  0 
+videodev               38427  1 uvcvideo
+v4l1_compat            15610  2 uvcvideo,videodev
+arc4                    1354  2 
+v4l2_compat_ioctl32    10385  1 videodev
+ecb                     2017  2 
+snd_seq_dummy           1439  0 
+snd_seq_oss            28991  0 
+snd_seq_midi_event      5316  1 snd_seq_oss
+tpm_infineon            8395  0 
+snd_seq                50397  5 snd_seq_dummy,snd_seq_oss,snd_seq_midi_event
+snd_seq_device          5181  3 snd_seq_dummy,snd_seq_oss,snd_seq
+snd_hda_codec_intelhdmi    15644  1 
+snd_pcm_oss            39171  0 
+ath9k                  72802  0 
+ath9k_common            2457  1 ath9k
+snd_mixer_oss          17075  1 snd_pcm_oss
+snd_hda_codec_realtek   258488  1 
+mac80211              171665  2 ath9k,ath9k_common
+snd_hda_intel          22514  1 
+ath9k_hw              218482  2 ath9k,ath9k_common
+snd_hda_codec          68493  3 snd_hda_codec_intelhdmi,snd_hda_codec_realtek,snd_hda_intel
+sdhci_pci               6755  0 
+sdhci                  16129  1 sdhci_pci
+ath                     8732  2 ath9k,ath9k_hw
+snd_hwdep               6244  1 snd_hda_codec
+sr_mod                 14851  0 
+kvm_intel              43331  0 
+ehci_hcd               35242  0 
+tpm_tis                 8125  0 
+snd_pcm                70254  3 snd_pcm_oss,snd_hda_intel,snd_hda_codec
+snd_timer              18895  2 snd_seq,snd_pcm
+iTCO_wdt                9157  0 
+psmouse                53750  0 
+tpm                    11357  2 tpm_infineon,tpm_tis
+mmc_core               52140  1 sdhci
+kvm                   274068  1 kvm_intel
+e1000e                128827  0 
+snd                    57453  14 snd_seq_oss,snd_seq,snd_seq_device,snd_hda_codec_intelhdmi,snd_pcm_oss,snd_mixer_oss,snd_hda_codec_realtek,snd_hda_intel,snd_hda_codec,snd_hwdep,snd_pcm,snd_timer
+toshiba_bluetooth       1914  0 
+toshiba_acpi            7226  0 
+cdrom                  35938  1 sr_mod
+tpm_bios                5481  1 tpm
+cfg80211              126595  4 ath9k,ath9k_common,mac80211,ath
+iTCO_vendor_support     1873  1 iTCO_wdt
+usbcore               144668  4 btusb,uvcvideo,ehci_hcd
+soundcore               6223  1 snd
+snd_page_alloc          7097  2 snd_hda_intel,snd_pcm
+container               2437  0 
+rfkill                 15364  4 bluetooth,toshiba_acpi,cfg80211
+led_class               2609  2 ath9k,sdhci
+acpi_cpufreq            6507  0 
+pcspkr                  1827  0 
+serio_raw               4536  0 
+sg                     25435  0 
+ac                      3091  0 
+thermal                12090  0 
+battery                 9580  0 
+freq_table              2395  2 cpufreq_ondemand,acpi_cpufreq
+processor              29856  5 acpi_cpufreq
+rtc_cmos                8990  0 
+rtc_core               14407  1 rtc_cmos
+rtc_lib                 1842  1 rtc_core
+fpu                     2456  1 
+aesni_intel            12110  5 
+cryptd                  6182  2 aesni_intel
+aes_x86_64              7388  1 aesni_intel
+aes_generic            26306  2 aesni_intel,aes_x86_64
+xts                     2437  1 
+gf128mul                6602  1 xts
+dm_crypt               11827  1 
+dm_mod                 64243  16 dm_crypt
+sd_mod                 27035  3 
+ahci                   35025  2 
+libata                154415  1 ahci
+scsi_mod               94580  4 sr_mod,sg,sd_mod,libata
+ext4                  329491  3 
+mbcache                 5658  2 ext3,ext4
+jbd2                   75684  1 ext4
+crc16                   1273  2 l2cap,ext4
+i915                  291612  2 
+drm_kms_helper         23689  1 i915
+drm                   160060  3 i915,drm_kms_helper
+i2c_algo_bit            5031  1 i915
+button                  4746  1 i915
+i2c_core               17842  5 videodev,i915,drm_kms_helper,drm,i2c_algo_bit
+video                  18736  1 i915
+output                  1916  1 video
+intel_agp              27961  1 

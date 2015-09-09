@@ -1,0 +1,41 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=33792
+Component: Sound(ALSA)
+Hardware: All Linux
+Reported: 2011-04-21 17:30 UTC 
+Modified: 2013-11-13 17:31 UTC 
+Kernel Version: 2.6.39-rc4
+Tree: Mainline
+Status:	RESOLVED CODE_FIX
+
+Summary:
+	This trace is discovered when NuForce uDAC is unplugged.
+		[ INFO: possible circular locking dependency detected ]
+		2.6.39-rc4+ #9
+		-------------------------------------------------------
+		khubd/21 is trying to acquire lock:
+		 (register_mutex#4){+.+.+.}, at: [<ffffffffa02f87e4>] \
+		snd_pcm_dev_disconnect+0x1e/0xdd [snd_pcm]
+
+		but task is already holding lock:
+		 (&chip->shutdown_mutex){+.+.+.}, at: [<ffffffffa03541fc>] \
+		usb_audio_disconnect+0x4a/0x172 [snd_usb_audio]
+
+		which lock already depends on the new lock.
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	Maciej Rutecki 2011-04-21 17:30:43 UTC
+	Subject    : lockdep trace when unplugging usb audio (.39rc4)
+	Submitter  : Dave Jones <davej@redhat.com>
+	Date       : 2011-04-19 18:07
+	Message-ID : 20110419180745.GA438@redhat.com
+	References : http://marc.info/?l=linux-kernel&m=130323648920431&w=2
+
+	This entry is being used for tracking a regression from 2.6.38. Please don't
+	close it until the problem is fixed in the mainline.
+---------------------------------------------------------------------------	
+	Takashi Iwai 2013-11-13 17:31:36 UTC
+	The race must have been already fixed in the upstream.
+
+Proposed Fix:
+	The bug seems to be already fixed, but the patch is not provided.

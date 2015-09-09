@@ -1,0 +1,1066 @@
+Nov 14 19:20:35 montag kernel: imklog 4.4.2, log source = /proc/kmsg started.
+Nov 14 19:20:35 montag kernel: [    0.000000] Linux version 2.6.32-rc7 (rm@montag) (gcc version 4.3.4 (Debian 4.3.4-6) ) #15 SMP PREEMPT Sat Nov 14 17:02:42 CET 2009
+Nov 14 19:20:35 montag kernel: [    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-2.6.32-rc7 root=UUID=770e4e60-f57b-4299-a18d-ed558a68d750 ro quiet
+Nov 14 19:20:35 montag kernel: [    0.000000] KERNEL supported cpus:
+Nov 14 19:20:35 montag kernel: [    0.000000]   Intel GenuineIntel
+Nov 14 19:20:35 montag kernel: [    0.000000]   AMD AuthenticAMD
+Nov 14 19:20:35 montag kernel: [    0.000000]   Centaur CentaurHauls
+Nov 14 19:20:35 montag kernel: [    0.000000] BIOS-provided physical RAM map:
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 0000000000000000 - 000000000009e400 (usable)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 000000000009e400 - 00000000000a0000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000000d6000 - 00000000000d8000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000000dc000 - 0000000000100000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 0000000000100000 - 00000000bd6a1000 (usable)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bd6a1000 - 00000000bd6a7000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bd6a7000 - 00000000bd7bd000 (usable)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bd7bd000 - 00000000bd80f000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bd80f000 - 00000000bd908000 (usable)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bd908000 - 00000000bdb0f000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bdb0f000 - 00000000bdb19000 (usable)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bdb19000 - 00000000bdb1f000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bdb1f000 - 00000000bdb64000 (usable)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bdb64000 - 00000000bdb9f000 (ACPI NVS)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bdb9f000 - 00000000bdc00000 (ACPI data)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000bdc00000 - 00000000bde00000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000be000000 - 00000000c0000000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000e0000000 - 00000000f0000000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000fec00000 - 00000000fec10000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000fed00000 - 00000000fed00400 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000fed10000 - 00000000fed14000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000fed18000 - 00000000fed1a000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000fed1c000 - 00000000fed90000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000]  BIOS-e820: 00000000ff800000 - 0000000100000000 (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000] DMI present.
+Nov 14 19:20:35 montag kernel: [    0.000000] Phoenix BIOS detected: BIOS may corrupt low RAM, working around it.
+Nov 14 19:20:35 montag kernel: [    0.000000] e820 update range: 0000000000000000 - 0000000000010000 (usable) ==> (reserved)
+Nov 14 19:20:35 montag kernel: [    0.000000] last_pfn = 0xbdb64 max_arch_pfn = 0x400000000
+Nov 14 19:20:35 montag kernel: [    0.000000] MTRR default type: uncachable
+Nov 14 19:20:35 montag kernel: [    0.000000] MTRR fixed ranges enabled:
+Nov 14 19:20:35 montag kernel: [    0.000000]   00000-9FFFF write-back
+Nov 14 19:20:35 montag kernel: [    0.000000]   A0000-BFFFF uncachable
+Nov 14 19:20:35 montag kernel: [    0.000000]   C0000-FFFFF write-protect
+Nov 14 19:20:35 montag kernel: [    0.000000] MTRR variable ranges enabled:
+Nov 14 19:20:35 montag kernel: [    0.000000]   0 base 0BE000000 mask FFE000000 uncachable
+Nov 14 19:20:35 montag kernel: [    0.000000]   1 base 000000000 mask F80000000 write-back
+Nov 14 19:20:35 montag kernel: [    0.000000]   2 base 080000000 mask FC0000000 write-back
+Nov 14 19:20:35 montag kernel: [    0.000000]   3 disabled
+Nov 14 19:20:35 montag kernel: [    0.000000]   4 disabled
+Nov 14 19:20:35 montag kernel: [    0.000000]   5 disabled
+Nov 14 19:20:35 montag kernel: [    0.000000]   6 disabled
+Nov 14 19:20:35 montag kernel: [    0.000000] x86 PAT enabled: cpu 0, old 0x7040600070406, new 0x7010600070106
+Nov 14 19:20:35 montag kernel: [    0.000000] initial memory mapped : 0 - 20000000
+Nov 14 19:20:35 montag kernel: [    0.000000] init_memory_mapping: 0000000000000000-00000000bdb64000
+Nov 14 19:20:35 montag kernel: [    0.000000]  0000000000 - 00bda00000 page 2M
+Nov 14 19:20:35 montag kernel: [    0.000000]  00bda00000 - 00bdb64000 page 4k
+Nov 14 19:20:35 montag kernel: [    0.000000] kernel direct mapping tables up to bdb64000 @ 10000-15000
+Nov 14 19:20:35 montag kernel: [    0.000000] RAMDISK: 37c5c000 - 37fef10e
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: RSDP 00000000000f7150 00024 (v02 PTLTD )
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: XSDT 00000000bdbf700e 00074 (v01 SECCSD LH43STAR 06040000  LTP 00000000)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: FACP 00000000bdbe7000 000F4 (v03 INTEL  CRESTLNE 06040000 ALAN 00000001)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: DSDT 00000000bdbe8000 07AE1 (v02 Intel  CANTIGA  06040000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: FACS 00000000bdb9efc0 00040
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: HPET 00000000bdbfed86 00038 (v01 INTEL  CRESTLNE 06040000 LOHR 0000005A)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: MCFG 00000000bdbfedbe 0003C (v01 INTEL  CRESTLNE 06040000 LOHR 0000005A)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: APIC 00000000bdbfedfa 00068 (v01 PTLTD  ? APIC   06040000  LTP 00000000)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: BOOT 00000000bdbfee62 00028 (v01 PTLTD  $SBFTBL$ 06040000  LTP 00000001)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: SLIC 00000000bdbfee8a 00176 (v01 SECCSD LH43STAR 06040000  LTP 00000000)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: SSDT 00000000bdbf70aa 00093 (v01 BrtRef  DD01BRT 00001000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: SSDT 00000000bdbe6000 005F9 (v01  PmRef    CpuPm 00003000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: SSDT 00000000bdbe5000 00259 (v01  PmRef  Cpu0Tst 00003000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: SSDT 00000000bdbe4000 0020F (v01  PmRef    ApTst 00003000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: Local APIC address 0xfee00000
+Nov 14 19:20:35 montag kernel: [    0.000000] (7 early reservations) ==> bootmem [0000000000 - 00bdb64000]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #0 [0000000000 - 0000001000]   BIOS data page ==> [0000000000 - 0000001000]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #1 [0000006000 - 0000008000]       TRAMPOLINE ==> [0000006000 - 0000008000]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #2 [0001000000 - 000159cbe4]    TEXT DATA BSS ==> [0001000000 - 000159cbe4]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #3 [0037c5c000 - 0037fef10e]          RAMDISK ==> [0037c5c000 - 0037fef10e]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #4 [000009e400 - 0000100000]    BIOS reserved ==> [000009e400 - 0000100000]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #5 [000159d000 - 000159d1e0]              BRK ==> [000159d000 - 000159d1e0]
+Nov 14 19:20:35 montag kernel: [    0.000000]   #6 [0000010000 - 0000013000]          PGTABLE ==> [0000010000 - 0000013000]
+Nov 14 19:20:35 montag kernel: [    0.000000] found SMP MP-table at [ffff8800000f71f0] f71f0
+Nov 14 19:20:35 montag kernel: [    0.000000]  [ffffea0000000000-ffffea00029fffff] PMD -> [ffff880001a00000-ffff8800043fffff] on node 0
+Nov 14 19:20:35 montag kernel: [    0.000000] Zone PFN ranges:
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA      0x00000010 -> 0x00001000
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA32    0x00001000 -> 0x00100000
+Nov 14 19:20:35 montag kernel: [    0.000000]   Normal   0x00100000 -> 0x00100000
+Nov 14 19:20:35 montag kernel: [    0.000000] Movable zone start PFN for each node
+Nov 14 19:20:35 montag kernel: [    0.000000] early_node_map[6] active PFN ranges
+Nov 14 19:20:35 montag kernel: [    0.000000]     0: 0x00000010 -> 0x0000009e
+Nov 14 19:20:35 montag kernel: [    0.000000]     0: 0x00000100 -> 0x000bd6a1
+Nov 14 19:20:35 montag kernel: [    0.000000]     0: 0x000bd6a7 -> 0x000bd7bd
+Nov 14 19:20:35 montag kernel: [    0.000000]     0: 0x000bd80f -> 0x000bd908
+Nov 14 19:20:35 montag kernel: [    0.000000]     0: 0x000bdb0f -> 0x000bdb19
+Nov 14 19:20:35 montag kernel: [    0.000000]     0: 0x000bdb1f -> 0x000bdb64
+Nov 14 19:20:35 montag kernel: [    0.000000] On node 0 totalpages: 776333
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA zone: 56 pages used for memmap
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA zone: 103 pages reserved
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA zone: 3823 pages, LIFO batch:0
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA32 zone: 10568 pages used for memmap
+Nov 14 19:20:35 montag kernel: [    0.000000]   DMA32 zone: 761783 pages, LIFO batch:31
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: PM-Timer IO Port: 0x408
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: Local APIC address 0xfee00000
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: LAPIC (acpi_id[0x01] lapic_id[0x01] enabled)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: LAPIC_NMI (acpi_id[0x00] high edge lint[0x1])
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: LAPIC_NMI (acpi_id[0x01] high edge lint[0x1])
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: IOAPIC (id[0x02] address[0xfec00000] gsi_base[0])
+Nov 14 19:20:35 montag kernel: [    0.000000] IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 high edge)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: IRQ0 used by override.
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: IRQ2 used by override.
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: IRQ9 used by override.
+Nov 14 19:20:35 montag kernel: [    0.000000] Using ACPI (MADT) for SMP configuration information
+Nov 14 19:20:35 montag kernel: [    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+Nov 14 19:20:35 montag kernel: [    0.000000] SMP: Allowing 2 CPUs, 0 hotplug CPUs
+Nov 14 19:20:35 montag kernel: [    0.000000] nr_irqs_gsi: 24
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 000000000009e000 - 000000000009f000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 000000000009f000 - 00000000000a0000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000000a0000 - 00000000000d6000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000000d6000 - 00000000000d8000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000000d8000 - 00000000000dc000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000000dc000 - 0000000000100000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000bd6a1000 - 00000000bd6a7000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000bd7bd000 - 00000000bd80f000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000bd908000 - 00000000bdb0f000
+Nov 14 19:20:35 montag kernel: [    0.000000] PM: Registered nosave memory: 00000000bdb19000 - 00000000bdb1f000
+Nov 14 19:20:35 montag kernel: [    0.000000] Allocating PCI resources starting at c0000000 (gap: c0000000:20000000)
+Nov 14 19:20:35 montag kernel: [    0.000000] NR_CPUS:2 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+Nov 14 19:20:35 montag kernel: [    0.000000] PERCPU: Embedded 27 pages/cpu @ffff880001600000 s78552 r8192 d23848 u1048576
+Nov 14 19:20:35 montag kernel: [    0.000000] pcpu-alloc: s78552 r8192 d23848 u1048576 alloc=1*2097152
+Nov 14 19:20:35 montag kernel: [    0.000000] pcpu-alloc: [0] 0 1 
+Nov 14 19:20:35 montag kernel: [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 765606
+Nov 14 19:20:35 montag kernel: [    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-2.6.32-rc7 root=UUID=770e4e60-f57b-4299-a18d-ed558a68d750 ro quiet
+Nov 14 19:20:35 montag kernel: [    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+Nov 14 19:20:35 montag kernel: [    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+Nov 14 19:20:35 montag kernel: [    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+Nov 14 19:20:35 montag kernel: [    0.000000] Initializing CPU#0
+Nov 14 19:20:35 montag kernel: [    0.000000] Checking aperture...
+Nov 14 19:20:35 montag kernel: [    0.000000] No AGP bridge found
+Nov 14 19:20:35 montag kernel: [    0.000000] Memory: 3045620k/3108240k available (2853k kernel code, 2908k absent, 58984k reserved, 1844k data, 412k init)
+Nov 14 19:20:35 montag kernel: [    0.000000] Hierarchical RCU implementation.
+Nov 14 19:20:35 montag kernel: [    0.000000] NR_IRQS:320
+Nov 14 19:20:35 montag kernel: [    0.000000] Extended CMOS year: 2000
+Nov 14 19:20:35 montag kernel: [    0.000000] Console: colour VGA+ 80x25
+Nov 14 19:20:35 montag kernel: [    0.000000] console [tty0] enabled
+Nov 14 19:20:35 montag kernel: [    0.000000] hpet clockevent registered
+Nov 14 19:20:35 montag kernel: [    0.000000] HPET: 4 timers in total, 0 timers will be used for per-cpu timer
+Nov 14 19:20:35 montag kernel: [    0.000000] Fast TSC calibration using PIT
+Nov 14 19:20:35 montag kernel: [    0.000000] Detected 1995.297 MHz processor.
+Nov 14 19:20:35 montag kernel: [    0.004006] Calibrating delay loop (skipped), value calculated using timer frequency.. 3990.59 BogoMIPS (lpj=7981188)
+Nov 14 19:20:35 montag kernel: [    0.004053] Security Framework initialized
+Nov 14 19:20:35 montag kernel: [    0.004075] Mount-cache hash table entries: 256
+Nov 14 19:20:35 montag kernel: [    0.004211] CPU: L1 I cache: 32K, L1 D cache: 32K
+Nov 14 19:20:35 montag kernel: [    0.004214] CPU: L2 cache: 3072K
+Nov 14 19:20:35 montag kernel: [    0.004216] CPU: Physical Processor ID: 0
+Nov 14 19:20:35 montag kernel: [    0.004218] CPU: Processor Core ID: 0
+Nov 14 19:20:35 montag kernel: [    0.004221] mce: CPU supports 6 MCE banks
+Nov 14 19:20:35 montag kernel: [    0.004228] CPU0: Thermal monitoring enabled (TM2)
+Nov 14 19:20:35 montag kernel: [    0.004232] using mwait in idle threads.
+Nov 14 19:20:35 montag kernel: [    0.004233] Performance Events: Core2 events, Intel PMU driver.
+Nov 14 19:20:35 montag kernel: [    0.004239] ... version:                2
+Nov 14 19:20:35 montag kernel: [    0.004240] ... bit width:              40
+Nov 14 19:20:35 montag kernel: [    0.004242] ... generic registers:      2
+Nov 14 19:20:35 montag kernel: [    0.004243] ... value mask:             000000ffffffffff
+Nov 14 19:20:35 montag kernel: [    0.004245] ... max period:             000000007fffffff
+Nov 14 19:20:35 montag kernel: [    0.004247] ... fixed-purpose events:   3
+Nov 14 19:20:35 montag kernel: [    0.004248] ... event mask:             0000000700000003
+Nov 14 19:20:35 montag kernel: [    0.004266] ACPI: Core revision 20090903
+Nov 14 19:20:35 montag kernel: [    0.020062] Setting APIC routing to flat
+Nov 14 19:20:35 montag kernel: [    0.020406] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Nov 14 19:20:35 montag kernel: [    0.062109] CPU0: Intel(R) Core(TM)2 Duo CPU     P7350  @ 2.00GHz stepping 06
+Nov 14 19:20:35 montag kernel: [    0.064001] Booting processor 1 APIC 0x1 ip 0x6000
+Nov 14 19:20:35 montag kernel: [    0.008000] Initializing CPU#1
+Nov 14 19:20:35 montag kernel: [    0.008000] Calibrating delay using timer specific routine.. 3989.98 BogoMIPS (lpj=7979978)
+Nov 14 19:20:35 montag kernel: [    0.008000] CPU: L1 I cache: 32K, L1 D cache: 32K
+Nov 14 19:20:35 montag kernel: [    0.008000] CPU: L2 cache: 3072K
+Nov 14 19:20:35 montag kernel: [    0.008000] CPU: Physical Processor ID: 0
+Nov 14 19:20:35 montag kernel: [    0.008000] CPU: Processor Core ID: 1
+Nov 14 19:20:35 montag kernel: [    0.008000] CPU1: Thermal monitoring enabled (TM2)
+Nov 14 19:20:35 montag kernel: [    0.148107] CPU1: Intel(R) Core(TM)2 Duo CPU     P7350  @ 2.00GHz stepping 06
+Nov 14 19:20:35 montag kernel: [    0.148116] checking TSC synchronization [CPU#0 -> CPU#1]: passed.
+Nov 14 19:20:35 montag kernel: [    0.152027] Brought up 2 CPUs
+Nov 14 19:20:35 montag kernel: [    0.152029] Total of 2 processors activated (7980.58 BogoMIPS).
+Nov 14 19:20:35 montag kernel: [    0.152578] CPU0 attaching sched-domain:
+Nov 14 19:20:35 montag kernel: [    0.152581]  domain 0: span 0-1 level MC
+Nov 14 19:20:35 montag kernel: [    0.152583]   groups: 0 1
+Nov 14 19:20:35 montag kernel: [    0.152589] CPU1 attaching sched-domain:
+Nov 14 19:20:35 montag kernel: [    0.152591]  domain 0: span 0-1 level MC
+Nov 14 19:20:35 montag kernel: [    0.152593]   groups: 1 0
+Nov 14 19:20:35 montag kernel: [    0.152670] NET: Registered protocol family 16
+Nov 14 19:20:35 montag kernel: [    0.152670] ACPI: bus type pci registered
+Nov 14 19:20:35 montag kernel: [    0.152670] PCI: MCFG configuration 0: base e0000000 segment 0 buses 0 - 255
+Nov 14 19:20:35 montag kernel: [    0.152670] PCI: MCFG area at e0000000 reserved in E820
+Nov 14 19:20:35 montag kernel: [    0.166243] PCI: Using MMCONFIG at e0000000 - efffffff
+Nov 14 19:20:35 montag kernel: [    0.166245] PCI: Using configuration type 1 for base access
+Nov 14 19:20:35 montag kernel: [    0.168062] bio: create slab <bio-0> at 0
+Nov 14 19:20:35 montag kernel: [    0.169001] ACPI: EC: Look up EC in DSDT
+Nov 14 19:20:35 montag kernel: [    0.173682] ACPI: BIOS _OSI(Linux) query ignored
+Nov 14 19:20:35 montag kernel: [    0.180137] ACPI: Interpreter enabled
+Nov 14 19:20:35 montag kernel: [    0.180137] ACPI: (supports S0 S3 S4 S5)
+Nov 14 19:20:35 montag kernel: [    0.180137] ACPI: Using IOAPIC for interrupt routing
+Nov 14 19:20:35 montag kernel: [    0.180177] [Firmware Bug]: ACPI: ACPI brightness control misses _BQC function
+Nov 14 19:20:35 montag kernel: [    0.188154] ACPI: EC: GPE = 0x17, I/O: command/status = 0x66, data = 0x62
+Nov 14 19:20:35 montag kernel: [    0.188154] ACPI: Power Resource [FN00] (off)
+Nov 14 19:20:35 montag kernel: [    0.188154] ACPI: Power Resource [FN01] (off)
+Nov 14 19:20:35 montag kernel: [    0.188359] ACPI: ACPI Dock Station Driver: 1 docks/bays found
+Nov 14 19:20:35 montag kernel: [    0.188971] ACPI: PCI Root Bridge [PCI0] (0000:00)
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:02.0: reg 10 64bit mmio: [0xf8000000-0xf83fffff]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:02.0: reg 18 64bit mmio pref: [0xd0000000-0xdfffffff]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:02.0: reg 20 io port: [0x1800-0x1807]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:02.1: reg 10 64bit mmio: [0xf8400000-0xf84fffff]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:19.0: reg 10 32bit mmio: [0xf8600000-0xf861ffff]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:19.0: reg 14 32bit mmio: [0xf8624000-0xf8624fff]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:19.0: reg 18 io port: [0x1820-0x183f]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:19.0: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:19.0: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:1a.0: reg 20 io port: [0x1840-0x185f]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:1a.1: reg 20 io port: [0x1860-0x187f]
+Nov 14 19:20:35 montag kernel: [    0.189005] pci 0000:00:1a.2: reg 20 io port: [0x1880-0x189f]
+Nov 14 19:20:35 montag kernel: [    0.192105] pci 0000:00:1a.7: reg 10 32bit mmio: [0xf8825800-0xf8825bff]
+Nov 14 19:20:35 montag kernel: [    0.192177] pci 0000:00:1a.7: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.192182] pci 0000:00:1a.7: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.192239] pci 0000:00:1b.0: reg 10 64bit mmio: [0xf8620000-0xf8623fff]
+Nov 14 19:20:35 montag kernel: [    0.192301] pci 0000:00:1b.0: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.192306] pci 0000:00:1b.0: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.192399] pci 0000:00:1c.0: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.192404] pci 0000:00:1c.0: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.192498] pci 0000:00:1c.2: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.192503] pci 0000:00:1c.2: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.192583] pci 0000:00:1d.0: reg 20 io port: [0x18a0-0x18bf]
+Nov 14 19:20:35 montag kernel: [    0.192679] pci 0000:00:1d.1: reg 20 io port: [0x18c0-0x18df]
+Nov 14 19:20:35 montag kernel: [    0.192771] pci 0000:00:1d.2: reg 20 io port: [0x18e0-0x18ff]
+Nov 14 19:20:35 montag kernel: [    0.192865] pci 0000:00:1d.7: reg 10 32bit mmio: [0xf8825c00-0xf8825fff]
+Nov 14 19:20:35 montag kernel: [    0.192936] pci 0000:00:1d.7: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.192942] pci 0000:00:1d.7: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.193192] pci 0000:00:1f.2: reg 10 io port: [0x1818-0x181f]
+Nov 14 19:20:35 montag kernel: [    0.193200] pci 0000:00:1f.2: reg 14 io port: [0x180c-0x180f]
+Nov 14 19:20:35 montag kernel: [    0.193208] pci 0000:00:1f.2: reg 18 io port: [0x1810-0x1817]
+Nov 14 19:20:35 montag kernel: [    0.193216] pci 0000:00:1f.2: reg 1c io port: [0x1808-0x180b]
+Nov 14 19:20:35 montag kernel: [    0.193224] pci 0000:00:1f.2: reg 20 io port: [0x1c00-0x1c1f]
+Nov 14 19:20:35 montag kernel: [    0.193232] pci 0000:00:1f.2: reg 24 32bit mmio: [0xf8825000-0xf88257ff]
+Nov 14 19:20:35 montag kernel: [    0.193282] pci 0000:00:1f.2: PME# supported from D3hot
+Nov 14 19:20:35 montag kernel: [    0.193286] pci 0000:00:1f.2: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.193328] pci 0000:00:1f.3: reg 10 64bit mmio: [0x000000-0x0000ff]
+Nov 14 19:20:35 montag kernel: [    0.193347] pci 0000:00:1f.3: reg 20 io port: [0x1c20-0x1c3f]
+Nov 14 19:20:35 montag kernel: [    0.193496] pci 0000:02:00.0: reg 10 64bit mmio: [0xf4000000-0xf4001fff]
+Nov 14 19:20:35 montag kernel: [    0.193627] pci 0000:02:00.0: PME# supported from D0 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.193638] pci 0000:02:00.0: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.193721] pci 0000:00:1c.0: bridge io port: [0x2000-0x2fff]
+Nov 14 19:20:35 montag kernel: [    0.193726] pci 0000:00:1c.0: bridge 32bit mmio: [0xf4000000-0xf5ffffff]
+Nov 14 19:20:35 montag kernel: [    0.193734] pci 0000:00:1c.0: bridge 64bit mmio pref: [0xf0000000-0xf1ffffff]
+Nov 14 19:20:35 montag kernel: [    0.193796] pci 0000:00:1c.2: bridge io port: [0x3000-0x3fff]
+Nov 14 19:20:35 montag kernel: [    0.193801] pci 0000:00:1c.2: bridge 32bit mmio: [0xf6000000-0xf7ffffff]
+Nov 14 19:20:35 montag kernel: [    0.193810] pci 0000:00:1c.2: bridge 64bit mmio pref: [0xf2000000-0xf3ffffff]
+Nov 14 19:20:35 montag kernel: [    0.193868] pci 0000:06:09.0: reg 10 32bit mmio: [0xf8500000-0xf8500fff]
+Nov 14 19:20:35 montag kernel: [    0.193892] pci 0000:06:09.0: supports D1 D2
+Nov 14 19:20:35 montag kernel: [    0.193894] pci 0000:06:09.0: PME# supported from D0 D1 D2 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.193899] pci 0000:06:09.0: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.193941] pci 0000:06:09.1: reg 10 32bit mmio: [0xf8501000-0xf85010ff]
+Nov 14 19:20:35 montag kernel: [    0.194000] pci 0000:06:09.1: supports D1 D2
+Nov 14 19:20:35 montag kernel: [    0.194002] pci 0000:06:09.1: PME# supported from D0 D1 D2 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.194007] pci 0000:06:09.1: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.194048] pci 0000:06:09.2: reg 10 32bit mmio: [0xf8501400-0xf85014ff]
+Nov 14 19:20:35 montag kernel: [    0.194106] pci 0000:06:09.2: supports D1 D2
+Nov 14 19:20:35 montag kernel: [    0.194108] pci 0000:06:09.2: PME# supported from D0 D1 D2 D3hot D3cold
+Nov 14 19:20:35 montag kernel: [    0.194113] pci 0000:06:09.2: PME# disabled
+Nov 14 19:20:35 montag kernel: [    0.194168] pci 0000:00:1e.0: transparent bridge
+Nov 14 19:20:35 montag kernel: [    0.194175] pci 0000:00:1e.0: bridge 32bit mmio: [0xf8500000-0xf85fffff]
+Nov 14 19:20:35 montag kernel: [    0.194222] pci_bus 0000:00: on NUMA node 0
+Nov 14 19:20:35 montag kernel: [    0.194228] ACPI: PCI Interrupt Routing Table [\_SB_.PCI0._PRT]
+Nov 14 19:20:35 montag kernel: [    0.194528] ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.P0P1._PRT]
+Nov 14 19:20:35 montag kernel: [    0.194678] ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.RP01._PRT]
+Nov 14 19:20:35 montag kernel: [    0.194771] ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.RP03._PRT]
+Nov 14 19:20:35 montag kernel: [    0.208785] ACPI: PCI Interrupt Link [LNKA] (IRQs *11)
+Nov 14 19:20:35 montag kernel: [    0.208785] ACPI: PCI Interrupt Link [LNKB] (IRQs *10)
+Nov 14 19:20:35 montag kernel: [    0.208785] ACPI: PCI Interrupt Link [LNKC] (IRQs *5)
+Nov 14 19:20:35 montag kernel: [    0.208785] ACPI: PCI Interrupt Link [LNKD] (IRQs *5)
+Nov 14 19:20:35 montag kernel: [    0.208785] ACPI: PCI Interrupt Link [LNKE] (IRQs *11)
+Nov 14 19:20:35 montag kernel: [    0.208785] ACPI: PCI Interrupt Link [LNKF] (IRQs *10)
+Nov 14 19:20:35 montag kernel: [    0.208794] ACPI: PCI Interrupt Link [LNKG] (IRQs *5)
+Nov 14 19:20:35 montag kernel: [    0.208909] ACPI: PCI Interrupt Link [LNKH] (IRQs *5)
+Nov 14 19:20:35 montag kernel: [    0.208965] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+Nov 14 19:20:35 montag kernel: [    0.208965] vgaarb: loaded
+Nov 14 19:20:35 montag kernel: [    0.208965] SCSI subsystem initialized
+Nov 14 19:20:35 montag kernel: [    0.208965] libata version 3.00 loaded.
+Nov 14 19:20:35 montag kernel: [    0.208965] usbcore: registered new interface driver usbfs
+Nov 14 19:20:35 montag kernel: [    0.208965] usbcore: registered new interface driver hub
+Nov 14 19:20:35 montag kernel: [    0.208965] usbcore: registered new device driver usb
+Nov 14 19:20:35 montag kernel: [    0.212037] PCI: Using ACPI for IRQ routing
+Nov 14 19:20:35 montag kernel: [    0.212192] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0, 0
+Nov 14 19:20:35 montag kernel: [    0.212192] hpet0: 4 comparators, 64-bit 14.318180 MHz counter
+Nov 14 19:20:35 montag kernel: [    0.216015] Switching to clocksource tsc
+Nov 14 19:20:35 montag kernel: [    0.217300] pnp: PnP ACPI init
+Nov 14 19:20:35 montag kernel: [    0.217311] ACPI: bus type pnp registered
+Nov 14 19:20:35 montag kernel: [    0.220603] pnp: PnP ACPI: found 12 devices
+Nov 14 19:20:35 montag kernel: [    0.220605] ACPI: ACPI bus type pnp unregistered
+Nov 14 19:20:35 montag kernel: [    0.220616] system 00:03: iomem range 0xfed00000-0xfed003ff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220624] system 00:05: ioport range 0x680-0x69f has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220627] system 00:05: ioport range 0x480-0x48f has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220630] system 00:05: ioport range 0xffff-0xffff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220633] system 00:05: ioport range 0xffff-0xffff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220636] system 00:05: ioport range 0x400-0x47f has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220639] system 00:05: ioport range 0x480-0x48f has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220642] system 00:05: ioport range 0x1180-0x11ff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220645] system 00:05: ioport range 0x164e-0x164f has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220648] system 00:05: ioport range 0x5000-0x500f has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220651] system 00:05: ioport range 0xfe00-0xfe00 has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220657] system 00:06: ioport range 0x6a0-0x6af has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220660] system 00:06: ioport range 0x6b0-0x6ff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220667] system 00:0b: iomem range 0xfed1c000-0xfed1ffff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220670] system 00:0b: iomem range 0xfed10000-0xfed13fff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220673] system 00:0b: iomem range 0xfed18000-0xfed18fff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220676] system 00:0b: iomem range 0xfed19000-0xfed19fff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220679] system 00:0b: iomem range 0xe0000000-0xefffffff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220682] system 00:0b: iomem range 0xfed20000-0xfed3ffff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220685] system 00:0b: iomem range 0xfed40000-0xfed44fff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.220689] system 00:0b: iomem range 0xfed45000-0xfed8ffff has been reserved
+Nov 14 19:20:35 montag kernel: [    0.225690] pci 0000:00:1c.0: PCI bridge, secondary bus 0000:02
+Nov 14 19:20:35 montag kernel: [    0.225694] pci 0000:00:1c.0:   IO window: 0x2000-0x2fff
+Nov 14 19:20:35 montag kernel: [    0.225701] pci 0000:00:1c.0:   MEM window: 0xf4000000-0xf5ffffff
+Nov 14 19:20:35 montag kernel: [    0.225706] pci 0000:00:1c.0:   PREFETCH window: 0x000000f0000000-0x000000f1ffffff
+Nov 14 19:20:35 montag kernel: [    0.225714] pci 0000:00:1c.2: PCI bridge, secondary bus 0000:04
+Nov 14 19:20:35 montag kernel: [    0.225718] pci 0000:00:1c.2:   IO window: 0x3000-0x3fff
+Nov 14 19:20:35 montag kernel: [    0.225724] pci 0000:00:1c.2:   MEM window: 0xf6000000-0xf7ffffff
+Nov 14 19:20:35 montag kernel: [    0.225729] pci 0000:00:1c.2:   PREFETCH window: 0x000000f2000000-0x000000f3ffffff
+Nov 14 19:20:35 montag kernel: [    0.225740] pci 0000:06:09.0: CardBus bridge, secondary bus 0000:07
+Nov 14 19:20:35 montag kernel: [    0.225742] pci 0000:06:09.0:   IO window: 0x004000-0x0040ff
+Nov 14 19:20:35 montag kernel: [    0.225747] pci 0000:06:09.0:   IO window: 0x004400-0x0044ff
+Nov 14 19:20:35 montag kernel: [    0.225752] pci 0000:06:09.0:   PREFETCH window: 0xc0000000-0xc3ffffff
+Nov 14 19:20:35 montag kernel: [    0.225757] pci 0000:06:09.0:   MEM window: 0xc8000000-0xcbffffff
+Nov 14 19:20:35 montag kernel: [    0.225762] pci 0000:00:1e.0: PCI bridge, secondary bus 0000:06
+Nov 14 19:20:35 montag kernel: [    0.225766] pci 0000:00:1e.0:   IO window: 0x4000-0x4fff
+Nov 14 19:20:35 montag kernel: [    0.225772] pci 0000:00:1e.0:   MEM window: 0xf8500000-0xf85fffff
+Nov 14 19:20:35 montag kernel: [    0.225777] pci 0000:00:1e.0:   PREFETCH window: 0xc0000000-0xc3ffffff
+Nov 14 19:20:35 montag kernel: [    0.225793] pci 0000:00:1c.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+Nov 14 19:20:35 montag kernel: [    0.225798] pci 0000:00:1c.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    0.225809] pci 0000:00:1c.2: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:20:35 montag kernel: [    0.225814] pci 0000:00:1c.2: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    0.225821] pci 0000:00:1e.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    0.225873] pci 0000:06:09.0: power state changed by ACPI to D0
+Nov 14 19:20:35 montag kernel: [    0.225881] pci 0000:06:09.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Nov 14 19:20:35 montag kernel: [    0.225887] pci_bus 0000:00: resource 0 io:  [0x00-0xffff]
+Nov 14 19:20:35 montag kernel: [    0.225890] pci_bus 0000:00: resource 1 mem: [0x000000-0xffffffffffffffff]
+Nov 14 19:20:35 montag kernel: [    0.225893] pci_bus 0000:02: resource 0 io:  [0x2000-0x2fff]
+Nov 14 19:20:35 montag kernel: [    0.225895] pci_bus 0000:02: resource 1 mem: [0xf4000000-0xf5ffffff]
+Nov 14 19:20:35 montag kernel: [    0.225898] pci_bus 0000:02: resource 2 pref mem [0xf0000000-0xf1ffffff]
+Nov 14 19:20:35 montag kernel: [    0.225901] pci_bus 0000:04: resource 0 io:  [0x3000-0x3fff]
+Nov 14 19:20:35 montag kernel: [    0.225903] pci_bus 0000:04: resource 1 mem: [0xf6000000-0xf7ffffff]
+Nov 14 19:20:35 montag kernel: [    0.225905] pci_bus 0000:04: resource 2 pref mem [0xf2000000-0xf3ffffff]
+Nov 14 19:20:35 montag kernel: [    0.225908] pci_bus 0000:06: resource 0 io:  [0x4000-0x4fff]
+Nov 14 19:20:35 montag kernel: [    0.225910] pci_bus 0000:06: resource 1 mem: [0xf8500000-0xf85fffff]
+Nov 14 19:20:35 montag kernel: [    0.225913] pci_bus 0000:06: resource 2 pref mem [0xc0000000-0xc3ffffff]
+Nov 14 19:20:35 montag kernel: [    0.225915] pci_bus 0000:06: resource 3 io:  [0x00-0xffff]
+Nov 14 19:20:35 montag kernel: [    0.225918] pci_bus 0000:06: resource 4 mem: [0x000000-0xffffffffffffffff]
+Nov 14 19:20:35 montag kernel: [    0.225921] pci_bus 0000:07: resource 0 io:  [0x4000-0x40ff]
+Nov 14 19:20:35 montag kernel: [    0.225923] pci_bus 0000:07: resource 1 io:  [0x4400-0x44ff]
+Nov 14 19:20:35 montag kernel: [    0.225925] pci_bus 0000:07: resource 2 pref mem [0xc0000000-0xc3ffffff]
+Nov 14 19:20:35 montag kernel: [    0.225928] pci_bus 0000:07: resource 3 mem: [0xc8000000-0xcbffffff]
+Nov 14 19:20:35 montag kernel: [    0.225980] NET: Registered protocol family 2
+Nov 14 19:20:35 montag kernel: [    0.226072] IP route cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Nov 14 19:20:35 montag kernel: [    0.226679] TCP established hash table entries: 262144 (order: 10, 4194304 bytes)
+Nov 14 19:20:35 montag kernel: [    0.228572] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+Nov 14 19:20:35 montag kernel: [    0.229094] TCP: Hash tables configured (established 262144 bind 65536)
+Nov 14 19:20:35 montag kernel: [    0.229097] TCP reno registered
+Nov 14 19:20:35 montag kernel: [    0.229217] NET: Registered protocol family 1
+Nov 14 19:20:35 montag kernel: [    0.229239] pci 0000:00:02.0: Boot video device
+Nov 14 19:20:35 montag kernel: [    0.229451] Unpacking initramfs...
+Nov 14 19:20:35 montag kernel: [    0.313221] Freeing initrd memory: 3660k freed
+Nov 14 19:20:35 montag kernel: [    0.314672] Simple Boot Flag at 0x37 set to 0x1
+Nov 14 19:20:35 montag kernel: [    0.315853] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+Nov 14 19:20:35 montag kernel: [    0.315973] VFS: Disk quotas dquot_6.5.2
+Nov 14 19:20:35 montag kernel: [    0.316007] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Nov 14 19:20:35 montag kernel: [    0.316113] msgmni has been set to 5957
+Nov 14 19:20:35 montag kernel: [    0.316267] alg: No test for stdrng (krng)
+Nov 14 19:20:35 montag kernel: [    0.316322] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+Nov 14 19:20:35 montag kernel: [    0.316325] io scheduler noop registered
+Nov 14 19:20:35 montag kernel: [    0.316341] io scheduler cfq registered (default)
+Nov 14 19:20:35 montag kernel: [    0.316521] pcieport 0000:00:1c.0: irq 24 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [    0.316533] pcieport 0000:00:1c.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    0.316775] pcieport 0000:00:1c.2: irq 25 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [    0.316786] pcieport 0000:00:1c.2: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    0.320337] Linux agpgart interface v0.103
+Nov 14 19:20:35 montag kernel: [    0.320341] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Nov 14 19:20:35 montag kernel: [    0.320487] serial8250: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+Nov 14 19:20:35 montag kernel: [    0.320998] 00:08: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+Nov 14 19:20:35 montag kernel: [    0.321338] ahci 0000:00:1f.2: version 3.0
+Nov 14 19:20:35 montag kernel: [    0.321357] ahci 0000:00:1f.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:20:35 montag kernel: [    0.321397] ahci 0000:00:1f.2: irq 26 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [    0.321449] ahci: SSS flag set, parallel bus scan disabled
+Nov 14 19:20:35 montag kernel: [    0.321486] ahci 0000:00:1f.2: AHCI 0001.0200 32 slots 4 ports 3 Gbps 0x33 impl SATA mode
+Nov 14 19:20:35 montag kernel: [    0.321490] ahci 0000:00:1f.2: flags: 64bit ncq sntf stag pm led clo pio slum part ccc ems sxs 
+Nov 14 19:20:35 montag kernel: [    0.321495] ahci 0000:00:1f.2: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    0.343975] scsi0 : ahci
+Nov 14 19:20:35 montag kernel: [    0.344103] scsi1 : ahci
+Nov 14 19:20:35 montag kernel: [    0.344203] scsi2 : ahci
+Nov 14 19:20:35 montag kernel: [    0.344302] scsi3 : ahci
+Nov 14 19:20:35 montag kernel: [    0.344399] scsi4 : ahci
+Nov 14 19:20:35 montag kernel: [    0.344495] scsi5 : ahci
+Nov 14 19:20:35 montag kernel: [    0.344587] ata1: SATA max UDMA/133 abar m2048@0xf8825000 port 0xf8825100 irq 26
+Nov 14 19:20:35 montag kernel: [    0.344591] ata2: SATA max UDMA/133 abar m2048@0xf8825000 port 0xf8825180 irq 26
+Nov 14 19:20:35 montag kernel: [    0.344593] ata3: DUMMY
+Nov 14 19:20:35 montag kernel: [    0.344595] ata4: DUMMY
+Nov 14 19:20:35 montag kernel: [    0.344598] ata5: SATA max UDMA/133 abar m2048@0xf8825000 port 0xf8825300 irq 26
+Nov 14 19:20:35 montag kernel: [    0.344601] ata6: SATA max UDMA/133 abar m2048@0xf8825000 port 0xf8825380 irq 26
+Nov 14 19:20:35 montag kernel: [    0.344859] PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+Nov 14 19:20:35 montag kernel: [    0.347515] i8042.c: Detected active multiplexing controller, rev 1.1.
+Nov 14 19:20:35 montag kernel: [    0.349100] serio: i8042 KBD port at 0x60,0x64 irq 1
+Nov 14 19:20:35 montag kernel: [    0.349105] serio: i8042 AUX0 port at 0x60,0x64 irq 12
+Nov 14 19:20:35 montag kernel: [    0.349108] serio: i8042 AUX1 port at 0x60,0x64 irq 12
+Nov 14 19:20:35 montag kernel: [    0.349111] serio: i8042 AUX2 port at 0x60,0x64 irq 12
+Nov 14 19:20:35 montag kernel: [    0.349114] serio: i8042 AUX3 port at 0x60,0x64 irq 12
+Nov 14 19:20:35 montag kernel: [    0.349304] mice: PS/2 mouse device common for all mice
+Nov 14 19:20:35 montag kernel: [    0.349365] Driver 'rtc_cmos' needs updating - please use bus_type methods
+Nov 14 19:20:35 montag kernel: [    0.349511] rtc_cmos 00:07: rtc core: registered rtc_cmos as rtc0
+Nov 14 19:20:35 montag kernel: [    0.349541] rtc0: alarms up to one month, y3k, 242 bytes nvram, hpet irqs
+Nov 14 19:20:35 montag kernel: [    0.349575] cpuidle: using governor ladder
+Nov 14 19:20:35 montag kernel: [    0.349578] cpuidle: using governor menu
+Nov 14 19:20:35 montag kernel: [    0.349638] oprofile: using NMI interrupt.
+Nov 14 19:20:35 montag kernel: [    0.349951] TCP cubic registered
+Nov 14 19:20:35 montag kernel: [    0.349954] NET: Registered protocol family 17
+Nov 14 19:20:35 montag kernel: [    0.350605] rtc_cmos 00:07: setting system clock to 2009-11-14 18:20:23 UTC (1258222823)
+Nov 14 19:20:35 montag kernel: [    0.417975] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+Nov 14 19:20:35 montag kernel: [    0.663893] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Nov 14 19:20:35 montag kernel: [    0.664922] ata1.00: ATA-8: Hitachi HTS543216L9A300, FB2OC40C, max UDMA/133
+Nov 14 19:20:35 montag kernel: [    0.664925] ata1.00: 312581808 sectors, multi 0: LBA48 NCQ (depth 31/32), AA
+Nov 14 19:20:35 montag kernel: [    0.666176] ata1.00: configured for UDMA/133
+Nov 14 19:20:35 montag kernel: [    0.679968] scsi 0:0:0:0: Direct-Access     ATA      Hitachi HTS54321 FB2O PQ: 0 ANSI: 5
+Nov 14 19:20:35 montag kernel: [    0.680203] sd 0:0:0:0: Attached scsi generic sg0 type 0
+Nov 14 19:20:35 montag kernel: [    0.680234] sd 0:0:0:0: [sda] 312581808 512-byte logical blocks: (160 GB/149 GiB)
+Nov 14 19:20:35 montag kernel: [    0.680310] sd 0:0:0:0: [sda] Write Protect is off
+Nov 14 19:20:35 montag kernel: [    0.680313] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+Nov 14 19:20:35 montag kernel: [    0.680336] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Nov 14 19:20:35 montag kernel: [    0.680462]  sda: sda1 sda2 sda3
+Nov 14 19:20:35 montag kernel: [    0.729368] sd 0:0:0:0: [sda] Attached SCSI disk
+Nov 14 19:20:35 montag kernel: [    1.404019] ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+Nov 14 19:20:35 montag kernel: [    1.404891] ata2.00: ATAPI: TSSTcorp CDDVDW TS-L633A, SC03, max UDMA/100, ATAPI AN
+Nov 14 19:20:35 montag kernel: [    1.404907] ata2.00: applying bridge limits
+Nov 14 19:20:35 montag kernel: [    1.406312] ata2.00: configured for UDMA/100
+Nov 14 19:20:35 montag kernel: [    1.422332] scsi 1:0:0:0: CD-ROM            TSSTcorp CDDVDW TS-L633A  SC03 PQ: 0 ANSI: 5
+Nov 14 19:20:35 montag kernel: [    1.429118] sr0: scsi3-mmc drive: 16x/24x writer dvd-ram cd/rw xa/form2 cdda tray
+Nov 14 19:20:35 montag kernel: [    1.429122] Uniform CD-ROM driver Revision: 3.20
+Nov 14 19:20:35 montag kernel: [    1.429232] sr 1:0:0:0: Attached scsi CD-ROM sr0
+Nov 14 19:20:35 montag kernel: [    1.429320] sr 1:0:0:0: Attached scsi generic sg1 type 5
+Nov 14 19:20:35 montag kernel: [    1.749015] ata5: SATA link down (SStatus 0 SControl 300)
+Nov 14 19:20:35 montag kernel: [    2.084016] ata6: SATA link down (SStatus 0 SControl 300)
+Nov 14 19:20:35 montag kernel: [    2.100023] Freeing unused kernel memory: 412k freed
+Nov 14 19:20:35 montag kernel: [    2.146757] fan PNP0C0B:00: registered as cooling_device0
+Nov 14 19:20:35 montag kernel: [    2.146765] ACPI: Fan [FAN0] (off)
+Nov 14 19:20:35 montag kernel: [    2.146889] fan PNP0C0B:01: registered as cooling_device1
+Nov 14 19:20:35 montag kernel: [    2.146895] ACPI: Fan [FAN1] (off)
+Nov 14 19:20:35 montag kernel: [    2.150120] thermal LNXTHERM:01: registered as thermal_zone0
+Nov 14 19:20:35 montag kernel: [    2.150129] ACPI: Thermal Zone [TZ00] (47 C)
+Nov 14 19:20:35 montag kernel: [    2.150889] thermal LNXTHERM:02: registered as thermal_zone1
+Nov 14 19:20:35 montag kernel: [    2.150897] ACPI: Thermal Zone [TZ01] (47 C)
+Nov 14 19:20:35 montag kernel: [    2.167094] input: Lid Switch as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0D:00/input/input1
+Nov 14 19:20:35 montag kernel: [    2.167186] ACPI: Lid Switch [LID0]
+Nov 14 19:20:35 montag kernel: [    2.167240] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input2
+Nov 14 19:20:35 montag kernel: [    2.167252] ACPI: Power Button [PWRB]
+Nov 14 19:20:35 montag kernel: [    2.167302] input: Sleep Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input3
+Nov 14 19:20:35 montag kernel: [    2.167307] ACPI: Sleep Button [SLPB]
+Nov 14 19:20:35 montag kernel: [    2.167359] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input4
+Nov 14 19:20:35 montag kernel: [    2.167363] ACPI: Power Button [PWRF]
+Nov 14 19:20:35 montag kernel: [    2.249666] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Nov 14 19:20:35 montag kernel: [    2.249707] ehci_hcd 0000:00:1a.7: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:20:35 montag kernel: [    2.249731] ehci_hcd 0000:00:1a.7: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.249735] ehci_hcd 0000:00:1a.7: EHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.249743] ehci_hcd 0000:00:1a.7: new USB bus registered, assigned bus number 1
+Nov 14 19:20:35 montag kernel: [    2.249775] ehci_hcd 0000:00:1a.7: debug port 1
+Nov 14 19:20:35 montag kernel: [    2.254898] e1000e: Intel(R) PRO/1000 Network Driver - 1.0.2-k2
+Nov 14 19:20:35 montag kernel: [    2.254901] e1000e: Copyright (c) 1999-2008 Intel Corporation.
+Nov 14 19:20:35 montag kernel: [    2.266728] ricoh-mmc: Ricoh MMC Controller disabling driver
+Nov 14 19:20:35 montag kernel: [    2.266731] ricoh-mmc: Copyright(c) Philip Langdale
+Nov 14 19:20:35 montag kernel: [    2.266755] ricoh-mmc: Ricoh MMC controller found at 0000:06:09.2 [1180:0843] (rev 11)
+Nov 14 19:20:35 montag kernel: [    2.266773] ricoh-mmc: Controller is now disabled.
+Nov 14 19:20:35 montag kernel: [    2.272359] ehci_hcd 0000:00:1a.7: cache line size of 32 is not supported
+Nov 14 19:20:35 montag kernel: [    2.272379] ehci_hcd 0000:00:1a.7: irq 19, io mem 0xf8825800
+Nov 14 19:20:35 montag kernel: [    2.275703] sdhci: Secure Digital Host Controller Interface driver
+Nov 14 19:20:35 montag kernel: [    2.275706] sdhci: Copyright(c) Pierre Ossman
+Nov 14 19:20:35 montag kernel: [    2.277847] sdhci-pci 0000:06:09.1: SDHCI controller found [1180:0822] (rev 21)
+Nov 14 19:20:35 montag kernel: [    2.277932] sdhci-pci 0000:06:09.1: power state changed by ACPI to D0
+Nov 14 19:20:35 montag kernel: [    2.277941] sdhci-pci 0000:06:09.1: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:20:35 montag kernel: [    2.277967] sdhci-pci 0000:06:09.1: Will use DMA mode even though HW doesn't fully claim to support it.
+Nov 14 19:20:35 montag kernel: [    2.277973] sdhci-pci 0000:06:09.1: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.278041] Registered led device: mmc0::
+Nov 14 19:20:35 montag kernel: [    2.278107] mmc0: SDHCI controller on PCI [0000:06:09.1] using DMA
+Nov 14 19:20:35 montag kernel: [    2.289010] ehci_hcd 0000:00:1a.7: USB 2.0 started, EHCI 1.00
+Nov 14 19:20:35 montag kernel: [    2.289037] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+Nov 14 19:20:35 montag kernel: [    2.289040] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.289043] usb usb1: Product: EHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.289044] usb usb1: Manufacturer: Linux 2.6.32-rc7 ehci_hcd
+Nov 14 19:20:35 montag kernel: [    2.289047] usb usb1: SerialNumber: 0000:00:1a.7
+Nov 14 19:20:35 montag kernel: [    2.289104] usb usb1: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.289140] hub 1-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.289147] hub 1-0:1.0: 6 ports detected
+Nov 14 19:20:35 montag kernel: [    2.289254] e1000e 0000:00:19.0: PCI INT A -> GSI 20 (level, low) -> IRQ 20
+Nov 14 19:20:35 montag kernel: [    2.289262] e1000e 0000:00:19.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.289371] e1000e 0000:00:19.0: irq 27 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [    2.396247] 0000:00:19.0: eth0: (PCI Express:2.5GB/s:Width x1) 00:13:77:b0:eb:01
+Nov 14 19:20:35 montag kernel: [    2.396250] 0000:00:19.0: eth0: Intel(R) PRO/1000 Network Connection
+Nov 14 19:20:35 montag kernel: [    2.396274] 0000:00:19.0: eth0: MAC: 7, PHY: 8, PBA No: ffffff-0ff
+Nov 14 19:20:35 montag kernel: [    2.396298] agpgart-intel 0000:00:00.0: Intel Mobile Intel® GM45 Express Chipset
+Nov 14 19:20:35 montag kernel: [    2.397325] agpgart-intel 0000:00:00.0: detected 32764K stolen memory
+Nov 14 19:20:35 montag kernel: [    2.400510] agpgart-intel 0000:00:00.0: AGP aperture is 256M @ 0xd0000000
+Nov 14 19:20:35 montag kernel: [    2.400692] ehci_hcd 0000:00:1d.7: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+Nov 14 19:20:35 montag kernel: [    2.400705] ehci_hcd 0000:00:1d.7: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.400709] ehci_hcd 0000:00:1d.7: EHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.400717] ehci_hcd 0000:00:1d.7: new USB bus registered, assigned bus number 2
+Nov 14 19:20:35 montag kernel: [    2.400750] ehci_hcd 0000:00:1d.7: debug port 1
+Nov 14 19:20:35 montag kernel: [    2.404646] ehci_hcd 0000:00:1d.7: cache line size of 32 is not supported
+Nov 14 19:20:35 montag kernel: [    2.404663] ehci_hcd 0000:00:1d.7: irq 23, io mem 0xf8825c00
+Nov 14 19:20:35 montag kernel: [    2.417010] ehci_hcd 0000:00:1d.7: USB 2.0 started, EHCI 1.00
+Nov 14 19:20:35 montag kernel: [    2.417035] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+Nov 14 19:20:35 montag kernel: [    2.417038] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.417042] usb usb2: Product: EHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.417044] usb usb2: Manufacturer: Linux 2.6.32-rc7 ehci_hcd
+Nov 14 19:20:35 montag kernel: [    2.417046] usb usb2: SerialNumber: 0000:00:1d.7
+Nov 14 19:20:35 montag kernel: [    2.417109] usb usb2: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.417145] hub 2-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.417154] hub 2-0:1.0: 6 ports detected
+Nov 14 19:20:35 montag kernel: [    2.461612] uhci_hcd: USB Universal Host Controller Interface driver
+Nov 14 19:20:35 montag kernel: [    2.461653] uhci_hcd 0000:00:1a.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Nov 14 19:20:35 montag kernel: [    2.461663] uhci_hcd 0000:00:1a.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.461667] uhci_hcd 0000:00:1a.0: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.461674] uhci_hcd 0000:00:1a.0: new USB bus registered, assigned bus number 3
+Nov 14 19:20:35 montag kernel: [    2.461718] uhci_hcd 0000:00:1a.0: irq 16, io base 0x00001840
+Nov 14 19:20:35 montag kernel: [    2.461768] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001
+Nov 14 19:20:35 montag kernel: [    2.461770] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.461773] usb usb3: Product: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.461775] usb usb3: Manufacturer: Linux 2.6.32-rc7 uhci_hcd
+Nov 14 19:20:35 montag kernel: [    2.461777] usb usb3: SerialNumber: 0000:00:1a.0
+Nov 14 19:20:35 montag kernel: [    2.461876] usb usb3: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.461974] hub 3-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.461981] hub 3-0:1.0: 2 ports detected
+Nov 14 19:20:35 montag kernel: [    2.462096] uhci_hcd 0000:00:1a.1: PCI INT B -> GSI 21 (level, low) -> IRQ 21
+Nov 14 19:20:35 montag kernel: [    2.462104] uhci_hcd 0000:00:1a.1: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.462107] uhci_hcd 0000:00:1a.1: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.462113] uhci_hcd 0000:00:1a.1: new USB bus registered, assigned bus number 4
+Nov 14 19:20:35 montag kernel: [    2.462148] uhci_hcd 0000:00:1a.1: irq 21, io base 0x00001860
+Nov 14 19:20:35 montag kernel: [    2.462187] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001
+Nov 14 19:20:35 montag kernel: [    2.462190] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.462192] usb usb4: Product: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.462194] usb usb4: Manufacturer: Linux 2.6.32-rc7 uhci_hcd
+Nov 14 19:20:35 montag kernel: [    2.462197] usb usb4: SerialNumber: 0000:00:1a.1
+Nov 14 19:20:35 montag kernel: [    2.462279] usb usb4: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.462337] hub 4-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.462345] hub 4-0:1.0: 2 ports detected
+Nov 14 19:20:35 montag kernel: [    2.462440] uhci_hcd 0000:00:1a.2: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:20:35 montag kernel: [    2.462447] uhci_hcd 0000:00:1a.2: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.462451] uhci_hcd 0000:00:1a.2: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.462458] uhci_hcd 0000:00:1a.2: new USB bus registered, assigned bus number 5
+Nov 14 19:20:35 montag kernel: [    2.462488] uhci_hcd 0000:00:1a.2: irq 19, io base 0x00001880
+Nov 14 19:20:35 montag kernel: [    2.462534] usb usb5: New USB device found, idVendor=1d6b, idProduct=0001
+Nov 14 19:20:35 montag kernel: [    2.462537] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.462539] usb usb5: Product: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.462541] usb usb5: Manufacturer: Linux 2.6.32-rc7 uhci_hcd
+Nov 14 19:20:35 montag kernel: [    2.462543] usb usb5: SerialNumber: 0000:00:1a.2
+Nov 14 19:20:35 montag kernel: [    2.462802] usb usb5: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.462867] hub 5-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.462874] hub 5-0:1.0: 2 ports detected
+Nov 14 19:20:35 montag kernel: [    2.462977] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+Nov 14 19:20:35 montag kernel: [    2.462985] uhci_hcd 0000:00:1d.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.462988] uhci_hcd 0000:00:1d.0: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.462994] uhci_hcd 0000:00:1d.0: new USB bus registered, assigned bus number 6
+Nov 14 19:20:35 montag kernel: [    2.463039] uhci_hcd 0000:00:1d.0: irq 23, io base 0x000018a0
+Nov 14 19:20:35 montag kernel: [    2.463649] usb usb6: New USB device found, idVendor=1d6b, idProduct=0001
+Nov 14 19:20:35 montag kernel: [    2.463653] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.463656] usb usb6: Product: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.463658] usb usb6: Manufacturer: Linux 2.6.32-rc7 uhci_hcd
+Nov 14 19:20:35 montag kernel: [    2.463660] usb usb6: SerialNumber: 0000:00:1d.0
+Nov 14 19:20:35 montag kernel: [    2.463750] usb usb6: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.463814] hub 6-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.463821] hub 6-0:1.0: 2 ports detected
+Nov 14 19:20:35 montag kernel: [    2.463925] uhci_hcd 0000:00:1d.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:20:35 montag kernel: [    2.463933] uhci_hcd 0000:00:1d.1: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.463937] uhci_hcd 0000:00:1d.1: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.463942] uhci_hcd 0000:00:1d.1: new USB bus registered, assigned bus number 7
+Nov 14 19:20:35 montag kernel: [    2.463972] uhci_hcd 0000:00:1d.1: irq 19, io base 0x000018c0
+Nov 14 19:20:35 montag kernel: [    2.464010] usb usb7: New USB device found, idVendor=1d6b, idProduct=0001
+Nov 14 19:20:35 montag kernel: [    2.464012] usb usb7: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.464015] usb usb7: Product: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.464017] usb usb7: Manufacturer: Linux 2.6.32-rc7 uhci_hcd
+Nov 14 19:20:35 montag kernel: [    2.464019] usb usb7: SerialNumber: 0000:00:1d.1
+Nov 14 19:20:35 montag kernel: [    2.464101] usb usb7: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.464163] hub 7-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.464170] hub 7-0:1.0: 2 ports detected
+Nov 14 19:20:35 montag kernel: [    2.464268] uhci_hcd 0000:00:1d.2: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:20:35 montag kernel: [    2.464276] uhci_hcd 0000:00:1d.2: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    2.464279] uhci_hcd 0000:00:1d.2: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.464286] uhci_hcd 0000:00:1d.2: new USB bus registered, assigned bus number 8
+Nov 14 19:20:35 montag kernel: [    2.464315] uhci_hcd 0000:00:1d.2: irq 18, io base 0x000018e0
+Nov 14 19:20:35 montag kernel: [    2.464351] usb usb8: New USB device found, idVendor=1d6b, idProduct=0001
+Nov 14 19:20:35 montag kernel: [    2.464354] usb usb8: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Nov 14 19:20:35 montag kernel: [    2.464357] usb usb8: Product: UHCI Host Controller
+Nov 14 19:20:35 montag kernel: [    2.464359] usb usb8: Manufacturer: Linux 2.6.32-rc7 uhci_hcd
+Nov 14 19:20:35 montag kernel: [    2.464361] usb usb8: SerialNumber: 0000:00:1d.2
+Nov 14 19:20:35 montag kernel: [    2.464450] usb usb8: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    2.464512] hub 8-0:1.0: USB hub found
+Nov 14 19:20:35 montag kernel: [    2.464519] hub 8-0:1.0: 2 ports detected
+Nov 14 19:20:35 montag kernel: [    2.601013] usb 1-3: new high speed USB device using ehci_hcd and address 2
+Nov 14 19:20:35 montag kernel: [    2.640332] PM: Starting manual resume from disk
+Nov 14 19:20:35 montag kernel: [    2.723535] kjournald starting.  Commit interval 5 seconds
+Nov 14 19:20:35 montag kernel: [    2.723541] EXT3-fs: mounted filesystem with writeback data mode.
+Nov 14 19:20:35 montag kernel: [    3.295908] usb 1-3: New USB device found, idVendor=174f, idProduct=5931
+Nov 14 19:20:35 montag kernel: [    3.295912] usb 1-3: New USB device strings: Mfr=2, Product=3, SerialNumber=4
+Nov 14 19:20:35 montag kernel: [    3.295914] usb 1-3: Product: USB2.0 UVC PC Camera
+Nov 14 19:20:35 montag kernel: [    3.295916] usb 1-3: Manufacturer: Syntek
+Nov 14 19:20:35 montag kernel: [    3.295918] usb 1-3: SerialNumber: 0001
+Nov 14 19:20:35 montag kernel: [    3.295994] usb 1-3: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    3.708011] usb 4-2: new full speed USB device using uhci_hcd and address 2
+Nov 14 19:20:35 montag kernel: [    3.871977] usb 4-2: New USB device found, idVendor=08ff, idProduct=1600
+Nov 14 19:20:35 montag kernel: [    3.871983] usb 4-2: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+Nov 14 19:20:35 montag kernel: [    3.871985] usb 4-2: Product: Fingerprint Sensor
+Nov 14 19:20:35 montag kernel: [    3.872070] usb 4-2: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    4.113009] usb 6-2: new low speed USB device using uhci_hcd and address 2
+Nov 14 19:20:35 montag kernel: [    4.287806] usb 6-2: New USB device found, idVendor=046d, idProduct=c052
+Nov 14 19:20:35 montag kernel: [    4.287809] usb 6-2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Nov 14 19:20:35 montag kernel: [    4.287815] usb 6-2: Product: USB Laser Mouse
+Nov 14 19:20:35 montag kernel: [    4.287817] usb 6-2: Manufacturer: Logitech
+Nov 14 19:20:35 montag kernel: [    4.287909] usb 6-2: configuration #1 chosen from 1 choice
+Nov 14 19:20:35 montag kernel: [    4.316262] udev: starting version 147
+Nov 14 19:20:35 montag kernel: [    4.603005] usbcore: registered new interface driver hiddev
+Nov 14 19:20:35 montag kernel: [    4.617265] input: Logitech USB Laser Mouse as /devices/pci0000:00/0000:00:1d.0/usb6/6-2/6-2:1.0/input/input5
+Nov 14 19:20:35 montag kernel: [    4.617322] generic-usb 0003:046D:C052.0001: input,hidraw0: USB HID v1.10 Mouse [Logitech USB Laser Mouse] on usb-0000:00:1d.0-2/input0
+Nov 14 19:20:35 montag kernel: [    4.617343] usbcore: registered new interface driver usbhid
+Nov 14 19:20:35 montag kernel: [    4.617346] usbhid: v2.6:USB HID core driver
+Nov 14 19:20:35 montag kernel: [    5.231534] input: PC Speaker as /devices/platform/pcspkr/input/input6
+Nov 14 19:20:35 montag kernel: [    5.235660] ACPI: SSDT 00000000bdb1aca0 00223 (v01  PmRef  Cpu0Ist 00003000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    5.236718] ACPI: AC Adapter [ADP1] (on-line)
+Nov 14 19:20:35 montag kernel: [    5.238737] ACPI: SSDT 00000000bdb19020 00C78 (v01  PmRef  Cpu0Cst 00003001 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    5.244017] Monitor-Mwait will be used to enter C-1 state
+Nov 14 19:20:35 montag kernel: [    5.248013] Monitor-Mwait will be used to enter C-2 state
+Nov 14 19:20:35 montag kernel: [    5.248036] Monitor-Mwait will be used to enter C-3 state
+Nov 14 19:20:35 montag kernel: [    5.248041] Marking TSC unstable due to TSC halts in idle
+Nov 14 19:20:35 montag kernel: [    5.248175] processor LNXCPU:00: registered as cooling_device2
+Nov 14 19:20:35 montag kernel: [    5.248730] ACPI: SSDT 00000000bdb1aa20 001CF (v01  PmRef    ApIst 00003000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    5.249118] Switching to clocksource hpet
+Nov 14 19:20:35 montag kernel: [    5.249284] ACPI: Battery Slot [BAT1] (battery present)
+Nov 14 19:20:35 montag kernel: [    5.249315] ACPI: SSDT 00000000bdb1af20 0008D (v01  PmRef    ApCst 00003000 INTL 20050624)
+Nov 14 19:20:35 montag kernel: [    5.256135] processor LNXCPU:01: registered as cooling_device3
+Nov 14 19:20:35 montag kernel: [    5.308226] i801_smbus 0000:00:1f.3: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:20:35 montag kernel: [    5.308231] ACPI: I/O resource 0000:00:1f.3 [0x1c20-0x1c3f] conflicts with ACPI region SMBI [0x1c20-0x1c2f]
+Nov 14 19:20:35 montag kernel: [    5.308289] ACPI: If an ACPI driver is available for this device, you should use it instead of the native driver
+Nov 14 19:20:35 montag kernel: [    5.438342] cfg80211: Calling CRDA to update world regulatory domain
+Nov 14 19:20:35 montag kernel: [    5.438384] cfg80211: Calling CRDA for country: EU
+Nov 14 19:20:35 montag kernel: [    5.598170] yenta_cardbus 0000:06:09.0: CardBus bridge found [144d:c045]
+Nov 14 19:20:35 montag kernel: [    5.725842] yenta_cardbus 0000:06:09.0: ISA IRQ mask 0x0cb8, PCI irq 16
+Nov 14 19:20:35 montag kernel: [    5.725846] yenta_cardbus 0000:06:09.0: Socket status: 30000006
+Nov 14 19:20:35 montag kernel: [    5.725850] pci_bus 0000:06: Raising subordinate bus# of parent bus (#06) from #07 to #0a
+Nov 14 19:20:35 montag kernel: [    5.725857] yenta_cardbus 0000:06:09.0: pcmcia: parent PCI bridge I/O window: 0x4000 - 0x4fff
+Nov 14 19:20:35 montag kernel: [    5.725860] yenta_cardbus 0000:06:09.0: pcmcia: parent PCI bridge Memory window: 0xf8500000 - 0xf85fffff
+Nov 14 19:20:35 montag kernel: [    5.725863] yenta_cardbus 0000:06:09.0: pcmcia: parent PCI bridge Memory window: 0xc0000000 - 0xc3ffffff
+Nov 14 19:20:35 montag kernel: [    6.199534] Linux video capture interface: v2.00
+Nov 14 19:20:35 montag kernel: [    6.245844] uvcvideo: Found UVC 1.00 device USB2.0 UVC PC Camera (174f:5931)
+Nov 14 19:20:35 montag kernel: [    6.250564] Synaptics Touchpad, model: 1, fw: 6.3, id: 0x1c0b1, caps: 0xa04711/0xa00000
+Nov 14 19:20:35 montag kernel: [    6.285392] input: SynPS/2 Synaptics TouchPad as /devices/platform/i8042/serio4/input/input7
+Nov 14 19:20:35 montag kernel: [    6.305757] uvcvideo: UVC non compliance - GET_DEF(PROBE) not supported. Enabling workaround.
+Nov 14 19:20:35 montag kernel: [    6.328818] usbcore: registered new interface driver uvcvideo
+Nov 14 19:20:35 montag kernel: [    6.328821] USB Video Class driver (v0.1.0)
+Nov 14 19:20:35 montag kernel: [    6.349028] iwlagn: Intel(R) Wireless WiFi Link AGN driver for Linux, 1.3.27ks
+Nov 14 19:20:35 montag kernel: [    6.349031] iwlagn: Copyright(c) 2003-2009 Intel Corporation
+Nov 14 19:20:35 montag kernel: [    6.349115] iwlagn 0000:02:00.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Nov 14 19:20:35 montag kernel: [    6.349144] iwlagn 0000:02:00.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    6.349195] iwlagn 0000:02:00.0: Detected Intel Wireless WiFi Link 5100AGN REV=0x54
+Nov 14 19:20:35 montag kernel: [    6.388207] iwlagn 0000:02:00.0: Tunable channels: 13 802.11bg, 24 802.11a channels
+Nov 14 19:20:35 montag kernel: [    6.388284] iwlagn 0000:02:00.0: irq 28 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [    6.520262] phy0: Selected rate control algorithm 'iwl-agn-rs'
+Nov 14 19:20:35 montag kernel: [    6.875461] HDA Intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+Nov 14 19:20:35 montag kernel: [    6.875498] HDA Intel 0000:00:1b.0: setting latency timer to 64
+Nov 14 19:20:35 montag kernel: [    7.105613] input: HDA Digital PCBeep as /devices/pci0000:00/0000:00:1b.0/input/input8
+Nov 14 19:20:35 montag kernel: [    8.188366] Adding 1992052k swap on /dev/sda3.  Priority:-1 extents:1 across:1992052k 
+Nov 14 19:20:35 montag kernel: [    8.384032] EXT3 FS on sda1, internal journal
+Nov 14 19:20:35 montag kernel: [    8.519328] loop: module loaded
+Nov 14 19:20:35 montag kernel: [    9.195386] kjournald starting.  Commit interval 5 seconds
+Nov 14 19:20:35 montag kernel: [    9.195613] EXT3 FS on sda2, internal journal
+Nov 14 19:20:35 montag kernel: [    9.195618] EXT3-fs: mounted filesystem with writeback data mode.
+Nov 14 19:20:35 montag kernel: [   10.965344] e1000e 0000:00:19.0: irq 27 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [   11.021081] e1000e 0000:00:19.0: irq 27 for MSI/MSI-X
+Nov 14 19:20:35 montag kernel: [   11.049278] fuse init (API version 7.13)
+Nov 14 19:20:38 montag kernel: [   15.429791] [drm] Initialized drm 1.1.0 20060810
+Nov 14 19:20:38 montag kernel: [   15.520729] i915 0000:00:02.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Nov 14 19:20:38 montag kernel: [   15.520734] i915 0000:00:02.0: setting latency timer to 64
+Nov 14 19:20:38 montag kernel: [   15.545055] i915 0000:00:02.0: irq 29 for MSI/MSI-X
+Nov 14 19:20:38 montag kernel: [   15.545062] [drm] set up 31M of stolen space
+Nov 14 19:20:39 montag kernel: [   16.263859] NET: Registered protocol family 10
+Nov 14 19:20:39 montag kernel: [   16.264469] lo: Disabled Privacy Extensions
+Nov 14 19:20:39 montag kernel: [   16.264960] ADDRCONF(NETDEV_UP): eth0: link is not ready
+Nov 14 19:20:39 montag kernel: [   16.273180] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:20:39 montag kernel: [   16.416723] fb0: inteldrmfb frame buffer device
+Nov 14 19:20:39 montag kernel: [   16.416725] registered panic notifier
+Nov 14 19:20:39 montag kernel: [   16.418277] ACPI Warning: _BQC returned an invalid level (20090903/video-631)
+Nov 14 19:20:39 montag kernel: [   16.419230] acpi device:08: registered as cooling_device4
+Nov 14 19:20:39 montag kernel: [   16.419428] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:01/input/input9
+Nov 14 19:20:39 montag kernel: [   16.419461] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+Nov 14 19:20:39 montag kernel: [   16.419489] [drm] Initialized i915 1.6.0 20080730 for 0000:00:02.0 on minor 0
+Nov 14 19:20:39 montag kernel: [   16.527184] Console: switching to colour frame buffer device 160x50
+Nov 14 19:20:39 montag kernel: [   16.627030] [drm] LVDS-8: set mode 1280x800 27
+Nov 14 19:20:40 montag kernel: [   17.351813] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:20:40 montag kernel: [   17.532983] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:20:41 montag kernel: [   17.959675] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:20:41 montag kernel: [   18.139825] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:20:49 montag kernel: [   25.850488] iwlagn 0000:02:00.0: firmware: requesting iwlwifi-5000-2.ucode
+Nov 14 19:20:49 montag kernel: [   25.920133] iwlagn 0000:02:00.0: loaded firmware version 8.24.2.12
+Nov 14 19:20:49 montag kernel: [   26.064681] Registered led device: iwl-phy0::radio
+Nov 14 19:20:49 montag kernel: [   26.064848] Registered led device: iwl-phy0::assoc
+Nov 14 19:20:49 montag kernel: [   26.064901] Registered led device: iwl-phy0::RX
+Nov 14 19:20:49 montag kernel: [   26.065034] Registered led device: iwl-phy0::TX
+Nov 14 19:20:49 montag kernel: [   26.077674] ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Nov 14 19:21:19 montag kernel: [   56.042640] nm-applet[2136]: segfault at 28 ip 00000000080616d2 sp 00000000ff8e51a0 error 4 in nm-applet[8048000+47000]
+Nov 14 19:21:39 montag kernel: [   76.530997] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:21:40 montag kernel: [   77.059022] [drm] TV-24: set mode NTSC 480i 0
+Nov 14 19:21:42 montag kernel: [   78.902900] [drm] LVDS-8: set mode 1280x800 27
+Nov 14 19:21:42 montag kernel: [   79.045965] [drm] LVDS-8: set mode 1280x800 27
+Nov 14 19:21:57 montag kernel: [   79.527406] PM: Syncing filesystems ... done.
+Nov 14 19:21:57 montag kernel: [   79.569095] Freezing user space processes ... (elapsed 0.00 seconds) done.
+Nov 14 19:21:57 montag kernel: [   79.569503] Freezing remaining freezable tasks ... (elapsed 0.00 seconds) done.
+Nov 14 19:21:57 montag kernel: [   79.569542] Suspending console(s) (use no_console_suspend to debug)
+Nov 14 19:21:57 montag kernel: [   79.640157] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+Nov 14 19:21:57 montag kernel: [   79.664333] sd 0:0:0:0: [sda] Stopping disk
+Nov 14 19:21:57 montag kernel: [   80.810220] serial 00:08: disabled
+Nov 14 19:21:57 montag kernel: [   80.810370] sdhci-pci 0000:06:09.1: PCI INT C disabled
+Nov 14 19:21:57 montag kernel: [   80.824118] sdhci-pci 0000:06:09.1: power state changed by ACPI to D3
+Nov 14 19:21:57 montag kernel: [   80.840119] pci 0000:00:1f.3: PCI INT C disabled
+Nov 14 19:21:57 montag kernel: [   80.920078] ehci_hcd 0000:00:1d.7: PCI INT A disabled
+Nov 14 19:21:57 montag kernel: [   80.920086] uhci_hcd 0000:00:1d.2: PCI INT C disabled
+Nov 14 19:21:57 montag kernel: [   80.920093] uhci_hcd 0000:00:1d.1: PCI INT B disabled
+Nov 14 19:21:57 montag kernel: [   80.920100] uhci_hcd 0000:00:1d.0: PCI INT A disabled
+Nov 14 19:21:57 montag kernel: [   81.232159] HDA Intel 0000:00:1b.0: PCI INT A disabled
+Nov 14 19:21:57 montag kernel: [   81.248086] ehci_hcd 0000:00:1a.7: PCI INT C disabled
+Nov 14 19:21:57 montag kernel: [   81.248093] uhci_hcd 0000:00:1a.2: PCI INT C disabled
+Nov 14 19:21:57 montag kernel: [   81.248100] uhci_hcd 0000:00:1a.1: PCI INT B disabled
+Nov 14 19:21:57 montag kernel: [   81.248107] uhci_hcd 0000:00:1a.0: PCI INT A disabled
+Nov 14 19:21:57 montag kernel: [   81.316336] e1000e 0000:00:19.0: PCI INT A disabled
+Nov 14 19:21:57 montag kernel: [   81.316342] e1000e 0000:00:19.0: PME# enabled
+Nov 14 19:21:57 montag kernel: [   81.316349] e1000e 0000:00:19.0: wake-up capability enabled by ACPI
+Nov 14 19:21:57 montag kernel: [   81.353320] ricoh-mmc: Suspending.
+Nov 14 19:21:57 montag kernel: [   81.353334] ricoh-mmc: Controller is now re-enabled.
+Nov 14 19:21:57 montag kernel: [   81.384579] ACPI: Preparing to enter system sleep state S3
+Nov 14 19:21:57 montag kernel: [   81.402284] Disabling non-boot CPUs ...
+Nov 14 19:21:57 montag kernel: [   81.404514] CPU 1 is now offline
+Nov 14 19:21:57 montag kernel: [   81.404516] SMP alternatives: switching to UP code
+Nov 14 19:21:57 montag kernel: [   81.409427] CPU0 attaching NULL sched-domain.
+Nov 14 19:21:57 montag kernel: [   81.409430] CPU1 attaching NULL sched-domain.
+Nov 14 19:21:57 montag kernel: [   81.409435] CPU0 attaching NULL sched-domain.
+Nov 14 19:21:57 montag kernel: [   81.409616] CPU1 is down
+Nov 14 19:21:57 montag kernel: [   81.409660] Extended CMOS year: 2000
+Nov 14 19:21:57 montag kernel: [   81.409660] Back to C!
+Nov 14 19:21:57 montag kernel: [   81.409660] CPU0: Thermal LVT vector (0xfa) already installed
+Nov 14 19:21:57 montag kernel: [   81.409660] Extended CMOS year: 2000
+Nov 14 19:21:57 montag kernel: [   81.409660] Enabling non-boot CPUs ...
+Nov 14 19:21:57 montag kernel: [   81.420103] SMP alternatives: switching to SMP code
+Nov 14 19:21:57 montag kernel: [   81.424510] Booting processor 1 APIC 0x1 ip 0x6000
+Nov 14 19:21:57 montag kernel: [   81.409167] Initializing CPU#1
+Nov 14 19:21:57 montag kernel: [   81.409167] Calibrating delay using timer specific routine.. 3989.97 BogoMIPS (lpj=7979942)
+Nov 14 19:21:57 montag kernel: [   81.409167] CPU: L1 I cache: 32K, L1 D cache: 32K
+Nov 14 19:21:57 montag kernel: [   81.409167] CPU: L2 cache: 3072K
+Nov 14 19:21:57 montag kernel: [   81.409167] CPU: Physical Processor ID: 0
+Nov 14 19:21:57 montag kernel: [   81.409167] CPU: Processor Core ID: 1
+Nov 14 19:21:57 montag kernel: [   81.409167] CPU1: Thermal monitoring enabled (TM2)
+Nov 14 19:21:57 montag kernel: [   81.512125] CPU1: Intel(R) Core(TM)2 Duo CPU     P7350  @ 2.00GHz stepping 06
+Nov 14 19:21:57 montag kernel: [   81.512148] CPU0 attaching NULL sched-domain.
+Nov 14 19:21:57 montag kernel: [   81.520015] CPU0 attaching sched-domain:
+Nov 14 19:21:57 montag kernel: [   81.520017]  domain 0: span 0-1 level MC
+Nov 14 19:21:57 montag kernel: [   81.520020]   groups: 0 1
+Nov 14 19:21:57 montag kernel: [   81.520024] CPU1 attaching sched-domain:
+Nov 14 19:21:57 montag kernel: [   81.520026]  domain 0: span 0-1 level MC
+Nov 14 19:21:57 montag kernel: [   81.520028]   groups: 1 0
+Nov 14 19:21:57 montag kernel: [   81.520452] CPU1 is up
+Nov 14 19:21:57 montag kernel: [   81.520996] ACPI: Waking up from system sleep state S3
+Nov 14 19:21:57 montag kernel: [   81.768902] i915 0000:00:02.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
+Nov 14 19:21:57 montag kernel: [   81.768914] i915 0000:00:02.0: restoring config space at offset 0x1 (was 0x900007, writing 0x900407)
+Nov 14 19:21:57 montag kernel: [   81.768939] pci 0000:00:02.1: restoring config space at offset 0x1 (was 0x900000, writing 0x900007)
+Nov 14 19:21:57 montag kernel: [   81.768960] e1000e 0000:00:19.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
+Nov 14 19:21:57 montag kernel: [   81.768976] e1000e 0000:00:19.0: restoring config space at offset 0x6 (was 0x1, writing 0x1821)
+Nov 14 19:21:57 montag kernel: [   81.768981] e1000e 0000:00:19.0: restoring config space at offset 0x5 (was 0x0, writing 0xf8624000)
+Nov 14 19:21:57 montag kernel: [   81.768987] e1000e 0000:00:19.0: restoring config space at offset 0x4 (was 0x0, writing 0xf8600000)
+Nov 14 19:21:57 montag kernel: [   81.768995] e1000e 0000:00:19.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100007)
+Nov 14 19:21:57 montag kernel: [   81.769044] uhci_hcd 0000:00:1a.0: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:21:57 montag kernel: [   81.769083] uhci_hcd 0000:00:1a.1: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:21:57 montag kernel: [   81.769121] uhci_hcd 0000:00:1a.2: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:21:57 montag kernel: [   81.769168] ehci_hcd 0000:00:1a.7: restoring config space at offset 0x1 (was 0x2900006, writing 0x2900002)
+Nov 14 19:21:57 montag kernel: [   81.769202] HDA Intel 0000:00:1b.0: restoring config space at offset 0xf (was 0x100, writing 0x105)
+Nov 14 19:21:57 montag kernel: [   81.769223] HDA Intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x10)
+Nov 14 19:21:57 montag kernel: [   81.769230] HDA Intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100002)
+Nov 14 19:21:57 montag kernel: [   81.769261] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x40100, writing 0x4010a)
+Nov 14 19:21:57 montag kernel: [   81.769274] pcieport 0000:00:1c.0: restoring config space at offset 0x9 (was 0x10001, writing 0xf1f1f001)
+Nov 14 19:21:57 montag kernel: [   81.769280] pcieport 0000:00:1c.0: restoring config space at offset 0x8 (was 0x0, writing 0xf5f0f400)
+Nov 14 19:21:57 montag kernel: [   81.769285] pcieport 0000:00:1c.0: restoring config space at offset 0x7 (was 0x20000000, writing 0x2020)
+Nov 14 19:21:57 montag kernel: [   81.769295] pcieport 0000:00:1c.0: restoring config space at offset 0x3 (was 0x810000, writing 0x810010)
+Nov 14 19:21:57 montag kernel: [   81.769302] pcieport 0000:00:1c.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100407)
+Nov 14 19:21:57 montag kernel: [   81.769350] pcieport 0000:00:1c.2: restoring config space at offset 0xf (was 0x40300, writing 0x40305)
+Nov 14 19:21:57 montag kernel: [   81.769362] pcieport 0000:00:1c.2: restoring config space at offset 0x9 (was 0x10001, writing 0xf3f1f201)
+Nov 14 19:21:57 montag kernel: [   81.769369] pcieport 0000:00:1c.2: restoring config space at offset 0x7 (was 0x20000000, writing 0x3030)
+Nov 14 19:21:57 montag kernel: [   81.769379] pcieport 0000:00:1c.2: restoring config space at offset 0x3 (was 0x810000, writing 0x810010)
+Nov 14 19:21:57 montag kernel: [   81.769386] pcieport 0000:00:1c.2: restoring config space at offset 0x1 (was 0x100000, writing 0x100407)
+Nov 14 19:21:57 montag kernel: [   81.769446] uhci_hcd 0000:00:1d.0: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:21:57 montag kernel: [   81.769485] uhci_hcd 0000:00:1d.1: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:21:57 montag kernel: [   81.769523] uhci_hcd 0000:00:1d.2: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:21:57 montag kernel: [   81.769570] ehci_hcd 0000:00:1d.7: restoring config space at offset 0x1 (was 0x2900006, writing 0x2900002)
+Nov 14 19:21:57 montag kernel: [   81.769594] pci 0000:00:1e.0: restoring config space at offset 0xf (was 0x40000, writing 0x400ff)
+Nov 14 19:21:57 montag kernel: [   81.769607] pci 0000:00:1e.0: restoring config space at offset 0x9 (was 0x10001, writing 0xc3f1c001)
+Nov 14 19:21:57 montag kernel: [   81.769612] pci 0000:00:1e.0: restoring config space at offset 0x8 (was 0x0, writing 0xf850f850)
+Nov 14 19:21:57 montag kernel: [   81.769618] pci 0000:00:1e.0: restoring config space at offset 0x7 (was 0x22800000, writing 0x22804040)
+Nov 14 19:21:57 montag kernel: [   81.769623] pci 0000:00:1e.0: restoring config space at offset 0x6 (was 0x20070600, writing 0x200a0600)
+Nov 14 19:21:57 montag kernel: [   81.769635] pci 0000:00:1e.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100007)
+Nov 14 19:21:57 montag kernel: [   81.769708] ahci 0000:00:1f.2: restoring config space at offset 0xf (was 0x200, writing 0x205)
+Nov 14 19:21:57 montag kernel: [   81.769732] ahci 0000:00:1f.2: restoring config space at offset 0x1 (was 0x2b00007, writing 0x2b00407)
+Nov 14 19:21:57 montag kernel: [   81.769784] pci 0000:00:1f.3: restoring config space at offset 0x4 (was 0x4, writing 0xc4000004)
+Nov 14 19:21:57 montag kernel: [   81.769851] iwlagn 0000:02:00.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
+Nov 14 19:21:57 montag kernel: [   81.769906] iwlagn 0000:02:00.0: restoring config space at offset 0x4 (was 0x4, writing 0xf4000004)
+Nov 14 19:21:57 montag kernel: [   81.769934] iwlagn 0000:02:00.0: restoring config space at offset 0x3 (was 0x0, writing 0x10)
+Nov 14 19:21:57 montag kernel: [   81.769948] iwlagn 0000:02:00.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100006)
+Nov 14 19:21:57 montag kernel: [   81.770039] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xf (was 0x7000100, writing 0x58001ff)
+Nov 14 19:21:57 montag kernel: [   81.770045] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xe (was 0x0, writing 0x44fc)
+Nov 14 19:21:57 montag kernel: [   81.770051] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xd (was 0x0, writing 0x4400)
+Nov 14 19:21:57 montag kernel: [   81.770056] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xc (was 0x0, writing 0x40fc)
+Nov 14 19:21:57 montag kernel: [   81.770062] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xb (was 0x0, writing 0x4000)
+Nov 14 19:21:57 montag kernel: [   81.770068] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xa (was 0x0, writing 0xcbfff000)
+Nov 14 19:21:57 montag kernel: [   81.770073] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x9 (was 0x0, writing 0xc8000000)
+Nov 14 19:21:57 montag kernel: [   81.770079] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x8 (was 0x0, writing 0xc3fff000)
+Nov 14 19:21:57 montag kernel: [   81.770084] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x7 (was 0x0, writing 0xc0000000)
+Nov 14 19:21:57 montag kernel: [   81.770090] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x6 (was 0x0, writing 0xb00a0706)
+Nov 14 19:21:57 montag kernel: [   81.770098] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x4 (was 0x0, writing 0xf8500000)
+Nov 14 19:21:57 montag kernel: [   81.770103] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x3 (was 0x824000, writing 0x82a800)
+Nov 14 19:21:57 montag kernel: [   81.770237] sdhci-pci 0000:06:09.1: restoring config space at offset 0xf (was 0x300, writing 0x3ff)
+Nov 14 19:21:57 montag kernel: [   81.770257] sdhci-pci 0000:06:09.1: restoring config space at offset 0x4 (was 0x0, writing 0xf8501000)
+Nov 14 19:21:57 montag kernel: [   81.770262] sdhci-pci 0000:06:09.1: restoring config space at offset 0x3 (was 0x800000, writing 0x804010)
+Nov 14 19:21:57 montag kernel: [   81.770270] sdhci-pci 0000:06:09.1: restoring config space at offset 0x1 (was 0x2100000, writing 0x2100006)
+Nov 14 19:21:57 montag kernel: [   81.770292] ricoh-mmc 0000:06:09.2: restoring config space at offset 0xf (was 0x300, writing 0x3ff)
+Nov 14 19:21:57 montag kernel: [   81.770314] ricoh-mmc 0000:06:09.2: restoring config space at offset 0x4 (was 0x0, writing 0xf8501400)
+Nov 14 19:21:57 montag kernel: [   81.770319] ricoh-mmc 0000:06:09.2: restoring config space at offset 0x3 (was 0x800000, writing 0x802010)
+Nov 14 19:21:57 montag kernel: [   81.770326] ricoh-mmc 0000:06:09.2: restoring config space at offset 0x1 (was 0x2100000, writing 0x2100006)
+Nov 14 19:21:57 montag kernel: [   81.770337] ricoh-mmc: Resuming.
+Nov 14 19:21:57 montag kernel: [   81.770350] ricoh-mmc: Controller is now disabled.
+Nov 14 19:21:57 montag kernel: [   81.775991] PM: Device PNP0C0D:00 failed to resume: error 1
+Nov 14 19:21:57 montag kernel: [   81.780345] i915 0000:00:02.0: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.860644] e1000e 0000:00:19.0: PCI INT A -> GSI 20 (level, low) -> IRQ 20
+Nov 14 19:21:57 montag kernel: [   81.860649] e1000e 0000:00:19.0: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.860662] e1000e 0000:00:19.0: wake-up capability disabled by ACPI
+Nov 14 19:21:57 montag kernel: [   81.860666] e1000e 0000:00:19.0: PME# disabled
+Nov 14 19:21:57 montag kernel: [   81.860706] e1000e 0000:00:19.0: irq 27 for MSI/MSI-X
+Nov 14 19:21:57 montag kernel: [   81.928254] uhci_hcd 0000:00:1a.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Nov 14 19:21:57 montag kernel: [   81.928260] uhci_hcd 0000:00:1a.0: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928284] usb usb3: root hub lost power or was reset
+Nov 14 19:21:57 montag kernel: [   81.928303] uhci_hcd 0000:00:1a.1: PCI INT B -> GSI 21 (level, low) -> IRQ 21
+Nov 14 19:21:57 montag kernel: [   81.928310] uhci_hcd 0000:00:1a.1: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928334] usb usb4: root hub lost power or was reset
+Nov 14 19:21:57 montag kernel: [   81.928366] uhci_hcd 0000:00:1a.2: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:21:57 montag kernel: [   81.928383] uhci_hcd 0000:00:1a.2: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928409] usb usb5: root hub lost power or was reset
+Nov 14 19:21:57 montag kernel: [   81.928431] ehci_hcd 0000:00:1a.7: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:21:57 montag kernel: [   81.928448] ehci_hcd 0000:00:1a.7: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928479] HDA Intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+Nov 14 19:21:57 montag kernel: [   81.928490] HDA Intel 0000:00:1b.0: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928540] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+Nov 14 19:21:57 montag kernel: [   81.928550] uhci_hcd 0000:00:1d.0: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928575] usb usb6: root hub lost power or was reset
+Nov 14 19:21:57 montag kernel: [   81.928606] uhci_hcd 0000:00:1d.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:21:57 montag kernel: [   81.928620] uhci_hcd 0000:00:1d.1: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928645] usb usb7: root hub lost power or was reset
+Nov 14 19:21:57 montag kernel: [   81.928668] uhci_hcd 0000:00:1d.2: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:21:57 montag kernel: [   81.928686] uhci_hcd 0000:00:1d.2: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928711] usb usb8: root hub lost power or was reset
+Nov 14 19:21:57 montag kernel: [   81.928733] ehci_hcd 0000:00:1d.7: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+Nov 14 19:21:57 montag kernel: [   81.928751] ehci_hcd 0000:00:1d.7: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928776] pci 0000:00:1e.0: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928787] ahci 0000:00:1f.2: setting latency timer to 64
+Nov 14 19:21:57 montag kernel: [   81.928901] pci 0000:00:1f.3: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:21:57 montag kernel: [   81.928952] iwlagn 0000:02:00.0: RF_KILL bit toggled to enable radio.
+Nov 14 19:21:57 montag kernel: [   82.068077] sdhci-pci 0000:06:09.1: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:21:57 montag kernel: [   82.068079] sdhci-pci 0000:06:09.1: Will use DMA mode even though HW doesn't fully claim to support it.
+Nov 14 19:21:57 montag kernel: [   82.068929] serial 00:08: activated
+Nov 14 19:21:57 montag kernel: [   82.071266] sd 0:0:0:0: [sda] Starting disk
+Nov 14 19:21:57 montag kernel: [   82.256078] ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+Nov 14 19:21:57 montag kernel: [   82.264039] ata6: SATA link down (SStatus 0 SControl 300)
+Nov 14 19:21:57 montag kernel: [   82.272039] ata5: SATA link down (SStatus 0 SControl 300)
+Nov 14 19:21:57 montag kernel: [   82.343303] ata2.00: configured for UDMA/100
+Nov 14 19:21:57 montag kernel: [   83.536075] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Nov 14 19:21:57 montag kernel: [   83.546400] ata1.00: configured for UDMA/133
+Nov 14 19:21:57 montag kernel: [   84.572034] usb 1-3: reset high speed USB device using ehci_hcd and address 2
+Nov 14 19:21:57 montag kernel: [   86.136037] usb 4-2: reset full speed USB device using uhci_hcd and address 2
+Nov 14 19:21:57 montag kernel: [   86.544036] usb 6-2: reset low speed USB device using uhci_hcd and address 2
+Nov 14 19:21:57 montag kernel: [   86.851499] Restarting tasks ... done.
+Nov 14 19:21:57 montag kernel: [   86.946636] [drm] LVDS-8: set mode 1280x800 27
+Nov 14 19:21:57 montag kernel: [   87.089925] Registered led device: iwl-phy0::radio
+Nov 14 19:21:57 montag kernel: [   87.089970] Registered led device: iwl-phy0::assoc
+Nov 14 19:21:57 montag kernel: [   87.090009] Registered led device: iwl-phy0::RX
+Nov 14 19:21:57 montag kernel: [   87.090047] Registered led device: iwl-phy0::TX
+Nov 14 19:21:57 montag kernel: [   87.098601] ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Nov 14 19:21:58 montag kernel: [   88.186596] [drm] LVDS-8: set mode 1280x800 27
+Nov 14 19:22:10 montag kernel: [   88.249839] PM: Syncing filesystems ... done.
+Nov 14 19:22:10 montag kernel: [   88.272285] Freezing user space processes ... (elapsed 0.00 seconds) done.
+Nov 14 19:22:10 montag kernel: [   88.272734] Freezing remaining freezable tasks ... (elapsed 0.00 seconds) done.
+Nov 14 19:22:10 montag kernel: [   88.272779] Suspending console(s) (use no_console_suspend to debug)
+Nov 14 19:22:10 montag kernel: [   88.344135] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+Nov 14 19:22:10 montag kernel: [   88.366939] sd 0:0:0:0: [sda] Stopping disk
+Nov 14 19:22:10 montag kernel: [   89.481419] serial 00:08: disabled
+Nov 14 19:22:10 montag kernel: [   89.481568] sdhci-pci 0000:06:09.1: PCI INT C disabled
+Nov 14 19:22:10 montag kernel: [   89.496121] sdhci-pci 0000:06:09.1: power state changed by ACPI to D3
+Nov 14 19:22:10 montag kernel: [   89.512097] pci 0000:00:1f.3: PCI INT C disabled
+Nov 14 19:22:10 montag kernel: [   89.592077] ehci_hcd 0000:00:1d.7: PCI INT A disabled
+Nov 14 19:22:10 montag kernel: [   89.592085] uhci_hcd 0000:00:1d.2: PCI INT C disabled
+Nov 14 19:22:10 montag kernel: [   89.592092] uhci_hcd 0000:00:1d.1: PCI INT B disabled
+Nov 14 19:22:10 montag kernel: [   89.592099] uhci_hcd 0000:00:1d.0: PCI INT A disabled
+Nov 14 19:22:10 montag kernel: [   89.592115] HDA Intel 0000:00:1b.0: PCI INT A disabled
+Nov 14 19:22:10 montag kernel: [   89.608074] ehci_hcd 0000:00:1a.7: PCI INT C disabled
+Nov 14 19:22:10 montag kernel: [   89.608082] uhci_hcd 0000:00:1a.2: PCI INT C disabled
+Nov 14 19:22:10 montag kernel: [   89.608088] uhci_hcd 0000:00:1a.1: PCI INT B disabled
+Nov 14 19:22:10 montag kernel: [   89.608095] uhci_hcd 0000:00:1a.0: PCI INT A disabled
+Nov 14 19:22:10 montag kernel: [   89.676347] e1000e 0000:00:19.0: PCI INT A disabled
+Nov 14 19:22:10 montag kernel: [   89.676353] e1000e 0000:00:19.0: PME# enabled
+Nov 14 19:22:10 montag kernel: [   89.676359] e1000e 0000:00:19.0: wake-up capability enabled by ACPI
+Nov 14 19:22:10 montag kernel: [   89.708231] ricoh-mmc: Suspending.
+Nov 14 19:22:10 montag kernel: [   89.708245] ricoh-mmc: Controller is now re-enabled.
+Nov 14 19:22:10 montag kernel: [   89.740569] ACPI: Preparing to enter system sleep state S3
+Nov 14 19:22:10 montag kernel: [   89.757301] Disabling non-boot CPUs ...
+Nov 14 19:22:10 montag kernel: [   89.860014] CPU 1 is now offline
+Nov 14 19:22:10 montag kernel: [   89.860016] SMP alternatives: switching to UP code
+Nov 14 19:22:10 montag kernel: [   89.864949] CPU0 attaching NULL sched-domain.
+Nov 14 19:22:10 montag kernel: [   89.864951] CPU1 attaching NULL sched-domain.
+Nov 14 19:22:10 montag kernel: [   89.864956] CPU0 attaching NULL sched-domain.
+Nov 14 19:22:10 montag kernel: [   89.865145] CPU1 is down
+Nov 14 19:22:10 montag kernel: [   89.865191] Extended CMOS year: 2000
+Nov 14 19:22:10 montag kernel: [   89.865191] Back to C!
+Nov 14 19:22:10 montag kernel: [   89.865191] CPU0: Thermal LVT vector (0xfa) already installed
+Nov 14 19:22:10 montag kernel: [   89.865191] Extended CMOS year: 2000
+Nov 14 19:22:10 montag kernel: [   89.865191] Enabling non-boot CPUs ...
+Nov 14 19:22:10 montag kernel: [   89.876106] SMP alternatives: switching to SMP code
+Nov 14 19:22:10 montag kernel: [   89.880625] Booting processor 1 APIC 0x1 ip 0x6000
+Nov 14 19:22:10 montag kernel: [   89.864714] Initializing CPU#1
+Nov 14 19:22:10 montag kernel: [   89.864714] Calibrating delay using timer specific routine.. 3990.02 BogoMIPS (lpj=7980053)
+Nov 14 19:22:10 montag kernel: [   89.864714] CPU: L1 I cache: 32K, L1 D cache: 32K
+Nov 14 19:22:10 montag kernel: [   89.864714] CPU: L2 cache: 3072K
+Nov 14 19:22:10 montag kernel: [   89.864714] CPU: Physical Processor ID: 0
+Nov 14 19:22:10 montag kernel: [   89.864714] CPU: Processor Core ID: 1
+Nov 14 19:22:10 montag kernel: [   89.864714] CPU1: Thermal monitoring enabled (TM2)
+Nov 14 19:22:10 montag kernel: [   89.968080] CPU1: Intel(R) Core(TM)2 Duo CPU     P7350  @ 2.00GHz stepping 06
+Nov 14 19:22:10 montag kernel: [   89.968104] CPU0 attaching NULL sched-domain.
+Nov 14 19:22:10 montag kernel: [   89.976015] CPU0 attaching sched-domain:
+Nov 14 19:22:10 montag kernel: [   89.976018]  domain 0: span 0-1 level MC
+Nov 14 19:22:10 montag kernel: [   89.976020]   groups: 0 1
+Nov 14 19:22:10 montag kernel: [   89.976024] CPU1 attaching sched-domain:
+Nov 14 19:22:10 montag kernel: [   89.976026]  domain 0: span 0-1 level MC
+Nov 14 19:22:10 montag kernel: [   89.976028]   groups: 1 0
+Nov 14 19:22:10 montag kernel: [   89.976450] CPU1 is up
+Nov 14 19:22:10 montag kernel: [   89.976993] ACPI: Waking up from system sleep state S3
+Nov 14 19:22:10 montag kernel: [   90.224825] i915 0000:00:02.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
+Nov 14 19:22:10 montag kernel: [   90.224837] i915 0000:00:02.0: restoring config space at offset 0x1 (was 0x900007, writing 0x900407)
+Nov 14 19:22:10 montag kernel: [   90.224861] pci 0000:00:02.1: restoring config space at offset 0x1 (was 0x900000, writing 0x900007)
+Nov 14 19:22:10 montag kernel: [   90.224883] e1000e 0000:00:19.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
+Nov 14 19:22:10 montag kernel: [   90.224899] e1000e 0000:00:19.0: restoring config space at offset 0x6 (was 0x1, writing 0x1821)
+Nov 14 19:22:10 montag kernel: [   90.224905] e1000e 0000:00:19.0: restoring config space at offset 0x5 (was 0x0, writing 0xf8624000)
+Nov 14 19:22:10 montag kernel: [   90.224910] e1000e 0000:00:19.0: restoring config space at offset 0x4 (was 0x0, writing 0xf8600000)
+Nov 14 19:22:10 montag kernel: [   90.224919] e1000e 0000:00:19.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100007)
+Nov 14 19:22:10 montag kernel: [   90.224963] uhci_hcd 0000:00:1a.0: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:22:10 montag kernel: [   90.225003] uhci_hcd 0000:00:1a.1: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:22:10 montag kernel: [   90.225043] uhci_hcd 0000:00:1a.2: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:22:10 montag kernel: [   90.225089] ehci_hcd 0000:00:1a.7: restoring config space at offset 0x1 (was 0x2900006, writing 0x2900002)
+Nov 14 19:22:10 montag kernel: [   90.225122] HDA Intel 0000:00:1b.0: restoring config space at offset 0xf (was 0x100, writing 0x105)
+Nov 14 19:22:10 montag kernel: [   90.225143] HDA Intel 0000:00:1b.0: restoring config space at offset 0x3 (was 0x0, writing 0x10)
+Nov 14 19:22:10 montag kernel: [   90.225150] HDA Intel 0000:00:1b.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100002)
+Nov 14 19:22:10 montag kernel: [   90.225182] pcieport 0000:00:1c.0: restoring config space at offset 0xf (was 0x40100, writing 0x4010a)
+Nov 14 19:22:10 montag kernel: [   90.225195] pcieport 0000:00:1c.0: restoring config space at offset 0x9 (was 0x10001, writing 0xf1f1f001)
+Nov 14 19:22:10 montag kernel: [   90.225201] pcieport 0000:00:1c.0: restoring config space at offset 0x8 (was 0x0, writing 0xf5f0f400)
+Nov 14 19:22:10 montag kernel: [   90.225206] pcieport 0000:00:1c.0: restoring config space at offset 0x7 (was 0x20000000, writing 0x20002020)
+Nov 14 19:22:10 montag kernel: [   90.225216] pcieport 0000:00:1c.0: restoring config space at offset 0x3 (was 0x810000, writing 0x810010)
+Nov 14 19:22:10 montag kernel: [   90.225223] pcieport 0000:00:1c.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100407)
+Nov 14 19:22:10 montag kernel: [   90.225269] pcieport 0000:00:1c.2: restoring config space at offset 0xf (was 0x40300, writing 0x40305)
+Nov 14 19:22:10 montag kernel: [   90.225282] pcieport 0000:00:1c.2: restoring config space at offset 0x9 (was 0x10001, writing 0xf3f1f201)
+Nov 14 19:22:10 montag kernel: [   90.225289] pcieport 0000:00:1c.2: restoring config space at offset 0x7 (was 0x20000000, writing 0x20003030)
+Nov 14 19:22:10 montag kernel: [   90.225299] pcieport 0000:00:1c.2: restoring config space at offset 0x3 (was 0x810000, writing 0x810010)
+Nov 14 19:22:10 montag kernel: [   90.225306] pcieport 0000:00:1c.2: restoring config space at offset 0x1 (was 0x100000, writing 0x100407)
+Nov 14 19:22:10 montag kernel: [   90.225366] uhci_hcd 0000:00:1d.0: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:22:10 montag kernel: [   90.225405] uhci_hcd 0000:00:1d.1: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:22:10 montag kernel: [   90.225443] uhci_hcd 0000:00:1d.2: restoring config space at offset 0x1 (was 0x2900005, writing 0x2900001)
+Nov 14 19:22:10 montag kernel: [   90.225490] ehci_hcd 0000:00:1d.7: restoring config space at offset 0x1 (was 0x2900006, writing 0x2900002)
+Nov 14 19:22:10 montag kernel: [   90.225515] pci 0000:00:1e.0: restoring config space at offset 0xf (was 0x40000, writing 0x400ff)
+Nov 14 19:22:10 montag kernel: [   90.225527] pci 0000:00:1e.0: restoring config space at offset 0x9 (was 0x10001, writing 0xc3f1c001)
+Nov 14 19:22:10 montag kernel: [   90.225532] pci 0000:00:1e.0: restoring config space at offset 0x8 (was 0x0, writing 0xf850f850)
+Nov 14 19:22:10 montag kernel: [   90.225538] pci 0000:00:1e.0: restoring config space at offset 0x7 (was 0x22800000, writing 0x22804040)
+Nov 14 19:22:10 montag kernel: [   90.225543] pci 0000:00:1e.0: restoring config space at offset 0x6 (was 0x20070600, writing 0x200a0600)
+Nov 14 19:22:10 montag kernel: [   90.225555] pci 0000:00:1e.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100007)
+Nov 14 19:22:10 montag kernel: [   90.225629] ahci 0000:00:1f.2: restoring config space at offset 0xf (was 0x200, writing 0x205)
+Nov 14 19:22:10 montag kernel: [   90.225652] ahci 0000:00:1f.2: restoring config space at offset 0x1 (was 0x2b00007, writing 0x2b00407)
+Nov 14 19:22:10 montag kernel: [   90.225704] pci 0000:00:1f.3: restoring config space at offset 0x4 (was 0x4, writing 0xc4000004)
+Nov 14 19:22:10 montag kernel: [   90.225770] iwlagn 0000:02:00.0: restoring config space at offset 0xf (was 0x100, writing 0x10b)
+Nov 14 19:22:10 montag kernel: [   90.225825] iwlagn 0000:02:00.0: restoring config space at offset 0x4 (was 0x4, writing 0xf4000004)
+Nov 14 19:22:10 montag kernel: [   90.225853] iwlagn 0000:02:00.0: restoring config space at offset 0x3 (was 0x0, writing 0x10)
+Nov 14 19:22:10 montag kernel: [   90.225867] iwlagn 0000:02:00.0: restoring config space at offset 0x1 (was 0x100000, writing 0x100406)
+Nov 14 19:22:10 montag kernel: [   90.225956] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xf (was 0x7000100, writing 0x58001ff)
+Nov 14 19:22:10 montag kernel: [   90.225961] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xe (was 0x0, writing 0x44fc)
+Nov 14 19:22:10 montag kernel: [   90.225967] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xd (was 0x0, writing 0x4400)
+Nov 14 19:22:10 montag kernel: [   90.225972] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xc (was 0x0, writing 0x40fc)
+Nov 14 19:22:10 montag kernel: [   90.225978] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xb (was 0x0, writing 0x4000)
+Nov 14 19:22:10 montag kernel: [   90.225984] yenta_cardbus 0000:06:09.0: restoring config space at offset 0xa (was 0x0, writing 0xcbfff000)
+Nov 14 19:22:10 montag kernel: [   90.225989] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x9 (was 0x0, writing 0xc8000000)
+Nov 14 19:22:10 montag kernel: [   90.225995] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x8 (was 0x0, writing 0xc3fff000)
+Nov 14 19:22:10 montag kernel: [   90.226000] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x7 (was 0x0, writing 0xc0000000)
+Nov 14 19:22:10 montag kernel: [   90.226006] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x6 (was 0x0, writing 0xb00a0706)
+Nov 14 19:22:10 montag kernel: [   90.226013] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x4 (was 0x0, writing 0xf8500000)
+Nov 14 19:22:10 montag kernel: [   90.226019] yenta_cardbus 0000:06:09.0: restoring config space at offset 0x3 (was 0x824000, writing 0x82a800)
+Nov 14 19:22:10 montag kernel: [   90.226153] sdhci-pci 0000:06:09.1: restoring config space at offset 0xf (was 0x300, writing 0x3ff)
+Nov 14 19:22:10 montag kernel: [   90.226174] sdhci-pci 0000:06:09.1: restoring config space at offset 0x4 (was 0x0, writing 0xf8501000)
+Nov 14 19:22:10 montag kernel: [   90.226179] sdhci-pci 0000:06:09.1: restoring config space at offset 0x3 (was 0x800000, writing 0x804010)
+Nov 14 19:22:10 montag kernel: [   90.226186] sdhci-pci 0000:06:09.1: restoring config space at offset 0x1 (was 0x2100000, writing 0x2100006)
+Nov 14 19:22:10 montag kernel: [   90.226208] ricoh-mmc 0000:06:09.2: restoring config space at offset 0xf (was 0x300, writing 0x3ff)
+Nov 14 19:22:10 montag kernel: [   90.226228] ricoh-mmc 0000:06:09.2: restoring config space at offset 0x4 (was 0x0, writing 0xf8501400)
+Nov 14 19:22:10 montag kernel: [   90.226234] ricoh-mmc 0000:06:09.2: restoring config space at offset 0x3 (was 0x800000, writing 0x802010)
+Nov 14 19:22:10 montag kernel: [   90.226241] ricoh-mmc 0000:06:09.2: restoring config space at offset 0x1 (was 0x2100000, writing 0x2100006)
+Nov 14 19:22:10 montag kernel: [   90.226253] ricoh-mmc: Resuming.
+Nov 14 19:22:10 montag kernel: [   90.226265] ricoh-mmc: Controller is now disabled.
+Nov 14 19:22:10 montag kernel: [   90.231671] PM: Device PNP0C0D:00 failed to resume: error 1
+Nov 14 19:22:10 montag kernel: [   90.235569] i915 0000:00:02.0: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.315881] e1000e 0000:00:19.0: PCI INT A -> GSI 20 (level, low) -> IRQ 20
+Nov 14 19:22:10 montag kernel: [   90.315887] e1000e 0000:00:19.0: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.315899] e1000e 0000:00:19.0: wake-up capability disabled by ACPI
+Nov 14 19:22:10 montag kernel: [   90.315904] e1000e 0000:00:19.0: PME# disabled
+Nov 14 19:22:10 montag kernel: [   90.315944] e1000e 0000:00:19.0: irq 27 for MSI/MSI-X
+Nov 14 19:22:10 montag kernel: [   90.384245] uhci_hcd 0000:00:1a.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+Nov 14 19:22:10 montag kernel: [   90.384252] uhci_hcd 0000:00:1a.0: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384276] usb usb3: root hub lost power or was reset
+Nov 14 19:22:10 montag kernel: [   90.384295] uhci_hcd 0000:00:1a.1: PCI INT B -> GSI 21 (level, low) -> IRQ 21
+Nov 14 19:22:10 montag kernel: [   90.384301] uhci_hcd 0000:00:1a.1: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384324] usb usb4: root hub lost power or was reset
+Nov 14 19:22:10 montag kernel: [   90.384357] uhci_hcd 0000:00:1a.2: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:22:10 montag kernel: [   90.384373] uhci_hcd 0000:00:1a.2: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384398] usb usb5: root hub lost power or was reset
+Nov 14 19:22:10 montag kernel: [   90.384421] ehci_hcd 0000:00:1a.7: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:22:10 montag kernel: [   90.384438] ehci_hcd 0000:00:1a.7: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384469] HDA Intel 0000:00:1b.0: PCI INT A -> GSI 22 (level, low) -> IRQ 22
+Nov 14 19:22:10 montag kernel: [   90.384478] HDA Intel 0000:00:1b.0: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384526] uhci_hcd 0000:00:1d.0: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+Nov 14 19:22:10 montag kernel: [   90.384537] uhci_hcd 0000:00:1d.0: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384562] usb usb6: root hub lost power or was reset
+Nov 14 19:22:10 montag kernel: [   90.384601] uhci_hcd 0000:00:1d.1: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:22:10 montag kernel: [   90.384611] uhci_hcd 0000:00:1d.1: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384636] usb usb7: root hub lost power or was reset
+Nov 14 19:22:10 montag kernel: [   90.384659] uhci_hcd 0000:00:1d.2: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:22:10 montag kernel: [   90.384676] uhci_hcd 0000:00:1d.2: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384700] usb usb8: root hub lost power or was reset
+Nov 14 19:22:10 montag kernel: [   90.384720] ehci_hcd 0000:00:1d.7: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+Nov 14 19:22:10 montag kernel: [   90.384730] ehci_hcd 0000:00:1d.7: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384760] pci 0000:00:1e.0: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384771] ahci 0000:00:1f.2: setting latency timer to 64
+Nov 14 19:22:10 montag kernel: [   90.384886] pci 0000:00:1f.3: PCI INT C -> GSI 19 (level, low) -> IRQ 19
+Nov 14 19:22:10 montag kernel: [   90.384938] iwlagn 0000:02:00.0: RF_KILL bit toggled to enable radio.
+Nov 14 19:22:10 montag kernel: [   90.524076] sdhci-pci 0000:06:09.1: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+Nov 14 19:22:10 montag kernel: [   90.524079] sdhci-pci 0000:06:09.1: Will use DMA mode even though HW doesn't fully claim to support it.
+Nov 14 19:22:10 montag kernel: [   90.524930] serial 00:08: activated
+Nov 14 19:22:10 montag kernel: [   90.527267] sd 0:0:0:0: [sda] Starting disk
+Nov 14 19:22:10 montag kernel: [   90.712078] ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+Nov 14 19:22:10 montag kernel: [   90.720039] ata6: SATA link down (SStatus 0 SControl 300)
+Nov 14 19:22:10 montag kernel: [   90.728039] ata5: SATA link down (SStatus 0 SControl 300)
+Nov 14 19:22:10 montag kernel: [   90.814638] ata2.00: configured for UDMA/100
+Nov 14 19:22:10 montag kernel: [   91.992075] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Nov 14 19:22:10 montag kernel: [   92.004787] ata1.00: configured for UDMA/133
+Nov 14 19:22:10 montag kernel: [   93.032040] usb 1-3: reset high speed USB device using ehci_hcd and address 2
+Nov 14 19:22:10 montag kernel: [   94.596037] usb 4-2: reset full speed USB device using uhci_hcd and address 2
+Nov 14 19:22:10 montag kernel: [   95.004037] usb 6-2: reset low speed USB device using uhci_hcd and address 2
+Nov 14 19:22:10 montag kernel: [   95.311500] Restarting tasks ... done.
+Nov 14 19:22:10 montag kernel: [   95.405800] [drm] LVDS-8: set mode 1280x800 27
+Nov 14 19:22:10 montag kernel: [   95.548582] Registered led device: iwl-phy0::radio
+Nov 14 19:22:10 montag kernel: [   95.548605] Registered led device: iwl-phy0::assoc
+Nov 14 19:22:10 montag kernel: [   95.548625] Registered led device: iwl-phy0::RX
+Nov 14 19:22:10 montag kernel: [   95.548644] Registered led device: iwl-phy0::TX
+Nov 14 19:22:10 montag kernel: [   95.566804] ADDRCONF(NETDEV_UP): wlan0: link is not ready

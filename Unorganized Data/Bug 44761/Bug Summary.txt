@@ -1,0 +1,13 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=44761
+Component: Serial
+Hardware: All Linux
+Reported: 2012-07-13 19:32 UTC 
+Modified: 2012-07-26 00:15 UTC 
+Kernel Version: 2.6.32-71.29.1.el6.i686
+Tree: Mainline
+
+Summary:
+	n_tty driver caused kernel panic possibly due to race condition clearing tty->read_buf.
+
+
+	

@@ -1,0 +1,13 @@
+Notes:
+	-This bug seems to be dismissed as invalid (but no reason is given on why it is invalid).
+	
+Proposed fix:	
+	static void z8530_dma_status(struct z8530_channel *chan)
+	{
+		u8 status, altered;
+	+	spin_lock(chan->lock);
+
+		status=read_zsreg(chan, R0);
+		altered=chan->status^status;
+	         
+		chan->status=status;

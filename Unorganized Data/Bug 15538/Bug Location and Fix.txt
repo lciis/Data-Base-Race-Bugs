@@ -1,0 +1,23 @@
+Notes:
+	-This change checks txdp before processing a descriptor (if there are any subsequent descriptors) to see if
+hardware moved on.  
+
+Proposed fix:
+	diff --git a/drivers/net/wireless/ath/ath5k/base.c b/drivers/net/wireless/ath/ath5k/base.c
+	index b142a78..63dfb84 100644
+	--- a/drivers/net/wireless/ath/ath5k/base.c
+	+++ b/drivers/net/wireless/ath/ath5k/base.c
+	@@ -2059,6 +2059,11 @@ ath5k_tx_processq(struct ath5k_softc *sc, struct ath5k_txq *txq)
+	 	list_for_each_entry_safe(bf, bf0, &txq->q, list) {
+	 		ds = bf->desc;
+	 
+	+		/* make sure hardware can read the ds_link (if present) */
+	+		if (ath5k_hw_get_txdp(sc->ah, txq->qnum) == bf->daddr &&
+	+		    !list_is_last(&bf->list, &txq->q))
+	+			break;
+	+
+	 		ret = sc->ah->ah_proc_tx_desc(sc->ah, ds, &ts);
+	 		if (unlikely(ret == -EINPROGRESS))
+	 			break;
+	-- 
+	1.5.4.1

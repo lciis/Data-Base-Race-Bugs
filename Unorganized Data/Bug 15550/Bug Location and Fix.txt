@@ -1,0 +1,47 @@
+*See ./Attachments/Proposed fix: mutex accesses to fw_priv->fw.txt for detail.
+
+Notes:
+	-The mutex_lock in the original source code doesn’t protect fw_priv->fw in case 0.  
+
+Proposed fix:
+	diff --git a/drivers/base/firmware_class.c b/drivers/base/firmware_class.c
+	index 7376367..21ac040 100644
+	--- a/drivers/base/firmware_class.c
+	+++ b/drivers/base/firmware_class.c
+	@@ -150,13 +150,15 @@ static ssize_t firmware_loading_store(struct device *dev, 
+	int loading = simple_strtol(buf, NULL, 10);
+ 	int i;
+ 
+	+
+	+	mutex_lock(&fw_lock);
+	+	if (!fw_priv->fw) {
+	+		mutex_unlock(&fw_lock);
+	+		return -ENODEV;
+	+	}
+	+
+ 		switch (loading) {
+ 		case 1:
+	-		mutex_lock(&fw_lock);
+	-		if (!fw_priv->fw) {
+	-			mutex_unlock(&fw_lock);
+	-			break;
+	-		}
+ 			vfree(fw_priv->fw->data);
+ 			fw_priv->fw->data = NULL;
+ 			for (i = 0; i < fw_priv->nr_pages; i++)
+	@@ -167,7 +169,6 @@ static ssize_t firmware_loading_store(struct device *dev,
+ 			fw_priv->nr_pages = 0;								
+ 			fw_priv->fw->size = 0;
+ 			set_bit(FW_STATUS_LOADING, &fw_priv->status);
+	-		mutex_unlock(&fw_lock);
+ 			break;
+ 		case 0:
+ 			if (test_bit(FW_STATUS_LOADING, &fw_priv->status)) {
+	@@ -195,6 +196,7 @@ static ssize_t firmware_loading_store(struct device *dev,
+ 			fw_load_abort(fw_priv);
+ 			break;
+ 		}
+	+	mutex_unlock(&fw_lock);
+ 
+ 		return count;
+	 }

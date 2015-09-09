@@ -1,0 +1,29 @@
+[    7.242449] ------------[ cut here ]------------
+[    7.243706] Kernel BUG at d04d523e [verbose debug info unavailable]
+[    7.243706] invalid opcode: 0000 [#1] PREEMPT
+[    7.243706] last sysfs file: /sys/devices/pci0000:00/0000:00:09.0/firmware/0000:00:09.0/loading
+[    7.243706] Modules linked in: arc4 ecb cryptomgr crypto_blkcipher aead pcompress crypto_hash crypto_algapi rt61pci rt2x00pci rt2x00lib firmware_class mac80211 input_polldev crc_itu_t eeprom_93cx6 cfg80211 ndccanram ndccan ndcser(P) ndcscan(P) eu16550(P) ndccon(P)
+[    7.243706]
+[    7.243706] Pid: 1004, comm: echo Tainted: P           (2.6.31 #1)
+[    7.243706] EIP: 0060:[<d04d523e>] EFLAGS: 00010246 CPU: 0
+[    7.243706] EIP is at firmware_loading_store+0x15e/0x170 [firmware_class]
+[    7.243706] EAX: 00000000 EBX: d04d50e0 ECX: 0000000a EDX: 00000028
+[    7.243706] ESI: cf4f2a20 EDI: cf4ffc00 EBP: cf4ffc08 ESP: cea37f2c
+[    7.243706]  DS: 007b ES: 007b FS: 0000 GS: 0000 SS: 0068
+[    7.243706] Process echo (pid: 1004, ti=cea36000 task=cf6c2380 task.ti=cea36000)
+[    7.243706] Stack:
+[    7.243706]  d04d50e0 cf4ffc00 00000002 c028051d 00000002 c0414c40 cf4fd420 c01c9c98
+[    7.243706] <0> 00000002 c0414c40 00000002 b7fc8000 cf636e80 cf471980 c01c9ce6 cf636e94
+[    7.243706] <0> cf471980 b7fc8000 00000002 c01c9cb0 c018d362 cea37f9c cf471980 fffffff7
+[    7.243706] Call Trace:
+[    7.243706]  [<d04d50e0>] ? firmware_loading_store+0x0/0x170 [firmware_class]
+[    7.243706]  [<c028051d>] ? dev_attr_store+0x1d/0x20
+[    7.243706]  [<c01c9c98>] ? flush_write_buffer+0x38/0x50
+[    7.243706]  [<c01c9ce6>] ? sysfs_write_file+0x36/0x60
+[    7.243706]  [<c01c9cb0>] ? sysfs_write_file+0x0/0x60
+[    7.243706]  [<c018d362>] ? vfs_write+0x82/0xf0
+[    7.243706]  [<c018d47c>] ? sys_write+0x3c/0x70
+[    7.243706]  [<c0102ba1>] ? syscall_call+0x7/0xb
+[    7.243706] Code: 66 34 fe e9 14 ff ff ff 8b 47 08 68 1c 5f 4d d0 50 89 f8 e8 65 b2 da ef 50 68 c3 5f 4d d0 e8 da 3c c5 ef 83 c4 10 e9 ea fe ff ff <0f> 0b eb fe 8d b4 26 00 00 00 00 8d bc 27 00 00 00 00 55 89 cd
+[    7.243706] EIP: [<d04d523e>] firmware_loading_store+0x15e/0x170 [firmware_class] SS:ESP 0068:cea37f2c
+[    7.458557] ---[ end trace 604593037057054f ]---

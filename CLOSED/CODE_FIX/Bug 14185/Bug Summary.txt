@@ -1,0 +1,52 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=14185
+Component: Other
+Hardware: All Linux
+Reported: 2009-09-17 05:09 UTC
+Modified: 2009-10-12 21:43 UTC
+Kernel Version: 2.6.31
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	In drivers/base/firmware_class, there is a race between _request_firmware and firmware_loading_store by protecting the accesses to fw_priv->fw. The mutex_lock in the original source code doesn’t protect fw_priv->fw in case 0.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Lars_ericsson 2009-09-17 05:09:04 UTC
+	Hi,
+
+	I have discovered a Oops in the firmware_loading_store function. 
+	At first it looks like a timing issue but after adding a BUG_ON test,
+	it fails every time. 
+
+	drivers\base\firmware_class:
+	------------------------------
+	 541 01c0 F6463401 	testb $1,52(%esi)
+	 542 01c4 0F843FFF 	je .L38
+	 542      FFFF
+	 543              	.loc 1 174 0
+	 544 01ca 8B4630   	movl 48(%esi),%eax
+	 545 01cd 8B4004   	movl 4(%eax),%eax	<---- Oops
+	 546 01d0 E8FCFFFF 	call vfree
+	 546      FF
+
+	The code that fails was introduced in commit
+	6e03a201bbe8137487f340d26aa662110e324b20 
+
+	Attached you will find the:
+	- Oops with the vanilla 2.6.31
+	- The BUG_ON patch
+	- Oops with the patched 2.6.31
+
+	/Lars
+	
+---------------------------------------------------------------------------
+	Frederik Deweerdt 2009-10-02 21:18:12 UTC
+	Created attachment 23237 [details]
+	Proposed fix: mutex accesses to fw_priv->fw
+
+	The patch to be found on the above URL should fix the race between _request_firmware and firmware_loading_store by protecting the accesses to fw_priv->fw.
+---------------------------------------------------------------------------
+	
+Proposed Fix:
+	In ./Attachments/Proposed fix_ mutex accesses to fw_priv-_fw

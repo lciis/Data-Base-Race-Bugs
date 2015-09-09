@@ -1,0 +1,440 @@
+00:00.0 RAM memory: nVidia Corporation MCP55 Memory Controller (rev a2)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0
+	Capabilities: [44] HyperTransport: Slave or Primary Interface
+		Command: BaseUnitID=0 UnitCnt=15 MastHost- DefDir- DUL-
+		Link Control 0: CFlE+ CST- CFE- <LkFail- Init+ EOC- TXO- <CRCErr=0 IsocEn- LSEn+ ExtCTL- 64b-
+		Link Config 0: MLWI=16bit DwFcIn- MLWO=16bit DwFcOut- LWI=16bit DwFcInEn- LWO=16bit DwFcOutEn-
+		Link Control 1: CFlE- CST- CFE- <LkFail+ Init- EOC+ TXO+ <CRCErr=0 IsocEn- LSEn- ExtCTL- 64b-
+		Link Config 1: MLWI=8bit DwFcIn- MLWO=8bit DwFcOut- LWI=8bit DwFcInEn- LWO=8bit DwFcOutEn-
+		Revision ID: 1.03
+		Link Frequency 0: 1.0GHz
+		Link Error 0: <Prot- <Ovfl- <EOC- CTLTm-
+		Link Frequency Capability 0: 200MHz+ 300MHz+ 400MHz+ 500MHz+ 600MHz+ 800MHz+ 1.0GHz+ 1.2GHz- 1.4GHz- 1.6GHz- Vend-
+		Feature Capability: IsocFC+ LDTSTOP+ CRCTM- ECTLT- 64bA- UIDRD-
+		Link Frequency 1: 200MHz
+		Link Error 1: <Prot- <Ovfl- <EOC- CTLTm-
+		Link Frequency Capability 1: 200MHz- 300MHz- 400MHz- 500MHz- 600MHz- 800MHz- 1.0GHz- 1.2GHz- 1.4GHz- 1.6GHz- Vend-
+		Error Handling: PFlE+ OFlE+ PFE- OFE- EOCFE- RFE- CRCFE- SERRFE- CF- RE- PNFE- ONFE- EOCNFE- RNFE- CRCNFE- SERRNFE-
+		Prefetchable memory behind bridge Upper: 00-00
+		Bus Number: 00
+	Capabilities: [dc] HyperTransport: MSI Mapping
+
+00:01.0 ISA bridge: nVidia Corporation MCP55 LPC Bridge (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O+ Mem+ BusMaster+ SpecCycle+ MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap- 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0
+
+00:01.1 SMBus: nVidia Corporation MCP55 SMBus (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O+ Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Interrupt: pin A routed to IRQ 10
+	Region 0: I/O ports at dc00 [size=64]
+	Region 4: I/O ports at 2d00 [size=64]
+	Region 5: I/O ports at 2e00 [size=64]
+	Capabilities: [44] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+
+00:02.0 USB Controller: nVidia Corporation MCP55 USB Controller (rev a1) (prog-if 10 [OHCI])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0 (750ns min, 250ns max)
+	Interrupt: pin A routed to IRQ 22
+	Region 0: Memory at fe9fb000 (32-bit, non-prefetchable) [size=4K]
+	Capabilities: [44] Power Management version 2
+		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+
+00:02.1 USB Controller: nVidia Corporation MCP55 USB Controller (rev a2) (prog-if 20 [EHCI])
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0 (750ns min, 250ns max)
+	Interrupt: pin B routed to IRQ 23
+	Region 0: Memory at fe9fac00 (32-bit, non-prefetchable) [size=256]
+	Capabilities: [44] Debug port
+	Capabilities: [80] Power Management version 2
+		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+
+00:04.0 IDE interface: nVidia Corporation MCP55 IDE (rev a1) (prog-if 8a [Master SecP PriP])
+	Subsystem: Unknown device f0de:cb84
+	Control: I/O+ Mem- BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0 (750ns min, 250ns max)
+	Region 0: [virtual] Memory at 000001f0 (32-bit, non-prefetchable) [disabled] [size=8]
+	Region 1: [virtual] Memory at 000003f0 (type 3, non-prefetchable) [disabled] [size=1]
+	Region 2: [virtual] Memory at 00000170 (32-bit, non-prefetchable) [disabled] [size=8]
+	Region 3: [virtual] Memory at 00000370 (type 3, non-prefetchable) [disabled] [size=1]
+	Region 4: I/O ports at ffa0 [size=16]
+	Capabilities: [44] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot-,D3cold-)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+
+00:06.0 PCI bridge: nVidia Corporation Unknown device 0370 (rev a2) (prog-if 01 [Subtractive decode])
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0
+	Bus: primary=00, secondary=01, subordinate=01, sec-latency=64
+	I/O behind bridge: 0000e000-0000efff
+	Memory behind bridge: fea00000-feafffff
+	Prefetchable memory behind bridge: f8000000-fbffffff
+	Secondary status: 66MHz- FastB2B+ ParErr- DEVSEL=medium >TAbort- <TAbort- <MAbort- <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA+ MAbort- >Reset- FastB2B-
+	Capabilities: [b8] Subsystem: nVidia Corporation Unknown device cb84
+	Capabilities: [8c] HyperTransport: MSI Mapping
+
+00:08.0 Bridge: nVidia Corporation MCP55 Ethernet (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0 (250ns min, 5000ns max)
+	Interrupt: pin A routed to IRQ 1273
+	Region 0: Memory at fe9f9000 (32-bit, non-prefetchable) [size=4K]
+	Region 1: I/O ports at d480 [size=8]
+	Region 2: Memory at fe9fa800 (32-bit, non-prefetchable) [size=256]
+	Region 3: Memory at fe9fa400 (32-bit, non-prefetchable) [size=16]
+	Capabilities: [44] Power Management version 2
+		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable+ DSel=0 DScale=0 PME-
+	Capabilities: [70] MSI-X: Enable- Mask- TabSize=8
+		Vector table: BAR=2 offset=00000000
+		PBA: BAR=3 offset=00000000
+	Capabilities: [50] Message Signalled Interrupts: Mask+ 64bit+ Queue=0/3 Enable+
+		Address: 00000000fee0f00c  Data: 41a1
+		Masking: 000000fe  Pending: 00000000
+	Capabilities: [6c] HyperTransport: MSI Mapping
+
+00:09.0 Bridge: nVidia Corporation MCP55 Ethernet (rev a3)
+	Subsystem: nVidia Corporation Unknown device cb84
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0 (250ns min, 5000ns max)
+	Interrupt: pin A routed to IRQ 20
+	Region 0: Memory at fe9f8000 (32-bit, non-prefetchable) [size=4K]
+	Region 1: I/O ports at d400 [size=8]
+	Region 2: Memory at fe9fa000 (32-bit, non-prefetchable) [size=256]
+	Region 3: Memory at fe9f7c00 (32-bit, non-prefetchable) [size=16]
+	Capabilities: [44] Power Management version 2
+		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [70] MSI-X: Enable- Mask- TabSize=8
+		Vector table: BAR=2 offset=00000000
+		PBA: BAR=3 offset=00000000
+	Capabilities: [50] Message Signalled Interrupts: Mask+ 64bit+ Queue=0/3 Enable-
+		Address: 0000000000000000  Data: 0000
+		Masking: 00000000  Pending: 00000000
+	Capabilities: [6c] HyperTransport: MSI Mapping
+
+00:0a.0 PCI bridge: nVidia Corporation Unknown device 0376 (rev a3) (prog-if 00 [Normal decode])
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Bus: primary=00, secondary=02, subordinate=02, sec-latency=0
+	I/O behind bridge: 0000f000-00000fff
+	Memory behind bridge: feb00000-febfffff
+	Prefetchable memory behind bridge: 00000000fff00000-00000000000fffff
+	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort+ <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA- MAbort- >Reset- FastB2B-
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+		Address: 00000000fee0f00c  Data: 4149
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+		Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s <64ns, L1 <1us
+		Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x8, ASPM L0s L1, Port 5
+		Link: Latency L0s <512ns, L1 <4us
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x8
+		Slot: AtnBtn- PwrCtrl- MRL- AtnInd- PwrInd- HotPlug- Surpise-
+		Slot: Number 0, PowerLimit 0.000000
+		Slot: Enabled AtnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq-
+		Slot: AttnInd Off, PwrInd On, Power-
+		Root: Correctable- Non-Fatal- Fatal- PME-
+
+00:0b.0 PCI bridge: nVidia Corporation Unknown device 0374 (rev a3) (prog-if 00 [Normal decode])
+	Control: I/O- Mem- BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Bus: primary=00, secondary=03, subordinate=03, sec-latency=0
+	I/O behind bridge: 0000f000-00000fff
+	Memory behind bridge: fff00000-000fffff
+	Prefetchable memory behind bridge: 00000000fff00000-00000000000fffff
+	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA- MAbort- >Reset- FastB2B-
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+		Address: 00000000fee0f00c  Data: 4151
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+		Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s <64ns, L1 <1us
+		Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x0, ASPM L0s L1, Port 4
+		Link: Latency L0s <512ns, L1 <4us
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x4
+		Slot: AtnBtn- PwrCtrl- MRL- AtnInd- PwrInd- HotPlug- Surpise-
+		Slot: Number 0, PowerLimit 0.000000
+		Slot: Enabled AtnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq-
+		Slot: AttnInd Off, PwrInd On, Power-
+		Root: Correctable- Non-Fatal- Fatal- PME-
+
+00:0c.0 PCI bridge: nVidia Corporation Unknown device 0374 (rev a3) (prog-if 00 [Normal decode])
+	Control: I/O- Mem- BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Bus: primary=00, secondary=04, subordinate=04, sec-latency=0
+	I/O behind bridge: 0000f000-00000fff
+	Memory behind bridge: fff00000-000fffff
+	Prefetchable memory behind bridge: 00000000fff00000-00000000000fffff
+	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA- MAbort- >Reset- FastB2B-
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+		Address: 00000000fee0f00c  Data: 4159
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+		Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s <64ns, L1 <1us
+		Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x0, ASPM L0s L1, Port 3
+		Link: Latency L0s <512ns, L1 <4us
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x4
+		Slot: AtnBtn- PwrCtrl- MRL- AtnInd- PwrInd- HotPlug- Surpise-
+		Slot: Number 0, PowerLimit 0.000000
+		Slot: Enabled AtnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq-
+		Slot: AttnInd Off, PwrInd On, Power-
+		Root: Correctable- Non-Fatal- Fatal- PME-
+
+00:0d.0 PCI bridge: nVidia Corporation Unknown device 0378 (rev a3) (prog-if 00 [Normal decode])
+	Control: I/O- Mem- BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Bus: primary=00, secondary=05, subordinate=05, sec-latency=0
+	I/O behind bridge: 0000f000-00000fff
+	Memory behind bridge: fff00000-000fffff
+	Prefetchable memory behind bridge: 00000000fff00000-00000000000fffff
+	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA- MAbort- >Reset- FastB2B-
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+		Address: 00000000fee0f00c  Data: 4161
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+		Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s <64ns, L1 <1us
+		Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x4, ASPM L0s L1, Port 2
+		Link: Latency L0s <512ns, L1 <4us
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x4
+		Slot: AtnBtn- PwrCtrl- MRL- AtnInd- PwrInd- HotPlug- Surpise-
+		Slot: Number 0, PowerLimit 0.000000
+		Slot: Enabled AtnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq-
+		Slot: AttnInd Off, PwrInd On, Power-
+		Root: Correctable- Non-Fatal- Fatal- PME-
+
+00:0e.0 PCI bridge: nVidia Corporation Unknown device 0375 (rev a3) (prog-if 00 [Normal decode])
+	Control: I/O- Mem- BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Bus: primary=00, secondary=06, subordinate=06, sec-latency=0
+	I/O behind bridge: 0000f000-00000fff
+	Memory behind bridge: fff00000-000fffff
+	Prefetchable memory behind bridge: 00000000fff00000-00000000000fffff
+	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA- MAbort- >Reset- FastB2B-
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+		Address: 00000000fee0f00c  Data: 4169
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+		Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s <64ns, L1 <1us
+		Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x0, ASPM L0s L1, Port 1
+		Link: Latency L0s <512ns, L1 <4us
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x8
+		Slot: AtnBtn- PwrCtrl- MRL- AtnInd- PwrInd- HotPlug- Surpise-
+		Slot: Number 0, PowerLimit 0.000000
+		Slot: Enabled AtnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq-
+		Slot: AttnInd Off, PwrInd On, Power-
+		Root: Correctable- Non-Fatal- Fatal- PME-
+
+00:0f.0 PCI bridge: nVidia Corporation Unknown device 0377 (rev a3) (prog-if 00 [Normal decode])
+	Control: I/O- Mem- BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Bus: primary=00, secondary=07, subordinate=07, sec-latency=0
+	I/O behind bridge: 0000f000-00000fff
+	Memory behind bridge: fff00000-000fffff
+	Prefetchable memory behind bridge: 00000000fff00000-00000000000fffff
+	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
+	BridgeCtl: Parity- SERR+ NoISA- VGA- MAbort- >Reset- FastB2B-
+	Capabilities: [40] Subsystem: nVidia Corporation Unknown device 0000
+	Capabilities: [48] Power Management version 2
+		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [50] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable+
+		Address: 00000000fee0f00c  Data: 4171
+	Capabilities: [60] HyperTransport: MSI Mapping
+	Capabilities: [80] Express Root Port (Slot+) IRQ 0
+		Device: Supported: MaxPayload 256 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s <64ns, L1 <1us
+		Device: Errors: Correctable+ Non-Fatal+ Fatal+ Unsupported+
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x16, ASPM L0s L1, Port 0
+		Link: Latency L0s <512ns, L1 <4us
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x16
+		Slot: AtnBtn- PwrCtrl- MRL- AtnInd- PwrInd- HotPlug- Surpise-
+		Slot: Number 0, PowerLimit 0.000000
+		Slot: Enabled AtnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq-
+		Slot: AttnInd Off, PwrInd On, Power-
+		Root: Correctable- Non-Fatal- Fatal- PME-
+
+00:18.0 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] HyperTransport Technology Configuration
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Capabilities: [80] HyperTransport: Host or Secondary Interface
+		!!! Possibly incomplete decoding
+		Command: WarmRst+ DblEnd-
+		Link Control: CFlE- CST- CFE- <LkFail- Init+ EOC- TXO- <CRCErr=0
+		Link Config: MLWI=16bit MLWO=16bit LWI=16bit LWO=16bit
+		Revision ID: 1.02
+	Capabilities: [a0] HyperTransport: Host or Secondary Interface
+		!!! Possibly incomplete decoding
+		Command: WarmRst+ DblEnd-
+		Link Control: CFlE- CST- CFE- <LkFail- Init+ EOC- TXO- <CRCErr=0
+		Link Config: MLWI=16bit MLWO=16bit LWI=16bit LWO=16bit
+		Revision ID: 1.02
+	Capabilities: [c0] HyperTransport: Host or Secondary Interface
+		!!! Possibly incomplete decoding
+		Command: WarmRst+ DblEnd-
+		Link Control: CFlE- CST- CFE- <LkFail+ Init- EOC+ TXO+ <CRCErr=0
+		Link Config: MLWI=16bit MLWO=16bit LWI=N/C LWO=N/C
+		Revision ID: 1.02
+
+00:18.1 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Address Map
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+
+00:18.2 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] DRAM Controller
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+
+00:18.3 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Miscellaneous Control
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Capabilities: [f0] #0f [0010]
+
+00:19.0 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] HyperTransport Technology Configuration
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Capabilities: [80] HyperTransport: Host or Secondary Interface
+		!!! Possibly incomplete decoding
+		Command: WarmRst+ DblEnd-
+		Link Control: CFlE- CST- CFE- <LkFail+ Init- EOC+ TXO+ <CRCErr=0
+		Link Config: MLWI=16bit MLWO=16bit LWI=N/C LWO=N/C
+		Revision ID: 1.02
+	Capabilities: [a0] HyperTransport: Host or Secondary Interface
+		!!! Possibly incomplete decoding
+		Command: WarmRst+ DblEnd-
+		Link Control: CFlE- CST- CFE- <LkFail- Init+ EOC- TXO- <CRCErr=0
+		Link Config: MLWI=16bit MLWO=16bit LWI=16bit LWO=16bit
+		Revision ID: 1.02
+	Capabilities: [c0] HyperTransport: Host or Secondary Interface
+		!!! Possibly incomplete decoding
+		Command: WarmRst+ DblEnd-
+		Link Control: CFlE- CST- CFE- <LkFail+ Init- EOC+ TXO+ <CRCErr=0
+		Link Config: MLWI=16bit MLWO=16bit LWI=N/C LWO=N/C
+		Revision ID: 1.02
+
+00:19.1 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Address Map
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+
+00:19.2 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] DRAM Controller
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+
+00:19.3 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Miscellaneous Control
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Capabilities: [f0] #0f [0010]
+
+01:06.0 VGA compatible controller: XGI - Xabre Graphics Inc Volari Z7 (prog-if 00 [VGA])
+	Subsystem: XGI - Xabre Graphics Inc Volari Z7
+	Control: I/O+ Mem+ BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz+ UDF- FastB2B- ParErr- DEVSEL=medium >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	BIST result: 00
+	Region 0: Memory at f8000000 (32-bit, prefetchable) [size=64M]
+	Region 1: Memory at feac0000 (32-bit, non-prefetchable) [size=256K]
+	Region 2: I/O ports at ec00 [size=128]
+	Capabilities: [40] Power Management version 2
+		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot-,D3cold-)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+
+02:00.0 RAID bus controller: Areca Technology Corp. Unknown device 1280
+	Subsystem: Areca Technology Corp. Unknown device 1280
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR- FastB2B-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR-
+	Latency: 0, Cache Line Size: 64 bytes
+	Interrupt: pin A routed to IRQ 19
+	Region 0: Memory at febfe000 (32-bit, non-prefetchable) [size=8K]
+	Expansion ROM at febe0000 [disabled] [size=64K]
+	Capabilities: [98] Power Management version 2
+		Flags: PMEClk- DSI- D1+ D2- AuxCurrent=0mA PME(D0-,D1-,D2-,D3hot-,D3cold-)
+		Status: D0 PME-Enable- DSel=0 DScale=0 PME-
+	Capabilities: [b0] Subsystem: LSI Logic / Symbios Logic Unknown device 0000
+	Capabilities: [a0] Message Signalled Interrupts: Mask- 64bit+ Queue=0/1 Enable-
+		Address: 0000000000000000  Data: 0000
+	Capabilities: [d0] Express Endpoint IRQ 0
+		Device: Supported: MaxPayload 512 bytes, PhantFunc 0, ExtTag-
+		Device: Latency L0s unlimited, L1 <1us
+		Device: AtnBtn- AtnInd- PwrInd-
+		Device: Errors: Correctable- Non-Fatal- Fatal- Unsupported-
+		Device: RlxdOrd+ ExtTag- PhantFunc- AuxPwr- NoSnoop+
+		Device: MaxPayload 128 bytes, MaxReadReq 512 bytes
+		Link: Supported Speed 2.5Gb/s, Width x8, ASPM L0s, Port 0
+		Link: Latency L0s <128ns, L1 unlimited
+		Link: ASPM Disabled RCB 64 bytes CommClk- ExtSynch-
+		Link: Speed 2.5Gb/s, Width x8
+

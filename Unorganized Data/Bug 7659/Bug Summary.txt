@@ -1,0 +1,13 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=7659
+Component: Network
+Hardware: i386 Linux
+Reported: 2006-12-09 15:08 UTC
+Modified: 2008-09-22 11:43 UTC 
+Kernel Version: 2.6.19
+Tree: Mainline
+
+Summary:
+	There is a lock must be held before entering update_stats.
+
+Problem Description:
+	A lock must be held before calling function update_stats().This rule is followed in some cases, but not in some others. The lock is held when the function is called in function el3_get_stats().  But the queue lock is NOT held when the function is called in el3_close(). It can cause potential data races. These functions are all in "drivers/net/pcmcia/3c589_cs.c.

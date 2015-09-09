@@ -1,0 +1,151 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=44761
+Component: network-wireless
+Hardware: All Linux
+Reported: 2009-12-12 12:38 UTC
+Modified: 2010-03-02 17:59 UTC 
+Kernel Version: 2.6.32
+Tree: Mainline
+Status: RESOLVED INSUFFICIENT_DATA
+
+Summary:
+	The bug is possibly due to the high order page allocation failure and the race between deauth and assoc response
+Newsgroups: gmane.linux.kernel.wireless.general that is fixed in [PATCH 2.6.33 3/3] cfg80211: fix race between deauth and assoc response
+Newsgroups: gmane.linux.kernel.wireless.general.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	flx.foo 2009-12-12 12:38:36 UTC
+	I use a slow wireless connexion.
+	Sometimes it failes to connect to a network.
+	I'm using wicd.
+	wifi card is : intel 3945 (iwl) card
+
+	------------[ cut here ]------------
+	WARNING: at net/wireless/mlme.c:97 cfg80211_send_rx_assoc+0x109/0x230 [cfg80211]()
+	Hardware name: W7J                 
+	Modules linked in: arc4 snd_hda_codec_realtek fan iwl3945 snd_hda_intel iwlcore snd_hda_codec ohci1394 video snd_hwdep mac80211 battery ieee1394 sdhci_pci sdhci button thermal snd_pcm snd_page_alloc ricoh_mmc processor cfg80211 iTCO_wdt iTCO_vendor_support intel_agp btusb r8169 mii ac psmouse gspca_sn9c20x snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq snd_timer snd_seq_device nvidia(P)
+	Pid: 3558, comm: phy0 Tainted: P           2.6.32 #1
+	Call Trace:
+	[<c102958e>] ? warn_slowpath_common+0x6e/0xb0
+	[<f94c3819>] ? cfg80211_send_rx_assoc+0x109/0x230 [cfg80211]
+	[<c10295e3>] ? warn_slowpath_null+0x13/0x20
+	[<f94c3819>] ? cfg80211_send_rx_assoc+0x109/0x230 [cfg80211]
+	[<f95f5d05>] ? ieee80211_sta_work+0x5d5/0x10f0 [mac80211]
+	[<f95ed165>] ? ieee80211_configure_filter+0x105/0x150 [mac80211]
+	[<c10392e7>] ? worker_thread+0x117/0x1f0
+	[<f95f5730>] ? ieee80211_sta_work+0x0/0x10f0 [mac80211]
+	[<c103cd90>] ? autoremove_wake_function+0x0/0x40
+	[<c10391d0>] ? worker_thread+0x0/0x1f0
+	[<c103cb74>] ? kthread+0x74/0x80
+	[<c103cb00>] ? kthread+0x0/0x80
+	[<c10037ff>] ? kernel_thread_helper+0x7/0x18
+	---[ end trace 07cfb517ba63e226 ]---
+
+	Few second later...
+
+	phy0: page allocation failure. order:5, mode:0xd0
+	Pid: 3558, comm: phy0 Tainted: P        W  2.6.32 #1
+	Call Trace:
+	[<c10632a3>] ? __alloc_pages_nodemask+0x4b3/0x5b0
+	[<c1086bdf>] ? cache_alloc_refill+0x2ef/0x510
+	[<c1086ea3>] ? __kmalloc+0xa3/0xd0
+	[<f95ef31a>] ? __ieee80211_start_scan+0x14a/0x2d0 [mac80211]
+	[<f95efcb3>] ? ieee80211_scan_work+0x403/0x4f0 [mac80211]
+	[<c10392e7>] ? worker_thread+0x117/0x1f0
+	[<f95ef8b0>] ? ieee80211_scan_work+0x0/0x4f0 [mac80211]
+	[<c103cd90>] ? autoremove_wake_function+0x0/0x40
+	[<c10391d0>] ? worker_thread+0x0/0x1f0
+	[<c103cb74>] ? kthread+0x74/0x80
+	[<c103cb00>] ? kthread+0x0/0x80
+	[<c10037ff>] ? kernel_thread_helper+0x7/0x18
+	Mem-Info:
+	DMA per-cpu:
+	CPU    0: hi:    0, btch:   1 usd:   0
+	CPU    1: hi:    0, btch:   1 usd:   0
+	Normal per-cpu:
+	CPU    0: hi:  186, btch:  31 usd:   0
+	CPU    1: hi:  186, btch:  31 usd:   0
+	HighMem per-cpu:
+	CPU    0: hi:   42, btch:   7 usd:   0
+	CPU    1: hi:   42, btch:   7 usd:   0
+	active_anon:24711 inactive_anon:25105 isolated_anon:14
+	active_file:7444 inactive_file:29790 isolated_file:0
+	unevictable:0 dirty:0 writeback:50 unstable:0
+	free:22510 slab_reclaimable:2059 slab_unreclaimable:140692
+	mapped:6875 shmem:372 pagetables:406 bounce:0
+	DMA free:3548kB min:64kB low:80kB high:96kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15868kB mlocked:0kB dirty:0kB writeback:0kB mapped:0kB shmem:0kB slab_reclaimable:0kB slab_unreclaimable:12416kB kernel_stack:0kB pagetables:0kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+	lowmem_reserve[]: 0 865 999 999
+	Normal free:75976kB min:3728kB low:4660kB high:5592kB active_anon:68348kB inactive_anon:68752kB active_file:25628kB inactive_file:68364kB unevictable:0kB isolated(anon):56kB isolated(file):0kB present:885944kB mlocked:0kB dirty:0kB writeback:200kB mapped:10044kB shmem:1352kB slab_reclaimable:8236kB slab_unreclaimable:550352kB kernel_stack:1480kB pagetables:772kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+	lowmem_reserve[]: 0 0 1077 1077
+	HighMem free:10516kB min:132kB low:276kB high:420kB active_anon:30496kB inactive_anon:31668kB active_file:4148kB inactive_file:50796kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:137864kB mlocked:0kB dirty:0kB writeback:0kB mapped:17456kB shmem:136kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:852kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+	lowmem_reserve[]: 0 0 0 0
+	DMA: 1*4kB 1*8kB 1*16kB 2*32kB 2*64kB 0*128kB 1*256kB 0*512kB 1*1024kB 1*2048kB 0*4096kB = 3548kB
+	Normal: 2212*4kB 1461*8kB 871*16kB 595*32kB 349*64kB 1*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 75976kB
+	HighMem: 12*4kB 4*8kB 266*16kB 127*32kB 29*64kB 2*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 10512kB
+	45018 total pagecache pages
+	7421 pages in swap cache
+	Swap cache stats: add 7930, delete 509, find 681/688
+	Free swap  = 989524kB
+	Total swap = 1020116kB
+	262064 pages RAM
+	34738 pages HighMem
+	3781 pages reserved
+	33173 pages shared
+	81730 pages non-shared
+	------------[ cut here ]------------
+	WARNING: at net/mac80211/scan.c:267 ieee80211_scan_completed+0x24b/0x260 [mac80211]()
+	Hardware name: W7J                 
+	Modules linked in: arc4 snd_hda_codec_realtek fan iwl3945 snd_hda_intel iwlcore snd_hda_codec ohci1394 video snd_hwdep mac80211 battery ieee1394 sdhci_pci sdhci button thermal snd_pcm snd_page_alloc ricoh_mmc processor cfg80211 iTCO_wdt iTCO_vendor_support intel_agp btusb r8169 mii ac psmouse gspca_sn9c20x snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq snd_timer snd_seq_device nvidia(P)
+	Pid: 3558, comm: phy0 Tainted: P        W  2.6.32 #1
+	Call Trace:
+	[<c102958e>] ? warn_slowpath_common+0x6e/0xb0
+	[<f95ef81b>] ? ieee80211_scan_completed+0x24b/0x260 [mac80211]
+	[<c10295e3>] ? warn_slowpath_null+0x13/0x20
+	[<f95ef81b>] ? ieee80211_scan_completed+0x24b/0x260 [mac80211]
+	[<c10392e7>] ? worker_thread+0x117/0x1f0
+	[<f95ef8b0>] ? ieee80211_scan_work+0x0/0x4f0 [mac80211]
+	[<c103cd90>] ? autoremove_wake_function+0x0/0x40
+	[<c10391d0>] ? worker_thread+0x0/0x1f0
+	[<c103cb74>] ? kthread+0x74/0x80
+	[<c103cb00>] ? kthread+0x0/0x80
+	[<c10037ff>] ? kernel_thread_helper+0x7/0x18
+	---[ end trace 07cfb517ba63e227 ]---
+
+	And...
+	------------[ cut here ]------------
+	WARNING: at net/wireless/core.c:614 wdev_cleanup_work+0x9f/0xc0 [cfg80211]()
+	Hardware name: W7J                 
+	Modules linked in: arc4 snd_hda_codec_realtek fan iwl3945 snd_hda_intel iwlcore snd_hda_codec ohci1394 video snd_hwdep mac80211 battery ieee1394 sdhci_pci sdhci button thermal snd_pcm snd_page_alloc ricoh_mmc processor cfg80211 iTCO_wdt iTCO_vendor_support intel_agp btusb r8169 mii ac psmouse gspca_sn9c20x snd_seq_midi snd_rawmidi snd_seq_midi_event snd_seq snd_timer snd_seq_device nvidia(P)
+	Pid: 7, comm: events/0 Tainted: P        W  2.6.32 #1
+	Call Trace:
+	[<c102958e>] ? warn_slowpath_common+0x6e/0xb0
+	[<f94b452f>] ? wdev_cleanup_work+0x9f/0xc0 [cfg80211]
+	[<c10295e3>] ? warn_slowpath_null+0x13/0x20
+	[<f94b452f>] ? wdev_cleanup_work+0x9f/0xc0 [cfg80211]
+	[<c10392e7>] ? worker_thread+0x117/0x1f0
+	[<f94b4490>] ? wdev_cleanup_work+0x0/0xc0 [cfg80211]
+	[<c103cd90>] ? autoremove_wake_function+0x0/0x40
+	[<c10391d0>] ? worker_thread+0x0/0x1f0
+	[<c103cb74>] ? kthread+0x74/0x80
+	[<c103cb00>] ? kthread+0x0/0x80
+	[<c10037ff>] ? kernel_thread_helper+0x7/0x18
+	---[ end trace 07cfb517ba63e228 ]---
+
+	Hope this help...
+	Dave
+---------------------------------------------------------------------------
+	Reinette Chatre 2010-01-04 23:56:55 UTC
+	There are two issues here.
+
+	First, the "WARNING: at net/wireless/mlme.c:97 cfg80211_send_rx_assoc+0x109/0x230
+	" - this warning has showed up a few times already and a few fixes have been posted for it. I think most should be headed to latest 2.6.32 stable. The latest fix probably not - please see http://thread.gmane.org/gmane.linux.kernel.wireless.general/44813/focus=44816 You can confirm that you are running into the same race condition by enabling verbose mac80211 debugging.
+
+	Second, the high order page allocation failure is a known problem. This is being discussed in bug #14141
+---------------------------------------------------------------------------
+	Reinette Chatre 2010-03-02 17:59:49 UTC
+	No test results provided in more than a month. Closing.
+---------------------------------------------------------------------------
+
+Proposed fix:
+	-It may not occur any more in the current kernel since it is not re-opened.
+	-The bug is been closed due to no test results provided in more than a month. 

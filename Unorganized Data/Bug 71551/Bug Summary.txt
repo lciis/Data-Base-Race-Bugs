@@ -1,0 +1,10 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=71551
+Component: Input Devices
+Hardware: All Linux
+Reported: 2014-03-05 21:34 UTC
+Modified: 2014-03-31 01:55 UTC 
+Kernel Version: 3.13.5
+Tree: Mainline
+
+Summary:
+	There is an race when the driver is creating multiplexer device, and it occurs in the function static int mousedev_open_device(struct mousedev *mousedev).

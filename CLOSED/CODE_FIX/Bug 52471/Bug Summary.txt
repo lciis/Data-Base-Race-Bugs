@@ -1,0 +1,53 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=52471
+Component: USB
+Hardware: All Linux
+Reported: 2013-01-08 13:24 UTC
+Modified: 2013-11-19 14:08 UTC
+Kernel Version: 3.7
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	There is a race between hidp_session and hci code that can lead to hci device being removed from sysfs before its children devices. 
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	karllinuxtest.relton 2013-01-08 13:24:19 UTC
+	Created attachment 90741 [details]
+	udevadm monitor log
+
+	On coming out of suspend my usb bluetooth adaptor is being reset by the system.
+
+	In linux 3.7 the usb devices are being removed from the sysfs tree first, and then the various 'child' devices (like my bluetooth mouse & keyboard related devices) afterwards. This is causing the udev events for the input devices to have 'orphaned' sysfs paths in the udev events.
+
+	This in term means the Xorg evdev driver does not recognise the events, and so doesn't see the removal of in the put devices.
+
+	This has been picked by some downstream distributions, e.g. see this thread by Google Chrome developers:
+
+	http://code.google.com/p/chromium-os/issues/detail?id=33813
+
+	Back on linux 3.2 this was not the case. The usb adaptor was reset, but device removal was orderly: first the input devices (will full paths in the udev events), then the usb devices walking up the tree.
+---------------------------------------------------------------------------
+	karllinuxtest.relton 2013-01-24 13:58:13 UTC
+	The problem is caused by two separate issues:
+
+	1) There is a race between 
+	hidp_session() in bluetooth/hidp/core.c
+	and
+	hci_unregister_dev() in bluetooth/hci_core.c
+
+	Really the latter needs to wait for the former to terminate before pulling the plug on the hci device (it is hidp_session that eventually removes the 'input' device).
+
+
+	2) the power_supply system seems to be triggering a lookup of battery 'capacity' in the input device. This calls into the driver, which deep down invokes more code in the 'hidp' module: hidp_get_raw_report()
+
+	This function tries to communicate with the bluetooth device (keyboard in my case), but because the device is being 'torn down' such communication fails. Accordingly hidp_get_raw_report has a 5 second timeout ... so this function stalls for 5 seconds until that timeout occurs.
+
+	---
+
+	I would guess that for some reason, removing the 'hid' or associated 'input' device is leading to the power_supply code wanting to lookup the battery capacity which introduces a 5 second wait. This would delay hidp_session by 5 seconds ... in the mean time allowing hci_unregister_dev() to win the race and hence the hci device is removed before the input & hid devices.
+
+	The attachment is a fragment captured by udevadm monitor when running 3.7. See how the usb devices are moved first, and then the input/bluetooth related stuff with path-heads removed (paths are now /hci0/... instead of /devices/...)
+---------------------------------------------------------------------------
+Proposed Fix:
+	In ./Attachments/Fix race between hidp_session and hci code

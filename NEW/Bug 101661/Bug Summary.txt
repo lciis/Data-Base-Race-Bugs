@@ -1,0 +1,110 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=101661
+Component: USB
+Hardware: All Linux
+Reported: 2015-07-17 13:11 UTC 
+Modified: 2015-08-05 07:03 UTC  
+Kernel Version: kernel-4.2.0-0.rc2.git1.1.fc23.x86_64
+Tree: Fedora
+Status: NEW
+
+Summary:
+	External USB3 hard drive is sometimes not recognized (race condition?) - Event TRB for slot 14 ep 2 with no TDs queued.
+	
+Important User Comments:
+---------------------------------------------------------------------------
+	Kamil Paral 2015-07-17 13:11:35 UTC
+	I have a desktop machine with USB3 ports and an external hard drive with USB3 enclosure. When I plug the disk into the USB3 port, it is in roughly 50% recognized and mounted, and in the other cases no disk device is created and the disk is not accessible. System journal reports this:
+
+	Jul 17 14:41:07 titan kernel: usb 2-6.2: new SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:41:07 titan kernel: usb 2-6.2: New USB device found, idVendor=1f75, idProduct=0888
+	Jul 17 14:41:07 titan kernel: usb 2-6.2: New USB device strings: Mfr=4, Product=5, SerialNumber=6
+	Jul 17 14:41:07 titan kernel: usb 2-6.2: Product: IS888 USB bridge
+	Jul 17 14:41:07 titan kernel: usb 2-6.2: Manufacturer: Innostor
+	Jul 17 14:41:07 titan kernel: usb 2-6.2: SerialNumber: 088815678900000556
+	Jul 17 14:41:07 titan kernel: usb-storage 2-6.2:1.0: USB Mass Storage device detected
+	Jul 17 14:41:07 titan kernel: scsi host12: usb-storage 2-6.2:1.0
+	Jul 17 14:41:07 titan mtp-probe[2903]: checking bus 2, device 8: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-6/2-6.2"
+	Jul 17 14:41:07 titan mtp-probe[2903]: bus: 2, device: 8 was not an MTP device
+	Jul 17 14:41:10 titan kernel: scsi 12:0:0:0: Direct-Access     ST950042 0AS                   PQ: 0 ANSI: 0
+	Jul 17 14:41:10 titan kernel: sd 12:0:0:0: Attached scsi generic sg2 type 0
+	Jul 17 14:41:10 titan kernel: sd 12:0:0:0: [sdc] 976773168 512-byte logical blocks: (500 GB/465 GiB)
+	Jul 17 14:41:10 titan kernel: sd 12:0:0:0: [sdc] Write Protect is off
+	Jul 17 14:41:10 titan kernel: sd 12:0:0:0: [sdc] Mode Sense: 03 00 00 00
+	Jul 17 14:41:10 titan kernel: sd 12:0:0:0: [sdc] No Caching mode page found
+	Jul 17 14:41:10 titan kernel: sd 12:0:0:0: [sdc] Assuming drive cache: write through
+	Jul 17 14:41:10 titan kernel: xhci_hcd 0000:00:14.0: WARN Event TRB for slot 14 ep 2 with no TDs queued?
+	Jul 17 14:41:40 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:42:11 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:42:42 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:42:53 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:43:09 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:43:09 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:43:19 titan kernel: usb 2-6.2: reset SuperSpeed USB device number 8 using xhci_hcd
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: Device offlined - not ready after error recovery
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: [sdc] FAILED Result: hostbyte=DID_ABORT driverbyte=DRIVER_OK
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: [sdc] CDB: Read(10) 28 00 00 00 00 00 00 00 08 00
+	Jul 17 14:43:19 titan kernel: blk_update_request: I/O error, dev sdc, sector 0
+	Jul 17 14:43:19 titan kernel: Buffer I/O error on dev sdc, logical block 0, async page read
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: ldm_validate_partition_table(): Disk read failed.
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: Dev sdc: unable to read RDB block 0
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: rejecting I/O to offline device
+	Jul 17 14:43:19 titan kernel:  sdc: unable to read partition table
+	Jul 17 14:43:19 titan kernel: sd 12:0:0:0: [sdc] Attached SCSI disk
+	Jul 17 14:43:19 titan systemd-udevd[496]: error: /dev/sdc: No such device or address
+
+
+	When kernel successfully recognizes the drive, it looks like this:
+
+	Jul 17 14:35:21 titan kernel: usb 2-6.2: new SuperSpeed USB device number 4 using xhci_hcd
+	Jul 17 14:35:21 titan kernel: usb 2-6.2: New USB device found, idVendor=1f75, idProduct=0888
+	Jul 17 14:35:21 titan kernel: usb 2-6.2: New USB device strings: Mfr=4, Product=5, SerialNumber=6
+	Jul 17 14:35:21 titan kernel: usb 2-6.2: Product: IS888 USB bridge
+	Jul 17 14:35:21 titan kernel: usb 2-6.2: Manufacturer: Innostor
+	Jul 17 14:35:21 titan kernel: usb 2-6.2: SerialNumber: 088815678900000556
+	Jul 17 14:35:21 titan mtp-probe[2313]: checking bus 2, device 4: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-6/2-6.2"
+	Jul 17 14:35:21 titan mtp-probe[2313]: bus: 2, device: 4 was not an MTP device
+	Jul 17 14:35:21 titan kernel: usb-storage 2-6.2:1.0: USB Mass Storage device detected
+	Jul 17 14:35:21 titan kernel: scsi host6: usb-storage 2-6.2:1.0
+	Jul 17 14:35:21 titan kernel: usbcore: registered new interface driver usb-storage
+	Jul 17 14:35:21 titan kernel: usbcore: registered new interface driver uas
+	Jul 17 14:35:24 titan kernel: scsi 6:0:0:0: Direct-Access     ST950042 0AS                   PQ: 0 ANSI: 0
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: Attached scsi generic sg2 type 0
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: [sdc] 976773168 512-byte logical blocks: (500 GB/465 GiB)
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: [sdc] Write Protect is off
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: [sdc] Mode Sense: 03 00 00 00
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: [sdc] No Caching mode page found
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: [sdc] Assuming drive cache: write through
+	Jul 17 14:35:24 titan kernel:  sdc: sdc1
+	Jul 17 14:35:24 titan kernel: sd 6:0:0:0: [sdc] Attached SCSI disk
+	Jul 17 14:35:25 titan udisksd[953]: Mounted /dev/sdc1 at /run/media/kparal/IcyBox on behalf of uid 1000
+	Jul 17 14:35:25 titan ntfs-3g[2334]: Version 2015.3.14 integrated FUSE 27
+	Jul 17 14:35:25 titan ntfs-3g[2334]: Mounted /dev/sdc1 (Read-Write, label "IcyBox", NTFS 3.1)
+	Jul 17 14:35:25 titan ntfs-3g[2334]: Cmdline options: rw,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2
+	Jul 17 14:35:25 titan ntfs-3g[2334]: Mount options: rw,nodev,nosuid,uhelper=udisks2,allow_other,nonempty,relatime,default_permissions,fsname=/dev/sdc1,blkdev,blksize=4096
+	Jul 17 14:35:25 titan ntfs-3g[2334]: Global ownership and permissions enforced, configuration type 1
+
+
+	If I use USB2 port, it always works. I can verify that the drive really works in USB2/3 mode when it is attached to USB2/3 port (when it happens to work), because it has a LED which glows red or blue depending on USB2/3 mode. So I can say that USB3 port provides working USB3 mode and transfer speeds, it just doesn't initialize always properly.
+
+	I tried the same hard-drive on different machines with USB3 ports, and I don't have the same problem anywhere else - it works reliably. I thought that could indicate a hardware issue. But then I tried running Windows on that affected machine, and it works perfectly - no issues with USB3. So this issue might be a combination of a kernel behavior and a particular hardware.
+
+	There are a few more quirks to be mentioned, they might be related to this:
+	* Sometimes when I disconnect the drive from a particular USB3 port (regardless of whether it worked well or not), I can't use that port again (with that hard drive) for some time. It is either based on some time period, or maybe I have to use a different port in the mean time, I'm not really sure. But it is quite common that if I connect the drive to the same port shortly afterwards, nothing happens (no output in system journal, no disk device created) - but the drive spins up and glows blue, indicating USB3 mode. I have to use a different USB3 port. After a while, it "fixes itself" and the port is usable again.
+	* When I disconnect the drive not just by unmounting, but by "safely ejecting" the drive in nautilus or gnome-disks (I assume it powers it down or similar), it immediately spins back up and connect again, but this time in USB2 mode instead of USB3 mode (red LED instead of blue). The system mounts it again, thinking it was freshly connected. After I "safely eject" it once more, it finally stays disconnected and I can unplug it. This happens on all systems I tested with, but it doesn't happen on Windows - it disconnects properly on the first try in there. I assume it can be some kind of manufacturer quirk to fall back to USB2 if USB3 mode is problematic, and it kicks in on Linux even for standard disconnect for some reason.
+
+	I'm running Fedora 22, with latest available kernel:
+	Linux titan 4.2.0-0.rc2.git1.1.fc23.x86_64 #1 SMP Wed Jul 15 16:09:32 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+	kernel-4.2.0-0.rc2.git1.1.fc23.x86_64
+
+
+	Please tell me if I can provide you with further details to help you debug this issue. Thank you.
+
+Proposed Fix:
+	None, The bug is still marked as NEW.

@@ -1,0 +1,53 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=16111
+Component: network-wireless
+Hardware: All Linux
+Reported: 2010-06-02 20:55 UTC 
+Modified: 2010-08-02 18:25 UTC
+Kernel Version: 2.6.34
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	Loading hostap_pci module on 2.6.34 kernel causes kernel infinite loop. There seems to be a race between card initialization and IRQ handling with different impacts on SMP and single-CPU systems. This bug is fixed with 3 patches. The issue seems to be caused by multiple sources. See the Bug Location and Fix.txt for detail.
+
+Important User Comments:
+---------------------------------------------------------------------------	
+	Petr Pisar 2010-06-02 20:55:19 UTC
+	Hardware: PCI 802.11b network card ZCOMAX XI-626 based on Intersil Prism 2.5 chipset
+	Driver: hostap_pci
+	Architecture: i586 (Pentium TSC), i686 (AMD Thunderbid)
+
+	Loading hostap_pci module on 2.6.34 kernel causes kernel infinite loop. Latest known working kernel is 2.6.32.14 (more precisely where the module can be loaded). Transcription of kernel messages follows (text in brackets is abbreviated:
+
+	# modprobe hostap_pci
+	lib80211: common routine for IEEE802.11 drivers
+	ACPI: PCI Interrupt Link [...] enabled at IRQ 10
+	hostap_pci: [PCI ... -> IRQ 10]
+	hostap_pci: registered netdevice wifi0
+	net_ratelimit: 609587 callbacks suppressed
+
+	And the last message repeats ad infinitum (with different but similar number of callbacks).
+
+	I'm pretty sure it's not a user space problem because I tested it with init process being /bin/bash without any other daemons or init scripts.
+---------------------------------------------------------------------------	
+	John W. Linville 2010-07-23 13:37:36 UTC
+	Final patch is in 2.6.35-rc6...
+
+	commit 0f4da2d77e1bf424ac36424081afc22cbfc3ff2b
+	Author: John W. Linville <linville@tuxdriver.com>
+	Date:   Tue Jul 13 14:06:32 2010 -0400
+
+		hostap_pci: set dev->base_addr during probe
+		
+		"hostap: Protect against initialization interrupt" (which reinstated
+		"wireless: hostap, fix oops due to early probing interrupt")
+		reintroduced Bug 16111.  This is because hostap_pci wasn't setting
+		dev->base_addr, which is now checked in prism2_interrupt.  As a result,
+		initialization was failing for PCI-based hostap devices.  This corrects
+		that oversight.
+		
+		Signed-off-by: John W. Linville <linville@tuxdriver.com>
+---------------------------------------------------------------------------	
+
+Proposed Fix:
+	In ./Attachments/Fix backport for 2.6.34 

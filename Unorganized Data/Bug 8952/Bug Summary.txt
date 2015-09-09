@@ -1,0 +1,10 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=8952
+Component: Network
+Hardware: All Linux
+Reported: 2007-08-28 05:36 UTC
+Modified: 2008-06-05 01:30 UTC
+Kernel Version: 2.6.22.5
+Tree: Mainline
+
+Summary:
+	The kernel reports an Oops in the tulip driver while hibernating, but not every time. (It occurs perhaps 30% to 50% of the time.) The system hangs, caps lock and scroll lock flash, and the computer has to be powered off by holding down the power button. There  may be a race condition between the suspend and delivery of a pending IRQ. Ie the suspend path isn't waiting until either the interrupt has been delivered or possibly delivered but not completed handling of the interrupt.

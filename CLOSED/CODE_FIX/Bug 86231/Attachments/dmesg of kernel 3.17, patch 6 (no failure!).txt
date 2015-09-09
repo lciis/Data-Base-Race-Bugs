@@ -1,0 +1,1211 @@
+[    0.000000] PM: Registered nosave memory: [mem 0xff980000-0xffbfffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xffc00000-0xffd7ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xffd80000-0xffffffff]
+[    0.000000] e820: [mem 0xafa00000-0xdfffffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on bare hardware
+[    0.000000] setup_percpu: NR_CPUS:512 nr_cpumask_bits:512 nr_cpu_ids:16 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 29 pages/cpu @ffff88024fa00000 s86912 r8192 d23680 u131072
+[    0.000000] pcpu-alloc: s86912 r8192 d23680 u131072 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 2045753
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: BOOT_IMAGE=/vmlinuz-3.17.0+ root=/dev/mapper/cryptvg-rootlv ro quiet
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] xsave: enabled xstate_bv 0x7, cntxt size 0x340 using standard form
+[    0.000000] AGP: Checking aperture...
+[    0.000000] AGP: No AGP bridge found
+[    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+[    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.000000] Memory: 8082420K/8297084K available (5461K kernel code, 1021K rwdata, 1836K rodata, 1220K init, 848K bss, 214664K reserved)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=16.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=16
+[    0.000000] NR_IRQS:33024 nr_irqs:552 0
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [tty0] enabled
+[    0.000000] allocated 33554432 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] hpet clockevent registered
+[    0.000000] tsc: Fast TSC calibration failed
+[    0.000000] tsc: PIT calibration matches HPET. 1 loops
+[    0.000000] tsc: Detected 2494.132 MHz processor
+[    0.000034] Calibrating delay loop (skipped), value calculated using timer frequency.. 4988.26 BogoMIPS (lpj=9976528)
+[    0.000036] pid_max: default: 32768 minimum: 301
+[    0.000045] ACPI: Core revision 20140724
+[    0.011068] ACPI: All ACPI Tables successfully acquired
+[    0.021882] Security Framework initialized
+[    0.021890] AppArmor: AppArmor disabled by boot time parameter
+[    0.021891] Yama: becoming mindful.
+[    0.022407] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes)
+[    0.024004] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.024702] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.024712] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.024912] Initializing cgroup subsys memory
+[    0.024918] Initializing cgroup subsys devices
+[    0.024922] Initializing cgroup subsys freezer
+[    0.024924] Initializing cgroup subsys net_cls
+[    0.024926] Initializing cgroup subsys blkio
+[    0.024928] Initializing cgroup subsys perf_event
+[    0.024930] Initializing cgroup subsys net_prio
+[    0.024951] CPU: Physical Processor ID: 0
+[    0.024952] CPU: Processor Core ID: 0
+[    0.024957] ENERGY_PERF_BIAS: Set to 'normal', was 'performance'
+ENERGY_PERF_BIAS: View and update with x86_energy_perf_policy(8)
+[    0.024959] mce: CPU supports 7 MCE banks
+[    0.024970] CPU0: Thermal monitoring enabled (TM1)
+[    0.024978] Last level iTLB entries: 4KB 512, 2MB 8, 4MB 8
+Last level dTLB entries: 4KB 512, 2MB 32, 4MB 32, 1GB 0
+[    0.025078] Freeing SMP alternatives memory: 20K (ffffffff81a32000 - ffffffff81a37000)
+[    0.026130] ftrace: allocating 21740 entries in 85 pages
+[    0.036330] Switched APIC routing to physical flat.
+[    0.036757] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.076483] smpboot: CPU0: Intel(R) Core(TM) i5-2450M CPU @ 2.50GHz (fam: 06, model: 2a, stepping: 07)
+[    0.076491] TSC deadline timer enabled
+[    0.076514] Performance Events: PEBS fmt1+, 16-deep LBR, SandyBridge events, full-width counters, Intel PMU driver.
+[    0.076534] ... version:                3
+[    0.076535] ... bit width:              48
+[    0.076536] ... generic registers:      4
+[    0.076537] ... value mask:             0000ffffffffffff
+[    0.076538] ... max period:             0000ffffffffffff
+[    0.076539] ... fixed-purpose events:   3
+[    0.076540] ... event mask:             000000070000000f
+[    0.077876] x86: Booting SMP configuration:
+[    0.077878] .... node  #0, CPUs:        #1
+[    0.098306] CPU1 microcode updated early to revision 0x29, date = 2013-06-12
+[    0.100587] NMI watchdog: enabled on all CPUs, permanently consumes one hw-PMU counter.
+[    0.100684]   #2  #3
+[    0.136105] x86: Booted up 1 node, 4 CPUs
+[    0.136108] smpboot: Total of 4 processors activated (19953.05 BogoMIPS)
+[    0.139344] devtmpfs: initialized
+[    0.143389] PM: Registering ACPI NVS region [mem 0xaaf06000-0xaafe7fff] (925696 bytes)
+[    0.144292] pinctrl core: initialized pinctrl subsystem
+[    0.144405] NET: Registered protocol family 16
+[    0.144526] cpuidle: using governor ladder
+[    0.144528] cpuidle: using governor menu
+[    0.144572] ACPI FADT declares the system doesn't support PCIe ASPM, so disable it
+[    0.144574] ACPI: bus type PCI registered
+[    0.144575] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.144673] PCI: MMCONFIG for domain 0000 [bus 00-3f] at [mem 0xe0000000-0xe3ffffff] (base 0xe0000000)
+[    0.144676] PCI: MMCONFIG at [mem 0xe0000000-0xe3ffffff] reserved in E820
+[    0.144757] PCI: Using configuration type 1 for base access
+[    0.145008] mtrr: your CPUs had inconsistent variable MTRR settings
+[    0.145009] mtrr: probably your BIOS does not setup all CPUs.
+[    0.145010] mtrr: corrected configuration.
+[    0.156649] ACPI: Added _OSI(Module Device)
+[    0.156652] ACPI: Added _OSI(Processor Device)
+[    0.156653] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.156654] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.158207] ACPI : EC: EC description table is found, configuring boot EC
+[    0.159852] ACPI: Executed 1 blocks of module-level executable AML code
+[    0.171267] [Firmware Bug]: ACPI: BIOS _OSI(Linux) query ignored
+[    0.240684] ACPI: Dynamic OEM Table Load:
+[    0.240691] ACPI: SSDT 0xFFFF88024494E000 000694 (v01 PmRef  Cpu0Cst  00003001 INTL 20091112)
+[    0.252615] ACPI: Dynamic OEM Table Load:
+[    0.252621] ACPI: SSDT 0xFFFF8802449E2000 000303 (v01 PmRef  ApIst    00003000 INTL 20091112)
+[    0.263529] ACPI: Dynamic OEM Table Load:
+[    0.263534] ACPI: SSDT 0xFFFF8802448ABE00 000119 (v01 PmRef  ApCst    00003000 INTL 20091112)
+[    0.284614] ACPI: Interpreter enabled
+[    0.284625] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20140724/hwxface-580)
+[    0.284639] ACPI: (supports S0 S1 S3 S4 S5)
+[    0.284640] ACPI: Using IOAPIC for interrupt routing
+[    0.284668] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.406445] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-3e])
+[    0.406451] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI]
+[    0.406486] \_SB_.PCI0:_OSC invalid UUID
+[    0.406487] _OSC request data:1 1f 0 
+[    0.406491] acpi PNP0A08:00: _OSC failed (AE_ERROR); disabling ASPM
+[    0.407128] PCI host bridge to bus 0000:00
+[    0.407131] pci_bus 0000:00: root bus resource [bus 00-3e]
+[    0.407133] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7]
+[    0.407135] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff]
+[    0.407136] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff]
+[    0.407138] pci_bus 0000:00: root bus resource [mem 0x000d4000-0x000d7fff]
+[    0.407140] pci_bus 0000:00: root bus resource [mem 0x000d8000-0x000dbfff]
+[    0.407141] pci_bus 0000:00: root bus resource [mem 0x000dc000-0x000dffff]
+[    0.407143] pci_bus 0000:00: root bus resource [mem 0x000e0000-0x000e3fff]
+[    0.407144] pci_bus 0000:00: root bus resource [mem 0x000e4000-0x000e7fff]
+[    0.407146] pci_bus 0000:00: root bus resource [mem 0xafa00000-0xfeafffff]
+[    0.407148] pci_bus 0000:00: root bus resource [mem 0xfed40000-0xfed44fff]
+[    0.407155] pci 0000:00:00.0: [8086:0104] type 00 class 0x060000
+[    0.407253] pci 0000:00:01.0: [8086:0101] type 01 class 0x060400
+[    0.407285] pci 0000:00:01.0: PME# supported from D0 D3hot D3cold
+[    0.407330] pci 0000:00:01.0: System wakeup disabled by ACPI
+[    0.407378] pci 0000:00:02.0: [8086:0126] type 00 class 0x030000
+[    0.407387] pci 0000:00:02.0: reg 0x10: [mem 0xdc400000-0xdc7fffff 64bit]
+[    0.407393] pci 0000:00:02.0: reg 0x18: [mem 0xb0000000-0xbfffffff 64bit pref]
+[    0.407397] pci 0000:00:02.0: reg 0x20: [io  0xe000-0xe03f]
+[    0.407512] pci 0000:00:16.0: [8086:1c3a] type 00 class 0x078000
+[    0.407536] pci 0000:00:16.0: reg 0x10: [mem 0xdf00a000-0xdf00a00f 64bit]
+[    0.407617] pci 0000:00:16.0: PME# supported from D0 D3hot D3cold
+[    0.407716] pci 0000:00:1a.0: [8086:1c2d] type 00 class 0x0c0320
+[    0.407738] pci 0000:00:1a.0: reg 0x10: [mem 0xdf008000-0xdf0083ff]
+[    0.407827] pci 0000:00:1a.0: PME# supported from D0 D3hot D3cold
+[    0.407890] pci 0000:00:1a.0: System wakeup disabled by ACPI
+[    0.407939] pci 0000:00:1b.0: [8086:1c20] type 00 class 0x040300
+[    0.407956] pci 0000:00:1b.0: reg 0x10: [mem 0xdf000000-0xdf003fff 64bit]
+[    0.408030] pci 0000:00:1b.0: PME# supported from D0 D3hot D3cold
+[    0.408125] pci 0000:00:1c.0: [8086:1c10] type 01 class 0x060400
+[    0.408262] pci 0000:00:1c.0: PME# supported from D0 D3hot D3cold
+[    0.408368] pci 0000:00:1c.1: [8086:1c12] type 01 class 0x060400
+[    0.408505] pci 0000:00:1c.1: PME# supported from D0 D3hot D3cold
+[    0.408617] pci 0000:00:1c.3: [8086:1c16] type 01 class 0x060400
+[    0.408755] pci 0000:00:1c.3: PME# supported from D0 D3hot D3cold
+[    0.408858] pci 0000:00:1c.5: [8086:1c1a] type 01 class 0x060400
+[    0.408940] pci 0000:00:1c.5: PME# supported from D0 D3hot D3cold
+[    0.409038] pci 0000:00:1d.0: [8086:1c26] type 00 class 0x0c0320
+[    0.409060] pci 0000:00:1d.0: reg 0x10: [mem 0xdf007000-0xdf0073ff]
+[    0.409150] pci 0000:00:1d.0: PME# supported from D0 D3hot D3cold
+[    0.409212] pci 0000:00:1d.0: System wakeup disabled by ACPI
+[    0.409259] pci 0000:00:1f.0: [8086:1c49] type 00 class 0x060100
+[    0.409447] pci 0000:00:1f.2: [8086:1c03] type 00 class 0x010601
+[    0.409465] pci 0000:00:1f.2: reg 0x10: [io  0xe0b0-0xe0b7]
+[    0.409473] pci 0000:00:1f.2: reg 0x14: [io  0xe0a0-0xe0a3]
+[    0.409481] pci 0000:00:1f.2: reg 0x18: [io  0xe090-0xe097]
+[    0.409489] pci 0000:00:1f.2: reg 0x1c: [io  0xe080-0xe083]
+[    0.409497] pci 0000:00:1f.2: reg 0x20: [io  0xe060-0xe07f]
+[    0.409505] pci 0000:00:1f.2: reg 0x24: [mem 0xdf006000-0xdf0067ff]
+[    0.409551] pci 0000:00:1f.2: PME# supported from D3hot
+[    0.409636] pci 0000:00:1f.3: [8086:1c22] type 00 class 0x0c0500
+[    0.409652] pci 0000:00:1f.3: reg 0x10: [mem 0xdf005000-0xdf0050ff 64bit]
+[    0.409673] pci 0000:00:1f.3: reg 0x20: [io  0xe040-0xe05f]
+[    0.409817] pci 0000:01:00.0: [10de:0de9] type 00 class 0x030000
+[    0.409825] pci 0000:01:00.0: reg 0x10: [mem 0xdb000000-0xdbffffff]
+[    0.409833] pci 0000:01:00.0: reg 0x14: [mem 0xc0000000-0xcfffffff 64bit pref]
+[    0.409840] pci 0000:01:00.0: reg 0x1c: [mem 0xd0000000-0xd1ffffff 64bit pref]
+[    0.409844] pci 0000:01:00.0: reg 0x24: [io  0xd000-0xd07f]
+[    0.409849] pci 0000:01:00.0: reg 0x30: [mem 0xdc000000-0xdc07ffff pref]
+[    0.409898] pci 0000:01:00.0: System wakeup disabled by ACPI
+[    0.419658] pci 0000:00:01.0: PCI bridge to [bus 01]
+[    0.419665] pci 0000:00:01.0:   bridge window [io  0xd000-0xdfff]
+[    0.419672] pci 0000:00:01.0:   bridge window [mem 0xdb000000-0xdc0fffff]
+[    0.419682] pci 0000:00:01.0:   bridge window [mem 0xc0000000-0xd1ffffff 64bit pref]
+[    0.419808] pci 0000:00:1c.0: PCI bridge to [bus 02]
+[    0.419813] pci 0000:00:1c.0:   bridge window [io  0xc000-0xcfff]
+[    0.419818] pci 0000:00:1c.0:   bridge window [mem 0xde600000-0xdeffffff]
+[    0.419827] pci 0000:00:1c.0:   bridge window [mem 0xd4200000-0xd4bfffff 64bit pref]
+[    0.420058] pci 0000:03:00.0: [8086:08b1] type 00 class 0x028000
+[    0.420125] pci 0000:03:00.0: reg 0x10: [mem 0xddc00000-0xddc01fff 64bit]
+[    0.420440] pci 0000:03:00.0: PME# supported from D0 D3hot D3cold
+[    0.420507] pci 0000:03:00.0: System wakeup disabled by ACPI
+[    0.427727] pci 0000:00:1c.1: PCI bridge to [bus 03]
+[    0.427737] pci 0000:00:1c.1:   bridge window [io  0xb000-0xbfff]
+[    0.427747] pci 0000:00:1c.1:   bridge window [mem 0xddc00000-0xde5fffff]
+[    0.427762] pci 0000:00:1c.1:   bridge window [mem 0xd3700000-0xd40fffff 64bit pref]
+[    0.427924] pci 0000:04:00.0: [1b21:1042] type 00 class 0x0c0330
+[    0.427965] pci 0000:04:00.0: reg 0x10: [mem 0xdd200000-0xdd207fff 64bit]
+[    0.428167] pci 0000:04:00.0: PME# supported from D3hot D3cold
+[    0.428208] pci 0000:04:00.0: System wakeup disabled by ACPI
+[    0.435726] pci 0000:00:1c.3: PCI bridge to [bus 04]
+[    0.435736] pci 0000:00:1c.3:   bridge window [io  0xa000-0xafff]
+[    0.435744] pci 0000:00:1c.3:   bridge window [mem 0xdd200000-0xddbfffff]
+[    0.435758] pci 0000:00:1c.3:   bridge window [mem 0xd2c00000-0xd35fffff 64bit pref]
+[    0.435878] pci 0000:05:00.0: [10ec:8168] type 00 class 0x020000
+[    0.435902] pci 0000:05:00.0: reg 0x10: [io  0x9000-0x90ff]
+[    0.435936] pci 0000:05:00.0: reg 0x18: [mem 0xd2104000-0xd2104fff 64bit pref]
+[    0.435958] pci 0000:05:00.0: reg 0x20: [mem 0xd2100000-0xd2103fff 64bit pref]
+[    0.436071] pci 0000:05:00.0: supports D1 D2
+[    0.436072] pci 0000:05:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    0.436114] pci 0000:05:00.0: System wakeup disabled by ACPI
+[    0.443708] pci 0000:00:1c.5: PCI bridge to [bus 05]
+[    0.443717] pci 0000:00:1c.5:   bridge window [io  0x9000-0x9fff]
+[    0.443727] pci 0000:00:1c.5:   bridge window [mem 0xdc800000-0xdd1fffff]
+[    0.443741] pci 0000:00:1c.5:   bridge window [mem 0xd2100000-0xd2afffff 64bit pref]
+[    0.499988] ACPI: PCI Interrupt Link [LNKA] (IRQs 1 3 4 5 6 *10 11 12 14 15)
+[    0.500041] ACPI: PCI Interrupt Link [LNKB] (IRQs 1 3 4 5 6 10 *11 12 14 15)
+[    0.500093] ACPI: PCI Interrupt Link [LNKC] (IRQs 1 3 4 5 6 10 *11 12 14 15)
+[    0.500144] ACPI: PCI Interrupt Link [LNKD] (IRQs 1 3 4 *5 6 10 11 12 14 15)
+[    0.500194] ACPI: PCI Interrupt Link [LNKE] (IRQs 1 3 4 5 6 10 11 12 14 15) *0, disabled.
+[    0.500246] ACPI: PCI Interrupt Link [LNKF] (IRQs 1 3 4 5 6 10 11 12 14 15) *0, disabled.
+[    0.500297] ACPI: PCI Interrupt Link [LNKG] (IRQs 1 *3 4 5 6 10 11 12 14 15)
+[    0.500347] ACPI: PCI Interrupt Link [LNKH] (IRQs 1 3 *4 5 6 10 11 12 14 15)
+[    0.500466] ACPI: Enabled 2 GPEs in block 00 to 3F
+[    0.500517] ACPI : EC: GPE = 0x1b, I/O: command/status = 0x66, data = 0x62
+[    0.500626] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    0.500628] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.500632] vgaarb: device added: PCI:0000:01:00.0,decodes=io+mem,owns=none,locks=none
+[    0.500633] vgaarb: loaded
+[    0.500634] vgaarb: bridge control possible 0000:01:00.0
+[    0.500635] vgaarb: no bridge control possible 0000:00:02.0
+[    0.500698] PCI: Using ACPI for IRQ routing
+[    0.502325] PCI: pci_cache_line_size set to 64 bytes
+[    0.502398] e820: reserve RAM buffer [mem 0x0009e800-0x0009ffff]
+[    0.502400] e820: reserve RAM buffer [mem 0xaabcd000-0xabffffff]
+[    0.502402] e820: reserve RAM buffer [mem 0xaacf6000-0xabffffff]
+[    0.502403] e820: reserve RAM buffer [mem 0xaaf06000-0xabffffff]
+[    0.502405] e820: reserve RAM buffer [mem 0xaaffd000-0xabffffff]
+[    0.502406] e820: reserve RAM buffer [mem 0x24fe00000-0x24fffffff]
+[    0.502550] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0, 0, 0, 0, 0, 0
+[    0.502555] hpet0: 8 comparators, 64-bit 14.318180 MHz counter
+[    0.505589] Switched to clocksource hpet
+[    0.510732] pnp: PnP ACPI init
+[    0.510875] system 00:00: [io  0x0680-0x069f] has been reserved
+[    0.510878] system 00:00: [io  0x1000-0x100f] has been reserved
+[    0.510879] system 00:00: [io  0xffff] has been reserved
+[    0.510881] system 00:00: [io  0xffff] has been reserved
+[    0.510883] system 00:00: [io  0x0400-0x0453] could not be reserved
+[    0.510885] system 00:00: [io  0x0458-0x047f] has been reserved
+[    0.510887] system 00:00: [io  0x0500-0x057f] has been reserved
+[    0.510889] system 00:00: [io  0x164e-0x164f] has been reserved
+[    0.510892] system 00:00: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.510925] pnp 00:01: Plug and Play ACPI device, IDs PNP0b00 (active)
+[    0.510970] system 00:02: [io  0x0454-0x0457] has been reserved
+[    0.510972] system 00:02: Plug and Play ACPI device, IDs INT3f0d PNP0c02 (active)
+[    0.511021] pnp 00:03: Plug and Play ACPI device, IDs PNP0303 PNP030b (active)
+[    0.511077] pnp 00:04: Plug and Play ACPI device, IDs SYN0a17 SYN0a00 SYN0002 PNP0f13 (active)
+[    0.565923] system 00:05: [mem 0xfed1c000-0xfed1ffff] has been reserved
+[    0.565925] system 00:05: [mem 0xfed10000-0xfed17fff] could not be reserved
+[    0.565927] system 00:05: [mem 0xfed18000-0xfed18fff] has been reserved
+[    0.565929] system 00:05: [mem 0xfed19000-0xfed19fff] has been reserved
+[    0.565931] system 00:05: [mem 0xe0000000-0xe3ffffff] has been reserved
+[    0.565933] system 00:05: [mem 0xfed20000-0xfed3ffff] has been reserved
+[    0.565935] system 00:05: [mem 0xfed90000-0xfed93fff] has been reserved
+[    0.565937] system 00:05: [mem 0xfed45000-0xfed8ffff] has been reserved
+[    0.565939] system 00:05: [mem 0xff000000-0xffffffff] could not be reserved
+[    0.565941] system 00:05: [mem 0xfee00000-0xfeefffff] could not be reserved
+[    0.565943] system 00:05: [mem 0xafa00000-0xafa00fff] has been reserved
+[    0.565945] system 00:05: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.565996] system 00:06: [mem 0xafa00000-0xafa00fff] has been reserved
+[    0.565998] system 00:06: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.566130] system 00:07: [mem 0x20000000-0x201fffff] has been reserved
+[    0.566132] system 00:07: [mem 0x40000000-0x401fffff] has been reserved
+[    0.566134] system 00:07: Plug and Play ACPI device, IDs PNP0c01 (active)
+[    0.566147] pnp: PnP ACPI: found 8 devices
+[    0.572990] pci 0000:00:01.0: PCI bridge to [bus 01]
+[    0.572993] pci 0000:00:01.0:   bridge window [io  0xd000-0xdfff]
+[    0.572996] pci 0000:00:01.0:   bridge window [mem 0xdb000000-0xdc0fffff]
+[    0.572999] pci 0000:00:01.0:   bridge window [mem 0xc0000000-0xd1ffffff 64bit pref]
+[    0.573002] pci 0000:00:1c.0: PCI bridge to [bus 02]
+[    0.573006] pci 0000:00:1c.0:   bridge window [io  0xc000-0xcfff]
+[    0.573011] pci 0000:00:1c.0:   bridge window [mem 0xde600000-0xdeffffff]
+[    0.573015] pci 0000:00:1c.0:   bridge window [mem 0xd4200000-0xd4bfffff 64bit pref]
+[    0.573021] pci 0000:00:1c.1: PCI bridge to [bus 03]
+[    0.573024] pci 0000:00:1c.1:   bridge window [io  0xb000-0xbfff]
+[    0.573030] pci 0000:00:1c.1:   bridge window [mem 0xddc00000-0xde5fffff]
+[    0.573034] pci 0000:00:1c.1:   bridge window [mem 0xd3700000-0xd40fffff 64bit pref]
+[    0.573040] pci 0000:00:1c.3: PCI bridge to [bus 04]
+[    0.573043] pci 0000:00:1c.3:   bridge window [io  0xa000-0xafff]
+[    0.573048] pci 0000:00:1c.3:   bridge window [mem 0xdd200000-0xddbfffff]
+[    0.573053] pci 0000:00:1c.3:   bridge window [mem 0xd2c00000-0xd35fffff 64bit pref]
+[    0.573059] pci 0000:00:1c.5: PCI bridge to [bus 05]
+[    0.573062] pci 0000:00:1c.5:   bridge window [io  0x9000-0x9fff]
+[    0.573067] pci 0000:00:1c.5:   bridge window [mem 0xdc800000-0xdd1fffff]
+[    0.573071] pci 0000:00:1c.5:   bridge window [mem 0xd2100000-0xd2afffff 64bit pref]
+[    0.573078] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7]
+[    0.573080] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff]
+[    0.573082] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff]
+[    0.573083] pci_bus 0000:00: resource 7 [mem 0x000d4000-0x000d7fff]
+[    0.573085] pci_bus 0000:00: resource 8 [mem 0x000d8000-0x000dbfff]
+[    0.573086] pci_bus 0000:00: resource 9 [mem 0x000dc000-0x000dffff]
+[    0.573088] pci_bus 0000:00: resource 10 [mem 0x000e0000-0x000e3fff]
+[    0.573090] pci_bus 0000:00: resource 11 [mem 0x000e4000-0x000e7fff]
+[    0.573091] pci_bus 0000:00: resource 12 [mem 0xafa00000-0xfeafffff]
+[    0.573093] pci_bus 0000:00: resource 13 [mem 0xfed40000-0xfed44fff]
+[    0.573094] pci_bus 0000:01: resource 0 [io  0xd000-0xdfff]
+[    0.573096] pci_bus 0000:01: resource 1 [mem 0xdb000000-0xdc0fffff]
+[    0.573097] pci_bus 0000:01: resource 2 [mem 0xc0000000-0xd1ffffff 64bit pref]
+[    0.573099] pci_bus 0000:02: resource 0 [io  0xc000-0xcfff]
+[    0.573101] pci_bus 0000:02: resource 1 [mem 0xde600000-0xdeffffff]
+[    0.573102] pci_bus 0000:02: resource 2 [mem 0xd4200000-0xd4bfffff 64bit pref]
+[    0.573104] pci_bus 0000:03: resource 0 [io  0xb000-0xbfff]
+[    0.573106] pci_bus 0000:03: resource 1 [mem 0xddc00000-0xde5fffff]
+[    0.573107] pci_bus 0000:03: resource 2 [mem 0xd3700000-0xd40fffff 64bit pref]
+[    0.573109] pci_bus 0000:04: resource 0 [io  0xa000-0xafff]
+[    0.573111] pci_bus 0000:04: resource 1 [mem 0xdd200000-0xddbfffff]
+[    0.573112] pci_bus 0000:04: resource 2 [mem 0xd2c00000-0xd35fffff 64bit pref]
+[    0.573114] pci_bus 0000:05: resource 0 [io  0x9000-0x9fff]
+[    0.573115] pci_bus 0000:05: resource 1 [mem 0xdc800000-0xdd1fffff]
+[    0.573117] pci_bus 0000:05: resource 2 [mem 0xd2100000-0xd2afffff 64bit pref]
+[    0.573174] NET: Registered protocol family 2
+[    0.573417] TCP established hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.573568] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+[    0.573700] TCP: Hash tables configured (established 65536 bind 65536)
+[    0.573718] TCP: reno registered
+[    0.573729] UDP hash table entries: 4096 (order: 5, 131072 bytes)
+[    0.573758] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes)
+[    0.573862] NET: Registered protocol family 1
+[    0.573878] pci 0000:00:02.0: Video device with shadowed ROM
+[    0.830307] PCI: CLS 64 bytes, default 64
+[    0.830354] Unpacking initramfs...
+[    1.136451] Freeing initrd memory: 17752K (ffff880035d44000 - ffff880036e9a000)
+[    1.136462] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    1.136464] software IO TLB [mem 0xa6bcd000-0xaabcd000] (64MB) mapped at [ffff8800a6bcd000-ffff8800aabccfff]
+[    1.136684] RAPL PMU detected, hw unit 2^-16 Joules, API unit is 2^-32 Joules, 3 fixed counters 163840 ms ovfl timer
+[    1.136732] microcode: CPU0 sig=0x206a7, pf=0x10, revision=0x29
+[    1.136737] microcode: CPU1 sig=0x206a7, pf=0x10, revision=0x29
+[    1.136744] microcode: CPU2 sig=0x206a7, pf=0x10, revision=0x29
+[    1.136751] microcode: CPU3 sig=0x206a7, pf=0x10, revision=0x29
+[    1.136817] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    1.137275] futex hash table entries: 4096 (order: 6, 262144 bytes)
+[    1.137327] audit: initializing netlink subsys (disabled)
+[    1.137345] audit: type=2000 audit(1414931996.120:1): initialized
+[    1.137670] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    1.137689] zpool: loaded
+[    1.137692] zbud: loaded
+[    1.137887] VFS: Disk quotas dquot_6.5.2
+[    1.137908] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.137973] msgmni has been set to 15820
+[    1.138353] alg: No test for stdrng (krng)
+[    1.138383] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.138433] io scheduler noop registered
+[    1.138437] io scheduler deadline registered
+[    1.138457] io scheduler cfq registered (default)
+[    1.138632] pcieport 0000:00:01.0: irq 24 for MSI/MSI-X
+[    1.139065] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    1.139082] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    1.139127] intel_idle: MWAIT substates: 0x21120
+[    1.139128] intel_idle: v0.4 model 0x2A
+[    1.139129] intel_idle: lapic_timer_reliable_states 0xffffffff
+[    1.139339] GHES: HEST is not enabled!
+[    1.139422] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.139884] Linux agpgart interface v0.103
+[    1.139994] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+[    1.141951] i8042: Detected active multiplexing controller, rev 1.1
+[    1.142788] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.142792] serio: i8042 AUX0 port at 0x60,0x64 irq 12
+[    1.142819] serio: i8042 AUX1 port at 0x60,0x64 irq 12
+[    1.142840] serio: i8042 AUX2 port at 0x60,0x64 irq 12
+[    1.142861] serio: i8042 AUX3 port at 0x60,0x64 irq 12
+[    1.142986] mousedev: PS/2 mouse device common for all mice
+[    1.143031] rtc_cmos 00:01: RTC can wake from S4
+[    1.143168] rtc_cmos 00:01: rtc core: registered rtc_cmos as rtc0
+[    1.143196] rtc_cmos 00:01: alarms up to one year, y3k, 242 bytes nvram, hpet irqs
+[    1.143207] Intel P-state driver initializing.
+[    1.143385] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.144894] AMD IOMMUv2 driver by Joerg Roedel <joerg.roedel@amd.com>
+[    1.144898] AMD IOMMUv2 functionality not available on this system
+[    1.145134] TCP: cubic registered
+[    1.145277] NET: Registered protocol family 10
+[    1.145870] mip6: Mobile IPv6
+[    1.145896] NET: Registered protocol family 17
+[    1.145913] mpls_gso: MPLS GSO support
+[    1.146938] registered taskstats version 1
+[    1.148235] rtc_cmos 00:01: setting system clock to 2014-11-02 12:39:56 UTC (1414931996)
+[    1.148536] PM: Hibernation image not present or could not be loaded.
+[    1.150959] Freeing unused kernel memory: 1220K (ffffffff81901000 - ffffffff81a32000)
+[    1.150961] Write protecting the kernel read-only data: 8192k
+[    1.152366] Freeing unused kernel memory: 672K (ffff880001558000 - ffff880001600000)
+[    1.152815] Freeing unused kernel memory: 212K (ffff8800017cb000 - ffff880001800000)
+[    1.179683] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+[    1.231485] systemd-udevd[72]: starting version 215
+[    1.231774] random: systemd-udevd urandom read with 2 bits of entropy available
+[    1.238232] input: Lid Switch as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0D:00/input/input4
+[    1.247483] thermal LNXTHERM:00: registered as thermal_zone0
+[    1.247485] ACPI: Thermal Zone [TZ00] (57 C)
+[    1.248472] ACPI: bus type USB registered
+[    1.248494] usbcore: registered new interface driver usbfs
+[    1.248504] usbcore: registered new interface driver hub
+[    1.248563] usbcore: registered new device driver usb
+[    1.249201] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.249239] [drm] Initialized drm 1.1.0 20060810
+[    1.249397] ehci-pci: EHCI PCI platform driver
+[    1.249557] ehci-pci 0000:00:1a.0: EHCI Host Controller
+[    1.249568] ehci-pci 0000:00:1a.0: new USB bus registered, assigned bus number 1
+[    1.249584] ehci-pci 0000:00:1a.0: debug port 2
+[    1.250367] r8169 Gigabit Ethernet driver 2.3LK-NAPI loaded
+[    1.250376] r8169 0000:05:00.0: can't disable ASPM; OS doesn't have ASPM control
+[    1.250589] r8169 0000:05:00.0: irq 25 for MSI/MSI-X
+[    1.250779] r8169 0000:05:00.0 eth0: RTL8168e/8111e at 0xffffc90000c6a000, 10:bf:48:05:c7:f7, XID 0c200000 IRQ 25
+[    1.250781] r8169 0000:05:00.0 eth0: jumbo features [frames: 9200 bytes, tx checksumming: ko]
+[    1.252832] SCSI subsystem initialized
+[    1.253487] ehci-pci 0000:00:1a.0: cache line size of 64 is not supported
+[    1.253628] ehci-pci 0000:00:1a.0: irq 16, io mem 0xdf008000
+[    1.254087] libata version 3.00 loaded.
+[    1.257237] AVX version of gcm_enc/dec engaged.
+[    1.262479] ehci-pci 0000:00:1a.0: USB 2.0 started, EHCI 1.00
+[    1.262528] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.262531] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.262533] usb usb1: Product: EHCI Host Controller
+[    1.262535] usb usb1: Manufacturer: Linux 3.17.0+ ehci_hcd
+[    1.262538] usb usb1: SerialNumber: 0000:00:1a.0
+[    1.262703] hub 1-0:1.0: USB hub found
+[    1.262711] hub 1-0:1.0: 2 ports detected
+[    1.262853] ahci 0000:00:1f.2: version 3.0
+[    1.263006] ahci 0000:00:1f.2: irq 26 for MSI/MSI-X
+[    1.263058] ahci 0000:00:1f.2: AHCI 0001.0300 32 slots 6 ports 6 Gbps 0x3 impl SATA mode
+[    1.263062] ahci 0000:00:1f.2: flags: 64bit ncq sntf pm led clo pio slum part ems apst 
+[    1.263109] xhci_hcd 0000:04:00.0: xHCI Host Controller
+[    1.263116] xhci_hcd 0000:04:00.0: new USB bus registered, assigned bus number 2
+[    1.266570] alg: No test for __gcm-aes-aesni (__driver-gcm-aes-aesni)
+[    1.271363] scsi host0: ahci
+[    1.271514] scsi host1: ahci
+[    1.271635] scsi host2: ahci
+[    1.271753] scsi host3: ahci
+[    1.271875] scsi host4: ahci
+[    1.272001] scsi host5: ahci
+[    1.272046] ata1: SATA max UDMA/133 abar m2048@0xdf006000 port 0xdf006100 irq 26
+[    1.272048] ata2: SATA max UDMA/133 abar m2048@0xdf006000 port 0xdf006180 irq 26
+[    1.272049] ata3: DUMMY
+[    1.272050] ata4: DUMMY
+[    1.272051] ata5: DUMMY
+[    1.272052] ata6: DUMMY
+[    1.272998] xhci_hcd 0000:04:00.0: irq 27 for MSI/MSI-X
+[    1.273005] xhci_hcd 0000:04:00.0: irq 28 for MSI/MSI-X
+[    1.273010] xhci_hcd 0000:04:00.0: irq 29 for MSI/MSI-X
+[    1.273015] xhci_hcd 0000:04:00.0: irq 30 for MSI/MSI-X
+[    1.273020] xhci_hcd 0000:04:00.0: irq 31 for MSI/MSI-X
+[    1.273169] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.273171] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.273173] usb usb2: Product: xHCI Host Controller
+[    1.273176] usb usb2: Manufacturer: Linux 3.17.0+ xhci_hcd
+[    1.273178] usb usb2: SerialNumber: 0000:04:00.0
+[    1.273326] hub 2-0:1.0: USB hub found
+[    1.273342] hub 2-0:1.0: 2 ports detected
+[    1.273462] xhci_hcd 0000:04:00.0: xHCI Host Controller
+[    1.273466] ehci-pci 0000:00:1d.0: EHCI Host Controller
+[    1.273467] xhci_hcd 0000:04:00.0: new USB bus registered, assigned bus number 3
+[    1.273473] ehci-pci 0000:00:1d.0: new USB bus registered, assigned bus number 4
+[    1.273489] ehci-pci 0000:00:1d.0: debug port 2
+[    1.273519] usb usb3: New USB device found, idVendor=1d6b, idProduct=0003
+[    1.273522] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.273524] usb usb3: Product: xHCI Host Controller
+[    1.273526] usb usb3: Manufacturer: Linux 3.17.0+ xhci_hcd
+[    1.273528] usb usb3: SerialNumber: 0000:04:00.0
+[    1.273662] hub 3-0:1.0: USB hub found
+[    1.273674] hub 3-0:1.0: 2 ports detected
+[    1.277408] ehci-pci 0000:00:1d.0: cache line size of 64 is not supported
+[    1.277970] ehci-pci 0000:00:1d.0: irq 23, io mem 0xdf007000
+[    1.278708] alg: No test for crc32 (crc32-pclmul)
+[    1.286568] ehci-pci 0000:00:1d.0: USB 2.0 started, EHCI 1.00
+[    1.286657] usb usb4: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.286658] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.286660] usb usb4: Product: EHCI Host Controller
+[    1.286661] usb usb4: Manufacturer: Linux 3.17.0+ ehci_hcd
+[    1.286662] usb usb4: SerialNumber: 0000:00:1d.0
+[    1.286785] hub 4-0:1.0: USB hub found
+[    1.286791] hub 4-0:1.0: 2 ports detected
+[    1.290890] ACPI: Lid Switch [LID]
+[    1.290940] input: Sleep Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input6
+[    1.290944] ACPI: Sleep Button [SLPB]
+[    1.290982] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input7
+[    1.290984] ACPI: Power Button [PWRF]
+[    1.295201] [drm] Memory usable by graphics device = 2048M
+[    1.295203] [drm] Replacing VGA console driver
+[    1.295620] Console: switching to colour dummy device 80x25
+[    1.342735] i915 0000:00:02.0: irq 32 for MSI/MSI-X
+[    1.342759] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    1.342761] [drm] Driver supports precise vblank timestamp query.
+[    1.351052] vgaarb: device changed decodes: PCI:0000:00:02.0,olddecodes=io+mem,decodes=none:owns=io+mem
+[    1.440437] fbcon: inteldrmfb (fb0) is primary device
+[    1.479277] Console: switching to colour frame buffer device 170x48
+[    1.484262] i915 0000:00:02.0: fb0: inteldrmfb frame buffer device
+[    1.484265] i915 0000:00:02.0: registered panic notifier
+[    1.519409] ACPI: Video Device [GFX0] (multi-head: yes  rom: yes  post: no)
+[    1.526658] acpi device:50: registered as cooling_device0
+[    1.526906] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:4c/LNXVIDEO:00/input/input8
+[    1.544101] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    1.544292] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:01/input/input9
+[    1.544370] [drm] Initialized i915 1.6.0 20140725 for 0000:00:02.0 on minor 0
+[    1.574923] usb 1-1: new high-speed USB device number 2 using ehci-pci
+[    1.590983] ata2: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[    1.591030] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    1.591828] ata2.00: failed to get NCQ Send/Recv Log Emask 0x1
+[    1.591833] ata2.00: ATA-9: Samsung SSD 840 PRO Series, DXM05B0Q, max UDMA/133
+[    1.591836] ata2.00: 500118192 sectors, multi 16: LBA48 NCQ (depth 31/32), AA
+[    1.592293] ata1.00: ACPI cmd ef/90:06:00:00:00:00 (SET FEATURES) succeeded
+[    1.592297] ata1.00: ACPI cmd f5/00:00:00:00:00:00 (SECURITY FREEZE LOCK) filtered out
+[    1.592300] ata1.00: ACPI cmd b1/c1:00:00:00:00:00 (DEVICE CONFIGURATION OVERLAY) filtered out
+[    1.592494] ata2.00: failed to get NCQ Send/Recv Log Emask 0x1
+[    1.592569] ata2.00: configured for UDMA/133
+[    1.593419] ata1.00: ATA-8: Hitachi HTS547575A9E384, JE4OA60A, max UDMA/133
+[    1.593429] ata1.00: 1465149168 sectors, multi 16: LBA48 NCQ (depth 31/32), AA
+[    1.594890] ata1.00: ACPI cmd ef/90:06:00:00:00:00 (SET FEATURES) succeeded
+[    1.594908] ata1.00: ACPI cmd f5/00:00:00:00:00:00 (SECURITY FREEZE LOCK) filtered out
+[    1.594912] ata1.00: ACPI cmd b1/c1:00:00:00:00:00 (DEVICE CONFIGURATION OVERLAY) filtered out
+[    1.596104] ata1.00: configured for UDMA/133
+[    1.596535] scsi 0:0:0:0: Direct-Access     ATA      Hitachi HTS54757 A60A PQ: 0 ANSI: 5
+[    1.597494] scsi 1:0:0:0: Direct-Access     ATA      Samsung SSD 840  5B0Q PQ: 0 ANSI: 5
+[    1.603361] sd 0:0:0:0: [sda] 1465149168 512-byte logical blocks: (750 GB/698 GiB)
+[    1.603368] sd 0:0:0:0: [sda] 4096-byte physical blocks
+[    1.603403] sd 1:0:0:0: [sdb] 500118192 512-byte logical blocks: (256 GB/238 GiB)
+[    1.603481] sd 0:0:0:0: [sda] Write Protect is off
+[    1.603487] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    1.603538] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.603577] sd 1:0:0:0: [sdb] Write Protect is off
+[    1.603585] sd 1:0:0:0: [sdb] Mode Sense: 00 3a 00 00
+[    1.603627] sd 1:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.604334]  sdb: sdb2 sdb3
+[    1.604889] sd 1:0:0:0: [sdb] Attached SCSI disk
+[    1.707811] usb 1-1: New USB device found, idVendor=8087, idProduct=0024
+[    1.707820] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    1.708366] hub 1-1:1.0: USB hub found
+[    1.708446] hub 1-1:1.0: 6 ports detected
+[    1.819222] usb 4-1: new high-speed USB device number 2 using ehci-pci
+[    1.952085] usb 4-1: New USB device found, idVendor=8087, idProduct=0024
+[    1.952096] usb 4-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    1.952711] hub 4-1:1.0: USB hub found
+[    1.952870] hub 4-1:1.0: 6 ports detected
+[    2.023668] usb 1-1.1: new full-speed USB device number 3 using ehci-pci
+[    2.118111] usb 1-1.1: New USB device found, idVendor=8087, idProduct=07dc
+[    2.118121] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.135583] tsc: Refined TSC clocksource calibration: 2494.334 MHz
+[    2.191835] usb 1-1.2: new high-speed USB device number 4 using ehci-pci
+[    2.288581]  sda: sda1 sda2 sda4
+[    2.289698] sd 0:0:0:0: [sda] Attached SCSI disk
+[    2.291027] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    2.291154] sd 1:0:0:0: Attached scsi generic sg1 type 0
+[    2.344613] usb 1-1.2: New USB device found, idVendor=13d3, idProduct=5710
+[    2.344624] usb 1-1.2: New USB device strings: Mfr=3, Product=1, SerialNumber=2
+[    2.344629] usb 1-1.2: Product: USB 2.0 UVC VGA WebCam
+[    2.344633] usb 1-1.2: Manufacturer: Azurewave
+[    2.344638] usb 1-1.2: SerialNumber: 0x0001
+[    2.416079] usb 1-1.4: new high-speed USB device number 5 using ehci-pci
+[    2.509598] usb 1-1.4: New USB device found, idVendor=0bda, idProduct=0139
+[    2.509608] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    2.509613] usb 1-1.4: Product: USB2.0-CRW
+[    2.509617] usb 1-1.4: Manufacturer: Generic
+[    2.509621] usb 1-1.4: SerialNumber: 20100201396000000
+[    2.515665] usbcore: registered new interface driver rtsx_usb
+[    2.580296] usb 4-1.2: new high-speed USB device number 3 using ehci-pci
+[    2.672890] usb 4-1.2: New USB device found, idVendor=0424, idProduct=2514
+[    2.672899] usb 4-1.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.673470] hub 4-1.2:1.0: USB hub found
+[    2.673600] hub 4-1.2:1.0: 4 ports detected
+[    2.716720] device-mapper: uevent: version 1.0.3
+[    2.716907] device-mapper: ioctl: 4.27.0-ioctl (2013-10-30) initialised: dm-devel@redhat.com
+[    2.880648] usb 4-1-port3: over-current condition
+[    3.088848] usb 4-1-port4: over-current condition
+[    3.136921] Switched to clocksource tsc
+[    3.160953] usb 4-1.2.1: new low-speed USB device number 4 using ehci-pci
+[    3.257929] usb 4-1.2.1: New USB device found, idVendor=046d, idProduct=c069
+[    3.257938] usb 4-1.2.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    3.257943] usb 4-1.2.1: Product: USB Laser Mouse
+[    3.257947] usb 4-1.2.1: Manufacturer: Logitech
+[    3.263155] hidraw: raw HID events driver (C) Jiri Kosina
+[    3.267718] usbcore: registered new interface driver usbhid
+[    3.267724] usbhid: USB HID core driver
+[    3.269054] input: Logitech USB Laser Mouse as /devices/pci0000:00/0000:00:1d.0/usb4/4-1/4-1.2/4-1.2.1/4-1.2.1:1.0/0003:046D:C069.0001/input/input10
+[    3.269261] hid-generic 0003:046D:C069.0001: input,hidraw0: USB HID v1.10 Mouse [Logitech USB Laser Mouse] on usb-0000:00:1d.0-1.2.1/input0
+[    3.345187] usb 4-1.2.2: new low-speed USB device number 5 using ehci-pci
+[    3.465035] usb 4-1.2.2: New USB device found, idVendor=046a, idProduct=0023
+[    3.465045] usb 4-1.2.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.485541] input: HID 046a:0023 as /devices/pci0000:00/0000:00:1d.0/usb4/4-1/4-1.2/4-1.2.2/4-1.2.2:1.0/0003:046A:0023.0002/input/input11
+[    3.485811] cherry 0003:046A:0023.0002: input,hidraw1: USB HID v1.11 Keyboard [HID 046a:0023] on usb-0000:00:1d.0-1.2.2/input0
+[    3.488739] input: HID 046a:0023 as /devices/pci0000:00/0000:00:1d.0/usb4/4-1/4-1.2/4-1.2.2/4-1.2.2:1.1/0003:046A:0023.0003/input/input12
+[    3.489000] cherry 0003:046A:0023.0003: input,hidraw2: USB HID v1.11 Device [HID 046a:0023] on usb-0000:00:1d.0-1.2.2/input1
+[    5.623105] random: nonblocking pool is initialized
+[   10.120961] NET: Registered protocol family 38
+[   11.302217] EXT4-fs (dm-1): mounted filesystem with ordered data mode. Opts: (null)
+[   11.747013] systemd-udevd[282]: starting version 215
+[   11.747670] lp: driver loaded but no devices found
+[   11.749877] ppdev: user-space parallel port driver
+[   11.753807] fuse init (API version 7.23)
+[   11.776501] ip_tables: (C) 2000-2006 Netfilter Core Team
+[   11.782990] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[   11.816825] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[   11.849728] EXT4-fs (dm-1): re-mounted. Opts: errors=remount-ro,discard
+[   12.044924] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[   12.045898] ACPI: AC Adapter [AC0] (on-line)
+[   12.046725] mei_me 0000:00:16.0: irq 33 for MSI/MSI-X
+[   12.048373] ACPI: Battery Slot [BAT0] (battery present)
+[   12.048543] wmi: Mapper loaded
+[   12.071939] cfg80211: Calling CRDA to update world regulatory domain
+[   12.075279] Intel(R) Wireless WiFi driver for Linux, in-tree:d
+[   12.075281] Copyright(c) 2003- 2014 Intel Corporation
+[   12.075525] iwlwifi 0000:03:00.0: irq 34 for MSI/MSI-X
+[   12.076280] iwlwifi 0000:03:00.0: U iwl_request_firmware attempting to load firmware 'iwlwifi-7260-10.ucode'
+[   12.076331] iwlwifi 0000:03:00.0: U set_dflt_pwr_limit SPL method not found
+[   12.076486] iwlwifi 0000:03:00.0: Direct firmware load for iwlwifi-7260-10.ucode failed with error -2
+[   12.076491] iwlwifi 0000:03:00.0: U iwl_request_firmware attempting to load firmware 'iwlwifi-7260-9.ucode'
+[   12.079565] iwlwifi 0000:03:00.0: U iwl_req_fw_callback Loaded firmware file 'iwlwifi-7260-9.ucode' (680432 bytes).
+[   12.079780] iwlwifi 0000:03:00.0: loaded firmware version 25.228.9.0 op_mode iwlmvm
+[   12.090444] input: PC Speaker as /devices/platform/pcspkr/input/input13
+[   12.093136] iwlwifi 0000:03:00.0: Detected Intel(R) Dual Band Wireless AC 7260, REV=0x144
+[   12.093142] iwlwifi 0000:03:00.0: U iwl_pcie_prepare_card_hw iwl_trans_prepare_card_hw enter
+[   12.093161] iwlwifi 0000:03:00.0: U iwl_pcie_set_hw_ready hardware ready
+[   12.093187] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init Init card's basic functions
+[   12.093221] iwlwifi 0000:03:00.0: L1 Enabled; Disabling L0S
+[   12.093460] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init DEVICE_ENABLED bit is now set
+[   12.093469] iwlwifi 0000:03:00.0: U iwl_pcie_prepare_card_hw iwl_trans_prepare_card_hw enter
+[   12.093479] iwlwifi 0000:03:00.0: U iwl_pcie_set_hw_ready hardware ready
+[   12.093486] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init Init card's basic functions
+[   12.093511] iwlwifi 0000:03:00.0: L1 Enabled; Disabling L0S
+[   12.093663] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init DEVICE_ENABLED bit is now set
+[   12.093689] iwlwifi 0000:03:00.0: U iwl_mvm_nic_config Radio type=0x0-0x2-0x1
+[   12.094270] iwlwifi 0000:03:00.0: U iwl_pcie_nic_init Enabling shadow registers in device
+[   12.094274] iwlwifi 0000:03:00.0: U iwl_pcie_load_given_ucode working with Non Secured image
+[   12.094277] iwlwifi 0000:03:00.0: U iwl_pcie_load_given_ucode working with Single CPU
+[   12.094280] iwlwifi 0000:03:00.0: U iwl_pcie_load_section [0] uCode section being loaded...
+[   12.096674] iwlwifi 0000:03:00.0: U iwl_pcie_load_section [1] uCode section being loaded...
+[   12.096945] Error: Driver 'pcspkr' is already registered, aborting...
+[   12.099205] iwlwifi 0000:03:00.0: U iwl_pcie_load_cpu_sections Break since Data not valid or Empty section, sec = 2
+[   12.099722] iwlwifi 0000:03:00.0: I iwl_alive_fn Alive VER2 ucode status 0xcafe revision 0x9 0x0 flags 0x0
+[   12.099727] iwlwifi 0000:03:00.0: I iwl_alive_fn UMAC version: Major - 0x0, Minor - 0x0
+[   12.100159] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command BT_COEX_PRIO_TABLE
+[   12.100162] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command BT_COEX_PRIO_TABLE
+[   12.100167] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command BT_COEX_PRIO_TABLE (#cc), seq: 0x0900, 20 bytes at 0[0]:9
+[   12.103545] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command BT_COEX_PRIO_TABLE
+[   12.103557] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command BT_CONFIG
+[   12.103560] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command BT_CONFIG
+[   12.103564] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command BT_CONFIG (#9b), seq: 0x0901, 460 bytes at 1[1]:9
+[   12.103687] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command BT_CONFIG
+[   12.103694] iwlwifi 0000:03:00.0: U iwl_nvm_init Read from NVM
+[   12.103698] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.103700] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.103703] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0902, 12 bytes at 2[2]:9
+[   12.103846] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.103854] iwlwifi 0000:03:00.0: U iwl_nvm_read_section NVM section 0 read completed
+[   12.103857] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.103859] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.103863] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0903, 12 bytes at 3[3]:9
+[   12.103974] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.103980] iwlwifi 0000:03:00.0: U iwl_nvm_read_section NVM section 1 read completed
+[   12.103983] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.103985] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.103988] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0904, 12 bytes at 4[4]:9
+[   12.104131] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104140] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104143] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104146] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0905, 12 bytes at 5[5]:9
+[   12.104295] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104305] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104307] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104310] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0906, 12 bytes at 6[6]:9
+[   12.104416] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104424] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104426] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104430] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0907, 12 bytes at 7[7]:9
+[   12.104481] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104487] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed on offset 0x1800 since that section size is multiple 2K
+[   12.104490] iwlwifi 0000:03:00.0: U iwl_nvm_read_section NVM section 2 read completed
+[   12.104494] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104497] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104500] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0908, 12 bytes at 8[8]:9
+[   12.104560] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104566] iwlwifi 0000:03:00.0: U iwl_nvm_read_section NVM section 3 read completed
+[   12.104569] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104571] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104575] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0909, 12 bytes at 9[9]:9
+[   12.104638] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104645] iwlwifi 0000:03:00.0: U iwl_nvm_read_section NVM section 4 read completed
+[   12.104648] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104650] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104653] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x090A, 12 bytes at 10[10]:9
+[   12.104725] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104731] iwlwifi 0000:03:00.0: U iwl_nvm_read_section NVM section 5 read completed
+[   12.104733] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104736] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104739] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x090B, 12 bytes at 11[11]:9
+[   12.104801] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104808] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed with status 256 (device: Intel(R) Dual Band Wireless AC 7260)
+[   12.104811] iwlwifi 0000:03:00.0: U iwl_nvm_read_section Cannot read NVM from section 6 offset 0, length 2048
+[   12.104813] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104815] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104818] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x090C, 12 bytes at 12[12]:9
+[   12.104878] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104884] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed with status 256 (device: Intel(R) Dual Band Wireless AC 7260)
+[   12.104887] iwlwifi 0000:03:00.0: U iwl_nvm_read_section Cannot read NVM from section 7 offset 0, length 2048
+[   12.104890] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104892] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104895] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x090D, 12 bytes at 13[13]:9
+[   12.104954] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104959] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed with status 256 (device: Intel(R) Dual Band Wireless AC 7260)
+[   12.104962] iwlwifi 0000:03:00.0: U iwl_nvm_read_section Cannot read NVM from section 8 offset 0, length 2048
+[   12.104964] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.104966] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.104969] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x090E, 12 bytes at 14[14]:9
+[   12.105029] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.105035] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed with status 256 (device: Intel(R) Dual Band Wireless AC 7260)
+[   12.105038] iwlwifi 0000:03:00.0: U iwl_nvm_read_section Cannot read NVM from section 9 offset 0, length 2048
+[   12.105040] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.105042] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.105046] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x090F, 12 bytes at 15[15]:9
+[   12.105104] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.105110] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed with status 256 (device: Intel(R) Dual Band Wireless AC 7260)
+[   12.105113] iwlwifi 0000:03:00.0: U iwl_nvm_read_section Cannot read NVM from section 10 offset 0, length 2048
+[   12.105116] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command NVM_ACCESS_CMD
+[   12.105118] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.105122] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command NVM_ACCESS_CMD (#88), seq: 0x0910, 12 bytes at 16[16]:9
+[   12.105180] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command NVM_ACCESS_CMD
+[   12.105186] iwlwifi 0000:03:00.0: U iwl_nvm_read_chunk NVM access command failed with status 256 (device: Intel(R) Dual Band Wireless AC 7260)
+[   12.105188] iwlwifi 0000:03:00.0: U iwl_nvm_read_section Cannot read NVM from section 11 offset 0, length 2048
+[   12.105195] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 1 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105198] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 2 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105202] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 3 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105205] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 4 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105208] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 5 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105211] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 6 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105214] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 7 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105218] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 8 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105221] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 9 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105224] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 10 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105227] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 11 [2.4GHz] VALID IBSS ACTIVE WIDE GO_CONCURRENT (0x34b 22dBm): Ad-Hoc supported
+[   12.105231] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 12 [2.4GHz] VALID WIDE GO_CONCURRENT (0x341 22dBm): Ad-Hoc not supported
+[   12.105234] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 13 [2.4GHz] VALID WIDE GO_CONCURRENT (0x341 22dBm): Ad-Hoc not supported
+[   12.105236] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 14 Flags 0 [2.4GHz] - No traffic
+[   12.105240] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 36 [5.2GHz] VALID WIDE INDOOR_ONLY GO_CONCURRENT (0x7e1 22dBm): Ad-Hoc not supported
+[   12.105243] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 40 [5.2GHz] VALID WIDE INDOOR_ONLY GO_CONCURRENT (0x7e1 22dBm): Ad-Hoc not supported
+[   12.105247] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 44 [5.2GHz] VALID WIDE INDOOR_ONLY GO_CONCURRENT (0x7e1 22dBm): Ad-Hoc not supported
+[   12.105250] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 48 [5.2GHz] VALID WIDE INDOOR_ONLY GO_CONCURRENT (0x7e1 22dBm): Ad-Hoc not supported
+[   12.105254] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 52 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105257] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 56 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105261] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 60 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105264] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 64 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105267] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 100 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105271] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 104 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105274] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 108 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105277] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 112 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105281] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 116 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105284] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 120 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105287] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 124 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105290] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 128 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105294] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 132 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105297] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 136 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105301] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 140 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105304] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 144 [5.2GHz] VALID RADAR WIDE (0x711 22dBm): Ad-Hoc not supported
+[   12.105307] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 149 [5.2GHz] VALID WIDE GO_CONCURRENT (0x7c1 22dBm): Ad-Hoc not supported
+[   12.105311] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 153 [5.2GHz] VALID WIDE GO_CONCURRENT (0x7c1 22dBm): Ad-Hoc not supported
+[   12.105314] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 157 [5.2GHz] VALID WIDE GO_CONCURRENT (0x7c1 22dBm): Ad-Hoc not supported
+[   12.105317] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 161 [5.2GHz] VALID WIDE GO_CONCURRENT (0x7c1 22dBm): Ad-Hoc not supported
+[   12.105320] iwlwifi 0000:03:00.0: U iwl_init_channel_map Ch. 165 [5.2GHz] VALID WIDE GO_CONCURRENT (0x1c1 22dBm): Ad-Hoc not supported
+[   12.105324] iwlwifi 0000:03:00.0: U iwl_nvm_check_version device EEPROM VER=0xa2a, CALIB=0xff
+[   12.105327] iwlwifi 0000:03:00.0: U iwl_send_tx_ant_cfg select valid tx ant: 3
+[   12.105330] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command TX_ANT_CONFIGURATION_CMD
+[   12.105332] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command TX_ANT_CONFIGURATION_CMD
+[   12.105336] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command TX_ANT_CONFIGURATION_CMD (#98), seq: 0x0911, 8 bytes at 17[17]:9
+[   12.105395] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command TX_ANT_CONFIGURATION_CMD
+[   12.105401] iwlwifi 0000:03:00.0: U iwl_send_phy_cfg_cmd Sending Phy CFG command: 0x330018
+[   12.105403] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command PHY_CONFIGURATION_CMD
+[   12.105406] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command PHY_CONFIGURATION_CMD
+[   12.105409] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command PHY_CONFIGURATION_CMD (#6a), seq: 0x0912, 16 bytes at 18[18]:9
+[   12.105469] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command PHY_CONFIGURATION_CMD
+[   12.119797] intel_rapl: Found RAPL domain package
+[   12.119801] intel_rapl: Found RAPL domain core
+[   12.119804] intel_rapl: Found RAPL domain uncore
+[   12.152381] ACPI Warning: SystemIO range 0x0000000000000428-0x000000000000042f conflicts with OpRegion 0x0000000000000400-0x000000000000047f (\PMIO) (20140724/utaddress-258)
+[   12.152390] ACPI: If an ACPI driver is available for this device, you should use it instead of the native driver
+[   12.152394] ACPI Warning: SystemIO range 0x0000000000000540-0x000000000000054f conflicts with OpRegion 0x0000000000000500-0x0000000000000549 (\SBGP) (20140724/utaddress-258)
+[   12.152398] ACPI Warning: SystemIO range 0x0000000000000540-0x000000000000054f conflicts with OpRegion 0x0000000000000500-0x0000000000000563 (\GPIO) (20140724/utaddress-258)
+[   12.152402] ACPI: If an ACPI driver is available for this device, you should use it instead of the native driver
+[   12.152404] ACPI Warning: SystemIO range 0x0000000000000530-0x000000000000053f conflicts with OpRegion 0x0000000000000500-0x0000000000000549 (\SBGP) (20140724/utaddress-258)
+[   12.152407] ACPI Warning: SystemIO range 0x0000000000000530-0x000000000000053f conflicts with OpRegion 0x0000000000000500-0x0000000000000563 (\GPIO) (20140724/utaddress-258)
+[   12.152410] ACPI: If an ACPI driver is available for this device, you should use it instead of the native driver
+[   12.152412] ACPI Warning: SystemIO range 0x0000000000000500-0x000000000000052f conflicts with OpRegion 0x0000000000000500-0x0000000000000549 (\SBGP) (20140724/utaddress-258)
+[   12.152416] ACPI Warning: SystemIO range 0x0000000000000500-0x000000000000052f conflicts with OpRegion 0x0000000000000500-0x0000000000000563 (\GPIO) (20140724/utaddress-258)
+[   12.152419] ACPI: If an ACPI driver is available for this device, you should use it instead of the native driver
+[   12.152421] lpc_ich: Resource conflict(s) found affecting gpio_ich
+[   12.152705] snd_hda_intel 0000:00:1b.0: irq 35 for MSI/MSI-X
+[   12.153012] ACPI Warning: SystemIO range 0x000000000000e040-0x000000000000e05f conflicts with OpRegion 0x000000000000e040-0x000000000000e04f (\_SB_.PCI0.SBUS.SMBI) (20140724/utaddress-258)
+[   12.153018] ACPI: If an ACPI driver is available for this device, you should use it instead of the native driver
+[   12.167778] sound hdaudioC0D0: autoconfig: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:speaker
+[   12.167782] sound hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[   12.167784] sound hdaudioC0D0:    hp_outs=1 (0x21/0x0/0x0/0x0/0x0)
+[   12.167786] sound hdaudioC0D0:    mono: mono_out=0x0
+[   12.167788] sound hdaudioC0D0:    inputs:
+[   12.167791] sound hdaudioC0D0:      Internal Mic=0x19
+[   12.167794] sound hdaudioC0D0:      Mic=0x18
+[   12.171016] asus_wmi: ASUS WMI generic driver loaded
+[   12.171532] asus_wmi: Initialization: 0x1
+[   12.171705] asus_wmi: SFUN value: 0x1a0af7
+[   12.172404] input: Asus WMI hotkeys as /devices/platform/asus-nb-wmi/input/input18
+[   12.173788] media: Linux media interface: v0.10
+[   12.185345] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input19
+[   12.185479] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input20
+[   12.185584] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input21
+[   12.186400] Linux video capture interface: v2.00
+[   12.187833] iTCO_vendor_support: vendor-support=0
+[   12.188348] iTCO_wdt: Intel TCO WatchDog Timer Driver v1.11
+[   12.188387] iTCO_wdt: Found a Cougar Point TCO device (Version=2, TCOBASE=0x0460)
+[   12.188506] iTCO_wdt: initialized. heartbeat=30 sec (nowayout=0)
+[   12.194466] uvcvideo: Found UVC 1.00 device USB 2.0 UVC VGA WebCam (13d3:5710)
+[   12.199860] Bluetooth: Core ver 2.19
+[   12.199876] NET: Registered protocol family 31
+[   12.199878] Bluetooth: HCI device and connection manager initialized
+[   12.199886] Bluetooth: HCI socket layer initialized
+[   12.199889] Bluetooth: L2CAP socket layer initialized
+[   12.199896] Bluetooth: SCO socket layer initialized
+[   12.202620] input: USB 2.0 UVC VGA WebCam as /devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.2/1-1.2:1.0/input/input22
+[   12.202712] usbcore: registered new interface driver uvcvideo
+[   12.202714] USB Video Class driver (1.1.1)
+[   12.215419] asus_wmi: Backlight controlled by ACPI video driver
+[   12.224965] usbcore: registered new interface driver btusb
+[   12.226178] cfg80211: World regulatory domain updated:
+[   12.226182] cfg80211:  DFS Master region: unset
+[   12.226183] cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)
+[   12.226186] cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+[   12.226189] cfg80211:   (2457000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+[   12.226190] cfg80211:   (2474000 KHz - 2494000 KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)
+[   12.226193] cfg80211:   (5170000 KHz - 5250000 KHz @ 160000 KHz), (N/A, 2000 mBm), (N/A)
+[   12.226195] cfg80211:   (5250000 KHz - 5330000 KHz @ 160000 KHz), (N/A, 2000 mBm), (0 s)
+[   12.226197] cfg80211:   (5490000 KHz - 5730000 KHz @ 160000 KHz), (N/A, 2000 mBm), (0 s)
+[   12.226200] cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+[   12.226202] cfg80211:   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)
+[   12.229223] iwlwifi 0000:03:00.0: RF_KILL bit toggled to disable radio.
+[   12.229246] iwlwifi 0000:03:00.0: U iwl_trans_pcie_stop_device DEVICE_ENABLED bit was set and is now cleared
+[   12.229485] iwlwifi 0000:03:00.0: U iwl_trans_pcie_stop_device DEVICE_ENABLED bit was already clearn
+[   12.229500] iwlwifi 0000:03:00.0: U iwl_pcie_apm_stop Stop card, put in low power state ENABLED bit clear!
+[   12.229516] iwlwifi 0000:03:00.0: U iwl_pcie_apm_stop_master stop master
+[   12.229519] CPU: 3 PID: 401 Comm: irq/34-iwlwifi Not tainted 3.17.0+ #38
+[   12.229521] Hardware name: ASUSTeK Computer Inc. K53SM/K53SM, BIOS K53SM.214 08/15/2012
+[   12.229523]  0000000000000001 ffff880243fe7d00 ffffffff8154a3cb ffff880243fe0000
+[   12.229526]  ffff880243fe7d20 ffffffffa05e1977 ffff880243fe0000 0000000000000001
+[   12.229529]  ffff880243fe7d48 ffffffffa05e1e4c 0000000000000001 ffff880240d91a60
+[   12.229532] Call Trace:
+[   12.229540]  [<ffffffff8154a3cb>] dump_stack+0x45/0x56
+[   12.229551]  [<ffffffffa05e1977>] iwl_pcie_apm_stop+0xa7/0x320 [iwlwifi]
+[   12.229556]  [<ffffffffa05e1e4c>] iwl_trans_pcie_stop_device+0xfc/0x290 [iwlwifi]
+[   12.229560]  [<ffffffffa05e1d45>] iwl_trans_pcie_rf_kill+0x35/0x40 [iwlwifi]
+[   12.229565]  [<ffffffffa05db980>] iwl_pcie_irq_handler+0x970/0xf70 [iwlwifi]
+[   12.229570]  [<ffffffff81011661>] ? __switch_to+0x191/0x5f0
+[   12.229574]  [<ffffffff8154b919>] ? __schedule+0x2e9/0x840
+[   12.229578]  [<ffffffff810ba5e0>] ? irq_finalize_oneshot.part.30+0xf0/0xf0
+[   12.229582]  [<ffffffff810ba600>] irq_thread_fn+0x20/0x50
+[   12.229585]  [<ffffffff810ba5e0>] ? irq_finalize_oneshot.part.30+0xf0/0xf0
+[   12.229589]  [<ffffffff810ba947>] irq_thread+0x137/0x160
+[   12.229592]  [<ffffffff810ba690>] ? irq_forced_thread_fn+0x60/0x60
+[   12.229595]  [<ffffffff810ba810>] ? irq_thread_check_affinity+0xc0/0xc0
+[   12.229598]  [<ffffffff810875cb>] kthread+0xdb/0x100
+[   12.229601]  [<ffffffff810874f0>] ? kthread_create_on_node+0x180/0x180
+[   12.229605]  [<ffffffff815505fc>] ret_from_fork+0x7c/0xb0
+[   12.229608]  [<ffffffff810874f0>] ? kthread_create_on_node+0x180/0x180
+[   12.229813] iwlwifi 0000:03:00.0: We were cut short by RFKILL - all is good
+[   12.229871] iwlwifi 0000:03:00.0: U iwl_trans_pcie_stop_device DEVICE_ENABLED bit was already clearn
+[   12.229876] iwlwifi 0000:03:00.0: U iwl_pcie_apm_stop Stop card, put in low power state ENABLED bit clear!
+[   12.229884] iwlwifi 0000:03:00.0: U iwl_pcie_apm_stop_master stop master
+[   12.229887] CPU: 3 PID: 408 Comm: modprobe Not tainted 3.17.0+ #38
+[   12.229889] Hardware name: ASUSTeK Computer Inc. K53SM/K53SM, BIOS K53SM.214 08/15/2012
+[   12.229890]  0000000000000001 ffff8800a5417c38 ffffffff8154a3cb ffff880243fe0000
+[   12.229894]  ffff8800a5417c58 ffffffffa05e1977 ffff880243fe0000 0000000000000001
+[   12.229896]  ffff8800a5417c80 ffffffffa05e1e4c ffff880243fe0000 ffffffffa05e8f80
+[   12.229900] Call Trace:
+[   12.229904]  [<ffffffff8154a3cb>] dump_stack+0x45/0x56
+[   12.229909]  [<ffffffffa05e1977>] iwl_pcie_apm_stop+0xa7/0x320 [iwlwifi]
+[   12.229913]  [<ffffffffa05e1e4c>] iwl_trans_pcie_stop_device+0xfc/0x290 [iwlwifi]
+[   12.229924]  [<ffffffffa078601b>] iwl_op_mode_mvm_start+0x4fb/0x640 [iwlmvm]
+[   12.229940]  [<ffffffffa06ba000>] ? 0xffffffffa06ba000
+[   12.229944]  [<ffffffffa05d5982>] iwl_opmode_register+0xb2/0xf0 [iwlwifi]
+[   12.229951]  [<ffffffffa06ba037>] iwl_mvm_init+0x37/0x1000 [iwlmvm]
+[   12.229954]  [<ffffffff81002148>] do_one_initcall+0xd8/0x210
+[   12.229959]  [<ffffffff8118ac72>] ? __vunmap+0xa2/0x100
+[   12.229963]  [<ffffffff810e3ff2>] load_module+0x2222/0x26c0
+[   12.229966]  [<ffffffff810df650>] ? store_uevent+0x40/0x40
+[   12.229971]  [<ffffffff811c3e68>] ? kernel_read+0x48/0x60
+[   12.229974]  [<ffffffff810e4606>] SyS_finit_module+0x86/0xb0
+[   12.229977]  [<ffffffff815506ad>] system_call_fastpath+0x1a/0x1f
+[   12.237867] ieee80211 phy0: Selected rate control algorithm 'iwl-mvm-rs'
+[   12.241226] Bluetooth: hci0: read Intel version: 370710018002030d37
+[   12.241229] Bluetooth: hci0: Intel device is already patched. patch num: 37
+[   12.245708] EXT4-fs (dm-2): mounted filesystem with ordered data mode. Opts: errors=remount-ro,discard
+[   12.264908] EXT4-fs (sdb2): mounted filesystem with ordered data mode. Opts: errors=remount-ro,discard
+[   12.872987] psmouse serio4: synaptics: Touchpad model: 1, fw: 7.5, id: 0x1e0b1, caps: 0xd00073/0x240000/0xa0400, board id: 1704, fw id: 705499
+[   12.905071] input: SynPS/2 Synaptics TouchPad as /devices/platform/i8042/serio4/input/input17
+[   13.930909] EXT4-fs (dm-4): mounted filesystem with ordered data mode. Opts: errors=remount-ro
+[   13.978121] systemd-journald[267]: Received request to flush runtime journal from PID 1
+[   14.387437] bbswitch: version 0.8
+[   14.387446] bbswitch: Found integrated VGA device 0000:00:02.0: \_SB_.PCI0.GFX0
+[   14.387452] bbswitch: Found discrete VGA device 0000:01:00.0: \_SB_.PCI0.PEGR.GFX0
+[   14.387465] ACPI Warning: \_SB_.PCI0.PEGR.GFX0._DSM: Argument #4 type mismatch - Found [Buffer], ACPI requires [Package] (20140724/nsarguments-95)
+[   14.387598] bbswitch: detected an Optimus _DSM function
+[   14.387611] pci 0000:01:00.0: enabling device (0000 -> 0003)
+[   14.387670] bbswitch: Succesfully loaded. Discrete card 0000:01:00.0 is on
+[   14.393102] bbswitch: disabling discrete graphics
+[   14.393117] ACPI Warning: \_SB_.PCI0.PEGR.GFX0._DSM: Argument #4 type mismatch - Found [Buffer], ACPI requires [Package] (20140724/nsarguments-95)
+[   14.393660] vboxdrv: Found 4 processor cores.
+[   14.393833] vboxdrv: fAsync=0 offMin=0x4b9 offMax=0x6c9b
+[   14.393900] vboxdrv: TSC mode is 'synchronous', kernel timer mode is 'normal'.
+[   14.393901] vboxdrv: Successfully loaded version 4.3.18_Debian (interface 0x001a0008).
+[   14.422555] vboxpci: IOMMU not found (not registered)
+[   14.444509] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[   14.444514] Bluetooth: BNEP filters: protocol multicast
+[   14.444523] Bluetooth: BNEP socket layer initialized
+[   14.989958] r8169 0000:05:00.0 eth0: link down
+[   14.989986] r8169 0000:05:00.0 eth0: link down
+[   14.990000] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   16.650679] r8169 0000:05:00.0 eth0: link up
+[   16.650690] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   36.200797] iwlwifi 0000:03:00.0: RF_KILL bit toggled to enable radio.
+[   36.201106] iwlwifi 0000:03:00.0: U iwl_pcie_prepare_card_hw iwl_trans_prepare_card_hw enter
+[   36.201131] iwlwifi 0000:03:00.0: U iwl_pcie_set_hw_ready hardware ready
+[   36.201172] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init Init card's basic functions
+[   36.201214] iwlwifi 0000:03:00.0: L1 Enabled; Disabling L0S
+[   36.201457] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init DEVICE_ENABLED bit is now set
+[   36.201470] iwlwifi 0000:03:00.0: U iwl_pcie_prepare_card_hw iwl_trans_prepare_card_hw enter
+[   36.201482] iwlwifi 0000:03:00.0: U iwl_pcie_set_hw_ready hardware ready
+[   36.201491] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init Init card's basic functions
+[   36.201515] iwlwifi 0000:03:00.0: L1 Enabled; Disabling L0S
+[   36.201656] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init DEVICE_ENABLED bit is now set
+[   36.201682] iwlwifi 0000:03:00.0: U iwl_mvm_nic_config Radio type=0x0-0x2-0x1
+[   36.202329] iwlwifi 0000:03:00.0: U iwl_pcie_nic_init Enabling shadow registers in device
+[   36.202336] iwlwifi 0000:03:00.0: U iwl_pcie_load_given_ucode working with Non Secured image
+[   36.202341] iwlwifi 0000:03:00.0: U iwl_pcie_load_given_ucode working with Single CPU
+[   36.202347] iwlwifi 0000:03:00.0: U iwl_pcie_load_section [0] uCode section being loaded...
+[   36.204810] iwlwifi 0000:03:00.0: U iwl_pcie_load_section [1] uCode section being loaded...
+[   36.207467] iwlwifi 0000:03:00.0: U iwl_pcie_load_cpu_sections Break since Data not valid or Empty section, sec = 2
+[   36.207993] iwlwifi 0000:03:00.0: I iwl_alive_fn Alive VER2 ucode status 0xcafe revision 0x9 0x0 flags 0x0
+[   36.208003] iwlwifi 0000:03:00.0: I iwl_alive_fn UMAC version: Major - 0x0, Minor - 0x0
+[   36.208427] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command BT_COEX_PRIO_TABLE
+[   36.208435] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command BT_COEX_PRIO_TABLE
+[   36.208443] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command BT_COEX_PRIO_TABLE (#cc), seq: 0x0900, 20 bytes at 0[0]:9
+[   36.210460] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command BT_COEX_PRIO_TABLE
+[   36.210509] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command BT_CONFIG
+[   36.210517] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command BT_CONFIG
+[   36.210527] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command BT_CONFIG (#9b), seq: 0x0901, 460 bytes at 1[1]:9
+[   36.210598] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command BT_CONFIG
+[   36.210617] iwlwifi 0000:03:00.0: U iwl_nvm_check_version device EEPROM VER=0xa2a, CALIB=0xff
+[   36.210624] iwlwifi 0000:03:00.0: U iwl_send_tx_ant_cfg select valid tx ant: 3
+[   36.210631] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command TX_ANT_CONFIGURATION_CMD
+[   36.210636] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command TX_ANT_CONFIGURATION_CMD
+[   36.210646] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command TX_ANT_CONFIGURATION_CMD (#98), seq: 0x0902, 8 bytes at 2[2]:9
+[   36.210703] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command TX_ANT_CONFIGURATION_CMD
+[   36.210720] iwlwifi 0000:03:00.0: U iwl_send_phy_cfg_cmd Sending Phy CFG command: 0x330018
+[   36.210727] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command PHY_CONFIGURATION_CMD
+[   36.210733] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command PHY_CONFIGURATION_CMD
+[   36.210742] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command PHY_CONFIGURATION_CMD (#6a), seq: 0x0903, 16 bytes at 3[3]:9
+[   36.210800] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command PHY_CONFIGURATION_CMD
+[   36.395820] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 1 , Size: 100
+[   36.395895] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 2 , Size: 2940
+[   36.395954] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 4 , Size: 2396
+[   36.395961] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 4 , Size: 2396
+[   36.396125] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 4 , Size: 2396
+[   36.396142] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 4 , Size: 2396
+[   36.396146] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396150] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396154] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396157] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396161] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396165] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396169] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396173] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396177] iwlwifi 0000:03:00.0: I iwl_phy_db_set_section iwl_phy_db_set_section(246): [PHYDB]SET: Type 5 , Size: 20
+[   36.396264] iwlwifi 0000:03:00.0: U iwl_trans_pcie_stop_device DEVICE_ENABLED bit was set and is now cleared
+[   36.396516] iwlwifi 0000:03:00.0: U iwl_trans_pcie_stop_device DEVICE_ENABLED bit was already clearn
+[   36.396529] iwlwifi 0000:03:00.0: U iwl_pcie_apm_stop Stop card, put in low power state ENABLED bit clear!
+[   36.396538] iwlwifi 0000:03:00.0: U iwl_pcie_apm_stop_master stop master
+[   36.396542] CPU: 0 PID: 896 Comm: NetworkManager Tainted: G           O   3.17.0+ #38
+[   36.396544] Hardware name: ASUSTeK Computer Inc. K53SM/K53SM, BIOS K53SM.214 08/15/2012
+[   36.396546]  0000000000000000 ffff880243dcf600 ffffffff8154a3cb ffff880243fe0000
+[   36.396550]  ffff880243dcf620 ffffffffa05e1977 ffff880243fe0000 0000000000000000
+[   36.396554]  ffff880243dcf648 ffffffffa05e1e4c ffff880240d91a68 0000000000000000
+[   36.396557] Call Trace:
+[   36.396565]  [<ffffffff8154a3cb>] dump_stack+0x45/0x56
+[   36.396580]  [<ffffffffa05e1977>] iwl_pcie_apm_stop+0xa7/0x320 [iwlwifi]
+[   36.396585]  [<ffffffffa05e1e4c>] iwl_trans_pcie_stop_device+0xfc/0x290 [iwlwifi]
+[   36.396592]  [<ffffffffa0780988>] iwl_mvm_up+0x158/0x2d0 [iwlmvm]
+[   36.396601]  [<ffffffffa053f396>] ? cfg80211_netdev_notifier_call+0x3f6/0x620 [cfg80211]
+[   36.396606]  [<ffffffffa0782b62>] iwl_mvm_mac_start+0x42/0x330 [iwlmvm]
+[   36.396617]  [<ffffffffa064c1a1>] ieee80211_do_open+0x301/0xdd0 [mac80211]
+[   36.396626]  [<ffffffffa064ccd1>] ieee80211_open+0x61/0x70 [mac80211]
+[   36.396631]  [<ffffffff814585c6>] __dev_open+0xb6/0x130
+[   36.396635]  [<ffffffff814588dd>] __dev_change_flags+0x9d/0x160
+[   36.396638]  [<ffffffff814589c9>] dev_change_flags+0x29/0x70
+[   36.396643]  [<ffffffff81099888>] ? update_curr+0x58/0x130
+[   36.396647]  [<ffffffff81466049>] do_setlink+0x429/0xbb0
+[   36.396652]  [<ffffffff810991af>] ? set_next_entity+0x5f/0x80
+[   36.396655]  [<ffffffff812d46a3>] ? radix_tree_lookup_slot+0x13/0x30
+[   36.396659]  [<ffffffff8114cf1e>] ? find_get_entry+0x1e/0xc0
+[   36.396662]  [<ffffffff8114e0dc>] ? pagecache_get_page+0xbc/0x1d0
+[   36.396666]  [<ffffffff811f18fe>] ? __find_get_block+0xbe/0x240
+[   36.396670]  [<ffffffff812f80b2>] ? nla_parse+0x32/0x120
+[   36.396674]  [<ffffffff8146874d>] rtnl_newlink+0x61d/0x780
+[   36.396679]  [<ffffffff8109cc00>] ? check_preempt_wakeup+0x30/0x1d0
+[   36.396682]  [<ffffffff81251ca8>] ? security_capable+0x18/0x20
+[   36.396686]  [<ffffffff8107246b>] ? ns_capable+0x2b/0x60
+[   36.396690]  [<ffffffff81464c52>] rtnetlink_rcv_msg+0x92/0x260
+[   36.396693]  [<ffffffff812e3316>] ? rhashtable_lookup_compare+0x36/0x70
+[   36.396696]  [<ffffffff81464bc0>] ? rtnetlink_rcv+0x30/0x30
+[   36.396700]  [<ffffffff81485639>] netlink_rcv_skb+0xa9/0xd0
+[   36.396703]  [<ffffffff81464bb8>] rtnetlink_rcv+0x28/0x30
+[   36.396706]  [<ffffffff81484c7a>] netlink_unicast+0x10a/0x1a0
+[   36.396709]  [<ffffffff81485041>] netlink_sendmsg+0x331/0x770
+[   36.396712]  [<ffffffff81202cbb>] ? ep_poll_callback+0x11b/0x170
+[   36.396717]  [<ffffffff8143b72d>] sock_sendmsg+0x8d/0xc0
+[   36.396721]  [<ffffffff8143b40e>] ? move_addr_to_kernel.part.20+0x1e/0x70
+[   36.396725]  [<ffffffff8143c2d1>] ? move_addr_to_kernel+0x21/0x30
+[   36.396729]  [<ffffffff8143bb88>] ___sys_sendmsg+0x3c8/0x3e0
+[   36.396733]  [<ffffffff8105ae04>] ? __do_page_fault+0x274/0x550
+[   36.396737]  [<ffffffff811d5826>] ? dput+0x26/0x1b0
+[   36.396741]  [<ffffffff811de4c4>] ? mntput+0x24/0x40
+[   36.396745]  [<ffffffff811c000a>] ? __fput+0x17a/0x1f0
+[   36.396747]  [<ffffffff8143c9c2>] __sys_sendmsg+0x42/0x80
+[   36.396750]  [<ffffffff8143ca12>] SyS_sendmsg+0x12/0x20
+[   36.396755]  [<ffffffff815506ad>] system_call_fastpath+0x1a/0x1f
+[   36.396951] iwlwifi 0000:03:00.0: U iwl_pcie_prepare_card_hw iwl_trans_prepare_card_hw enter
+[   36.396968] iwlwifi 0000:03:00.0: U iwl_pcie_set_hw_ready hardware ready
+[   36.396993] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init Init card's basic functions
+[   36.397025] iwlwifi 0000:03:00.0: L1 Enabled; Disabling L0S
+[   36.397231] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init DEVICE_ENABLED bit is now set
+[   36.397239] iwlwifi 0000:03:00.0: U iwl_pcie_prepare_card_hw iwl_trans_prepare_card_hw enter
+[   36.397247] iwlwifi 0000:03:00.0: U iwl_pcie_set_hw_ready hardware ready
+[   36.397254] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init Init card's basic functions
+[   36.397274] iwlwifi 0000:03:00.0: L1 Enabled; Disabling L0S
+[   36.397410] iwlwifi 0000:03:00.0: U iwl_pcie_apm_init DEVICE_ENABLED bit is now set
+[   36.397431] iwlwifi 0000:03:00.0: U iwl_mvm_nic_config Radio type=0x0-0x2-0x1
+[   36.397931] iwlwifi 0000:03:00.0: U iwl_pcie_nic_init Enabling shadow registers in device
+[   36.397935] iwlwifi 0000:03:00.0: U iwl_pcie_load_given_ucode working with Non Secured image
+[   36.397937] iwlwifi 0000:03:00.0: U iwl_pcie_load_given_ucode working with Single CPU
+[   36.397940] iwlwifi 0000:03:00.0: U iwl_pcie_load_section [0] uCode section being loaded...
+[   36.400406] iwlwifi 0000:03:00.0: U iwl_pcie_load_section [1] uCode section being loaded...
+[   36.403594] iwlwifi 0000:03:00.0: U iwl_pcie_load_cpu_sections Break since Data not valid or Empty section, sec = 2
+[   36.404336] iwlwifi 0000:03:00.0: I iwl_alive_fn Alive VER2 ucode status 0xcafe revision 0x1 0x0 flags 0x0
+[   36.404351] iwlwifi 0000:03:00.0: I iwl_alive_fn UMAC version: Major - 0x0, Minor - 0x0
+[   36.404822] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command REPLY_SF_CFG_CMD (#d1), seq: 0x0900, 96 bytes at 0[0]:9
+[   36.404851] iwlwifi 0000:03:00.0: U iwl_send_tx_ant_cfg select valid tx ant: 3
+[   36.404857] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command TX_ANT_CONFIGURATION_CMD
+[   36.404862] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command TX_ANT_CONFIGURATION_CMD
+[   36.404870] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command TX_ANT_CONFIGURATION_CMD (#98), seq: 0x0901, 8 bytes at 1[1]:9
+[   36.404933] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command TX_ANT_CONFIGURATION_CMD
+[   36.405005] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command BT_COEX_PRIO_TABLE
+[   36.405016] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command BT_COEX_PRIO_TABLE
+[   36.405026] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command BT_COEX_PRIO_TABLE (#cc), seq: 0x0902, 20 bytes at 2[2]:9
+[   36.405099] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command BT_COEX_PRIO_TABLE
+[   36.405177] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command BT_CONFIG
+[   36.405188] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command BT_CONFIG
+[   36.405198] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command BT_CONFIG (#9b), seq: 0x0903, 460 bytes at 3[3]:9
+[   36.405300] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command BT_CONFIG
+[   36.405333] iwlwifi 0000:03:00.0: U iwl_send_phy_db_data Sending phy db data and configuration to runtime image
+[   36.405341] iwlwifi 0000:03:00.0: U iwl_phy_db_get_section_data iwl_phy_db_get_section_data(337): [PHYDB] GET: Type 1 , Size: 100
+[   36.405347] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 1, of length 100
+[   36.405352] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.405357] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.405366] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0904, 108 bytes at 4[4]:9
+[   36.405429] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.405449] iwlwifi 0000:03:00.0: U iwl_phy_db_get_section_data iwl_phy_db_get_section_data(337): [PHYDB] GET: Type 2 , Size: 2940
+[   36.405455] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 2, of length 2940
+[   36.405461] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.405465] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.405473] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0905, 2948 bytes at 5[5]:9
+[   36.405602] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.405621] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 4, of length 2396
+[   36.405627] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.405632] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.405639] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0906, 2404 bytes at 6[6]:9
+[   36.405760] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.405833] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 4 num = 0
+[   36.405845] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 4, of length 2396
+[   36.405851] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.405856] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.405865] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0907, 2404 bytes at 7[7]:9
+[   36.406131] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.406175] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 4 num = 1
+[   36.406187] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 4, of length 2396
+[   36.406193] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.406199] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.406208] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0908, 2404 bytes at 8[8]:9
+[   36.406431] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.406452] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 4 num = 2
+[   36.406458] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 4, of length 2396
+[   36.406463] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.406468] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.406476] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0909, 2404 bytes at 9[9]:9
+[   36.406729] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.406752] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 4 num = 3
+[   36.406760] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.406765] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.406771] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.406779] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x090A, 28 bytes at 10[10]:9
+[   36.406842] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.406861] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 0
+[   36.406868] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.406873] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.406878] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.406885] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x090B, 28 bytes at 11[11]:9
+[   36.406946] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.406963] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 1
+[   36.406969] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.406974] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.406979] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.406987] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x090C, 28 bytes at 12[12]:9
+[   36.407047] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407065] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 2
+[   36.407071] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.407076] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.407081] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.407088] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x090D, 28 bytes at 13[13]:9
+[   36.407150] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407168] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 3
+[   36.407174] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.407179] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.407184] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.407191] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x090E, 28 bytes at 14[14]:9
+[   36.407251] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407268] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 4
+[   36.407274] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.407279] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.407284] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.407291] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x090F, 28 bytes at 15[15]:9
+[   36.407352] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407370] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 5
+[   36.407376] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.407381] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.407387] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.407394] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0910, 28 bytes at 16[16]:9
+[   36.407456] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407473] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 6
+[   36.407480] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.407485] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.407490] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.407497] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0911, 28 bytes at 17[17]:9
+[   36.407559] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407576] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 7
+[   36.407582] iwlwifi 0000:03:00.0: U iwl_send_phy_db_cmd Sending PHY-DB hcmd of type 5, of length 20
+[   36.407587] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command UNKNOWN
+[   36.407592] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command UNKNOWN
+[   36.407599] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command UNKNOWN (#6c), seq: 0x0912, 28 bytes at 18[18]:9
+[   36.407667] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command UNKNOWN
+[   36.407685] iwlwifi 0000:03:00.0: U iwl_phy_db_send_all_channel_groups Sent PHY_DB HCMD, type = 5 num = 8
+[   36.407691] iwlwifi 0000:03:00.0: U iwl_send_phy_db_data Finished sending phy db non channel data
+[   36.407697] iwlwifi 0000:03:00.0: U iwl_send_phy_cfg_cmd Sending Phy CFG command: 0x330018
+[   36.407703] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command PHY_CONFIGURATION_CMD
+[   36.407709] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command PHY_CONFIGURATION_CMD
+[   36.407716] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command PHY_CONFIGURATION_CMD (#6a), seq: 0x0913, 16 bytes at 19[19]:9
+[   36.408973] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command PHY_CONFIGURATION_CMD
+[   36.409109] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command ADD_STA
+[   36.409115] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command ADD_STA
+[   36.409122] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command ADD_STA (#18), seq: 0x0914, 48 bytes at 20[20]:9
+[   36.409210] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command ADD_STA
+[   36.409231] iwlwifi 0000:03:00.0: U iwl_mvm_add_int_sta_common Internal station added.
+[   36.409240] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command PHY_CONTEXT_CMD
+[   36.409245] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command PHY_CONTEXT_CMD
+[   36.409252] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command PHY_CONTEXT_CMD (#8), seq: 0x0915, 40 bytes at 21[21]:9
+[   36.409323] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command PHY_CONTEXT_CMD
+[   36.409340] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command PHY_CONTEXT_CMD
+[   36.409346] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command PHY_CONTEXT_CMD
+[   36.409356] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command PHY_CONTEXT_CMD (#8), seq: 0x0916, 40 bytes at 22[22]:9
+[   36.409425] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command PHY_CONTEXT_CMD
+[   36.409443] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command PHY_CONTEXT_CMD
+[   36.409449] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command PHY_CONTEXT_CMD
+[   36.409456] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command PHY_CONTEXT_CMD (#8), seq: 0x0917, 40 bytes at 23[23]:9
+[   36.409526] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command PHY_CONTEXT_CMD
+[   36.409544] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command REPLY_THERMAL_MNG_BACKOFF
+[   36.409550] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command REPLY_THERMAL_MNG_BACKOFF
+[   36.409558] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command REPLY_THERMAL_MNG_BACKOFF (#7e), seq: 0x0918, 8 bytes at 24[24]:9
+[   36.409619] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command REPLY_THERMAL_MNG_BACKOFF
+[   36.409636] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command POWER_TABLE_CMD
+[   36.409642] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command POWER_TABLE_CMD
+[   36.409649] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command POWER_TABLE_CMD (#77), seq: 0x0919, 8 bytes at 25[25]:9
+[   36.409711] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command POWER_TABLE_CMD
+[   36.409728] iwlwifi 0000:03:00.0: U iwl_mvm_up RT uCode started.
+[   36.410169] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command MAC_CONTEXT_CMD
+[   36.410175] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command MAC_CONTEXT_CMD
+[   36.410186] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command MAC_CONTEXT_CMD (#28), seq: 0x091A, 152 bytes at 26[26]:9
+[   36.410355] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command MAC_CONTEXT_CMD
+[   36.410377] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command REPLY_BEACON_FILTERING_CMD
+[   36.410382] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command REPLY_BEACON_FILTERING_CMD
+[   36.410390] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command REPLY_BEACON_FILTERING_CMD (#d2), seq: 0x091B, 48 bytes at 27[27]:9
+[   36.410595] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command REPLY_BEACON_FILTERING_CMD
+[   36.410646] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command MAC_CONTEXT_CMD
+[   36.410665] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command MAC_CONTEXT_CMD
+[   36.410673] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command MAC_CONTEXT_CMD (#28), seq: 0x091C, 152 bytes at 28[28]:9
+[   36.410873] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command MAC_CONTEXT_CMD
+[   36.410910] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command MAC_CONTEXT_CMD
+[   36.410915] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command MAC_CONTEXT_CMD
+[   36.410922] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command MAC_CONTEXT_CMD (#28), seq: 0x091D, 152 bytes at 29[29]:9
+[   36.411140] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command MAC_CONTEXT_CMD
+[   36.411336] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   36.411347] iwlwifi 0000:03:00.0: I iwl_mvm_prepare_multicast mcast addr (0): 01:00:5e:00:00:01
+[   36.554661] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command SCAN_REQUEST_CMD
+[   36.554668] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   36.554676] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command SCAN_REQUEST_CMD (#80), seq: 0x091E, 1054 bytes at 30[30]:9
+[   36.557493] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   37.260560] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command SCAN_REQUEST_CMD
+[   37.260594] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   37.260627] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command SCAN_REQUEST_CMD (#80), seq: 0x091F, 1254 bytes at 31[31]:9
+[   37.263523] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   59.817610] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command SCAN_REQUEST_CMD
+[   59.817623] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   59.817634] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command SCAN_REQUEST_CMD (#80), seq: 0x0920, 1054 bytes at 32[0]:9
+[   59.820374] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   60.523485] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Attempting to send sync command SCAN_REQUEST_CMD
+[   60.523498] iwlwifi 0000:03:00.0: U iwl_pcie_send_hcmd_sync Setting HCMD_ACTIVE for command SCAN_REQUEST_CMD
+[   60.523510] iwlwifi 0000:03:00.0: I iwl_pcie_enqueue_hcmd Sending command SCAN_REQUEST_CMD (#80), seq: 0x0921, 1254 bytes at 33[1]:9
+[   60.526235] iwlwifi 0000:03:00.0: I iwl_pcie_hcmd_complete Clearing HCMD_ACTIVE for command SCAN_REQUEST_CMD

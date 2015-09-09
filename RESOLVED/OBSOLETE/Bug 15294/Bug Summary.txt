@@ -1,0 +1,69 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15294
+Component: Other
+Hardware: All Linux
+Reported: 2010-02-14 00:32 UTC 
+Modified: 2013-12-10 18:05 UTC
+Kernel Version: 2.6.32.7
+Tree: Mainline
+Status:	RESOLVED OBSOLETE
+
+Summary:
+	There are Oops due to an apparent race between udev and a timeout in firmware_class.c
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Andy Walls 2010-02-14 00:32:01 UTC
+	...							//The comment is too long
+	So we know the oops happens in
+	linux/drivers/base/firmware_class.c:firmware_loading_store().  This is
+	the function that handles the firmware loading status feedback from
+	userspace.  udev writes "1" to a device specific sysfs node when
+	firmware loading begins, and writes "0" to that sysfs node when the
+	firmware copying is completed by udev.
+
+	Here is the source code that Ooops'ed:
+
+	/**
+	 * firmware_loading_store - set value in the 'loading' control file
+	 * @dev: device pointer
+	 * @attr: device attribute pointer
+	 * @buf: buffer to scan for loading control value
+	 * @count: number of bytes in @buf
+	 *      
+	 *      The relevant values are:
+	 *      
+	 *       1: Start a load, discarding any previous partial load.
+	 *       0: Conclude the load and hand the data to the driver code.
+	 *      -1: Conclude the load with an error and discard any written data.
+	 **/            
+	static ssize_t firmware_loading_store(struct device *dev,
+										  struct device_attribute *attr,
+										  const char *buf, size_t count)
+	{       
+			struct firmware_priv *fw_priv = dev_get_drvdata(dev);
+			int loading = simple_strtol(buf, NULL, 10);
+			int i;
+
+			switch (loading) {
+			case 1:
+					...
+					break;
+			case 0:
+				   if (test_bit(FW_STATUS_LOADING, &fw_priv->status)) {
+							vfree(fw_priv->fw->data);
+							fw_priv->fw->data = vmap(fw_priv->pages,
+													 fw_priv->nr_pages,
+													 0, PAGE_KERNEL_RO);
+							if (!fw_priv->fw->data) {                              <------------ Ooops here: fw_priv->fw is NULL
+								   dev_err(dev, "%s: vmap() failed\n", __func__);
+									goto err;
+							}
+							/* Pages will be freed by vfree() */
+							fw_priv->page_array_size = 0;
+				   ....
+
+		...
+---------------------------------------------------------------------------
+
+Proposed fix:
+	None, no one is responding, and this bug is marked as obsolete.

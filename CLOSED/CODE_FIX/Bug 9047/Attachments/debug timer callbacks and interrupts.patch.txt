@@ -1,0 +1,114 @@
+--- 2.6/drivers/net/forcedeth.c	2007-10-03 12:57:41.000000000 +0200
++++ build-2.6/drivers/net/forcedeth.c	2007-10-03 12:56:39.000000000 +0200
+@@ -147,6 +147,7 @@
+ #include <linux/init.h>
+ #include <linux/if_vlan.h>
+ #include <linux/dma-mapping.h>
++#include <linux/kallsyms.h>
+ 
+ #include <asm/irq.h>
+ #include <asm/io.h>
+@@ -709,6 +710,35 @@
+ 	{ "loopback  (offline)       " }
+ };
+ 
++struct test_lock {
++	unsigned long mask;
++	void* addr;
++	int cpu;
++};
++
++static void dbg_getlock(struct test_lock *t)
++{
++	if (test_and_set_bit(1, &t->mask)) {
++		printk(KERN_ERR "forcedeth: lock error. Previous owner %p (%d), now %p (%d)\n",
++			t->addr, t->cpu, __builtin_return_address(0), smp_processor_id());
++		print_symbol("%s\n", (unsigned long) t->addr);
++		print_symbol("%s\n", (unsigned long)__builtin_return_address(0));
++	}
++	t->addr = __builtin_return_address(0);
++	t->cpu = smp_processor_id();
++}
++
++static void dbg_releaselock(struct test_lock *t)
++{
++	if (test_and_clear_bit(1, &t->mask) == 0) {
++		printk(KERN_ERR "forcedeth: lock not held %p (%d)\n",
++			__builtin_return_address(0), smp_processor_id());
++		print_symbol("%s\n", (unsigned long) t->addr);
++	}
++}
++
++struct test_lock dbg_g = { 0, NULL, 0};
++
+ struct register_test {
+ 	__le32 reg;
+ 	__le32 mask;
+@@ -3197,6 +3227,15 @@
+ 	return IRQ_RETVAL(i);
+ }
+ 
++static irqreturn_t nv_nic_irq_optimized_wrap(int foo, void *data)
++{
++	irqreturn_t t;
++	dbg_getlock(&dbg_g);
++	t = nv_nic_irq_optimized(foo, data);
++	dbg_releaselock(&dbg_g);
++	return t;
++}
++
+ static irqreturn_t nv_nic_irq_tx(int foo, void *data)
+ {
+ 	struct net_device *dev = (struct net_device *) data;
+@@ -3500,7 +3539,7 @@
+ 		handler = nv_nic_irq_test;
+ 	} else {
+ 		if (np->desc_ver == DESC_VER_3)
+-			handler = nv_nic_irq_optimized;
++			handler = nv_nic_irq_optimized_wrap;
+ 		else
+ 			handler = nv_nic_irq;
+ 	}
+@@ -3641,6 +3680,8 @@
+ 	}
+ 	np->nic_poll_irq = 0;
+ 
++	dbg_getlock(&dbg_g);
++
+ 	if (np->recover_error) {
+ 		np->recover_error = 0;
+ 		printk(KERN_INFO "forcedeth: MAC in recoverable error state\n");
+@@ -3682,11 +3723,15 @@
+ 	writel(mask, base + NvRegIrqMask);
+ 	pci_push(base);
+ 
++
+ 	if (!using_multi_irqs(dev)) {
+ 		if (np->desc_ver == DESC_VER_3)
+ 			nv_nic_irq_optimized(0, dev);
+ 		else
+ 			nv_nic_irq(0, dev);
++
++		dbg_releaselock(&dbg_g);
++
+ 		if (np->msi_flags & NV_MSI_X_ENABLED)
+ 			enable_irq_lockdep(np->msi_x_entry[NV_MSI_X_VECTOR_ALL].vector);
+ 		else
+@@ -4792,6 +4837,17 @@
+ 
+ 	dprintk(KERN_DEBUG "nv_open: begin\n");
+ 
++printk(KERN_ERR "test 1: ok\n");
++	dbg_getlock(&dbg_g);
++	dbg_releaselock(&dbg_g);
++printk(KERN_ERR "test 1: ok done, test 2 start\n");
++	dbg_getlock(&dbg_g);
++	dbg_getlock(&dbg_g);
++	dbg_releaselock(&dbg_g);
++printk(KERN_ERR "test 2: fail done, test 3 start\n");
++	dbg_releaselock(&dbg_g);
++printk(KERN_ERR "test 3: fail done\n");
++
+ 	/* erase previous misconfiguration */
+ 	if (np->driver_data & DEV_HAS_POWER_CNTRL)
+ 		nv_mac_reset(dev);

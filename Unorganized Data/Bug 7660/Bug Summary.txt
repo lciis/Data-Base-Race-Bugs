@@ -1,0 +1,15 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=7660
+Component: Network
+Hardware: i386 Linux
+Reported: 2006-12-09 15:17 UTC 
+Modified: 2008-04-14 01:28 UTC  
+Kernel Version: 2.6.19
+Tree: Mainline
+
+Summary:
+	There is a lock must be held before entering function z8530_read_port.
+
+Problem Description:
+	The comments about z8530_read_port() say the caller should hold the lock. Most
+callers do hold the lock before calling z8530_read_port(). But z8530_rx_clear()
+and z8530_status_clear() does not.

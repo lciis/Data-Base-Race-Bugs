@@ -1,0 +1,52 @@
+diff --git a/drivers/net/tulip/tulip_core.c b/drivers/net/tulip/tulip_core.c
+index ed600bf..710fe62 100644
+--- a/drivers/net/tulip/tulip_core.c
++++ b/drivers/net/tulip/tulip_core.c
+@@ -1733,13 +1733,13 @@ static int tulip_suspend (struct pci_dev *pdev, pm_message_t state)
+ 	if (!dev)
+ 		return -EINVAL;
+ 
+-	if (netif_running(dev))
+-		tulip_down(dev);
++	pci_save_state(pdev);
+ 
+-	netif_device_detach(dev);
+-	free_irq(dev->irq, dev);
++	if (netif_running(dev)) {
++		netif_device_detach(dev);
++		tulip_down(dev);
++	}
+ 
+-	pci_save_state(pdev);
+ 	pci_disable_device(pdev);
+ 	pci_set_power_state(pdev, pci_choose_state(pdev, state));
+ 
+@@ -1755,24 +1755,18 @@ static int tulip_resume(struct pci_dev *pdev)
+ 	if (!dev)
+ 		return -EINVAL;
+ 
+-	pci_set_power_state(pdev, PCI_D0);
+ 	pci_restore_state(pdev);
+ 
++	if (!netif_running(dev))
++		return 0;
++
+ 	if ((retval = pci_enable_device(pdev))) {
+ 		printk (KERN_ERR "tulip: pci_enable_device failed in resume\n");
+ 		return retval;
+ 	}
+ 
+-	if ((retval = request_irq(dev->irq, &tulip_interrupt, IRQF_SHARED, dev->name, dev))) {
+-		printk (KERN_ERR "tulip: request_irq failed in resume\n");
+-		return retval;
+-	}
+-
+ 	netif_device_attach(dev);
+-
+-	if (netif_running(dev))
+-		tulip_up(dev);
+-
++	tulip_up(dev);
+ 	return 0;
+ }
+ 

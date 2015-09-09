@@ -1,0 +1,23 @@
+Mar 26 10:17:37 dd16 [343499.364057] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.472695] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.485090] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.593727] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.606121] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.714759] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.718889] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.755101] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.759233] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.790027] pciehp 0000:00:1c.2:pcie04: No new device found
+Mar 26 10:17:37 dd16 [343499.790035] pciehp 0000:00:1c.2:pcie04: Cannot add device at 0000:03:00
+Mar 26 10:17:37 dd16 [343499.795445] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.799577] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.835789] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.839920] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.876131] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.880264] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.916477] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.920607] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.956821] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.960953] pciehp 0000:00:1c.2:pcie04: Card present on Slot(2)
+Mar 26 10:17:37 dd16 [343499.997164] pciehp 0000:00:1c.2:pcie04: Card not present on Slot(2)
+

@@ -1,0 +1,11 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=14455
+Component: Input Devices
+Hardware: All Linux
+Reported: 2009-10-22 23:11 UTC
+Modified: 2012-06-13 20:34 UTC
+Kernel Version: 2.6.31
+Tree: Mainline
+
+Summary:
+	race condition between /dev/input and /dev/console
+

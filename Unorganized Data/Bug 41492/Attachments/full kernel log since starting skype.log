@@ -1,0 +1,47 @@
+[ 1312.347379] process `skype' is using obsolete setsockopt SO_BSDCOMPAT
+[ 1315.961757] BUG: unable to handle kernel NULL pointer dereference at 0000000000000028
+[ 1315.961772] IP: [<ffffffffa01820c3>] setup_bdle.isra.28+0x73/0x100 [snd_hda_intel]
+[ 1315.961791] PGD 1ed85c067 PUD 1faaf2067 PMD 0 
+[ 1315.961801] Oops: 0000 [#1] PREEMPT SMP 
+[ 1315.961810] CPU 2 
+[ 1315.961813] Modules linked in: nouveau ttm drm_kms_helper drm i2c_algo_bit mxm_wmi video ipv6 cryptd aes_x86_64 aes_generic ext4 mbcache jbd2 crc16 arc4 ath9k_htc mac80211 ath9k_common ath9k_hw ath cfg80211 rfkill nvidia(P) fuse snd_emu10k1 sp5100_tco snd_rawmidi snd_ac97_codec snd_hda_codec_realtek vboxdrv i2c_piix4 cpufreq_powersave cpufreq_conservative cpufreq_stats sg edac_core snd_hda_intel snd_hda_codec ac97_bus snd_seq_device snd_util_mem ppdev firewire_ohci firewire_core edac_mce_amd cpufreq_userspace cpufreq_ondemand k10temp emu10k1_gp gameport snd_pcm snd_timer snd_hwdep snd evdev r8169 i2c_core floppy mii parport_pc parport powernow_k8 freq_table snd_page_alloc wmi pcspkr soundcore crc_itu_t button processor mperf reiserfs usbhid hid sd_mod sr_mod pata_acpi cdrom ohci_hcd ahci libahci ehci_hcd xhci_hcd pata_atiixp pata_jmicron libata usbcore scsi_mod
+[ 1315.961938] 
+[ 1315.961945] Pid: 5572, comm: skype Tainted: P            3.0-ARCH #1 Gigabyte Technology Co., Ltd. GA-870A-UD3/GA-870A-UD3
+[ 1315.961957] RIP: 0010:[<ffffffffa01820c3>]  [<ffffffffa01820c3>] setup_bdle.isra.28+0x73/0x100 [snd_hda_intel]
+[ 1315.961973] RSP: 0018:ffff8801edba1b38  EFLAGS: 00010202
+[ 1315.961979] RAX: 0000000000000000 RBX: ffff880220d71a40 RCX: 0000000000000000
+[ 1315.961985] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffff880221887800
+[ 1315.961991] RBP: ffff8801edba1b78 R08: 0000000000000080 R09: 0000000000000001
+[ 1315.961997] R10: 0000000000000006 R11: 0000000000000000 R12: 0000000000000000
+[ 1315.962003] R13: ffff880221887800 R14: 0000000000000080 R15: ffff88021fcc2000
+[ 1315.962011] FS:  00007f701d0c3900(0000) GS:ffff88022fc80000(0063) knlGS:00000000efcfeb70
+[ 1315.962017] CS:  0010 DS: 002b ES: 002b CR0: 0000000080050033
+[ 1315.962023] CR2: 0000000000000028 CR3: 00000001cf5f5000 CR4: 00000000000006e0
+[ 1315.962030] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[ 1315.962036] DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400
+[ 1315.962043] Process skype (pid: 5572, threadinfo ffff8801edba0000, task ffff880220db47e0)
+[ 1315.962049] Stack:
+[ 1315.962052]  ffff8801edba1be0 00000001a016c75d 0000000000082802 ffff880220d71a00
+[ 1315.962064]  ffff880221887800 ffff880221887800 0000000000004b00 ffff8801edba1be0
+[ 1315.962074]  ffff8801edba1c18 ffffffffa018234e 0000000000000000 0000000000000080
+[ 1315.962083] Call Trace:
+[ 1315.962097]  [<ffffffffa018234e>] azx_pcm_prepare+0x1fe/0x47c [snd_hda_intel]
+[ 1315.962109]  [<ffffffff81062226>] ? current_fs_time+0x16/0x60
+[ 1315.962125]  [<ffffffffa0194c5b>] snd_pcm_do_prepare+0x1b/0x30 [snd_pcm]
+[ 1315.962141]  [<ffffffffa01944b6>] snd_pcm_action_single+0x36/0x80 [snd_pcm]
+[ 1315.962157]  [<ffffffffa01948ee>] snd_pcm_action_nonatomic+0x7e/0x90 [snd_pcm]
+[ 1315.962171]  [<ffffffffa0195c5a>] snd_pcm_common_ioctl1+0x7da/0xcb0 [snd_pcm]
+[ 1315.962185]  [<ffffffffa01963fc>] snd_pcm_playback_ioctl1+0x4c/0x240 [snd_pcm]
+[ 1315.962196]  [<ffffffff813f23bf>] ? __mutex_lock_slowpath+0x23f/0x330
+[ 1315.962211]  [<ffffffffa0196b08>] snd_pcm_ioctl_compat+0x2d8/0x730 [snd_pcm]
+[ 1315.962227]  [<ffffffffa01549f1>] ? snd_ctl_ioctl_compat+0x321/0x630 [snd]
+[ 1315.962238]  [<ffffffff811a0cb9>] compat_sys_ioctl+0xe9/0x13a0
+[ 1315.962249]  [<ffffffff8100a81e>] ? __switch_to+0x20e/0x2f0
+[ 1315.962259]  [<ffffffff81049cf9>] ? finish_task_switch+0x49/0xd0
+[ 1315.962267]  [<ffffffff813f5a40>] cstar_dispatch+0x7/0x2e
+[ 1315.962272] Code: cc eb 11 0f 1f 44 00 00 81 fa ff 00 00 00 0f 87 94 00 00 00 49 8b 85 c0 00 00 00 44 89 e2 44 89 e6 4c 89 ef 48 8b 80 d8 02 00 00 
+[ 1315.962317]  8b 48 28 48 89 d0 81 e2 ff 0f 00 00 48 c1 e8 0c 48 c1 e0 04 
+[ 1315.962339] RIP  [<ffffffffa01820c3>] setup_bdle.isra.28+0x73/0x100 [snd_hda_intel]
+[ 1315.962352]  RSP <ffff8801edba1b38>
+[ 1315.962356] CR2: 0000000000000028
+[ 1315.962362] ---[ end trace d64c13c433b809ae ]---

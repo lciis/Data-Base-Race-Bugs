@@ -1,0 +1,34 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15824
+Component: network-wireless
+Hardware: All Linux
+Reported: 2010-04-21 09:19 UTC 
+Modified: 2010-06-03 21:39 UTC
+Kernel Version: 2.6.34-rc5
+Tree: Mainline
+Status:	RESOLVED CODE_FIX
+
+Summary:
+	BUG: unable to handle kernel NULL pointer dereference at (null). The issue seems to be related to scan races within the code. It is possible for internal scan to race against itself if the device is not returning the scan results from first requests. What happens in this case is the cleanup done during the abort of the first internal scan also cleans up part of the new scan, causing it to access memory it shouldn't.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	rocko 2010-04-21 09:19:26 UTC
+	Created attachment 26076 [details]
+	kernel log showing bug info
+
+	This happened while connected to an 802.11N network (the PC froze completely) and looks to me like it's a problem in iwl. I've included the kernel log which shows the oops at the end: there are several warnings preceding it.
+---------------------------------------------------------------------------
+	Reinette Chatre 2010-05-03 21:45:27 UTC
+	Johannes's "fix scan races" is definitely related to this problem. This problem looks very similar to https://bugzilla.kernel.org/show_bug.cgi?id=15667, which is fixed by that patch.
+---------------------------------------------------------------------------
+
+Proposed Fix:
+	Notes:
+		It is possible for internal scan to race against itself if the device is
+		not returning the scan results from first requests. What happens in this
+		case is the cleanup done during the abort of the first internal scan also
+		cleans up part of the new scan, causing it to access memory it shouldn't.
+		-The fix is twofold.
+		* Since "is_internal_short_scan" should be protected by mutex, fix this in scan completion work so that changes to it can be serialized.
+		* Do not queue a new internal scan if one is in progress.
+	In ./Attachments/Fix internal scan race

@@ -1,0 +1,32 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=8172
+Component: Sound(OSS)
+Hardware: i386 Linux
+Reported: 2007-03-10 18:43 UTC 
+Modified: 2007-11-20 03:03 UTC   
+Kernel Version: 2.6.20.1
+Tree: Mainline
+
+Summary:
+	There is a lock should be held when the function trident_write_voice_regs is called.
+
+Problem Description:
+	857 /* called with spin lock held */
+	858 static int
+	859 trident_write_voice_regs(struct trident_state *state)
+
+	But the function is called with lock held in some cases but not always.
+
+	One violating call chain is:
+	2699 trident_open -> 2784 trident_set_dac_rate(state, 8000); -> trident_write_voice_regs
+
+	======================================
+	One example that follows the comment is:
+
+	2289                                 spin_lock_irqsave(&state->card->lock, flags);
+	2290                                 trident_set_dac_rate(state, val);
+	2291                                 spin_unlock_irqrestore(&state->card->lock, flags);
+
+	trident_set_dac_rate calls  trident_write_voice_regs
+
+
+

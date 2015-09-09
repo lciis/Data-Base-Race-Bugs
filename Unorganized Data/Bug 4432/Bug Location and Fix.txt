@@ -1,0 +1,20 @@
+Notes:
+	-The code was stuck in usblp_write() in the "    while (writecount <
+count)" loop.
+	-Basically, it would go through this loop, never enter any of the ifs and hit the "if (usblp->writeurb.status != 0)" if statement and enter it because status is -2. It would then hit the continue statement, but because nothing was ever going to set the status to 0, it was stuck in an infinite loop.
+	-Fix: on a usblp_open call, you can unitize these:
+		usblp->writeurb.status = 0;
+    		usblp->readurb.status = 0;
+	
+Proposed fix:	
+	--- linux-current-rc/drivers/usb/class/usblp.c	2005-04-05 09:39:25.000000000 	-0700
+	+++ 2.6.12-rc2/drivers/usb/class/usblp.c	2005-04-05 10:23:57.000000000 	-0700
+	@@ -379,6 +379,8 @@ static int usblp_open(struct inode *inod
+	 	usblp->writeurb->transfer_buffer_length = 0;
+ 		usblp->wcomplete = 1; /* we begin writeable */
+ 		usblp->rcomplete = 0;
+	+	usblp->writeurb->status = 0;
+	+	usblp->readurb->status = 0;
+ 
+	 	if (usblp->bidir) {
+ 			usblp->readcount = 0;

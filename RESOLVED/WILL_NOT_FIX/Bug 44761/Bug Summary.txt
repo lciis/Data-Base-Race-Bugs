@@ -1,0 +1,98 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=44761
+Component: Serial
+Hardware: All Linux
+Reported: 2012-07-13 19:32 UTC 
+Modified: 2012-07-26 00:15 UTC 
+Kernel Version: 2.6.32-71.29.1.el6.i686
+Tree: Mainline
+
+Summary:
+	n_tty driver caused kernel panic possibly due to race condition clearing tty->read_buf.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Jim Cahill 2012-07-13 19:32:31 UTC
+	In n_tty_read(), the tty->read_buf field is found to be NULL.  This should never happen according to the code.  It's hard to reproduce this condition, but this is what our test case is doing:
+
+	A process ("A") is logging output to a log file, which is often rotated by logrotate.  My "stress test" process ("ST") uses a Telnet connection to a local port to force process "A" to flush its output before its log file is rotated, so the tail of the log doesn't show partial logged events.  Occasionally, a kernic panic is seen.  Although the stack trace always shows Telnet as the running task and the faulting address is usually at some offset within n_tty_read(), the actual panic is not always at the exact same address.
+
+	Here is one typical panic.
+
+	# crash /usr/lib/debug/lib/modules/2.6.32-71.29.1.el6.i686/vmlinux vmcore
+
+	crash 6.0.4-2.el6
+	< snipped >
+	GNU gdb (GDB) 7.3.1
+	< snipped >
+	This GDB was configured as "i686-pc-linux-gnu"...
+
+		  KERNEL: /usr/lib/debug/lib/modules/2.6.32-71.29.1.el6.i686/vmlinux
+		DUMPFILE: vmcore
+			CPUS: 2
+			DATE: Thu Jul 12 19:51:52 2012
+		  UPTIME: 02:02:06
+	LOAD AVERAGE: 0.00, 0.00, 0.00
+		   TASKS: 191
+		NODENAME: vnic157
+		 RELEASE: 2.6.32-71.29.1.el6.i686
+		 VERSION: #1 SMP Mon Jun 27 18:07:00 BST 2011
+		 MACHINE: i686  (1596 Mhz)
+		  MEMORY: 1 GB
+		   PANIC: "kernel BUG at drivers/char/n_tty.c:1713!"
+			 PID: 24932
+		 COMMAND: "telnet"
+			TASK: f53be560  [THREAD_INFO: f6150000]
+			 CPU: 0
+		   STATE: TASK_RUNNING (PANIC)
+
+	crash> bt -l
+	PID: 24932  TASK: f53be560  CPU: 0   COMMAND: "telnet"
+	 #0 [f6151d9c] crash_kexec at c0494a22
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/kernel/kexec.c:1083
+	 #1 [f6151df0] oops_end at c080f042
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/arch/x86/kernel/dumpstack.c:248
+	 #2 [f6151e04] do_invalid_op at c040b10a
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/arch/x86/kernel/traps.c:289
+	 #3 [f6151e9c] error_code (via invalid_op) at c080e449
+	/usr/src/debug////////kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/arch/x86/kernel/entry_32.S:1265
+		EAX: f53be560  EBX: 00000000  ECX: f5c03bf8  EDX: f5c03898  EBP: f5c03988 
+		DS:  007b      ESI: f5c03800  ES:  007b      EDI: f4fa2468  GS:  00e0
+		CS:  0060      EIP: c066fffd  ERR: ffffffff  EFLAGS: 00010246 
+	 #4 [f6151ed0] n_tty_read at c066fffd
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/drivers/char/n_tty.c:1713
+	 #5 [f6151f3c] tty_write at c066c824
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/drivers/char/tty_io.c:1071
+	 #6 [f6151f74] vfs_read at c051ec4b
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/fs/read_write.c:292
+	 #7 [f6151f94] sys_read at c051ed7c
+	/usr/src/debug/kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/fs/read_write.c:381
+	 #8 [f6151fb0] system_call at c0409ad5
+	/usr/src/debug////////kernel-2.6.32-71.29.1.el6/linux-2.6.32-71.29.1.el6.i686/arch/x86/kernel/entry_32.S:529
+		EAX: 00000003  EBX: 00000000  ECX: 0036f980  EDX: 00002000 
+		DS:  007b      ESI: 0036f960  ES:  007b      EDI: 0036b348
+		SS:  007b      ESP: bff59bb4  EBP: bff59bd8  GS:  0033
+		CS:  0073      EIP: 00d66416  ERR: 00000003  EFLAGS: 00000246 
+	crash> 
+
+	I have a vmcore file I can upload if anyone would like to access it.
+
+	Thank you!
+	Jim
+---------------------------------------------------------------------------
+	Alan 2012-07-16 14:10:38 UTC
+	There are various know races in the old tty code. The fixes are not really things we can backport.
+---------------------------------------------------------------------------
+	Jim Cahill 2012-07-25 18:39:38 UTC
+	No, we cannot move up to the 3.5-rc7 kernel.
+
+	As an additional data point, if the kernel boot parameter "maxcpus=1" is added, the crash no longer occurs.  I have 6 systems that have been running my stress test for 2 days now without a panic, whereas at least one of them would fail within a couple of hours running with SMP enabled.
+
+	Jim
+---------------------------------------------------------------------------
+	Alan 2012-07-26 00:15:18 UTC
+	In which case you need to talk to Red Hat, and tell them about your maxcpus case.
+
+Proposed Fix:
+	Notes:
+		-The bug is marked as resolved will_not_fix.
+		-One comment is stating that “There are various know races in the old tty code. The fixes are not really things we can backport.”

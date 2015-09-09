@@ -1,0 +1,33 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=9047
+Component: Network
+Hardware: All Linux
+Reported: 2007-09-20 21:22 UTC
+Modified: 2009-03-24 05:00 UTC
+Kernel Version: 2.6.26
+Tree: Mainline
+Status: CLOSED CODE_FIX
+
+Summary:
+	This bug has been identified as the issue with the forcedeth driver has a too-low value for max_interrupt_work. 
+The fix is simply to increase the max_interrupt_work number. Although the fix has nothing to do with race, many comments 
+have suspected race as a part of the problem. Unfortunately, none of these suspicions is verified. 
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Joshua Hoblitt 2007-09-20 21:22:16 UTC
+	Most recent kernel where this bug did not occur: unknown
+	Distribution: Gentoo 2007.0
+	Hardware Environment: amd64/x86_64 - 2 x Opeteron 2220s on Tyan S2927 motherboard
+	Software Environment: Gentoo Linux, mostly 64-bit userland w/ multilib
+	Problem Description:The kernel will either Oops from a NULL ptr dereference in forcedeth.c or the network interface will stop but the system will still respond on the serial while logging message about irq abuse into the dmesg.
+
+	Steps to reproduce:  We have an in house application which makes heavy use of NFS.  Allowing this program to run for a few minutes will consistently reproduce the issue.  It is almost always an Oops on a single CPU with perhaps a 1 out of 5 chance of seeing the dead network but system still up failure mode.  This issue also occurs with 2.6.22 "gentoo-r3" but the "NULL" value being deferenced is 0x64 instead of 0x7c.  Perhaps the strangest of all, having sysctl parameters set which affect tcp window scaling prevent a full stack trace in the oops message.
+	...
+---------------------------------------------------------------------------
+	Ayaz Abdulla 2008-08-19 15:18:58 UTC
+	There was a MSI fix recently. As for NAPI, I believe there is a race condition for turning on/off interrupts between the 3 threads: 
+nv_nic_irq_optimized, nv_do_nic_poll and nv_do_napi_poll. I am in the midst of fixing that race.
+	
+Proposed Fix:
+	In ./Attachments/Proposed fix
+	

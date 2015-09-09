@@ -1,0 +1,34 @@
+Link: https://bugzilla.kernel.org/show_bug.cgi?id=15078
+Component: Video(DRI - non Intel)
+Hardware: All Linux
+Reported: 2010-01-17 16:19 UTC
+Modified: 2012-06-27 14:18 UTC 
+Kernel Version: 2.6.32.3
+Tree: Mainline
+Status:	RESOLVED OBSOLETE
+
+Summary:
+	It appeared to be a race condition between rv515_mc_program() and r100_hdp_reset() in rv515_startup/rv515_gpu_init. No confirmation is given.
+
+Important User Comments:
+---------------------------------------------------------------------------
+	Tomáš Trnka 2010-01-17 16:19:01 UTC
+	My AGP X1300 often (maybe 80% of boots) fails to boot with radeon.modeset=1. No error messages are reported, but when the GPU is being initialized, my CRT screen goes blank (with signal on, the monitor reports 720x400@70Hz). After a few seconds, the machine reboots. Sometimes, instead of getting a blank screen, irregular vertical white&black stripes are displayed (at the aforementioned resolution).
+	I've used netconsole to get the dmesg output, the log ends with:
+	[drm] GART: num cpu pages 131072, num gpu pages 131072
+
+	I've tried to pinpoint the exact location of the problem by adding printk's between the relevant function calls in rv515.c (tested this on 2.6.32.3-17.fc12.x86_64, but the problem is here since the birth of the Universe). However, this made the bug disappear, as it apparently is some kind of a race condition. Adding printk's one by one I've found that the bug is somewhere between rv515_mc_program() and r100_rb2d_reset() in rv515_startup/rv515_gpu_init. Inserting anything between those two function calls makes the bug disappear.
+
+	I've tried to fiddle with various options, notably acpi=off, pci=nomsi, radeon.agpmode=-1 and various AGP aperture sizes, with no effect.
+---------------------------------------------------------------------------
+	Tomáš Trnka 2010-02-01 08:57:26 UTC
+	Actually, there's a bug in my bugreport :-) There should be r100_hdp_reset() instead of r100_rb2d_reset() (i.e. inserting a printk between those two doesn't make the bug disappear).
+---------------------------------------------------------------------------
+	Alan 2012-06-27 12:57:12 UTC
+	Closing as obsolete, please update the bug if it is seen with a modern kernel
+
+Proposed Fix:
+	Notes:
+		The bug is no longer appeared in the current kernel.
+		The bug is closed as obsolete.
+	
