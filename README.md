@@ -1,5 +1,6 @@
 # Data-Base-Race-Bugs
 ***Majority of Information is gathered through https://bugzilla.kernel.org.
+
 Directory Structure
 	/Data Base - Data Race						—The home directory
 
